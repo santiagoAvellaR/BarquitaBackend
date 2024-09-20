@@ -1,0 +1,66 @@
+package edu.eci.cvds.Task;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import static org.junit.jupiter.api.Assertions.*;
+
+import java.time.LocalDateTime;
+
+@SpringBootTest
+public class TaskTests {
+
+    private Task task;
+    @BeforeEach
+    void setUp() {
+        task = Task.builder()
+                .id("1")
+                .name("Study")
+                .state(false)
+                .priority(Priority.MEDIA)
+                .deadline(LocalDateTime.now().plusDays(1))
+                .description("This is the study task.")
+                .build();
+    }
+
+    @Test
+    void testChangeState() {
+        assertFalse(task.getState());
+        task.changeState();
+        assertTrue(task.getState());
+    }
+
+    @Test
+    void testChangePriority() {
+        assertEquals(Priority.MEDIA, task.getPriority());
+        task.changePriority(Priority.ALTA);
+        assertEquals(Priority.ALTA, task.getPriority());
+    }
+
+    @Test
+    void testChangeName() {
+        assertEquals("Study", task.getName());
+        task.changeName("Task Study");
+        assertEquals("Task Study", task.getName());
+    }
+
+    @Test
+    void testChangeDescription() {
+        assertEquals("This is the study task.", task.getDescription());
+        task.changeDescription("Updated description");
+        assertEquals("Updated description", task.getDescription());
+    }
+
+    @Test
+    void testChangeDeadline() {
+        LocalDateTime newDeadline = LocalDateTime.now().plusDays(2);
+        task.changeDeadline(newDeadline);
+        assertEquals(newDeadline, task.getDeadline());
+    }
+
+    @Test
+    void testGetId() {
+        assertEquals("1", task.getId());
+    }
+}

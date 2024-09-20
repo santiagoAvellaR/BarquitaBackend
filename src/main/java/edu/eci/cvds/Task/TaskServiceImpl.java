@@ -30,7 +30,8 @@ public class TaskServiceImpl implements TaskService{
 
     @Override
     public void changeStateTask(String id) {
-        Task task = taskRepository.findById(id);
+        // Asi estaba antes Task task = taskRepository.findById(id);  // Y daba error de tipo.
+        taskRepository.findById(id).get().changeState();
         
     }
 
