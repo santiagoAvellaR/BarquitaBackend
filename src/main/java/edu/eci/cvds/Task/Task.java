@@ -42,31 +42,40 @@ public class Task {
      * Methods changes the state of the task.
      */
     public void changeState(){
+        state = (!state);
     }
 
     /**
      * This method sets up the priority of the task by the new given one.
      * @param newPriority The priority to set to the task.
      */
-    public void changePriority(Priority newPriority){}
+    public void changePriority(Priority newPriority){
+        priority = newPriority;
+    }
 
     /**
      * Method sets up the name of the Task
      * @param newName
      */
-    public void changeName(String newName){}
+    public void changeName(String newName){
+        name = newName;
+    }
 
     /**
      * Method sets up a Description of the Task.
      * @param newDescription
      */
-    public void changeDescription(String newDescription){}
+    public void changeDescription(String newDescription){
+        description = newDescription;
+    }
 
     /**
      * Method sets up a Deadline to the Task.
      * @param newDeadline
      */
-    public void changeDeadline(LocalDateTime newDeadline){}
+    public void changeDeadline(LocalDateTime newDeadline){
+        deadline = newDeadline;
+    }
 
     /**
      * Method to get the Id of the Task.
