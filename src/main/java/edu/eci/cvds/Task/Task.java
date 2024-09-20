@@ -55,9 +55,11 @@ public class Task {
 
     /**
      * Method sets up the name of the Task
-     * @param newName
+     * @param newName The new name of the task
+     * @throws TaskManagerExceptions the name should not be empty
      */
-    public void changeName(String newName){
+    public void changeName(String newName) throws TaskManagerExceptions{
+        if (newName == null) throw new TaskManagerExceptions(TaskManagerExceptions.NAME_NOT_NULL);
         name = newName;
     }
 
@@ -71,9 +73,11 @@ public class Task {
 
     /**
      * Method sets up a Deadline to the Task.
-     * @param newDeadline
+     * @param newDeadline The new deadline, should be greater than the current deadline.
+     * @throws TaskManagerExceptions
      */
-    public void changeDeadline(LocalDateTime newDeadline){
+    public void changeDeadline(LocalDateTime newDeadline) throws TaskManagerExceptions{
+        if(newDeadline.isBefore(LocalDateTime.now())) throw new TaskManagerExceptions(TaskManagerExceptions.IMPOSSIBLE_DATE);
         deadline = newDeadline;
     }
 

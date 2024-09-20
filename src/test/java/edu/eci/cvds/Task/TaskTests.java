@@ -39,7 +39,7 @@ public class TaskTests {
     }
 
     @Test
-    void testChangeName() {
+    void testChangeName() throws TaskManagerExceptions {
         assertEquals("Study", task.getName());
         task.changeName("Task Study");
         assertEquals("Task Study", task.getName());
@@ -53,7 +53,7 @@ public class TaskTests {
     }
 
     @Test
-    void testChangeDeadline() {
+    void testChangeDeadline() throws TaskManagerExceptions {
         LocalDateTime newDeadline = LocalDateTime.now().plusDays(2);
         task.changeDeadline(newDeadline);
         assertEquals(newDeadline, task.getDeadline());
@@ -62,5 +62,24 @@ public class TaskTests {
     @Test
     void testGetId() {
         assertEquals("1", task.getId());
+    }
+
+    @Test
+    void shouldNotAddPastDeadline() throws TaskManagerExceptions {
+        task.changeDeadline(LocalDateTime.now().plusDays(2));
+        try{
+            task.changeDeadline(LocalDateTime.now().minusDays(1));
+        } catch (TaskManagerExceptions e){
+            assertEquals(TaskManagerExceptions.IMPOSSIBLE_DATE, e.getMessage());
+        }
+    }
+
+    @Test
+    void shouldNotChangeEmptyName() throws TaskManagerExceptions {
+        try{
+            task.changeName("");
+        } catch (TaskManagerExceptions e){
+            assertEquals(TaskManagerExceptions.NAME_NOT_NULL, e.getMessage());
+        }
     }
 }
