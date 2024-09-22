@@ -2,7 +2,6 @@ package edu.eci.cvds.Task;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -13,15 +12,9 @@ public class TaskTests {
 
     private Task task;
     @BeforeEach
-    void setUp() throws TaskManagerExceptions {
-        task = Task.builder()
-                .id("1")
-                .name("Study")
-                .state(false)
-                .priority(Priority.MEDIA)
-                .deadline(LocalDateTime.now().plusDays(1))
-                .description("This is the study task.")
-                .build();
+    void setUp() throws TaskManagerException {
+        task = new Task("1","Study","This is the study task.",false,
+                Priority.MEDIA,LocalDateTime.now().plusDays(2));
     }
 
     @Test
@@ -39,7 +32,7 @@ public class TaskTests {
     }
 
     @Test
-    void testChangeName() throws TaskManagerExceptions {
+    void testChangeName() throws TaskManagerException {
         assertEquals("Study", task.getName());
         task.changeName("Task Study");
         assertEquals("Task Study", task.getName());
@@ -51,13 +44,13 @@ public class TaskTests {
             assertEquals("This is the study task.", task.getDescription());
             task.changeDescription("Updated description");
             assertEquals("Updated description", task.getDescription());
-        } catch (TaskManagerExceptions e) {
+        } catch (TaskManagerException e) {
             fail("An exception occurred: " + e.getMessage());
         }
     }
 
     @Test
-    void testChangeDeadline() throws TaskManagerExceptions {
+    void testChangeDeadline() throws TaskManagerException {
         LocalDateTime newDeadline = LocalDateTime.now().plusDays(2);
         task.changeDeadline(newDeadline);
         assertEquals(newDeadline, task.getDeadline());
@@ -69,21 +62,21 @@ public class TaskTests {
     }
 
     @Test
-    void shouldNotAddPastDeadline() throws TaskManagerExceptions {
+    void shouldNotAddPastDeadline() throws TaskManagerException {
         task.changeDeadline(LocalDateTime.now().plusDays(2));
         try{
             task.changeDeadline(LocalDateTime.now().minusDays(1));
-        } catch (TaskManagerExceptions e){
-            assertEquals(TaskManagerExceptions.IMPOSSIBLE_DATE, e.getMessage());
+        } catch (TaskManagerException e){
+            assertEquals(TaskManagerException.IMPOSSIBLE_DATE, e.getMessage());
         }
     }
 
     @Test
-    void shouldNotChangeEmptyName() throws TaskManagerExceptions {
+    void shouldNotChangeEmptyName() throws TaskManagerException {
         try{
             task.changeName("");
-        } catch (TaskManagerExceptions e){
-            assertEquals(TaskManagerExceptions.NAME_NOT_NULL, e.getMessage());
+        } catch (TaskManagerException e){
+            assertEquals(TaskManagerException.NAME_NOT_NULL, e.getMessage());
         }
     }
 }

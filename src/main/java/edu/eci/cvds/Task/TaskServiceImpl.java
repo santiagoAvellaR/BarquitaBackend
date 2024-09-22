@@ -12,14 +12,10 @@ public class TaskServiceImpl implements TaskService{
 
 
     @Override
-    public Task addTask(TaskDTO dto) throws TaskManagerExceptions {
-        Task task = Task.builder()
-                .name(dto.getName())
-                .state(dto.getState())
-                .priority(dto.getPriority())
-                .deadline(dto.getDeadline())
-                .description(dto.getDescription())
-                .build();
+    public Task addTask(TaskDTO dto) throws TaskManagerException {
+        Task task = new Task(dto.getId(),
+                dto.getName(), dto.getDescription(), dto.getState(),
+                dto.getPriority(), dto.getDeadline());
         taskRepository.save(task);
         return task;
     }

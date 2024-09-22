@@ -15,7 +15,6 @@ import java.time.LocalDateTime;
  */
 @Setter
 @Getter
-@Builder
 @Document(collection = "Tasks")
 public class Task {
     @Id
@@ -23,18 +22,17 @@ public class Task {
     private String name;
     private String description;
     private boolean state;
-
     private Priority priority;
     private LocalDateTime deadline;
 
 
-    public Task(String id, String name, String description, boolean state, Priority priority, LocalDateTime deadline) throws TaskManagerExceptions {
+    public Task(String id, String name, String description, boolean state, Priority priority, LocalDateTime deadline) throws TaskManagerException {
         if(!validateName(name)){
-            throw new TaskManagerExceptions(TaskManagerExceptions.NAME_NOT_NULL);
+            throw new TaskManagerException(TaskManagerException.NAME_NOT_NULL);
         }
         this.name = name;
         if(!validateDescription(description)){
-            throw new TaskManagerExceptions(TaskManagerExceptions.DESCRIPTION_NOT_NULL);
+            throw new TaskManagerException(TaskManagerException.DESCRIPTION_NOT_NULL);
         }
         this.description = description;
         this.state = state;
@@ -70,10 +68,10 @@ public class Task {
     /**
      * Method sets up the name of the Task
      * @param newName The new name of the task
-     * @throws TaskManagerExceptions the name should not be empty
+     * @throws TaskManagerException the name should not be empty
      */
-    public void changeName(String newName) throws TaskManagerExceptions{
-        if (!validateName(newName)) throw new TaskManagerExceptions(TaskManagerExceptions.NAME_NOT_NULL);
+    public void changeName(String newName) throws TaskManagerException {
+        if (!validateName(newName)) throw new TaskManagerException(TaskManagerException.NAME_NOT_NULL);
         name = newName;
     }
 
@@ -81,24 +79,22 @@ public class Task {
      * Method sets up a Description of the Task.
      * @param newDescription
      */
-    public void changeDescription(String newDescription) throws TaskManagerExceptions {
-        if (!validateDescription(newDescription)) throw new TaskManagerExceptions(TaskManagerExceptions.DESCRIPTION_NOT_NULL);
+    public void changeDescription(String newDescription) throws TaskManagerException {
+        if (!validateDescription(newDescription)) throw new TaskManagerException(TaskManagerException.DESCRIPTION_NOT_NULL);
         description = newDescription;
     }
 
     /**
      * Method sets up a Deadline to the Task.
      * @param newDeadline The new deadline, should be greater than the current deadline.
-     * @throws TaskManagerExceptions
+     * @throws TaskManagerException
      */
-    public void changeDeadline(LocalDateTime newDeadline) throws TaskManagerExceptions{
-        if(newDeadline.isBefore(LocalDateTime.now())) throw new TaskManagerExceptions(TaskManagerExceptions.IMPOSSIBLE_DATE);
+    public void changeDeadline(LocalDateTime newDeadline) throws TaskManagerException {
+        if(newDeadline.isBefore(LocalDateTime.now())) throw new TaskManagerException(TaskManagerException.IMPOSSIBLE_DATE);
         deadline = newDeadline;
     }
 
-    /**
-     * Method to get the Id of the Task.
-     * @return String The Id of the Task
-     */
-    public String getId(){return id;}
+    public boolean getState() {
+        return state;
+    }
 }
