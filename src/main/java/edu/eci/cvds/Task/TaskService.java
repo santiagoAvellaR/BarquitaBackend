@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 public interface TaskService {
-    Task addTask(TaskDTO dto);
+    Task addTask(TaskDTO dto) throws TaskManagerExceptions;
     void deleteTask(String id);
     void changeStateTask(String id);
     void updateTask(TaskDTO dto);

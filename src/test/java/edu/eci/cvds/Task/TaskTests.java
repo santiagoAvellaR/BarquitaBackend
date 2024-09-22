@@ -13,7 +13,7 @@ public class TaskTests {
 
     private Task task;
     @BeforeEach
-    void setUp() {
+    void setUp() throws TaskManagerExceptions {
         task = Task.builder()
                 .id("1")
                 .name("Study")
@@ -47,9 +47,13 @@ public class TaskTests {
 
     @Test
     void testChangeDescription() {
-        assertEquals("This is the study task.", task.getDescription());
-        task.changeDescription("Updated description");
-        assertEquals("Updated description", task.getDescription());
+        try {
+            assertEquals("This is the study task.", task.getDescription());
+            task.changeDescription("Updated description");
+            assertEquals("Updated description", task.getDescription());
+        } catch (TaskManagerExceptions e) {
+            fail("An exception occurred: " + e.getMessage());
+        }
     }
 
     @Test

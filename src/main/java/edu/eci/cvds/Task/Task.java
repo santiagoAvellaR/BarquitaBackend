@@ -1,9 +1,9 @@
 package edu.eci.cvds.Task;
-import jakarta.persistence.Id;
-import lombok.AllArgsConstructor;
+
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import java.time.LocalDateTime;
 
@@ -15,29 +15,43 @@ import java.time.LocalDateTime;
  */
 @Setter
 @Getter
-@AllArgsConstructor
-@Document(collection = "Tasks")
 @Builder
+@Document(collection = "Tasks")
 public class Task {
     @Id
     private String id;
     private String name;
     private String description;
-    private Boolean state;
+    private boolean state;
 
     private Priority priority;
     private LocalDateTime deadline;
 
-    /*
-    public Task(String id, String name, String description, Boolean state, Priority priority, LocalDateTime deadline) {
-        this.id = id;
+
+    public Task(String id, String name, String description, boolean state, Priority priority, LocalDateTime deadline) throws TaskManagerExceptions {
+        if(!validateName(name)){
+            throw new TaskManagerExceptions(TaskManagerExceptions.NAME_NOT_NULL);
+        }
         this.name = name;
+        if(!validateDescription(description)){
+            throw new TaskManagerExceptions(TaskManagerExceptions.DESCRIPTION_NOT_NULL);
+        }
         this.description = description;
         this.state = state;
         this.priority = priority;
+
         this.deadline = deadline;
     }
-     */
+
+
+
+    private boolean validateName(String name){
+        return name != null;
+    }
+    private boolean validateDescription(String description){
+        return description != null;
+    }
+
     /**
      * Methods changes the state of the task.
      */
@@ -59,7 +73,7 @@ public class Task {
      * @throws TaskManagerExceptions the name should not be empty
      */
     public void changeName(String newName) throws TaskManagerExceptions{
-        if (newName == null) throw new TaskManagerExceptions(TaskManagerExceptions.NAME_NOT_NULL);
+        if (!validateName(newName)) throw new TaskManagerExceptions(TaskManagerExceptions.NAME_NOT_NULL);
         name = newName;
     }
 
@@ -67,7 +81,8 @@ public class Task {
      * Method sets up a Description of the Task.
      * @param newDescription
      */
-    public void changeDescription(String newDescription){
+    public void changeDescription(String newDescription) throws TaskManagerExceptions {
+        if (!validateDescription(newDescription)) throw new TaskManagerExceptions(TaskManagerExceptions.DESCRIPTION_NOT_NULL);
         description = newDescription;
     }
 

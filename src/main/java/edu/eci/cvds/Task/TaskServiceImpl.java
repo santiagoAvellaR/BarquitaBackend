@@ -12,7 +12,7 @@ public class TaskServiceImpl implements TaskService{
 
 
     @Override
-    public Task addTask(TaskDTO dto) {
+    public Task addTask(TaskDTO dto) throws TaskManagerExceptions {
         Task task = Task.builder()
                 .name(dto.getName())
                 .state(dto.getState())
