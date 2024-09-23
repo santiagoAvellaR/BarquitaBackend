@@ -1,21 +1,14 @@
-package edu.eci.cvds.Task;
+package edu.eci.cvds.Task.models;
 
-import jakarta.persistence.Id;
-import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
-
-@Setter
 @Getter
-@AllArgsConstructor
-@Document(collection = "Tasks")
+@Setter
 @Builder
-public class Task {
-    @Id
+public class TaskDTO {
     private String id;
     private String name;
     private String description;
@@ -23,6 +16,5 @@ public class Task {
 
     private Priority priority;
     private LocalDateTime deadline;
-
 
 }

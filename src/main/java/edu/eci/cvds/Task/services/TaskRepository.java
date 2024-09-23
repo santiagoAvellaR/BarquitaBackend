@@ -1,6 +1,6 @@
-package edu.eci.cvds.Task;
+package edu.eci.cvds.Task.services;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import edu.eci.cvds.Task.models.Task;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
