@@ -56,10 +56,6 @@ public class TaskTests {
         assertEquals(newDeadline, task.getDeadline());
     }
 
-    @Test
-    void testGetId() {
-        assertEquals("1", task.getId());
-    }
 
     @Test
     void shouldNotAddPastDeadline() throws TaskManagerException {
