@@ -1,6 +1,6 @@
-package edu.eci.cvds.Task;
+package edu.eci.cvds.Task.models;
 
-import lombok.Builder;
+import edu.eci.cvds.Task.TaskManagerException;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;

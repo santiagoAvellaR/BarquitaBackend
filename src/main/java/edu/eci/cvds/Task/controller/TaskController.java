@@ -1,4 +1,10 @@
-package edu.eci.cvds.Task;
+package edu.eci.cvds.Task.controller;
+import edu.eci.cvds.Task.*;
+import edu.eci.cvds.Task.models.Priority;
+import edu.eci.cvds.Task.models.Task;
+import edu.eci.cvds.Task.models.TaskDTO;
+import edu.eci.cvds.Task.services.TaskService;
+import edu.eci.cvds.Task.services.TaskServiceImpl;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

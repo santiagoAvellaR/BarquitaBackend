@@ -1,5 +1,6 @@
-package edu.eci.cvds.Task;
+package edu.eci.cvds.Task.controller;
 
+import edu.eci.cvds.Task.TaskManagerException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;

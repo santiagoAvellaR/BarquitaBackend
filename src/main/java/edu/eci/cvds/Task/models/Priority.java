@@ -1,4 +1,4 @@
-package edu.eci.cvds.Task;
+package edu.eci.cvds.Task.models;
 
 public enum Priority {
     ALTA,

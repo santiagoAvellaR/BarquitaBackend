@@ -1,5 +1,7 @@
 package edu.eci.cvds.Task;
 
+import edu.eci.cvds.Task.models.Priority;
+import edu.eci.cvds.Task.models.Task;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
