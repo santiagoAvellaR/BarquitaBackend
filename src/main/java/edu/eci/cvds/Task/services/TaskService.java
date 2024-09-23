@@ -9,10 +9,10 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 public interface TaskService {
-    Task addTask(TaskDTO dto) throws TaskManagerException;
-    void deleteTask(String id);
+    Task addTask(TaskDTO dto) throws TaskManagerException, FilePersistenceException;
+    void deleteTask(String id) throws TaskManagerException, FilePersistenceException;
     void changeStateTask(String id);
-    void updateTask(TaskDTO dto);
+    void updateTask(TaskDTO dto) throws FilePersistenceException;
     List<Task> getAllTasks();
     List<Task> getTasksByState(boolean state);
     List<Task> getTasksByDeadline(LocalDateTime deadline);

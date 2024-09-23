@@ -3,6 +3,7 @@ import edu.eci.cvds.Task.*;
 import edu.eci.cvds.Task.models.Priority;
 import edu.eci.cvds.Task.models.Task;
 import edu.eci.cvds.Task.models.TaskDTO;
+import edu.eci.cvds.Task.services.FilePersistenceException;
 import edu.eci.cvds.Task.services.TaskService;
 import edu.eci.cvds.Task.services.TaskServiceImpl;
 import org.springframework.http.HttpStatus;
@@ -33,7 +34,7 @@ public class TaskController {
      * @throws TaskManagerException
      */
     @PostMapping("/addTask")
-    public ResponseEntity<String> addTask(@RequestBody TaskDTO task) throws TaskManagerException {
+    public ResponseEntity<String> addTask(@RequestBody TaskDTO task) throws TaskManagerException, FilePersistenceException {
         // Aqui creo que hay un problema porque estamos recibiendo las 'id' de las tareas
         //    Por lo que no se si deberiamos hacer que en la clase de TaskServiceImpl se
         //   asigne la 'id' (para garantizar no repetidas)
@@ -71,7 +72,7 @@ public class TaskController {
      * @return Confirmation of success
      */
     @DeleteMapping("/deleteTask")
-    public ResponseEntity<String> deleteTask(@RequestParam String id){
+    public ResponseEntity<String> deleteTask(@RequestParam String id) throws TaskManagerException, FilePersistenceException {
         taskService.deleteTask(id);
         return ResponseEntity.status(HttpStatus.OK)
                 .body("OK");
@@ -99,7 +100,7 @@ public class TaskController {
      * @throws TaskManagerException
      */
     @PutMapping("/updateTask")
-    public ResponseEntity<String> updateTask(@RequestBody TaskDTO taskDTO) throws TaskManagerException {
+    public ResponseEntity<String> updateTask(@RequestBody TaskDTO taskDTO) throws TaskManagerException, FilePersistenceException {
         taskService.updateTask(taskDTO);
         return ResponseEntity.status(HttpStatus.FOUND)
                 .body("OK");

@@ -7,9 +7,9 @@ package edu.eci.cvds.Task;
  * @Since 20-09-2024
  */
 public class TaskManagerException extends Exception{
-    public static String IMPOSSIBLE_DATE = "The date for the task should not be before the current date.";
-    public static String NAME_NOT_NULL = "The name of the task should not be null.";
-    public static String DESCRIPTION_NOT_NULL ="The description of the task should not be null.";
+    public static final String IMPOSSIBLE_DATE = "The date for the task should not be before the current date.";
+    public static final String NAME_NOT_NULL = "The name of the task should not be null.";
+    public static final String DESCRIPTION_NOT_NULL ="The description of the task should not be null.";
     /**
      * Constructor TaskManagerExceptions.
      * @param message The message of error.
