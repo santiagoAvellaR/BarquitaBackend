@@ -12,9 +12,9 @@ public interface TaskService {
     Task addTask(TaskDTO dto) throws TaskManagerException, FilePersistenceException;
     void deleteTask(String id) throws TaskManagerException, FilePersistenceException;
     void changeStateTask(String id);
-    void updateTask(TaskDTO dto) throws FilePersistenceException;
-    List<Task> getAllTasks();
-    List<Task> getTasksByState(boolean state);
-    List<Task> getTasksByDeadline(LocalDateTime deadline);
-    List<Task> getTaskByPriority(Priority priority);
+    void updateTask(TaskDTO dto) throws TaskManagerException ;
+    List<Task> getAllTasks()throws TaskManagerException;
+    List<Task> getTasksByState(boolean state)throws TaskManagerException;
+    List<Task> getTasksByDeadline(LocalDateTime deadline)throws TaskManagerException;
+    List<Task> getTaskByPriority(Priority priority) throws TaskManagerException;
 }

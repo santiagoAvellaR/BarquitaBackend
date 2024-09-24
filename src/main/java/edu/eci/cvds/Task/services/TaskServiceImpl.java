@@ -41,7 +41,7 @@ public class TaskServiceImpl implements TaskService {
     }
 
     @Override
-    public void updateTask(TaskDTO dto) throws FilePersistenceException {
+    public void updateTask(TaskDTO dto) throws TaskManagerException {
         Task task = taskRepository.findById(dto.getId()).get();
         task.setName(dto.getName());
         task.setDescription(dto.getDescription());
@@ -51,22 +51,22 @@ public class TaskServiceImpl implements TaskService {
     }
 
     @Override
-    public List<Task> getAllTasks() {
+    public List<Task> getAllTasks() throws TaskManagerException {
         return taskRepository.findAll();
     }
 
     @Override
-    public List<Task> getTasksByState(boolean state) {
+    public List<Task> getTasksByState(boolean state) throws TaskManagerException{
         return taskRepository.findByState(state);
     }
 
     @Override
-    public List<Task> getTasksByDeadline(LocalDateTime deadline) {
+    public List<Task> getTasksByDeadline(LocalDateTime deadline) throws TaskManagerException {
         return taskRepository.findByDeadline(deadline);
     }
 
     @Override
-    public List<Task> getTaskByPriority(Priority priority) {
+    public List<Task> getTaskByPriority(Priority priority) throws TaskManagerException{
         return taskRepository.findByPriority(priority);
     }
 }
