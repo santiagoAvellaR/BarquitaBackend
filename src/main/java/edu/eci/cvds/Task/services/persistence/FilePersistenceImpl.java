@@ -17,19 +17,44 @@ import java.util.List;
 
 @Component
 public class FilePersistenceImpl implements TaskPersistence {
+    private String fileName = "src/main/java/edu/eci/cvds/Task/services/persistence/Data.txt";
+    private File file = new File(fileName);
+
     @Override
-    public Optional<Task> findById(String id) {
-        return Optional.empty();
+    public Optional<Task> findById(String id) throws TaskManagerException {
+        Optional<Task> res = Optional.empty();
+        for(Task t: findAll()){
+            if(t.getId().equals(id)){
+                res = Optional.of(t);
+            }
+        }
+        return res;
     }
 
-    private String fileName = "src/main/java/edu/eci/cvds/Task/tasks.txt";
-    private File file = new File(fileName);
+    private boolean isNew(String id)throws TaskManagerException{
+        boolean res = true;
+        for(Task t: findAll()){
+            if(t.getId().equals(id)){
+                res = false;
+                break;
+            }
+        }
+        return res;
+    }
+
     @Override
     public Task save(Task task) throws TaskManagerException {
+
+        if(!isNew(task.getId())){
+            deleteById(task.getId());
+        }
+
+        // Anotacion, van a haber duplicado, si lo hay, la actualizas, si no, si la creas.
         File file = new File(fileName);
         task.setId(String.valueOf(UUID.randomUUID()));
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(file, true))) {
-            writer.write(task.getId() + "," + task.getName() + "," + task.getDescription() + "," + task.getState() + "," + task.getPriority() + "," + task.getDeadline());
+            writer.write(task.getId() + "," + task.getName() + "," + task.getDescription() + "," +
+                    task.getState() + "," + task.getPriority() + "," + task.getDeadline().format(DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm")));
             writer.newLine();
         } catch (IOException e) {
             e.printStackTrace();
@@ -37,8 +62,8 @@ public class FilePersistenceImpl implements TaskPersistence {
         return task;
     }
     @Override
-    public void deleteById(String id) {
-
+    public void deleteById(String id) throws TaskManagerException{
+        if(isNew(id)) throw new TaskManagerException(TaskManagerException.TASK_NOT_FOUND);
         ArrayList<String> lines = searchId(id);
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(file))) {
             for (String filteredLine : lines) {
@@ -65,69 +90,10 @@ public class FilePersistenceImpl implements TaskPersistence {
         return lines;
     }
 
-    @Override
-    public void changeStateTask(String id) {
 
-        int count =0;
-        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
-            String line;
-            while ((line = reader.readLine()) != null) {
-                if (line.contains(id)) {
-                    changeState(count, line);
-                }
-                else{
-                    break;
-                }
-                count++;
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
 
-    }
-    public void changeState(int linea, String contenido){
 
-        int count = 0;
-        String[] palabras = contenido.split(",");
-        if(palabras[3].equals("false")){
-            palabras[3] = "true";
-        }
-        else{
-            palabras[3] = "false";
-        }
-        try{
-            String tempFileName = "tempArchivo.txt";
-            BufferedReader reader = new BufferedReader(new FileReader(file));
-            BufferedWriter writer = new BufferedWriter(new FileWriter(tempFileName));
-            String line;
-            while ((line = reader.readLine()) != null) {
-                if (count == linea) {
-                    writer.write( palabras[0]+ ","+ palabras[1] + "," +  palabras[2] + "," +palabras[3] + "," +palabras[4] + "," + palabras[5]);
-                } else {
-                    writer.write(line);
-                }
-                writer.newLine();
-                count++;
-            }
-            reader.close();
-            writer.close();
-            new java.io.File(fileName).delete();
-            new java.io.File(tempFileName).renameTo(new java.io.File(fileName));
 
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-    }
-
-    @Override
-    public void updateTask(TaskDTO dto) throws TaskManagerException {
-
-        deleteById(dto.getId());
-        Task task = new Task(dto.getId() ,dto.getName(), dto.getDescription(), dto.getState(), dto.getPriority(), dto.getDeadline());
-        task.setState(dto.getState());
-        save(task);
-    }
 
     @Override
     public List<Task> findAll() throws TaskManagerException {

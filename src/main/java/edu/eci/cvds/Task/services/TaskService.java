@@ -11,7 +11,7 @@ import java.util.List;
 public interface TaskService {
     Task addTask(TaskDTO dto) throws TaskManagerException, FilePersistenceException;
     void deleteTask(String id) throws TaskManagerException, FilePersistenceException;
-    void changeStateTask(String id);
+    void changeStateTask(String id)throws TaskManagerException;
     void updateTask(TaskDTO dto) throws TaskManagerException ;
     List<Task> getAllTasks()throws TaskManagerException;
     List<Task> getTasksByState(boolean state)throws TaskManagerException;

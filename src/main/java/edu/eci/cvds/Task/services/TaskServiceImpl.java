@@ -20,10 +20,9 @@ public class TaskServiceImpl implements TaskService {
      * @param dto The given DTO Object, in this case, TaskDTO
      * @return the created Task
      * @throws TaskManagerException In the case the information given to create the Task is not correct.
-     * @throws FilePersistenceException In the case there is an error with the File Persistence
      */
     @Override
-    public Task addTask(TaskDTO dto) throws TaskManagerException, FilePersistenceException {
+    public Task addTask(TaskDTO dto) throws TaskManagerException {
         Task task = new Task(dto.getId(),
                 dto.getName(), dto.getDescription(), dto.getState(),
                 dto.getPriority(), dto.getDeadline());
@@ -31,13 +30,15 @@ public class TaskServiceImpl implements TaskService {
         return task;
     }
     @Override
-    public void deleteTask(String id) throws FilePersistenceException{
+    public void deleteTask(String id) throws TaskManagerException{
         taskRepository.deleteById(id);
     }
 
     @Override
-    public void changeStateTask(String id) {
-        taskRepository.findById(id).get().changeState();
+    public void changeStateTask(String id) throws TaskManagerException{
+        Task task = taskRepository.findById(id).get();
+        task.changeState();
+        taskRepository.save(task);
     }
 
     @Override

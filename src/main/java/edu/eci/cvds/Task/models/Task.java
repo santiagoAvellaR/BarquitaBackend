@@ -34,6 +34,7 @@ public class Task {
         if(!validateDescription(description)){
             throw new TaskManagerException(TaskManagerException.DESCRIPTION_NOT_NULL);
         }
+        this.id = id;
         this.description = description;
         this.state = state;
         this.priority = priority;
@@ -96,5 +97,16 @@ public class Task {
 
     public boolean getState() {
         return state;
+    }
+
+    /**
+     * This method is made to verify if two Tasks are equals
+     * @param task The task to compare with.
+     * @return true if they have the same attributes, false otherwise
+     */
+    public boolean equals(Task task) {
+        return id.equals(task.getId())&&name.equals(task.getName())&&
+                description.equals(task.getDescription())&&state==task.getState()&&
+                priority==task.getPriority();
     }
 }

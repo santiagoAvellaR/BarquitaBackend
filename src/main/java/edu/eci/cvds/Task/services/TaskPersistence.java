@@ -23,16 +23,14 @@ public interface TaskPersistence {
 
 
     Task save(Task task) throws TaskManagerException;
-    void deleteById(String id);
-    void changeStateTask(String id);
-    void updateTask(TaskDTO dto) throws TaskManagerException;
+    void deleteById(String id)throws TaskManagerException;
     List<Task> findAll() throws TaskManagerException;
     List<Task> findByState(boolean state) throws TaskManagerException;
     List<Task> findByDeadline(LocalDateTime deadline) throws TaskManagerException;
     List<Task> findByPriority(Priority priority) throws TaskManagerException;
 
 
-    Optional<Task> findById(String id);
+    Optional<Task> findById(String id) throws TaskManagerException;
 
 
 }
