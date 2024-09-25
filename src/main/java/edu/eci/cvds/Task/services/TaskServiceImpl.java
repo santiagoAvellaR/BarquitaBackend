@@ -4,6 +4,7 @@ import edu.eci.cvds.Task.TaskManagerException;
 import edu.eci.cvds.Task.models.Priority;
 import edu.eci.cvds.Task.models.Task;
 import edu.eci.cvds.Task.models.TaskDTO;
+import edu.eci.cvds.Task.services.persistence.FilePersistenceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +15,7 @@ import java.util.UUID;
 @RequiredArgsConstructor
 @Service
 public class TaskServiceImpl implements TaskService {
-    private final TaskPersistence taskRepository;
+    private final FilePersistenceImpl taskRepository;
     private int id = 1; // Este metodo se usara para crear una String
 
     // Este metodo genra la clave de 14 caracteres, mas el valor del contador (imposible que se repita)
@@ -30,10 +31,7 @@ public class TaskServiceImpl implements TaskService {
      */
     @Override
     public Task addTask(TaskDTO dto) throws TaskManagerException {
-        String taskId = dto.getId();
-        /*
-        String id =String.valueOf(this.id++)+generateId();
-         */
+        String taskId =(this.id++)+generateId();
         Task task = new Task(taskId,
                 dto.getName(), dto.getDescription(), dto.getState(),
                 dto.getPriority(), dto.getDeadline());

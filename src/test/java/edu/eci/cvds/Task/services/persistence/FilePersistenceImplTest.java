@@ -19,7 +19,7 @@ class FilePersistenceImplTest {
 
     private FilePersistenceImpl filePersistence;
     private final LocalDateTime deadline = LocalDateTime.now().plusDays(1);
-    private List<Task> tasks = generateTasks();
+    private final List<Task> tasks = generateTasks();
 
     private List<Task> generateTasks(){
         List<Task> taskArray = null;
@@ -46,10 +46,7 @@ class FilePersistenceImplTest {
 
     @AfterEach
     void tearDown() throws TaskManagerException {
-        filePersistence.deleteById(tasks.get(0).getId());
-        filePersistence.deleteById(tasks.get(1).getId());
-        filePersistence.deleteById(tasks.get(2).getId());
-        filePersistence.deleteById(tasks.get(3).getId());
+        filePersistence.cleanFileForTest();
     }
 
     @Test

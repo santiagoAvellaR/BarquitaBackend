@@ -88,6 +88,12 @@
 						<goals>
 							<goal>report</goal>
 						</goals>
+						<configuration>
+							<excludes>
+								<!-- Excluding controller classes for analysis with JACOCO -->
+								<exclude>**/edu/eci/cvds/Task/controller/**</exclude>
+							</excludes>
+						</configuration>
 					</execution>
 				</executions>
 			</plugin>
