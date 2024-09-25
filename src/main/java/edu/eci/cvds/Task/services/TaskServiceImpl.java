@@ -9,11 +9,18 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.UUID;
+
 @RequiredArgsConstructor
 @Service
 public class TaskServiceImpl implements TaskService {
     private final TaskPersistence taskRepository;
+    private int id = 1; // Este metodo se usara para crear una String
 
+    // Este metodo genra la clave de 14 caracteres, mas el valor del contador (imposible que se repita)
+    private String generateId(){
+        return UUID.randomUUID().toString().replace("-", "").substring(0, 9) + String.valueOf(id++);
+    }
 
     /**
      * This method adds a Task by the given DTO Task and stores it in thd Date Base.
@@ -23,7 +30,11 @@ public class TaskServiceImpl implements TaskService {
      */
     @Override
     public Task addTask(TaskDTO dto) throws TaskManagerException {
-        Task task = new Task(dto.getId(),
+        String taskId = dto.getId();
+        /*
+        String id =String.valueOf(this.id++)+generateId();
+         */
+        Task task = new Task(taskId,
                 dto.getName(), dto.getDescription(), dto.getState(),
                 dto.getPriority(), dto.getDeadline());
         taskRepository.save(task);

@@ -5,6 +5,7 @@ import edu.eci.cvds.Task.models.Priority;
 import edu.eci.cvds.Task.models.Task;
 import edu.eci.cvds.Task.models.TaskDTO;
 import edu.eci.cvds.Task.services.TaskPersistence;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.Optional;
@@ -17,8 +18,14 @@ import java.util.List;
 
 @Component
 public class FilePersistenceImpl implements TaskPersistence {
-    private String fileName = "src/main/java/edu/eci/cvds/Task/services/persistence/Data.txt";
-    private File file = new File(fileName);
+    @Autowired // Porque no podemos tener el mismo archivo para hacer pruebas que para la Base de Datos
+    public FilePersistenceImpl(String fileName){
+        this.fileName = fileName;
+         this.file = new File(fileName);
+    }
+
+    private String fileName;
+    private File file;
 
     @Override
     public Optional<Task> findById(String id) throws TaskManagerException {
@@ -51,7 +58,7 @@ public class FilePersistenceImpl implements TaskPersistence {
 
         // Anotacion, van a haber duplicado, si lo hay, la actualizas, si no, si la creas.
         File file = new File(fileName);
-        task.setId(String.valueOf(UUID.randomUUID()));
+        //task.setId(String.valueOf(UUID.randomUUID())); No debe genrar las claves, lo hacemos en TaskServiceImpl.java
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(file, true))) {
             writer.write(task.getId() + "," + task.getName() + "," + task.getDescription() + "," +
                     task.getState() + "," + task.getPriority() + "," + task.getDeadline().format(DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm")));
@@ -80,7 +87,8 @@ public class FilePersistenceImpl implements TaskPersistence {
         try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
             String line;
             while ((line = reader.readLine()) != null) {
-                if (!line.contains(id)) {
+                String key = line.split(",")[0];
+                if (!key.contains(id)) {
                     lines.add(line);
                 }
             }
@@ -159,5 +167,11 @@ public class FilePersistenceImpl implements TaskPersistence {
         return taskByPriority;
     }
 
+    public void cleanFileForTest(){
+        try (PrintWriter writer = new PrintWriter(fileName)) {
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
 
 }

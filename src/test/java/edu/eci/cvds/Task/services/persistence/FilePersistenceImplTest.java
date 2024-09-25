@@ -25,10 +25,10 @@ class FilePersistenceImplTest {
         List<Task> taskArray = null;
         try {
             taskArray = new ArrayList<>(List.of(
-                    new Task("", "Task 1", "Description 1", false, Priority.ALTA, deadline.plusDays(1)),
-                    new Task("", "Task 2", "Description 2", false, Priority.ALTA, deadline.plusDays(2)),
-                    new Task("", "Task 3", "Description 3", false, Priority.MEDIA, deadline.plusDays(3)),
-                    new Task("", "Task 4", "Description 4", false, Priority.BAJA, deadline.plusDays(4))
+                    new Task("aurqtwkbcmdhga1", "Task 1", "Description 1", false, Priority.ALTA, deadline.plusDays(1)),
+                    new Task("2", "Task 2", "Description 2", false, Priority.ALTA, deadline.plusDays(2)),
+                    new Task("3", "Task 3", "Description 3", false, Priority.MEDIA, deadline.plusDays(3)),
+                    new Task("4", "Task 4", "Description 4", false, Priority.BAJA, deadline.plusDays(4))
             ));
         }catch (TaskManagerException e) {fail("Should not fail with error: " + e.getMessage());}
         return taskArray;
@@ -36,7 +36,7 @@ class FilePersistenceImplTest {
 
     @BeforeEach
     void setUp() {
-        filePersistence = new FilePersistenceImpl();
+        filePersistence = new FilePersistenceImpl("src/test/java/edu/eci/cvds/Task/services/persistence/DataTEST.txt");
         try {
             for(Task task : tasks){
                 filePersistence.save(task);
@@ -53,17 +53,16 @@ class FilePersistenceImplTest {
     }
 
     @Test
-    void shouldFindById(){
+    void shouldFindById()throws TaskManagerException {
         try{
             Task task = filePersistence.findById(tasks.get(0).getId()).get();
             assertEquals("Task 1", task.getName());
         } catch (TaskManagerException e ) {fail("Should not fail with error: " + e.getMessage());}
-
     }
 
     @Test
     void shouldSave() throws TaskManagerException {
-        Task task = new Task("", "Task 4", "Description 4", false, Priority.BAJA, deadline.plusDays(4));
+        Task task = new Task("5", "Task 5", "Description 5", false, Priority.BAJA, deadline.plusDays(4));
         filePersistence.save(task);
         assertTrue(filePersistence.findById(task.getId()).get().equals(task));
         filePersistence.deleteById(task.getId());
@@ -71,8 +70,8 @@ class FilePersistenceImplTest {
 
     @Test
     void shouldDeleteById() throws TaskManagerException {
-        Task newTask1 = new Task("", "Task NN", "NN Description", true, Priority.ALTA, deadline.plusDays(2));
-        Task newTask2 = new Task("", "Task NN", "NN Description", true, Priority.ALTA, deadline.plusDays(2));
+        Task newTask1 = new Task("6", "Task NN", "NN Description", true, Priority.ALTA, deadline.plusDays(2));
+        Task newTask2 = new Task("D", "Task NN", "NN Description", true, Priority.ALTA, deadline.plusDays(2));
         filePersistence.save(newTask1);
         filePersistence.save(newTask2);
 
@@ -131,7 +130,7 @@ class FilePersistenceImplTest {
 
     @Test
     void shouldNotSaveDuplicates() throws TaskManagerException {
-        Task newTask = new Task("", "Task NN", "NN Description", true, Priority.ALTA, deadline.plusDays(2));
+        Task newTask = new Task("NEW", "Task NN", "NN Description", true, Priority.ALTA, deadline.plusDays(2));
         filePersistence.save(newTask);
         filePersistence.save(newTask);
         filePersistence.save(newTask);
@@ -151,31 +150,47 @@ class FilePersistenceImplTest {
     }
 
     @Test
-    void shouldNotChangeStateTask() {
+    void shouldChangeState() throws TaskManagerException {
+        Task task = filePersistence.findById(tasks.get(0).getId()).get();
+        assertFalse(task.getState());
+        task.changeState();
+        assertTrue(task.getState());
+        filePersistence.save(task);
+        assertTrue(filePersistence.findById(task.getId()).get().getState());
     }
 
     @Test
-    void shouldNotChangeState() {
+    void shouldNotChangeState() throws TaskManagerException {
+        Task task = filePersistence.findById(tasks.get(0).getId()).get();
+        assertFalse(task.getState());
+        task.changeState();
+        assertTrue(task.getState());
+        assertFalse(filePersistence.findById(task.getId()).get().getState());
     }
 
     @Test
-    void shouldNotUpdateTask() {
+    void shouldUpdateTask() throws TaskManagerException {
+        Task task = filePersistence.findById(tasks.get(0).getId()).get();
+        task.setDescription("NEW UPDATING DESCRIPTION");
+        filePersistence.save(task);
+        assertEquals(filePersistence.findById(task.getId()).get().getDescription(), "NEW UPDATING DESCRIPTION");
+    }
+
+
+
+    @Test
+    void shouldNotFindByDeadline() throws TaskManagerException {
+        List<Task> tasks1 = filePersistence.findByDeadline(LocalDateTime.now().minusDays(1));
+        assertEquals(tasks1.size(), 0);
     }
 
     @Test
-    void shouldNotFindAll() {
-    }
-
-    @Test
-    void shouldNotFindByState() {
-    }
-
-    @Test
-    void shouldNotFindByDeadline() {
-    }
-
-    @Test
-    void shouldNotFindByPriority() {
+    void shouldNotFindByPriority() throws TaskManagerException {
+        Task task = filePersistence.findById("4").get();
+        task.setPriority(Priority.ALTA);
+        filePersistence.save(task);
+        List<Task> tasks1 = filePersistence.findByPriority(Priority.BAJA);
+        assertEquals(tasks1.size(), 0);
     }
 
 }
