@@ -6,16 +6,17 @@ import edu.eci.cvds.Task.models.Task;
 import edu.eci.cvds.Task.models.TaskDTO;
 import edu.eci.cvds.Task.services.persistence.FilePersistenceImpl;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
 
-@RequiredArgsConstructor
+
 @Service
 public class TaskServiceImpl implements TaskService {
-    private final FilePersistenceImpl taskRepository;
+    private final TaskPersistence taskRepository;
     private int id = 1; // Este metodo se usara para crear una String
 
     // Este metodo genra la clave de 14 caracteres, mas el valor del contador (imposible que se repita)
@@ -23,6 +24,9 @@ public class TaskServiceImpl implements TaskService {
         return UUID.randomUUID().toString().replace("-", "").substring(0, 9) + String.valueOf(id++);
     }
 
+    public TaskServiceImpl(@Qualifier("filePersistenceImpl") TaskPersistence taskRepository) {
+        this.taskRepository = taskRepository;
+    }
     /**
      * This method adds a Task by the given DTO Task and stores it in thd Date Base.
      * @param dto The given DTO Object, in this case, TaskDTO

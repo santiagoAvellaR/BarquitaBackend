@@ -55,7 +55,6 @@ public class FilePersistenceImpl implements TaskPersistence {
         if(!isNew(task.getId())){
             deleteById(task.getId());
         }
-
         // Anotacion, van a haber duplicado, si lo hay, la actualizas, si no, si la creas.
         File file = new File(fileName);
         //task.setId(String.valueOf(UUID.randomUUID())); No debe genrar las claves, lo hacemos en TaskServiceImpl.java

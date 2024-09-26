@@ -34,14 +34,14 @@ public class TaskController {
      * @throws TaskManagerException
      */
     @PostMapping("/addTask")
-    public ResponseEntity<String> addTask(@RequestBody TaskDTO task) throws TaskManagerException, FilePersistenceException {
+    public ResponseEntity<Task> addTask(@RequestBody TaskDTO task) throws TaskManagerException, FilePersistenceException {
         // Aqui creo que hay un problema porque estamos recibiendo las 'id' de las tareas
         //    Por lo que no se si deberiamos hacer que en la clase de TaskServiceImpl se
         //   asigne la 'id' (para garantizar no repetidas)
 
-        taskService.addTask(task);
+        Task task1 = taskService.addTask(task);
         return ResponseEntity.status(HttpStatus.CREATED)
-                .body("OK");
+                .body(task1);
         }
     /**
      * This method returns all the tasks without a specific order
