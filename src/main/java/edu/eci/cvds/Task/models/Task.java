@@ -8,10 +8,10 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import java.time.LocalDateTime;
 
 /**
- * This class represents a Task...
- * {@code @Autor} Daniel Aldana and Miguel Motta
- * {@code @Version} 1.0
- * {@code @Since} 20-09-2024
+ * This class represents a Task, and prevents an incorrect use of it
+ * by trying to assign wrong values to its attributes.
+ * @Version 1.0
+ * @Since 20-09-2024
  */
 @Setter
 @Getter
@@ -26,14 +26,25 @@ public class Task {
     private LocalDateTime deadline;
 
 
+    /**
+     * This method creates a Task with the given arguments, and throwing some exceptions if the arguments are incorrect.
+     * @param id The id of the task to be identified in the database.
+     * @param name The name of the task, should not be null.
+     * @param description A description of the Task, this should be null.
+     * @param state The state of task
+     * @param priority The priority of the task.
+     * @param deadline The deadline of the task, should not be earlier than the current date.
+     * @throws TaskManagerException Throws an exception if the name, description or deadline are incorrect.
+     */
     public Task(String id, String name, String description, boolean state, Priority priority, LocalDateTime deadline) throws TaskManagerException {
         if(!validateName(name)){
             throw new TaskManagerException(TaskManagerException.NAME_NOT_NULL);
         }
-        this.name = name;
         if(!validateDescription(description)){
             throw new TaskManagerException(TaskManagerException.DESCRIPTION_NOT_NULL);
         }
+        if(deadline.isBefore(LocalDateTime.now())) throw new TaskManagerException(TaskManagerException.IMPOSSIBLE_DATE);
+        this.name = name;
         this.id = id;
         this.description = description;
         this.state = state;
@@ -41,16 +52,6 @@ public class Task {
 
         this.deadline = deadline;
     }
-
-
-
-    private boolean validateName(String name){
-        return name != null;
-    }
-    private boolean validateDescription(String description){
-        return description != null;
-    }
-
     /**
      * Methods changes the state of the task.
      */
@@ -78,7 +79,7 @@ public class Task {
 
     /**
      * Method sets up a Description of the Task.
-     * @param newDescription
+     * @param newDescription the new description to set up to the task
      */
     public void changeDescription(String newDescription) throws TaskManagerException {
         if (!validateDescription(newDescription)) throw new TaskManagerException(TaskManagerException.DESCRIPTION_NOT_NULL);
@@ -88,13 +89,17 @@ public class Task {
     /**
      * Method sets up a Deadline to the Task.
      * @param newDeadline The new deadline, should be greater than the current deadline.
-     * @throws TaskManagerException
+     * @throws TaskManagerException Throws an exception if the given deadline is not after the current date.
      */
     public void changeDeadline(LocalDateTime newDeadline) throws TaskManagerException {
         if(newDeadline.isBefore(LocalDateTime.now())) throw new TaskManagerException(TaskManagerException.IMPOSSIBLE_DATE);
         deadline = newDeadline;
     }
 
+    /**
+     * This method returns the state of a Task
+     * @return the state of the task
+     */
     public boolean getState() {
         return state;
     }
@@ -108,5 +113,12 @@ public class Task {
         return id.equals(task.getId())&&name.equals(task.getName())&&
                 description.equals(task.getDescription())&&state==task.getState()&&
                 priority==task.getPriority();
+    }
+
+    private boolean validateName(String name){
+        return name != null;
+    }
+    private boolean validateDescription(String description){
+        return description != null;
     }
 }

@@ -2,7 +2,6 @@ package edu.eci.cvds.Task;
 
 /**
  * The exception class for the Task Manager
- * @Autor Miguel Motta
  * @Version 1.0
  * @Since 20-09-2024
  */

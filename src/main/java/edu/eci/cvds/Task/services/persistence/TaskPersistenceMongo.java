@@ -12,6 +12,11 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * This class represents a Database functions wit Mongo.
+ * @Version 1.0
+ * @Since 29-09-2024
+ */
 @RequiredArgsConstructor
 @Component
 public class TaskPersistenceMongo implements TaskPersistence {
