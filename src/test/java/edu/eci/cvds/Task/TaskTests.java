@@ -60,16 +60,6 @@ public class TaskTests {
 
 
     @Test
-    void shouldNotAddPastDeadline() throws TaskManagerException {
-        task.changeDeadline(LocalDateTime.now().plusDays(2));
-        try{
-            task.changeDeadline(LocalDateTime.now().minusDays(1));
-        } catch (TaskManagerException e){
-            assertEquals(TaskManagerException.IMPOSSIBLE_DATE, e.getMessage());
-        }
-    }
-
-    @Test
     void shouldNotChangeEmptyName() throws TaskManagerException {
         try{
             task.changeName("");

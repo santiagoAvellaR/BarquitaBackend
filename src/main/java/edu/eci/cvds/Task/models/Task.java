@@ -33,8 +33,8 @@ public class Task {
      * @param description A description of the Task, this should be null.
      * @param state The state of task
      * @param priority The priority of the task.
-     * @param deadline The deadline of the task, should not be earlier than the current date.
-     * @throws TaskManagerException Throws an exception if the name, description or deadline are incorrect.
+     * @param deadline The deadline of the task.
+     * @throws TaskManagerException Throws an exception if the name or description are incorrect.
      */
     public Task(String id, String name, String description, boolean state, Priority priority, LocalDateTime deadline) throws TaskManagerException {
         if(!validateName(name)){
@@ -43,7 +43,6 @@ public class Task {
         if(!validateDescription(description)){
             throw new TaskManagerException(TaskManagerException.DESCRIPTION_NOT_NULL);
         }
-        if(deadline.isBefore(LocalDateTime.now())) throw new TaskManagerException(TaskManagerException.IMPOSSIBLE_DATE);
         this.name = name;
         this.id = id;
         this.description = description;
@@ -88,11 +87,9 @@ public class Task {
 
     /**
      * Method sets up a Deadline to the Task.
-     * @param newDeadline The new deadline, should be greater than the current deadline.
-     * @throws TaskManagerException Throws an exception if the given deadline is not after the current date.
+     * @param newDeadline The new deadline
      */
-    public void changeDeadline(LocalDateTime newDeadline) throws TaskManagerException {
-        if(newDeadline.isBefore(LocalDateTime.now())) throw new TaskManagerException(TaskManagerException.IMPOSSIBLE_DATE);
+    public void changeDeadline(LocalDateTime newDeadline) {
         deadline = newDeadline;
     }
 

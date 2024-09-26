@@ -3,6 +3,7 @@ package edu.eci.cvds.Task.controller;
 import edu.eci.cvds.Task.TaskManagerException;
 import edu.eci.cvds.Task.services.FilePersistenceException;
 import jakarta.persistence.PersistenceException;
+import java.util.Arrays;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -30,6 +31,7 @@ public class TaskControllerHandler {
     @ResponseStatus(value= HttpStatus.INTERNAL_SERVER_ERROR)
     public String handleTaskManagerException(TaskManagerException ex) {
         logger.error(ex.getMessage());
+        logger.error(Arrays.toString(ex.getStackTrace()));
         return "Internal Server Error";
     }
 
@@ -38,6 +40,7 @@ public class TaskControllerHandler {
     @ResponseStatus(value= HttpStatus.INTERNAL_SERVER_ERROR)
     public String handleException(Exception ex) {
         logger.error(ex.getMessage());
+        logger.error(Arrays.toString(ex.getStackTrace()));
         return "Internal Server Error";
     }
 
@@ -45,6 +48,7 @@ public class TaskControllerHandler {
     @ResponseStatus(value= HttpStatus.BAD_REQUEST)
     public String handlePersistenceException(PersistenceException ex) {
         logger.error(ex.getMessage());
+        logger.error(Arrays.toString(ex.getStackTrace()));
         return "Persistence Error";
     }
 

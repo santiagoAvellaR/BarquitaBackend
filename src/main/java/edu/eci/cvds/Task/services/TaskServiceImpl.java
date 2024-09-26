@@ -76,10 +76,10 @@ public class TaskServiceImpl implements TaskService {
     @Override
     public void updateTask(TaskDTO dto) throws TaskManagerException {
         Task task = taskRepository.findById(dto.getId()).get();
-        task.setName(dto.getName());
-        task.setDescription(dto.getDescription());
+        task.changeName(dto.getName());
+        task.changeDescription(dto.getDescription());
         task.setState(dto.getState());
-        task.setDeadline(dto.getDeadline());
+        task.changeDeadline(dto.getDeadline());
         taskRepository.save(task);
     }
 
