@@ -10,7 +10,9 @@
 * [Modalidad de uso]()
 
 ### DOCUMENTACIÓN
-proximamente
+Este ropositorio contienen la capa de backend que 
+soluciona abstrae el concepto de un administrador 
+de tareas pendientes, implementando un modelo de API REST.
 ### ESTRUCTURA
 proximamente
 ### MODALIDAD DE USO
