@@ -28,11 +28,12 @@
 	</scm>
 	<properties>
 		<maven.compiler.release>17</maven.compiler.release>
-		<sonar.projectKey>library</sonar.projectKey>
-		<sonar.projectName>library</sonar.projectName>
+		<sonar.projectKey>Task</sonar.projectKey>
+		<sonar.projectName>Task</sonar.projectName>
 		<sonar.host.url>http://localhost:9000</sonar.host.url>
 		<sonar.coverage.jacoco.xmlReportPaths>target/site/jacoco/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
 		<sonar.coverage.exclusions>src//configurators/*</sonar.coverage.exclusions>
+		<sonar.login>squ_ba9bf4318f4c975d6764f5720f5ce2cf382df319</sonar.login>
 	</properties>
 	<dependencies>
 		<dependency>
