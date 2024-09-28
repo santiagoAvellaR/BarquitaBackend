@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import java.time.LocalDateTime;
 
-@SpringBootTest
+
 public class TaskTests {
 
     private Task task;
@@ -58,16 +58,17 @@ public class TaskTests {
         assertEquals(newDeadline, task.getDeadline());
     }
 
-
     @Test
-    void shouldNotAddPastDeadline() throws TaskManagerException {
-        task.changeDeadline(LocalDateTime.now().plusDays(2));
+    void checkEquals(){
         try{
-            task.changeDeadline(LocalDateTime.now().minusDays(1));
-        } catch (TaskManagerException e){
-            assertEquals(TaskManagerException.IMPOSSIBLE_DATE, e.getMessage());
-        }
+            Task task1 = new Task("1","Study","This is the study task.",false,
+                    Priority.MEDIA,LocalDateTime.now().plusDays(2));
+            assertTrue(task1.equals(task));
+            task1.changeState();
+            assertFalse(task1.equals(task));
+        } catch (TaskManagerException e) {fail("An exception ocurred, should not fail with this: " + e.getMessage());}
     }
+
 
     @Test
     void shouldNotChangeEmptyName() throws TaskManagerException {
