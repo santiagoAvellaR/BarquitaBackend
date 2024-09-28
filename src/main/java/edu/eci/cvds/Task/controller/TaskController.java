@@ -19,6 +19,7 @@ import java.util.List;
  * {@code @Since} 22-09-2024
  */
 @RestController
+@CrossOrigin
 public class TaskController {
 
     private final TaskService taskService;
@@ -103,7 +104,7 @@ public class TaskController {
     @PutMapping("/updateTask")
     public ResponseEntity<String> updateTask(@RequestBody TaskDTO taskDTO) throws TaskManagerException, FilePersistenceException {
         taskService.updateTask(taskDTO);
-        return ResponseEntity.status(HttpStatus.FOUND)
+        return ResponseEntity.status(HttpStatus.OK)
                 .body("OK");
     }
 
