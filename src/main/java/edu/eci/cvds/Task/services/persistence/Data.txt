@@ -1,0 +1,5 @@
+11aab4726e2,Study,This is a description,true,ALTA,2024-09-26T15:30
+9dc8641cee10,Tarea nueva,grgre ger ,false,ALTA,2024-09-29T12:19
+2344ccad72424,Tarea formal,dafdafa ,false,MEDIA,2024-10-02T12:22
+110736fb67a12,sadada,This is a description sa f,true,ALTA,2024-10-05T12:24
+21b3ca0b16022,tarea 1,fdsfsdasd as,true,BAJA,2024-10-04T12:22
