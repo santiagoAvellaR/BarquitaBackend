@@ -18,6 +18,7 @@ import java.util.List;
  * {@code @Since} 22-09-2024
  */
 @RestController
+@CrossOrigin
 public class TaskController {
 
     private final TaskService taskService;
