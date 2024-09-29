@@ -80,6 +80,7 @@ public class TaskServiceImpl implements TaskService {
         task.changeDescription(dto.getDescription());
         task.setState(dto.getState());
         task.changeDeadline(dto.getDeadline());
+        task.setPriority(dto.getPriority());
         taskRepository.save(task);
     }
 
