@@ -1,5 +1,3 @@
-11aab4726e2,Study,This is a description,true,ALTA,2024-09-26T15:30
-9dc8641cee10,Tarea nueva,grgre ger ,false,ALTA,2024-09-29T12:19
-2344ccad72424,Tarea formal,dafdafa ,false,MEDIA,2024-10-02T12:22
-110736fb67a12,sadada,This is a description sa f,true,ALTA,2024-10-05T12:24
-21b3ca0b16022,tarea 1,fdsfsdasd as,true,BAJA,2024-10-04T12:22
+9dc8641cee10,Tarea nueva edit 3,grgre ger edit 3,false,ALTA,2024-10-04T11:01
+34e7e195d44,Ir al GYM 2,Ir al gym mañana en la mañana,false,MEDIA,2024-09-30T10:10
+11aab4726e2,Study math,This is a description math,true,ALTA,2024-10-03T11:01
