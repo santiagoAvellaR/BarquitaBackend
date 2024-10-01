@@ -27,7 +27,7 @@
 		<url/>
 	</scm>
 	<properties>
-		<maven.compiler.release>21</maven.compiler.release>
+		<maven.compiler.release>17</maven.compiler.release>
 		<sonar.projectKey>Task</sonar.projectKey>
 		<sonar.projectName>Task</sonar.projectName>
 		<sonar.host.url>http://localhost:9000</sonar.host.url>
