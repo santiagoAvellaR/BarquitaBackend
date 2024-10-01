@@ -23,7 +23,7 @@ public class TaskServiceImpl implements TaskService {
     private final TaskPersistence taskRepository;
     private int id = 1; // Este metodo se usara para crear una String
 
-    public TaskServiceImpl(@Qualifier("filePersistenceImpl") TaskPersistence taskRepository) {
+    public TaskServiceImpl(@Qualifier("taskPersistenceMongo") TaskPersistence taskRepository) {
         this.taskRepository = taskRepository;
     }
     /**
