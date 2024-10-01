@@ -3,6 +3,7 @@ import edu.eci.cvds.Task.*;
 import edu.eci.cvds.Task.models.Priority;
 import edu.eci.cvds.Task.models.Task;
 import edu.eci.cvds.Task.models.TaskDTO;
+import edu.eci.cvds.Task.services.FilePersistenceException;
 import edu.eci.cvds.Task.services.TaskService;
 import edu.eci.cvds.Task.services.TaskServiceImpl;
 import org.springframework.http.HttpStatus;
@@ -23,6 +24,10 @@ public class TaskController {
 
     private final TaskService taskService;
 
+    /**
+     * This method is the constructor and receives the taskService by Injection.
+     * @param taskService The taskService by Injection
+     */
     public TaskController(TaskServiceImpl taskService){
         this.taskService = taskService;
     }
@@ -31,22 +36,20 @@ public class TaskController {
      * This method gets a TaskDTO in a JSON format from the client to be added with the interface TaskService;
      * @param task the task to add in JSON format
      * @return Confirmation of success
-     * @throws TaskManagerException
+     * @throws TaskManagerException Throws an exception if the given information is incorrect, if the
+     * given id of the TaskDTO does not exist in the database or if there is a problem with the database.
      */
     @PostMapping("/addTask")
-    public ResponseEntity<String> addTask(@RequestBody TaskDTO task) throws TaskManagerException {
-        // Aqui creo que hay un problema porque estamos recibiendo las 'id' de las tareas
-        //    Por lo que no se si deberiamos hacer que en la clase de TaskServiceImpl se
-        //   asigne la 'id' (para garantizar no repetidas)
-
-        taskService.addTask(task);
+    public ResponseEntity<Task> addTask(@RequestBody TaskDTO task) throws TaskManagerException, FilePersistenceException {
+        // La id de la tarea TaskDTO debe existir, de lo contrario lanza una excepcion.
+        Task task1 = taskService.addTask(task);
         return ResponseEntity.status(HttpStatus.CREATED)
-                .body("OK");
+                .body(task1);
         }
     /**
      * This method returns all the tasks without a specific order
      * @return The list of task in JSON format
-     * @throws TaskManagerException
+     * @throws TaskManagerException If there is a problem with the database.
      */
     @GetMapping("/getAllTasks")
     public ResponseEntity<List<Task>> getAllTasks() throws TaskManagerException {
@@ -58,7 +61,7 @@ public class TaskController {
      * This method returns all the tasks filtered by the given state
      * @param state The state of the tasks
      * @return The tasks with the given state
-     * @throws TaskManagerException
+     * @throws TaskManagerException Throws an exception if there is a problem the database.
      */
     @GetMapping("/getTasksByState")
     public ResponseEntity<List<Task>> getTasksByState(@RequestParam boolean state) throws TaskManagerException {
@@ -72,7 +75,7 @@ public class TaskController {
      * @return Confirmation of success
      */
     @DeleteMapping("/deleteTask")
-    public ResponseEntity<String> deleteTask(@RequestParam String id){
+    public ResponseEntity<String> deleteTask(@RequestParam String id) throws TaskManagerException, FilePersistenceException {
         taskService.deleteTask(id);
         return ResponseEntity.status(HttpStatus.OK)
                 .body("OK");
@@ -91,18 +94,17 @@ public class TaskController {
                 .body("OK");
     }
 
-    // Debo validar que este toda la informacion de la tarea.
-
     /**
      * This method updates a task by the given updated task
      * @param taskDTO The updated task
      * @return Confirmation of success
-     * @throws TaskManagerException
+     * @throws TaskManagerException Throws an exception if the given information is incorrect,
+     * or if there is a problem with the database.
      */
     @PutMapping("/updateTask")
-    public ResponseEntity<String> updateTask(@RequestBody TaskDTO taskDTO) throws TaskManagerException {
+    public ResponseEntity<String> updateTask(@RequestBody TaskDTO taskDTO) throws TaskManagerException, FilePersistenceException {
         taskService.updateTask(taskDTO);
-        return ResponseEntity.status(HttpStatus.FOUND)
+        return ResponseEntity.status(HttpStatus.OK)
                 .body("OK");
     }
 
@@ -110,7 +112,7 @@ public class TaskController {
      * This method returns the tasks with the given deadline
      * @param deadline The deadline to filter the tasks
      * @return the list of tasks with the given deadline
-     * @throws TaskManagerException
+     * @throws TaskManagerException If there is a problem with the database or the given deadline.
      */
     @GetMapping("/getTasksByDeadline")
     public ResponseEntity<List<Task>> getTasksByDeadline(@RequestParam LocalDateTime deadline) throws TaskManagerException {
@@ -122,7 +124,7 @@ public class TaskController {
      * This method returns the tasks filtered by a given priority
      * @param priority The priority to filter the tasks
      * @return The list of tasks with the given priority
-     * @throws TaskManagerException
+     * @throws TaskManagerException If there is a problem with the database.
      */
     @GetMapping("/getTaskByPriority")
     public ResponseEntity<List<Task>> getTaskByPriority(@RequestParam Priority priority) throws TaskManagerException {
