@@ -11,6 +11,7 @@ import org.junit.jupiter.api.Test;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -34,6 +35,16 @@ class TaskServiceImplTest {
         } catch (TaskManagerException e) {fail("Should not fail with error: " + e.getMessage());}
     }
 
+    @Test
+    void shouldNotAddTask(){
+        try{
+            taskService.addTask(new TaskDTO("1", null, "Description 1", false, Priority.ALTA, deadline));
+            fail("Should fail with error: " + TaskManagerException.NAME_NOT_NULL);
+        } catch (TaskManagerException e) {
+            assertEquals(TaskManagerException.NAME_NOT_NULL, e.getMessage());
+        }
+    }
+
 
     @Test
     void deleteTask() {
@@ -48,6 +59,16 @@ class TaskServiceImplTest {
     }
 
     @Test
+    void shouldNotDeleteTask(){
+        try{
+            taskService.deleteTask("1");
+            fail("Should fail with error: " + TaskManagerException.TASK_NOT_FOUND);
+        } catch (TaskManagerException e) {
+            assertEquals(TaskManagerException.TASK_NOT_FOUND, e.getMessage());
+        }
+    }
+
+    @Test
     void changeStateTask() {
         try{
             Task t = taskService.addTask(new TaskDTO("1", "Task 1", "Description 1", false, Priority.ALTA, deadline));
@@ -57,12 +78,53 @@ class TaskServiceImplTest {
     }
 
     @Test
+    void shouldNotChangeStateTask(){
+        try{
+            taskService.changeStateTask("1");
+            fail("Should fail with error: " + TaskManagerException.TASK_NOT_FOUND);
+        }catch (TaskManagerException e) {
+            assertEquals(TaskManagerException.TASK_NOT_FOUND, e.getMessage());
+        }
+    }
+    @Test
     void updateTask() {
         try{
             Task t = taskService.addTask(new TaskDTO("1", "Task 1", "Description 1", false, Priority.ALTA, deadline));
             taskService.updateTask(new TaskDTO(t.getId(), "Other name", "New Description", true, Priority.BAJA, deadline.plusDays(1)));
             assertTrue(taskService.getAllTasks().stream().filter(task -> task.getId().equals(t.getId())).findFirst().get().getState());
         } catch (TaskManagerException e) {fail("Should not fail with error: " + e.getMessage());}
+    }
+
+    @Test
+    void shouldNotUpdateTask(){
+        try{
+            taskService.updateTask(new TaskDTO("1", "Other name", "New Description", true, Priority.BAJA, deadline.plusDays(1)));
+            fail("Should fail with error: " + TaskManagerException.TASK_NOT_FOUND);
+        }catch (TaskManagerException e) {
+            assertEquals(TaskManagerException.TASK_NOT_FOUND, e.getMessage());
+        }
+    }
+
+    @Test
+    void shouldNotUpdateNullName(){
+        try{
+            Task t = taskService.addTask(new TaskDTO("1", "Task 1", "Description 1", false, Priority.ALTA, deadline));
+            taskService.updateTask(new TaskDTO(t.getId(), null, "New Description", true, Priority.BAJA, deadline.plusDays(1)));
+            fail("Should fail with error: " + TaskManagerException.NAME_NOT_NULL);
+        }catch (TaskManagerException e) {
+            assertEquals(TaskManagerException.NAME_NOT_NULL, e.getMessage());
+        }
+    }
+
+    @Test
+    void shouldNotUpdateNullDescription(){
+        try{
+            Task t = taskService.addTask(new TaskDTO("1", "Task 1", "Description 1", false, Priority.ALTA, deadline));
+            taskService.updateTask(new TaskDTO(t.getId(), "Task 1", "", true, Priority.BAJA, deadline.plusDays(1)));
+            fail("Should fail with error: " + TaskManagerException.DESCRIPTION_NOT_NULL);
+        }catch (TaskManagerException e) {
+            assertEquals(TaskManagerException.DESCRIPTION_NOT_NULL, e.getMessage());
+        }
     }
 
     @Test
@@ -130,6 +192,83 @@ class TaskServiceImplTest {
             assertEquals(1, taskService.getTaskByPriority(Priority.ALTA).size());
             assertEquals(1, taskService.getTaskByPriority(Priority.BAJA).size());
             assertEquals(2, taskService.getTaskByPriority(Priority.MEDIA).size());
+        } catch (TaskManagerException e) {fail("Should not fail with error: " + e.getMessage());}
+    }
+
+    /*
+    Dado que tengo 1 tarea registrada, Cuando lo consulto a
+    nivel de servicio, Entonces la consulta será exitosa validando el campo id.
+     */
+    @Test
+    void shouldAssertIdTask(){
+        try{
+            Task task = taskService.addTask(new TaskDTO("fa", "Task 1", "Description 1", false, Priority.ALTA, deadline.plusDays(2)));
+            String id = task.getId();
+            Task taskSaved = taskService.getAllTasks().get(0);
+
+            assertEquals(id, taskSaved.getId());
+            assertTrue(task.equals(taskSaved));
+
+        } catch (TaskManagerException e) {fail("Should not fail with error: " + e.getMessage());}
+    }
+    /*
+    Dado que no hay ninguna tarea registrada,
+    Cuándo la consulto a nivel de servicio,
+    Entonces la consulta no retornará ningún resultado.
+     */
+     @Test
+    void shouldAssertNullTask(){
+         try{
+             List<Task> listTasks = taskService.getAllTasks();
+             assertEquals(Collections.emptyList(), listTasks);
+         } catch (TaskManagerException e ){fail("Should not fail with error: " + e.getMessage());}
+     }
+
+    /*
+    Dado que no hay ninguna tarea registrada,
+    Cuándo lo creo a nivel de servicio, Entonces la creación será exitosa.
+     */
+    @Test
+    void shouldAddTask(){
+        try{
+            Task task = taskService.addTask(new TaskDTO("fa", "Task 1", "Description 1", false, Priority.ALTA, deadline.plusDays(2)));
+            assertEquals("Task 1", task.getName());
+            assertEquals("Description 1", task.getDescription());
+            assertFalse(task.getState());
+            assertEquals(Priority.ALTA, task.getPriority());
+            assertEquals(deadline.plusDays(2), task.getDeadline());
+        } catch (TaskManagerException e) {fail("Should not fail with error: " + e.getMessage());}
+    }
+
+    /*
+    Dado que tengo 1 tarea registrada,
+    Cuándo la elimino a nivel de servicio,
+    Entonces la eliminación será exitosa.
+     */
+    @Test
+    void shouldDeleteTask(){
+        try{
+            Task task = taskService.addTask(new TaskDTO("fa", "Task 1", "Description 1", false, Priority.ALTA, deadline.plusDays(2)));
+            Task taskSaved = taskService.getAllTasks().get(0);
+            assertTrue(task.equals(taskSaved));
+            taskService.deleteTask(task.getId());
+            List<Task> tasks = taskService.getAllTasks();
+            assertEquals(Collections.emptyList(), tasks);
+        } catch (TaskManagerException e) {fail("Should not fail with error: " + e.getMessage());}
+    }
+    /*
+    Dado que tengo 1 tarea registrada,
+    Cuándo la elimino y consulto a nivel de servicio,
+    Entonces el resultado de la consulta no retornará ningún resultado.
+     */
+    @Test
+    void shouldNotGetDeletedTask(){
+        try{
+            String id = taskService.addTask(new TaskDTO("fa", "Task 1", "Description 1", false, Priority.ALTA, deadline.plusDays(2))).getId();
+            taskService.deleteTask(id);
+            List<Task> tasks = taskService.getAllTasks();
+            assertEquals(Collections.emptyList(), tasks);
+
         } catch (TaskManagerException e) {fail("Should not fail with error: " + e.getMessage());}
     }
 }

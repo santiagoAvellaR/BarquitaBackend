@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 /**
@@ -60,7 +61,9 @@ public class TaskServiceImpl implements TaskService {
      */
     @Override
     public void changeStateTask(String id) throws TaskManagerException{
-        Task task = taskRepository.findById(id).get();
+        Optional<Task> possibleTask = taskRepository.findById(id);
+        if(possibleTask.isEmpty())throw new TaskManagerException(TaskManagerException.TASK_NOT_FOUND);
+        Task task = possibleTask.get();
         task.changeState();
         taskRepository.save(task);
     }
@@ -75,7 +78,9 @@ public class TaskServiceImpl implements TaskService {
      */
     @Override
     public void updateTask(TaskDTO dto) throws TaskManagerException {
-        Task task = taskRepository.findById(dto.getId()).get();
+        Optional<Task> possibleTask = taskRepository.findById(dto.getId());
+        if(possibleTask.isEmpty())throw new TaskManagerException(TaskManagerException.TASK_NOT_FOUND);
+        Task task = possibleTask.get();
         task.changeName(dto.getName());
         task.changeDescription(dto.getDescription());
         task.setState(dto.getState());

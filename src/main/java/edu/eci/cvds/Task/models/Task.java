@@ -113,9 +113,9 @@ public class Task {
     }
 
     private boolean validateName(String name){
-        return name != null;
+        return name != null && !name.isEmpty();
     }
     private boolean validateDescription(String description){
-        return description != null;
+        return description != null && !description.isEmpty();
     }
 }
