@@ -14,4 +14,5 @@ public interface TaskRepository extends MongoRepository<Task, String> {
     List<Task> findByDeadline(LocalDateTime deadline);
     List<Task> findByPriority(int priority);
     List<Task> findByDifficulty(Difficulty difficulty);
+    List<Task> findByEstimatedTime(int estimatedTime);
 }

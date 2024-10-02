@@ -23,6 +23,7 @@ public class Task {
     private String description;
     private boolean state;
     private int priority;
+    private int estimatedTime;
     private Difficulty difficulty;
     private LocalDateTime deadline;
 
@@ -34,23 +35,26 @@ public class Task {
      * @param description A description of the Task, this should be null.
      * @param state The state of task
      * @param priority The priority of the task, must be in the range [1,5].
+     * @param estimatedTime The estimated time to complete the task, must be greater than zero.
      * @param difficulty The difficulty of the task
      * @param deadline The deadline of the task.
      * @throws TaskManagerException Throws an exception if the name, description or the priority are incorrect.
      */
-    public Task(String id, String name, String description, boolean state, int priority,Difficulty difficulty, LocalDateTime deadline) throws TaskManagerException {
+    public Task(String id, String name, String description, boolean state, int priority,int estimatedTime,Difficulty difficulty, LocalDateTime deadline) throws TaskManagerException {
         if(!validateName(name)){
             throw new TaskManagerException(TaskManagerException.NAME_NOT_NULL);
         }
         if(!validateDescription(description)){
             throw new TaskManagerException(TaskManagerException.DESCRIPTION_NOT_NULL);
         }
-        if(!validatePriority(priority)) throw new TaskManagerException(TaskManagerException.DIFFICULTY_OUT_OF_RANGE);
+        if(!validatePriority(priority)) throw new TaskManagerException(TaskManagerException.PRIORITY_OUT_OF_RANGE);
+        if(!validateEstimatedTime(estimatedTime)) throw new TaskManagerException(TaskManagerException.TIME_INCORRECT);
         this.name = name;
         this.id = id;
         this.description = description;
         this.state = state;
         this.priority = priority;
+        this.estimatedTime = estimatedTime;
         this.difficulty = difficulty;
         this.deadline = deadline;
     }
@@ -67,10 +71,19 @@ public class Task {
      * @throws TaskManagerException If the given priority is not in the range of [1,5]
      */
     public void changePriority(int newPriority) throws TaskManagerException {
-        if(!validatePriority(newPriority)) throw new TaskManagerException(TaskManagerException.DIFFICULTY_OUT_OF_RANGE);
+        if(!validatePriority(newPriority)) throw new TaskManagerException(TaskManagerException.PRIORITY_OUT_OF_RANGE);
         priority = newPriority;
     }
 
+    /**
+     * This method sets up the estimated time of the task by the new given one.
+     * @param newEstimatedTime The new estimated time for the task, must be greater than zero.
+     * @throws TaskManagerException If the given time is not greater than zero.
+     */
+    public void changeEstimatedTime(int newEstimatedTime) throws TaskManagerException {
+        if(!validateEstimatedTime(newEstimatedTime)) throw new TaskManagerException(TaskManagerException.TIME_INCORRECT);
+        estimatedTime = newEstimatedTime;
+    }
     /**
      * This method sets up the difficulty of the task by the new given one.
      * @param newDifficulty The given difficulty of the task
@@ -133,5 +146,8 @@ public class Task {
     }
     private boolean validatePriority(int priority){
         return priority >= 1 && priority <= 5;
+    }
+    private boolean validateEstimatedTime(int estimatedTime){
+        return estimatedTime > 0;
     }
 }

@@ -10,6 +10,7 @@ import org.junit.jupiter.api.Test;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -25,10 +26,10 @@ class FilePersistenceImplTest {
         List<Task> taskArray = null;
         try {
             taskArray = new ArrayList<>(List.of(
-                    new Task("aurqtwkbcmdhga1", "Task 1", "Description 1", false, 2,Difficulty.ALTA, deadline.plusDays(1)),
-                    new Task("2", "Task 2", "Description 2", false, 1,Difficulty.ALTA, deadline.plusDays(2)),
-                    new Task("3", "Task 3", "Description 3", false, 3, Difficulty.MEDIA, deadline.plusDays(3)),
-                    new Task("4", "Task 4", "Description 4", false, 3,Difficulty.BAJA, deadline.plusDays(4))
+                    new Task("aurqtwkbcmdhga1", "Task 1", "Description 1", false, 2,10,Difficulty.ALTA, deadline.plusDays(1)),
+                    new Task("2", "Task 2", "Description 2", false, 1,10,Difficulty.ALTA, deadline.plusDays(2)),
+                    new Task("3", "Task 3", "Description 3", false, 3,10, Difficulty.MEDIA, deadline.plusDays(3)),
+                    new Task("4", "Task 4", "Description 4", false, 3,10,Difficulty.BAJA, deadline.plusDays(4))
             ));
         }catch (TaskManagerException e) {fail("Should not fail with error: " + e.getMessage());}
         return taskArray;
@@ -45,8 +46,10 @@ class FilePersistenceImplTest {
     }
 
     @AfterEach
-    void tearDown() throws TaskManagerException {
-        filePersistence.cleanFileForTest();
+    void tearDown(){
+        try{
+            filePersistence.cleanFileForTest();
+        } catch(TaskManagerException e) {fail("Should not fail with error: " + e.getMessage());}
     }
 
     @Test
@@ -59,7 +62,7 @@ class FilePersistenceImplTest {
 
     @Test
     void shouldSave() throws TaskManagerException {
-        Task task = new Task("5", "Task 5", "Description 5", false, 1, Difficulty.BAJA, deadline.plusDays(4));
+        Task task = new Task("5", "Task 5", "Description 5", false, 1, 10,Difficulty.BAJA, deadline.plusDays(4));
         filePersistence.save(task);
         assertTrue(filePersistence.findById(task.getId()).get().equals(task));
         filePersistence.deleteById(task.getId());
@@ -67,8 +70,8 @@ class FilePersistenceImplTest {
 
     @Test
     void shouldDeleteById() throws TaskManagerException {
-        Task newTask1 = new Task("6", "Task NN", "NN Description", true, 1, Difficulty.ALTA, deadline.plusDays(2));
-        Task newTask2 = new Task("D", "Task NN", "NN Description", true, 1, Difficulty.ALTA, deadline.plusDays(2));
+        Task newTask1 = new Task("6", "Task NN", "NN Description", true, 1,10, Difficulty.ALTA, deadline.plusDays(2));
+        Task newTask2 = new Task("D", "Task NN", "NN Description", true, 1, 10,Difficulty.ALTA, deadline.plusDays(2));
         filePersistence.save(newTask1);
         filePersistence.save(newTask2);
 
@@ -127,7 +130,7 @@ class FilePersistenceImplTest {
 
     @Test
     void shouldNotSaveDuplicates() throws TaskManagerException {
-        Task newTask = new Task("NEW", "Task NN", "NN Description", true, 1, Difficulty.ALTA, deadline.plusDays(2));
+        Task newTask = new Task("NEW", "Task NN", "NN Description", true, 1, 10,Difficulty.ALTA, deadline.plusDays(2));
         filePersistence.save(newTask);
         filePersistence.save(newTask);
         filePersistence.save(newTask);
@@ -173,8 +176,52 @@ class FilePersistenceImplTest {
         assertEquals(filePersistence.findById(task.getId()).get().getDescription(), "NEW UPDATING DESCRIPTION");
     }
 
+    @Test
+    void shouldFindByPriority1(){
+        try{
+            List<Task> tasks2 = filePersistence.findByPriority(2);
+            List<Task> tasks1 = filePersistence.findByPriority(1);
+            List<Task> tasks3 = filePersistence.findByPriority(3);
+            assertEquals(1, tasks2.size());
+            assertEquals(1, tasks1.size());
+            assertEquals(2, tasks3.size());
+        } catch (TaskManagerException e){fail("Should not fail with error: " + e.getMessage());}
+    }
 
+    @Test
+    void shouldFindByPriority2(){
+        try{
+            saveSomeTasks();
+            List<Task> tasks1 = filePersistence.findByPriority(1);
+            List<Task> tasks2 = filePersistence.findByPriority(2);
+            List<Task> tasks3 = filePersistence.findByPriority(3);
+            List<Task> tasks4 = filePersistence.findByPriority(4);
+            List<Task> tasks5 = filePersistence.findByPriority(5);
+            for(Task task : tasks1){
+                assertEquals(1,task.getPriority());
+            }
+            for(Task task : tasks2){
+                assertEquals(2,task.getPriority());
+            }
+            for(Task task : tasks3){
+                assertEquals(3,task.getPriority());
+            }
+            for(Task task : tasks4){
+                assertEquals(4,task.getPriority());
+            }
+            for(Task task : tasks5){
+                assertEquals(5,task.getPriority());
+            }
+        } catch (TaskManagerException e){fail("Should not fail with error: " + e.getMessage());}
+    }
 
+    @Test
+    void shouldNotFindByPriority(){
+        try{
+            List<Task> tasksEmpty = filePersistence.findByPriority(6);
+            assertEquals(Collections.emptyList(), tasksEmpty);
+        } catch (TaskManagerException e){fail("Should not fail with error: " + e.getMessage());}
+    }
     @Test
     void shouldNotFindByDeadline() throws TaskManagerException {
         List<Task> tasks1 = filePersistence.findByDeadline(LocalDateTime.now().minusDays(1));
@@ -190,4 +237,18 @@ class FilePersistenceImplTest {
         assertEquals(tasks1.size(), 0);
     }
 
+    private void saveSomeTasks() throws TaskManagerException {
+        filePersistence.save(new Task("01", "Task 1", "Description 1", false, 1, 10,Difficulty.MEDIA, deadline.plusDays(2)));
+        filePersistence.save(new Task("02", "Task 2", "Description 2", false, 2, 10,Difficulty.MEDIA, deadline.plusDays(2)));
+        filePersistence.save(new Task("03", "Task 3", "Description 3", false, 3, 10,Difficulty.MEDIA, deadline.plusDays(4)));
+        filePersistence.save(new Task("04", "Task 4", "Description 4", false, 4, 10,Difficulty.MEDIA, deadline.plusDays(4)));
+        filePersistence.save(new Task("05", "Task 5", "Description 5", true, 5, 10,Difficulty.BAJA, deadline.plusDays(4)));
+        filePersistence.save(new Task("06", "Task 6", "Description 6", true, 5, 10,Difficulty.BAJA, deadline.plusDays(4)));
+        filePersistence.save(new Task("07", "Task 7", "Description 7", true, 5, 10,Difficulty.BAJA, deadline.plusDays(1)));
+        filePersistence.save(new Task("08", "Task 8", "Description 8", true, 5, 10,Difficulty.BAJA, deadline.plusDays(1)));
+        filePersistence.save(new Task("09", "Task 9", "Description 9", true, 5, 10,Difficulty.BAJA, deadline.plusDays(1)));
+        filePersistence.save(new Task("010", "Task 10", "Description 10", false, 5, 10,Difficulty.ALTA, deadline.plusDays(1)));
+        filePersistence.save(new Task("011", "Task 11", "Description 11", false, 5, 10,Difficulty.ALTA, deadline));
+        filePersistence.save(new Task("012", "Task 12", "Description 12", false, 5, 10,Difficulty.ALTA, deadline));
+    }
 }

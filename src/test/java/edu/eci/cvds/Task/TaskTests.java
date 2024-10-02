@@ -17,7 +17,7 @@ public class TaskTests {
     @BeforeEach
     void setUp() throws TaskManagerException {
         task = new Task("1","Study","This is the study task.",false,
-                3,Difficulty.MEDIA,LocalDateTime.now().plusDays(2));
+                3,10,Difficulty.MEDIA,LocalDateTime.now().plusDays(2));
     }
 
     @Test
@@ -63,7 +63,7 @@ public class TaskTests {
     void checkEquals(){
         try{
             Task task1 = new Task("1","Study","This is the study task.",false,3,
-                    Difficulty.MEDIA,LocalDateTime.now().plusDays(2));
+                    10, Difficulty.MEDIA,LocalDateTime.now().plusDays(2));
             assertTrue(task1.equals(task));
             assertEquals(task.getId(), task1.getId());
             assertEquals(task.getName(), task1.getName());
@@ -112,6 +112,16 @@ public class TaskTests {
             fail("Should not change description to null:");
         } catch (TaskManagerException e){
             assertEquals(TaskManagerException.DESCRIPTION_NOT_NULL, e.getMessage());
+        }
+    }
+
+    @Test
+    void shouldNotChangeEstimatedTime() throws TaskManagerException {
+        try{
+            task.changeEstimatedTime(0);
+            fail("Should not change estimated time lower than zero:");
+        } catch (TaskManagerException e){
+            assertEquals(TaskManagerException.TIME_INCORRECT, e.getMessage());
         }
     }
 }

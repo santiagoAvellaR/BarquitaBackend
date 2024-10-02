@@ -60,6 +60,11 @@ public class TaskPersistenceMongo implements TaskPersistence {
     }
 
     @Override
+    public List<Task> findByEstimatedTime(int estimatedTime) throws TaskManagerException {
+        return taskRepository.findByEstimatedTime(estimatedTime);
+    }
+
+    @Override
     public Optional<Task> findById(String id) throws TaskManagerException {
         return taskRepository.findById(id);
     }

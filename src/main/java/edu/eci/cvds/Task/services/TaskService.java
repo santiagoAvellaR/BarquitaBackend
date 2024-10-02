@@ -9,8 +9,8 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 public interface TaskService {
-    Task addTask(TaskDTO dto) throws TaskManagerException, FilePersistenceException;
-    void deleteTask(String id) throws TaskManagerException, FilePersistenceException;
+    Task addTask(TaskDTO dto) throws TaskManagerException;
+    void deleteTask(String id) throws TaskManagerException;
     void changeStateTask(String id)throws TaskManagerException;
     void updateTask(TaskDTO dto) throws TaskManagerException ;
     List<Task> getAllTasks()throws TaskManagerException;
@@ -18,4 +18,5 @@ public interface TaskService {
     List<Task> getTasksByDeadline(LocalDateTime deadline)throws TaskManagerException;
     List<Task> getTaskByPriority(int priority) throws TaskManagerException;
     List<Task> getTaskByDifficulty(Difficulty difficulty) throws TaskManagerException;
+    List<Task> getTaskByEstimatedTime(int estimatedTime) throws TaskManagerException;
 }

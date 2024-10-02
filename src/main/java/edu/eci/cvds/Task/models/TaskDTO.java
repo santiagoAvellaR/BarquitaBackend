@@ -24,6 +24,7 @@ public class TaskDTO {
     private String description;
     private Boolean state;
     private int priority;
+    private int estimatedTime;
     private Difficulty difficulty;
     private LocalDateTime deadline;
 

@@ -37,7 +37,7 @@ public class TaskServiceImpl implements TaskService {
         String taskId =generateId();
         Task task = new Task(taskId,
                 dto.getName(), dto.getDescription(), dto.getState(),
-                dto.getPriority(), dto.getDifficulty(), dto.getDeadline());
+                dto.getPriority(), dto.getEstimatedTime(),dto.getDifficulty(), dto.getDeadline());
         taskRepository.save(task);
         return task;
     }
@@ -83,6 +83,7 @@ public class TaskServiceImpl implements TaskService {
         task.changeName(dto.getName());
         task.changeDescription(dto.getDescription());
         task.setState(dto.getState());
+        task.changeEstimatedTime(dto.getEstimatedTime());
         task.changeDeadline(dto.getDeadline());
         task.changePriority(dto.getPriority());
         task.changeDifficulty(dto.getDifficulty());
@@ -136,7 +137,7 @@ public class TaskServiceImpl implements TaskService {
     /**
      * This method returns List of Tasks that have the given difficulty
      * @param difficulty The difficulty to filter the List of Taks.
-     * @return THe list of tasks that satisfies the condition.
+     * @return The list of tasks that satisfies the condition.
      * @throws TaskManagerException Throws an exception if there is a problem with the database.
      */
     @Override
@@ -144,6 +145,16 @@ public class TaskServiceImpl implements TaskService {
         return taskRepository.findByDifficulty(difficulty);
     }
 
+    /**
+     * This method returns List of Tasks that have the given estimated time.
+     * @param estimatedTime The estimated time to complete the task
+     * @return The list of tasks that satisfies the condition.
+     * @throws TaskManagerException Throws an exception if there is a problem with the database.
+     */
+    @Override
+    public List<Task> getTaskByEstimatedTime(int estimatedTime) throws TaskManagerException{
+        return taskRepository.findByEstimatedTime(estimatedTime);
+    }
 
     // Este metodo genra la clave de 14 caracteres, mas el valor del contador (imposible que se repita)
     private String generateId(){
