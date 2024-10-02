@@ -1,7 +1,6 @@
 package edu.eci.cvds.Task.services.persistence;
-
 import edu.eci.cvds.Task.TaskManagerException;
-import edu.eci.cvds.Task.models.Priority;
+import edu.eci.cvds.Task.models.Difficulty;
 import edu.eci.cvds.Task.models.Task;
 import edu.eci.cvds.Task.services.TaskPersistence;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -65,7 +64,7 @@ public class FilePersistenceImpl implements TaskPersistence {
         File file = new File(fileName);
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(file, true))) {
             writer.write(task.getId() + "," + task.getName() + "," + task.getDescription() + "," +
-                    task.getState() + "," + task.getPriority() + "," + task.getDeadline().format(DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm")));
+                    task.getState() + "," + task.getPriority()+ "," + task.getDifficulty() + "," + task.getDeadline().format(DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm")));
             writer.newLine();
         } catch (IOException e) {
             e.printStackTrace();
@@ -160,15 +159,34 @@ public class FilePersistenceImpl implements TaskPersistence {
      * with the information stored in the text plane file.
      */
     @Override
-    public List<Task> findByPriority(Priority priority) throws TaskManagerException {
+    public List<Task> findByPriority(int priority) throws TaskManagerException {
         List<Task> tasks = findAll();
         ArrayList<Task> taskByPriority = new ArrayList<>();
         for(Task task: tasks){
-            if(task.getPriority().equals(priority)){
+            if(task.getPriority()== priority){
                 taskByPriority.add(task);
             }
         }
         return taskByPriority;
+    }
+
+    /**
+     * This method returns a list of tasks with the given difficulty
+     * @param difficulty The difficulty of the tasks
+     * @return THe list of task from the storage file with the given Difficulty
+     * @throws TaskManagerException Throws an exception if there is a problem
+     * with the information stored in the text plane file.
+     */
+    @Override
+    public List<Task> findByDifficulty(Difficulty difficulty) throws TaskManagerException{
+        List<Task> tasks = findAll();
+        ArrayList<Task> taskByDifficulty = new ArrayList<>();
+        for(Task task: tasks){
+            if(task.getDifficulty().equals(difficulty)){
+                taskByDifficulty.add(task);
+            }
+        }
+        return taskByDifficulty;
     }
 
     /**
@@ -212,12 +230,12 @@ public class FilePersistenceImpl implements TaskPersistence {
         ArrayList<Task> tasks = new ArrayList<>();
         for(String linea: lineas){
             String[] contenido = linea.split(",");
-            Priority priority = Priority.valueOf(contenido[4]);
+            int priority = Integer.parseInt(contenido[4]);
+            Difficulty difficulty = Difficulty.valueOf(contenido[5]);
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm");
-            LocalDateTime localDateTime = LocalDateTime.parse(contenido[5], formatter);
+            LocalDateTime localDateTime = LocalDateTime.parse(contenido[6], formatter);
             boolean state = Boolean.parseBoolean(contenido[3]);// El estado se puede agregar directamente sin hacer: setState(state);
-            Task task = new Task(contenido[0], contenido[1], contenido[2], state,priority, localDateTime);
-            //task.setState(state);
+            Task task = new Task(contenido[0], contenido[1], contenido[2], state,priority,difficulty, localDateTime);
             tasks.add(task);
         }
         return tasks;

@@ -23,8 +23,8 @@ public class TaskDTO {
     private String name;
     private String description;
     private Boolean state;
-
-    private Priority priority;
+    private int priority;
+    private Difficulty difficulty;
     private LocalDateTime deadline;
 
 }

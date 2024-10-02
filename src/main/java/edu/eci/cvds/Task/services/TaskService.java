@@ -1,7 +1,7 @@
 package edu.eci.cvds.Task.services;
 
 import edu.eci.cvds.Task.TaskManagerException;
-import edu.eci.cvds.Task.models.Priority;
+import edu.eci.cvds.Task.models.Difficulty;
 import edu.eci.cvds.Task.models.Task;
 import edu.eci.cvds.Task.models.TaskDTO;
 
@@ -16,5 +16,6 @@ public interface TaskService {
     List<Task> getAllTasks()throws TaskManagerException;
     List<Task> getTasksByState(boolean state)throws TaskManagerException;
     List<Task> getTasksByDeadline(LocalDateTime deadline)throws TaskManagerException;
-    List<Task> getTaskByPriority(Priority priority) throws TaskManagerException;
+    List<Task> getTaskByPriority(int priority) throws TaskManagerException;
+    List<Task> getTaskByDifficulty(Difficulty difficulty) throws TaskManagerException;
 }

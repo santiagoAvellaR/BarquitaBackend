@@ -1,7 +1,7 @@
 package edu.eci.cvds.Task.services.persistence;
 
 import edu.eci.cvds.Task.TaskManagerException;
-import edu.eci.cvds.Task.models.Priority;
+import edu.eci.cvds.Task.models.Difficulty;
 import edu.eci.cvds.Task.models.Task;
 import edu.eci.cvds.Task.models.TaskDTO;
 import edu.eci.cvds.Task.services.TaskPersistence;
@@ -50,8 +50,13 @@ public class TaskPersistenceMongo implements TaskPersistence {
     }
 
     @Override
-    public List<Task> findByPriority(Priority priority) throws TaskManagerException {
+    public List<Task> findByPriority(int priority) throws TaskManagerException {
         return taskRepository.findByPriority(priority);
+    }
+
+    @Override
+    public List<Task> findByDifficulty(Difficulty difficulty) throws TaskManagerException {
+        return taskRepository.findByDifficulty(difficulty);
     }
 
     @Override

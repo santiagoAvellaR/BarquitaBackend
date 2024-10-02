@@ -1,12 +1,11 @@
 package edu.eci.cvds.Task.services;
 
 import edu.eci.cvds.Task.TaskManagerException;
-import edu.eci.cvds.Task.models.Priority;
+import edu.eci.cvds.Task.models.Difficulty;
 import edu.eci.cvds.Task.models.Task;
 import edu.eci.cvds.Task.models.TaskDTO;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
-
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
@@ -24,7 +23,7 @@ public class TaskServiceImpl implements TaskService {
     private final TaskPersistence taskRepository;
     private int id = 1; // Este metodo se usara para crear una String
 
-    public TaskServiceImpl(@Qualifier("taskPersistenceMongo") TaskPersistence taskRepository) {
+    public TaskServiceImpl(@Qualifier("filePersistenceImpl") TaskPersistence taskRepository) {
         this.taskRepository = taskRepository;
     }
     /**
@@ -35,16 +34,16 @@ public class TaskServiceImpl implements TaskService {
      */
     @Override
     public Task addTask(TaskDTO dto) throws TaskManagerException {
-        String taskId =(this.id++)+generateId();
+        String taskId =generateId();
         Task task = new Task(taskId,
                 dto.getName(), dto.getDescription(), dto.getState(),
-                dto.getPriority(), dto.getDeadline());
+                dto.getPriority(), dto.getDifficulty(), dto.getDeadline());
         taskRepository.save(task);
         return task;
     }
 
     /**
-     * This method deletes a task by the given Id, if it exists
+     * This method deletes a task by the given id, if it exists
      * @param id The id of the task to delete
      * @throws TaskManagerException Throws an exception in case the task is not found
      */
@@ -85,7 +84,8 @@ public class TaskServiceImpl implements TaskService {
         task.changeDescription(dto.getDescription());
         task.setState(dto.getState());
         task.changeDeadline(dto.getDeadline());
-        task.setPriority(dto.getPriority());
+        task.changePriority(dto.getPriority());
+        task.changeDifficulty(dto.getDifficulty());
         taskRepository.save(task);
     }
 
@@ -129,11 +129,24 @@ public class TaskServiceImpl implements TaskService {
      * @throws TaskManagerException Throws an exception if there is a problem with the database.
      */
     @Override
-    public List<Task> getTaskByPriority(Priority priority) throws TaskManagerException{
+    public List<Task> getTaskByPriority(int priority) throws TaskManagerException{
         return taskRepository.findByPriority(priority);
     }
+
+    /**
+     * This method returns List of Tasks that have the given difficulty
+     * @param difficulty The difficulty to filter the List of Taks.
+     * @return THe list of tasks that satisfies the condition.
+     * @throws TaskManagerException Throws an exception if there is a problem with the database.
+     */
+    @Override
+    public List<Task> getTaskByDifficulty(Difficulty difficulty) throws TaskManagerException{
+        return taskRepository.findByDifficulty(difficulty);
+    }
+
+
     // Este metodo genra la clave de 14 caracteres, mas el valor del contador (imposible que se repita)
     private String generateId(){
-        return UUID.randomUUID().toString().replace("-", "").substring(0, 9) + String.valueOf(id++);
+        return UUID.randomUUID().toString().replace("-", "").substring(0, 9) + this.id++;
     }
 }

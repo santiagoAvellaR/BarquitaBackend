@@ -1,6 +1,6 @@
 package edu.eci.cvds.Task.controller;
 import edu.eci.cvds.Task.*;
-import edu.eci.cvds.Task.models.Priority;
+import edu.eci.cvds.Task.models.Difficulty;
 import edu.eci.cvds.Task.models.Task;
 import edu.eci.cvds.Task.models.TaskDTO;
 import edu.eci.cvds.Task.services.FilePersistenceException;
@@ -127,7 +127,7 @@ public class TaskController {
      * @throws TaskManagerException If there is a problem with the database.
      */
     @GetMapping("/getTaskByPriority")
-    public ResponseEntity<List<Task>> getTaskByPriority(@RequestParam Priority priority) throws TaskManagerException {
+    public ResponseEntity<List<Task>> getTaskByPriority(@RequestParam int priority) throws TaskManagerException {
         return ResponseEntity.status(HttpStatus.OK)
                 .body(taskService.getTaskByPriority(priority));
     }
