@@ -3,10 +3,11 @@ package edu.eci.cvds.Task.services.persistence;
 import edu.eci.cvds.Task.TaskManagerException;
 import edu.eci.cvds.Task.models.Difficulty;
 import edu.eci.cvds.Task.models.Task;
-import edu.eci.cvds.Task.models.TaskDTO;
+
 import edu.eci.cvds.Task.services.TaskPersistence;
 import edu.eci.cvds.Task.services.TaskRepository;
-import lombok.RequiredArgsConstructor;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -17,10 +18,12 @@ import java.util.Optional;
  * @Version 1.0
  * @Since 29-09-2024
  */
-@RequiredArgsConstructor
+
 @Component
 public class TaskPersistenceMongo implements TaskPersistence {
-    private final TaskRepository taskRepository;
+    @Autowired
+    private TaskRepository taskRepository;
+
 
     @Override
     public Task save(Task task) throws TaskManagerException {

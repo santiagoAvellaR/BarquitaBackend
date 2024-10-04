@@ -4,6 +4,7 @@ import edu.eci.cvds.Task.TaskManagerException;
 import edu.eci.cvds.Task.models.Difficulty;
 import edu.eci.cvds.Task.models.Task;
 import edu.eci.cvds.Task.models.TaskDTO;
+
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;
@@ -21,10 +22,12 @@ import java.util.UUID;
 @Service
 public class TaskServiceImpl implements TaskService {
     private final TaskPersistence taskRepository;
+
     private int id = 1; // Este metodo se usara para crear una String
 
-    public TaskServiceImpl(@Qualifier("filePersistenceImpl") TaskPersistence taskRepository) {
+    public TaskServiceImpl(@Qualifier("taskPersistenceMongo")TaskPersistence taskRepository) {
         this.taskRepository = taskRepository;
+
     }
     /**
      * This method adds a Task by the given DTO Task and stores it in thd Date Base.

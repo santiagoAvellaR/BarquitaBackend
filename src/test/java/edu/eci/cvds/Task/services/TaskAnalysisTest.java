@@ -21,20 +21,20 @@ class TaskAnalysisTest {
         TaskAnalysis.randomData(1000);
     }
     @Test
-    void shouldGenerateRandomData() {
-        List<TaskDTO> tasks = TaskAnalysis.getRandomTasks(100);
+    void shouldGenerateRandomData() throws TaskManagerException {
+        List<Task> tasks = TaskAnalysis.getRandomTasks(100);
         assertEquals(100, tasks.size());
     }
 
     @Test
-    void shouldNotGenerateRandomData(){
-        List<TaskDTO> tasks = TaskAnalysis.getRandomTasks(0);
+    void shouldNotGenerateRandomData() throws TaskManagerException {
+        List<Task> tasks = TaskAnalysis.getRandomTasks(0);
         assertEquals(Collections.emptyList(), tasks);
     }
     @Test
-    void shouldGenerateNotEmptyTasks(){
-        List<TaskDTO> tasks = TaskAnalysis.getRandomTasks(10);
-        for(TaskDTO task : tasks){
+    void shouldGenerateNotEmptyTasks() throws TaskManagerException {
+        List<Task> tasks = TaskAnalysis.getRandomTasks(10);
+        for(Task task : tasks){
             assertNotEquals(null, task.getId());
             assertNotEquals(null, task.getName());
             assertNotEquals(null, task.getDescription());
@@ -44,9 +44,7 @@ class TaskAnalysisTest {
             assertNotEquals(null, task.getDifficulty());
             assertNotEquals(null,task.getDeadline());
         }
-
     }
-
 
     @Test
     void shouldGetHistogram() throws TaskManagerException {
