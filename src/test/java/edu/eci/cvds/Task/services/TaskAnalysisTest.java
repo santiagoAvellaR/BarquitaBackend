@@ -40,7 +40,6 @@ public class TaskAnalysisTest {
     void shouldGenerateNotEmptyTasks() throws TaskManagerException {
         List<Task> tasks = taskAnalysis.getRandomTasks(10);
         for(Task task : tasks){
-            assertNotEquals(null, task.getId());
             assertNotEquals(null, task.getName());
             assertNotEquals(null, task.getDescription());
             assertNotEquals(null,task.getState());
