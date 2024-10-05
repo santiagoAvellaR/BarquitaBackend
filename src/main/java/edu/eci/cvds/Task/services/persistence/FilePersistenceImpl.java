@@ -264,5 +264,9 @@ public class FilePersistenceImpl implements TaskPersistence {
         }
         return tasks;
     }
+    @Override
+    public void deleteAll(){
+
+    }
 
 }

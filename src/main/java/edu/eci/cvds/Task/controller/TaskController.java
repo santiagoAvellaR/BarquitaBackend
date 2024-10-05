@@ -30,7 +30,6 @@ public class TaskController {
     public TaskController(TaskServiceImpl taskService){
         this.taskService = taskService;
     }
-
     /**
      * This method gets a TaskDTO in a JSON format from the client to be added with the interface TaskService;
      * @param task the task to add in JSON format

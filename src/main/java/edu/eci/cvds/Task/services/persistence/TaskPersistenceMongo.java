@@ -73,6 +73,9 @@ public class TaskPersistenceMongo implements TaskPersistence {
     public Optional<Task> findById(String id) throws TaskManagerException {
         return taskRepository.findById(id);
     }
-
+    @Override
+    public void deleteAll(){
+        taskRepository.deleteAll();
+    }
 
 }

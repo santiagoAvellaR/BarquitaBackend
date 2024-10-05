@@ -9,7 +9,6 @@ import java.util.stream.Collectors;
 import com.github.javafaker.Faker;
 import edu.eci.cvds.Task.models.Task;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -30,9 +29,8 @@ public class TaskAnalysis {
         ArrayList<Task> tasks = new ArrayList<>();
         for(int i = 0; i < numberOfTasks; i++) {
             Faker fake = new Faker();
-
             boolean state = fake.bool().bool();
-            String id = String.valueOf(fake.number().numberBetween(1, 10));
+            String id = null;
             String name = fake.name().fullName();
             String description = fake.animal().name();
             int priority = fake.number().numberBetween(1, 6);
@@ -62,7 +60,7 @@ public class TaskAnalysis {
                 .toLocalDateTime();
     }
     private boolean isEmpty()throws TaskManagerException{
-        return taskPersistence.findAll() == null;
+        return taskPersistence.findAll().isEmpty();
     }
     private void generateAnalysis(int counter) throws TaskManagerException {
         List<Task> tasks = getRandomTasks(counter);
@@ -108,6 +106,9 @@ public class TaskAnalysis {
                 Collectors.summingDouble(Task::getEstimatedTime)
         ));
 
+    }
+    public void deleteAllTasks(){
+        taskPersistence.deleteAll();
     }
 
 }

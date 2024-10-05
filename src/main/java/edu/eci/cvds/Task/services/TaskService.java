@@ -6,7 +6,10 @@ import edu.eci.cvds.Task.models.Task;
 import edu.eci.cvds.Task.models.TaskDTO;
 
 import java.time.LocalDateTime;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public interface TaskService {
     Task addTask(TaskDTO dto) throws TaskManagerException;
@@ -19,4 +22,5 @@ public interface TaskService {
     List<Task> getTaskByPriority(int priority) throws TaskManagerException;
     List<Task> getTaskByDifficulty(Difficulty difficulty) throws TaskManagerException;
     List<Task> getTaskByEstimatedTime(int estimatedTime) throws TaskManagerException;
+
 }

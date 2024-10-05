@@ -20,4 +20,5 @@ public interface TaskPersistence {
     List<Task> findByDifficulty(Difficulty difficulty) throws TaskManagerException;
     List<Task> findByEstimatedTime(int estimatedTime) throws TaskManagerException;
     Optional<Task> findById(String id) throws TaskManagerException;
+    void deleteAll();
 }
