@@ -155,7 +155,7 @@ public class TaskAnalysis {
      * @return A map where the keys are priorities and the values are the average number of tasks for each priority.
      * @throws TaskManagerException If there is an error while retrieving data from the persistence layer.
      */
-    public Map<Integer, Double> getAverageByPriority() throws TaskManagerException {
+    public Map<Integer, Double> getConsolidatedPriority() throws TaskManagerException {
         Map<Integer, Double> res = new HashMap<>();
         List<Task> totalTasks = taskPersistence.findAll();
         Map<Integer, Long> tasksGrouped = totalTasks.stream()
@@ -165,7 +165,7 @@ public class TaskAnalysis {
                 ));
 
         for (Map.Entry<Integer, Long> entry : tasksGrouped.entrySet()) {
-            res.put(entry.getKey(), (double) entry.getValue() / 3);
+            res.put(entry.getKey(), (double) entry.getValue());
         }
 
         return res;
