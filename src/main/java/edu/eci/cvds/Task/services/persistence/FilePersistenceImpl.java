@@ -1,7 +1,6 @@
 package edu.eci.cvds.Task.services.persistence;
-
 import edu.eci.cvds.Task.TaskManagerException;
-import edu.eci.cvds.Task.models.Priority;
+import edu.eci.cvds.Task.models.Difficulty;
 import edu.eci.cvds.Task.models.Task;
 import edu.eci.cvds.Task.services.TaskPersistence;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -64,11 +63,13 @@ public class FilePersistenceImpl implements TaskPersistence {
         // Anotacion, van a haber duplicado, si lo hay, la actualizas, si no, si la creas.
         File file = new File(fileName);
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(file, true))) {
-            writer.write(task.getId() + "," + task.getName() + "," + task.getDescription() + "," +
-                    task.getState() + "," + task.getPriority() + "," + task.getDeadline().format(DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm")));
+            writer.write(
+                task.getId() + "-#-" + task.getName() + "-#-" + task.getDescription() + "-#-" +
+                    task.getState() + "-#-" + task.getPriority()+ "-#-"+ task.getEstimatedTime()+ "-#-"
+                    + task.getDifficulty() + "-#-" + task.getDeadline().format(DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm")));
             writer.newLine();
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new TaskManagerException(TaskManagerException.DATA_BASE_FILE_ERROR);
         }
         return task;
     }
@@ -89,7 +90,7 @@ public class FilePersistenceImpl implements TaskPersistence {
                 writer.newLine();
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new TaskManagerException(TaskManagerException.DATA_BASE_FILE_ERROR);
         }
     }
 
@@ -108,7 +109,7 @@ public class FilePersistenceImpl implements TaskPersistence {
                 lineas.add(line);
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new TaskManagerException(TaskManagerException.DATA_BASE_FILE_ERROR);
         }
         return createTask(lineas);
     }
@@ -160,11 +161,11 @@ public class FilePersistenceImpl implements TaskPersistence {
      * with the information stored in the text plane file.
      */
     @Override
-    public List<Task> findByPriority(Priority priority) throws TaskManagerException {
+    public List<Task> findByPriority(int priority) throws TaskManagerException {
         List<Task> tasks = findAll();
         ArrayList<Task> taskByPriority = new ArrayList<>();
         for(Task task: tasks){
-            if(task.getPriority().equals(priority)){
+            if(task.getPriority()== priority){
                 taskByPriority.add(task);
             }
         }
@@ -172,12 +173,51 @@ public class FilePersistenceImpl implements TaskPersistence {
     }
 
     /**
-     * This method is made for the test, in order to clean the file where the data is stored.
+     * This method returns a list of tasks with the given difficulty
+     * @param difficulty The difficulty of the tasks
+     * @return THe list of task from the storage file with the given Difficulty
+     * @throws TaskManagerException Throws an exception if there is a problem
+     * with the information stored in the text plane file.
      */
-    public void cleanFileForTest(){
+    @Override
+    public List<Task> findByDifficulty(Difficulty difficulty) throws TaskManagerException{
+        List<Task> tasks = findAll();
+        ArrayList<Task> taskByDifficulty = new ArrayList<>();
+        for(Task task: tasks){
+            if(task.getDifficulty().equals(difficulty)){
+                taskByDifficulty.add(task);
+            }
+        }
+        return taskByDifficulty;
+    }
+
+    /**
+     * This method returns the list of task with the given estimated time from the storage file
+     * @param estimatedTime The time estimated to complete the task, to filter the tasks from the storage file
+     * @return The tasks with the given estimated time from the storage file
+     * @throws TaskManagerException Throws an exception if there is a problem
+     * with the information stored in the text plane file
+     */
+    @Override
+    public List<Task> findByEstimatedTime(int estimatedTime) throws TaskManagerException {
+        List<Task> tasks = findAll();
+        ArrayList<Task> taskByEstimatedTime = new ArrayList<>();
+        for(Task task: tasks){
+            if(task.getEstimatedTime() == estimatedTime){
+                taskByEstimatedTime.add(task);
+            }
+        }
+        return taskByEstimatedTime;
+    }
+
+    /**
+     * This method is made for the test, in order to clean the file where the data is stored.
+     * @throws TaskManagerException If there is a problem with the STDOUT of the database.
+     */
+    public void cleanFileForTest()throws TaskManagerException{
         try (PrintWriter writer = new PrintWriter(fileName)) {
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            throw new TaskManagerException(TaskManagerException.DATA_BASE_FILE_ERROR);
         }
     }
     private boolean isNew(String id)throws TaskManagerException{
@@ -191,19 +231,19 @@ public class FilePersistenceImpl implements TaskPersistence {
         return res;
     }
 
-    private ArrayList<String> searchId(String id){
+    private ArrayList<String> searchId(String id)throws TaskManagerException{
 
         ArrayList<String> lines = new ArrayList<>();
         try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
             String line;
             while ((line = reader.readLine()) != null) {
-                String key = line.split(",")[0];
+                String key = line.split("-#-")[0];
                 if (!key.contains(id)) {
                     lines.add(line);
                 }
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new TaskManagerException(TaskManagerException.DATA_BASE_FILE_ERROR);
         }
         return lines;
     }
@@ -211,16 +251,22 @@ public class FilePersistenceImpl implements TaskPersistence {
 
         ArrayList<Task> tasks = new ArrayList<>();
         for(String linea: lineas){
-            String[] contenido = linea.split(",");
-            Priority priority = Priority.valueOf(contenido[4]);
+            String[] contenido = linea.split("-#-");
+            int priority = Integer.parseInt(contenido[4]);
+            int estimatedTime = Integer.parseInt(contenido[5]);
+            Difficulty difficulty = Difficulty.valueOf(contenido[6]);
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm");
-            LocalDateTime localDateTime = LocalDateTime.parse(contenido[5], formatter);
-            boolean state = Boolean.parseBoolean(contenido[3]);// El estado se puede agregar directamente sin hacer: setState(state);
-            Task task = new Task(contenido[0], contenido[1], contenido[2], state,priority, localDateTime);
-            //task.setState(state);
+            LocalDateTime localDateTime = LocalDateTime.parse(contenido[7], formatter);
+            boolean state = Boolean.parseBoolean(contenido[3]);
+            Task task = new Task(
+                    contenido[0], contenido[1], contenido[2], state,priority,estimatedTime, difficulty, localDateTime);
             tasks.add(task);
         }
         return tasks;
+    }
+    @Override
+    public void deleteAll(){
+
     }
 
 }

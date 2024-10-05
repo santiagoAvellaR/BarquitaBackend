@@ -1,9 +1,8 @@
 package edu.eci.cvds.Task.controller;
 import edu.eci.cvds.Task.*;
-import edu.eci.cvds.Task.models.Priority;
+import edu.eci.cvds.Task.models.Difficulty;
 import edu.eci.cvds.Task.models.Task;
 import edu.eci.cvds.Task.models.TaskDTO;
-import edu.eci.cvds.Task.services.FilePersistenceException;
 import edu.eci.cvds.Task.services.TaskService;
 import edu.eci.cvds.Task.services.TaskServiceImpl;
 import org.springframework.http.HttpStatus;
@@ -31,7 +30,6 @@ public class TaskController {
     public TaskController(TaskServiceImpl taskService){
         this.taskService = taskService;
     }
-
     /**
      * This method gets a TaskDTO in a JSON format from the client to be added with the interface TaskService;
      * @param task the task to add in JSON format
@@ -40,7 +38,7 @@ public class TaskController {
      * given id of the TaskDTO does not exist in the database or if there is a problem with the database.
      */
     @PostMapping("/addTask")
-    public ResponseEntity<Task> addTask(@RequestBody TaskDTO task) throws TaskManagerException, FilePersistenceException {
+    public ResponseEntity<Task> addTask(@RequestBody TaskDTO task) throws TaskManagerException{
         // La id de la tarea TaskDTO debe existir, de lo contrario lanza una excepcion.
         Task task1 = taskService.addTask(task);
         return ResponseEntity.status(HttpStatus.CREATED)
@@ -75,7 +73,7 @@ public class TaskController {
      * @return Confirmation of success
      */
     @DeleteMapping("/deleteTask")
-    public ResponseEntity<String> deleteTask(@RequestParam String id) throws TaskManagerException, FilePersistenceException {
+    public ResponseEntity<String> deleteTask(@RequestParam String id) throws TaskManagerException{
         taskService.deleteTask(id);
         return ResponseEntity.status(HttpStatus.OK)
                 .body("OK");
@@ -102,7 +100,7 @@ public class TaskController {
      * or if there is a problem with the database.
      */
     @PutMapping("/updateTask")
-    public ResponseEntity<String> updateTask(@RequestBody TaskDTO taskDTO) throws TaskManagerException, FilePersistenceException {
+    public ResponseEntity<String> updateTask(@RequestBody TaskDTO taskDTO) throws TaskManagerException{
         taskService.updateTask(taskDTO);
         return ResponseEntity.status(HttpStatus.OK)
                 .body("OK");
@@ -127,9 +125,32 @@ public class TaskController {
      * @throws TaskManagerException If there is a problem with the database.
      */
     @GetMapping("/getTaskByPriority")
-    public ResponseEntity<List<Task>> getTaskByPriority(@RequestParam Priority priority) throws TaskManagerException {
+    public ResponseEntity<List<Task>> getTaskByPriority(@RequestParam int priority) throws TaskManagerException {
         return ResponseEntity.status(HttpStatus.OK)
                 .body(taskService.getTaskByPriority(priority));
     }
 
+    /**
+     * This method returns the tasks filtered by a given priority
+     * @param difficulty The difficulty to filter the tasks
+     * @return The list of tasks with the given difficulty
+     * @throws TaskManagerException If there is a problem with the database.
+     */
+    @GetMapping("/getTaskByDifficulty")
+    public ResponseEntity<List<Task>> getTaskByDifficulty(@RequestParam Difficulty difficulty) throws TaskManagerException {
+        return ResponseEntity.status(HttpStatus.OK)
+                .body(taskService.getTaskByDifficulty(difficulty));
+    }
+
+    /**
+     * This method returns the tasks filtered by the given estimated time to be completed
+     * @param estimatedTime The estimated time of the task to be done
+     * @return The list of task with the given estimated time
+     * @throws TaskManagerException If there is a problem with the database.
+     */
+    @GetMapping("/getTaskByEstimatedTime")
+    public ResponseEntity<List<Task>> getTaskByEstimatedTime(@RequestParam int estimatedTime) throws TaskManagerException {
+        return ResponseEntity.status(HttpStatus.OK)
+                .body(taskService.getTaskByEstimatedTime(estimatedTime));
+    }
 }

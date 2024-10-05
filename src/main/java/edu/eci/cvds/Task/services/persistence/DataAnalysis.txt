@@ -1,0 +1,1000 @@
+39cb3bcf81-#-Buford Fisher-#-rhinoceros-#-true-#-5-#-18-#-ALTA-#-1994-05-15T19:26
+f74c072af2-#-Miss Luciana Johns-#-ferret-#-true-#-4-#-75-#-MEDIA-#-1979-12-13T17:54
+941627d293-#-Lucien Runte-#-oyster-#-true-#-5-#-78-#-BAJA-#-1988-09-09T22:35
+1a72850fd4-#-Silas Koss-#-gnu-#-true-#-5-#-17-#-BAJA-#-1964-10-26T22:06
+7697af8c05-#-Mrs. Emilie Morar-#-dolphin-#-false-#-3-#-80-#-BAJA-#-1992-05-23T23:44
+0c39ee8556-#-Manda Wolf-#-otter-#-true-#-5-#-59-#-BAJA-#-1990-08-03T10:12
+08c5735ea7-#-Nickolas Steuber-#-pig-#-true-#-4-#-5-#-BAJA-#-1974-01-23T10:47
+fa00dca0d8-#-Fawn Fritsch V-#-snail-#-false-#-5-#-3-#-BAJA-#-1974-06-21T11:16
+4f4a2ec3b9-#-Lanette Rice-#-bat-#-true-#-4-#-11-#-BAJA-#-1971-04-17T17:46
+16529862610-#-Charlie Lesch Sr.-#-alpaca-#-true-#-1-#-28-#-BAJA-#-1975-06-25T12:52
+b55f57e3611-#-Coleman Runte-#-hippopotamus-#-true-#-2-#-76-#-BAJA-#-2000-08-26T23:22
+9f4f14ab412-#-Candie Ebert-#-wombat-#-true-#-2-#-68-#-BAJA-#-2006-08-29T09:14
+37ace05f213-#-Ms. Earlene Veum-#-mallard-#-false-#-3-#-67-#-MEDIA-#-1976-06-11T10:09
+05555730214-#-Desiree Kreiger-#-yak-#-true-#-1-#-12-#-ALTA-#-1987-08-04T14:52
+05472deb315-#-Inocencia Ward-#-herring-#-true-#-1-#-80-#-MEDIA-#-2002-03-21T22:46
+efdfd7fa416-#-Lura Bogan-#-dinosaur-#-true-#-3-#-65-#-BAJA-#-2005-06-15T23:18
+a7eeb0cc517-#-Brett Lang-#-cheetah-#-true-#-5-#-55-#-MEDIA-#-1982-12-08T06:46
+1202b27a818-#-Mathew Walsh II-#-mule-#-false-#-1-#-47-#-ALTA-#-1981-07-12T16:56
+a1702c05e19-#-Kimberly Yost-#-eel-#-false-#-1-#-75-#-BAJA-#-1978-03-24T06:09
+2cb312f5f20-#-Gladys Prosacco IV-#-oyster-#-true-#-5-#-14-#-BAJA-#-1967-09-06T05:07
+091e4dc9a21-#-Mr. Maida Moore-#-cockroach-#-false-#-2-#-25-#-BAJA-#-1988-01-06T09:49
+11839741f22-#-Micki Hilll-#-mole-#-false-#-3-#-30-#-ALTA-#-1988-10-26T10:39
+2c5a94d3b23-#-Layla Mayer-#-mink-#-false-#-2-#-33-#-BAJA-#-1977-08-18T16:13
+1684a259824-#-Alysia Kovacek-#-buffalo-#-true-#-4-#-25-#-BAJA-#-1990-07-10T19:29
+994bd585725-#-Mr. Greg Herzog-#-rabbit-#-false-#-4-#-87-#-BAJA-#-1997-05-30T06:01
+52fca13dc26-#-Duncan Carter-#-yak-#-false-#-3-#-44-#-BAJA-#-1976-03-27T22:47
+0cb5fdc1d27-#-Soledad Cartwright I-#-oyster-#-false-#-3-#-6-#-BAJA-#-1966-06-17T06:39
+534fa8a2e28-#-Sierra Stamm II-#-louse-#-true-#-1-#-23-#-BAJA-#-1986-01-11T02:18
+2518518db29-#-Stephan Schulist-#-hedgehog-#-false-#-2-#-45-#-BAJA-#-1998-05-15T21:49
+1ce4e531330-#-Terrell Collier Jr.-#-porpoise-#-false-#-1-#-43-#-MEDIA-#-1980-12-01T01:35
+80481a87331-#-Royce Bechtelar-#-mink-#-false-#-2-#-26-#-BAJA-#-1961-02-27T08:40
+f83b5f6fb32-#-Dr. Dustin Bernier-#-panda-#-true-#-3-#-38-#-ALTA-#-1997-10-11T12:55
+66e19f6f733-#-Alex Heathcote-#-caribou-#-false-#-3-#-34-#-BAJA-#-1992-04-07T15:15
+be154590434-#-Jeraldine Bayer-#-badger-#-true-#-3-#-31-#-MEDIA-#-2000-11-03T23:54
+b780e666f35-#-Dallas Pfeffer-#-lizard-#-true-#-4-#-52-#-BAJA-#-1996-07-27T18:09
+3b4ea596636-#-Marquis Wiegand-#-chinchilla-#-false-#-2-#-21-#-BAJA-#-1987-05-22T17:30
+b20f8760d37-#-Willy Hagenes-#-bat-#-false-#-3-#-48-#-BAJA-#-1971-04-01T12:46
+9ecb6882338-#-Elvira McGlynn-#-termite-#-true-#-3-#-52-#-ALTA-#-1983-10-09T19:50
+54dcbab3339-#-Leeanne Schmitt II-#-locust-#-false-#-4-#-11-#-BAJA-#-1995-02-26T18:06
+659a3b10640-#-Darrin Waelchi-#-elephant-#-true-#-3-#-47-#-BAJA-#-1980-03-01T18:07
+97dd1d17141-#-Karleen Aufderhar-#-elephant-#-false-#-2-#-5-#-MEDIA-#-1981-04-09T05:09
+fdd38b76a42-#-Angelo Howell-#-hare-#-true-#-3-#-43-#-ALTA-#-1964-02-12T12:11
+0fccac55643-#-Teressa Rodriguez II-#-oyster-#-false-#-3-#-54-#-BAJA-#-1974-12-14T08:55
+5c54c1fe944-#-Irene Dickens-#-mammoth-#-true-#-5-#-72-#-BAJA-#-1994-02-22T17:44
+8d194e1f345-#-Mervin Champlin PhD-#-lion-#-false-#-5-#-14-#-ALTA-#-2006-02-09T03:06
+0362a40a946-#-Dr. Joannie McClure-#-cat-#-true-#-2-#-55-#-ALTA-#-2001-04-05T20:27
+2ada72cba47-#-Scotty Crooks-#-cicada-#-true-#-2-#-20-#-ALTA-#-2006-09-09T17:11
+1a9b5ee9f48-#-Murray Larson-#-bee-#-false-#-4-#-33-#-BAJA-#-1968-07-05T09:36
+2a7cd062449-#-Lavonia Grimes-#-wasp-#-true-#-3-#-2-#-BAJA-#-2004-03-05T07:49
+6aca1587d50-#-Dr. Jasper Langworth-#-snail-#-true-#-4-#-52-#-BAJA-#-1964-08-03T11:03
+56a9ec7f951-#-Leonore Dibbert-#-crow-#-true-#-5-#-45-#-ALTA-#-1999-04-03T23:35
+a4c9f5c0252-#-Juanita Crona-#-ferret-#-false-#-1-#-18-#-ALTA-#-1973-08-02T16:20
+53e22f8d553-#-Jamar Mills-#-cattle-#-false-#-3-#-90-#-ALTA-#-1975-06-30T23:21
+d8fdfb59854-#-Ivory Lebsack DDS-#-locust-#-false-#-5-#-65-#-ALTA-#-1969-09-26T12:01
+d7339b05355-#-Jamaal Champlin Jr.-#-koala-#-true-#-1-#-59-#-ALTA-#-1964-09-06T06:59
+5336c48b756-#-Rena Howe-#-cattle-#-false-#-4-#-22-#-ALTA-#-1960-11-25T19:09
+a6655668157-#-Lisa Little-#-cockroach-#-false-#-2-#-26-#-BAJA-#-1994-01-19T09:34
+e11a7199a58-#-Rubie Kozey-#-herring-#-true-#-5-#-25-#-BAJA-#-2003-01-03T11:09
+383847d1c59-#-Vincent Schneider PhD-#-woodchuck-#-true-#-2-#-34-#-BAJA-#-1991-06-24T02:41
+6934615b060-#-Rosana Bechtelar-#-crow-#-true-#-4-#-11-#-MEDIA-#-2005-03-24T14:43
+5538521b061-#-Russell Schulist-#-frog-#-false-#-5-#-9-#-ALTA-#-1999-01-14T06:31
+4123d54c762-#-Tyesha Ritchie-#-weasel-#-false-#-2-#-73-#-BAJA-#-1996-07-05T15:57
+7f2e14fb963-#-Laraine Bechtelar-#-chinchilla-#-false-#-5-#-35-#-BAJA-#-1999-06-24T23:54
+8d79e2f5e64-#-Louvenia Kunze-#-snake-#-true-#-1-#-73-#-BAJA-#-1991-10-19T01:15
+a53c6216365-#-Ms. Elmira Koelpin-#-bee-#-true-#-5-#-28-#-BAJA-#-1980-02-27T18:48
+eebec26c666-#-Rich Kris Sr.-#-grasshopper-#-false-#-2-#-71-#-ALTA-#-1968-03-08T00:23
+c8990d51a67-#-Val Jacobi-#-hippopotamus-#-false-#-4-#-66-#-ALTA-#-1970-03-03T00:09
+793652e9168-#-Earle Wisoky-#-goose-#-true-#-3-#-82-#-BAJA-#-2003-12-04T02:41
+ec96a27cb69-#-Marc Marks-#-mink-#-true-#-3-#-15-#-ALTA-#-2003-09-06T20:45
+61f98fbab70-#-Brett Upton-#-crocodile-#-false-#-4-#-63-#-BAJA-#-1995-07-12T01:45
+c348d055971-#-Vanetta Shanahan-#-antelope-#-true-#-4-#-54-#-BAJA-#-1980-07-23T11:05
+eab1008ed72-#-Lakita Will-#-frog-#-true-#-3-#-34-#-BAJA-#-1968-11-24T12:04
+84ecf954173-#-Carson Spencer-#-panda-#-false-#-5-#-27-#-BAJA-#-1993-04-25T21:01
+bc920e1dd74-#-Natashia Pfeffer-#-cod-#-false-#-5-#-52-#-BAJA-#-1962-06-13T08:39
+bddb618d575-#-Selene Nolan-#-hippopotamus-#-true-#-3-#-83-#-MEDIA-#-1973-12-12T16:00
+b94b872b276-#-Troy Wintheiser-#-crab-#-true-#-5-#-39-#-BAJA-#-1997-09-12T21:31
+5aefd9e8f77-#-Alverta Renner-#-dolphin-#-false-#-3-#-24-#-BAJA-#-1998-03-10T14:29
+3406f7e9878-#-Avelina Langosh-#-caribou-#-true-#-4-#-31-#-BAJA-#-1990-10-12T03:28
+6201db3ad79-#-Mario Smith-#-deer-#-true-#-5-#-50-#-BAJA-#-1996-02-01T01:40
+c90d8a86a80-#-Neville Carroll-#-hippopotamus-#-true-#-4-#-70-#-BAJA-#-2000-01-23T01:39
+df1df278081-#-Denver Orn-#-beaver-#-true-#-3-#-60-#-ALTA-#-1984-12-24T21:59
+819ac8d3a82-#-Ms. Michal Orn-#-hedgehog-#-true-#-5-#-18-#-BAJA-#-1989-12-01T00:25
+b999c55bb83-#-Obdulia Feest-#-ape-#-true-#-3-#-67-#-MEDIA-#-2002-08-14T16:44
+eb3f29ef384-#-Ms. Allegra Macejkovic-#-badger-#-true-#-5-#-63-#-BAJA-#-1970-01-12T20:49
+2e8c0612a85-#-Whitley Durgan-#-porcupine-#-false-#-3-#-44-#-BAJA-#-1998-03-24T07:45
+a2562a92a86-#-Gerard Kiehn-#-squirrel-#-true-#-1-#-50-#-BAJA-#-1971-10-26T02:24
+72c495b7587-#-Woodrow Schmeler-#-toad-#-true-#-3-#-47-#-BAJA-#-1965-07-29T04:51
+e7ada611688-#-Gerri Bednar IV-#-porcupine-#-false-#-4-#-38-#-MEDIA-#-1961-10-11T05:54
+ee8a2811e89-#-Frances Sporer-#-gorilla-#-true-#-5-#-41-#-MEDIA-#-2006-07-18T11:26
+4b995d5b190-#-Charis Heidenreich-#-coyote-#-false-#-2-#-35-#-MEDIA-#-1991-01-04T03:39
+806a5bbfa91-#-Robert Douglas IV-#-hound-#-false-#-5-#-90-#-ALTA-#-1960-07-20T12:21
+32383d01a92-#-Bethel Toy-#-hare-#-true-#-4-#-21-#-BAJA-#-2000-04-01T09:07
+c9d37b86093-#-Eryn Gulgowski-#-frog-#-false-#-4-#-35-#-BAJA-#-1987-12-04T09:47
+0065bc5bf94-#-Merri Windler-#-alligator-#-false-#-2-#-77-#-MEDIA-#-1979-03-26T16:39
+81900b17395-#-Shelley Steuber-#-reindeer-#-false-#-2-#-7-#-BAJA-#-1967-07-14T05:56
+acbd3a6a896-#-Eldon Pouros-#-cheetah-#-false-#-4-#-64-#-ALTA-#-1971-09-10T11:04
+41f5e643997-#-Leonora Wiza-#-hamster-#-true-#-1-#-49-#-BAJA-#-2002-10-29T17:31
+633e0935898-#-Lanny Pfannerstill-#-jackal-#-false-#-4-#-33-#-BAJA-#-1996-10-02T04:21
+e61390fc499-#-Kindra Bruen-#-spider-#-false-#-2-#-3-#-BAJA-#-1993-08-07T07:42
+4eaee0469100-#-Carlena Klocko II-#-guinea pig-#-false-#-3-#-87-#-BAJA-#-1981-09-01T18:26
+db2593958101-#-Imogene Littel-#-cod-#-true-#-5-#-89-#-ALTA-#-2000-10-14T08:37
+f71749d2c102-#-Deane Sawayn-#-dog-#-true-#-1-#-71-#-BAJA-#-2005-01-21T19:28
+78aca3bc2103-#-Su Kuhlman-#-ape-#-true-#-2-#-66-#-MEDIA-#-1996-07-09T23:01
+e8b18a82f104-#-Gussie Emmerich Jr.-#-grasshopper-#-true-#-2-#-40-#-BAJA-#-1969-04-14T07:20
+3d2a6bb67105-#-Bianca Hagenes-#-fish-#-true-#-2-#-24-#-BAJA-#-2006-04-05T07:37
+552246469106-#-Keira Lindgren-#-tortoise-#-false-#-5-#-57-#-BAJA-#-2001-10-15T05:35
+55c6632ec107-#-Wilfredo Kub PhD-#-bat-#-false-#-4-#-76-#-BAJA-#-1966-10-29T06:29
+d5ddebe5e108-#-Max McGlynn-#-otter-#-false-#-4-#-63-#-BAJA-#-2004-06-24T12:46
+ab6e57b22109-#-Mayme Runte-#-snail-#-false-#-2-#-84-#-BAJA-#-1987-11-16T10:52
+f3a2d200e110-#-Mrs. Bethanie Legros-#-dinosaur-#-false-#-1-#-36-#-BAJA-#-2002-02-13T08:08
+02592616a111-#-Indira Stiedemann-#-panda-#-true-#-2-#-7-#-BAJA-#-1992-07-03T23:14
+9bb7e3e6c112-#-Omega Daugherty-#-platypus-#-false-#-3-#-71-#-BAJA-#-1984-11-29T19:26
+f84a9bb32113-#-Miss Lee Halvorson-#-monkey-#-false-#-4-#-64-#-ALTA-#-1972-05-23T14:57
+247fd9197114-#-Candelaria Hills V-#-mole-#-false-#-3-#-83-#-BAJA-#-1993-05-28T20:41
+f76d5ca45115-#-Dr. Harris Robel-#-minnow-#-true-#-2-#-7-#-MEDIA-#-2006-04-21T10:58
+8f0fbaeef116-#-Renaldo Hand-#-rhinoceros-#-false-#-2-#-21-#-BAJA-#-1982-05-09T01:43
+277e491d8117-#-Roger Denesik-#-chinchilla-#-true-#-3-#-44-#-BAJA-#-1980-12-01T23:07
+409163b5c118-#-Miss Marcelino Mante-#-panda-#-false-#-3-#-81-#-BAJA-#-2005-05-06T07:51
+d5e816afe119-#-Danelle Stamm-#-gnu-#-false-#-3-#-66-#-ALTA-#-1973-10-12T17:03
+71942cf86120-#-Nathan Klein-#-alligator-#-false-#-2-#-45-#-BAJA-#-1995-04-02T11:38
+5e9c01474121-#-Bradly Dicki-#-toad-#-true-#-1-#-65-#-BAJA-#-2003-09-22T15:13
+424e55f2d122-#-Thurman Osinski-#-worm-#-false-#-4-#-39-#-BAJA-#-2002-12-28T16:03
+cf0305e4c123-#-Margarito Mohr-#-wasp-#-true-#-1-#-44-#-BAJA-#-1964-08-06T23:29
+070a6f39f124-#-Dr. Raul Williamson-#-manatee-#-true-#-3-#-89-#-BAJA-#-1963-10-16T23:48
+a44fe7de7125-#-Numbers Schiller-#-hedgehog-#-true-#-3-#-22-#-BAJA-#-1990-01-04T09:01
+9cef55980126-#-Lissa Gleichner Jr.-#-spider-#-true-#-5-#-44-#-BAJA-#-1967-12-16T13:15
+0bef648b4127-#-Becki Wolf-#-beetle-#-false-#-2-#-39-#-BAJA-#-1999-11-14T17:35
+fb43aee93128-#-Silas Predovic-#-moose-#-true-#-5-#-64-#-BAJA-#-1996-03-18T14:37
+a28f041d5129-#-Rasheeda Schamberger-#-cockroach-#-true-#-3-#-56-#-BAJA-#-1988-08-06T12:57
+af31b7519130-#-Marylouise Homenick-#-lizard-#-true-#-5-#-76-#-MEDIA-#-1967-07-04T21:34
+00b543f78131-#-Charlie Turner-#-caribou-#-false-#-4-#-84-#-BAJA-#-2003-02-15T18:51
+463370416132-#-Celia Turcotte-#-koala-#-false-#-3-#-9-#-BAJA-#-1967-07-28T03:06
+ce4890967133-#-Edwina Bartell-#-eagle-#-true-#-3-#-36-#-BAJA-#-1984-11-15T02:36
+6a91b4a65134-#-Emil Carter-#-impala-#-false-#-2-#-89-#-BAJA-#-1984-02-06T18:56
+9d691b54c135-#-Korey Halvorson Sr.-#-beetle-#-false-#-4-#-74-#-MEDIA-#-1975-10-02T13:54
+658d7a158136-#-Marcos Sporer-#-chimpanzee-#-false-#-3-#-66-#-BAJA-#-1974-06-16T19:12
+7e4027e43137-#-Hye Simonis-#-goat-#-true-#-4-#-69-#-MEDIA-#-1992-10-29T04:47
+e8f4fb2c0138-#-Marleen Orn-#-scorpion-#-true-#-5-#-70-#-BAJA-#-1986-02-22T17:06
+d0ca4aa2c139-#-Leticia Koch-#-elk-#-false-#-1-#-19-#-BAJA-#-1987-07-21T23:45
+c6e68fa2a140-#-Milo Will V-#-sea lion-#-true-#-4-#-38-#-BAJA-#-1982-01-30T15:06
+77007bbc2141-#-Nadene Dietrich-#-tiger-#-true-#-3-#-15-#-BAJA-#-1978-12-30T04:44
+a8055b0a0142-#-Cheryll Koelpin-#-horse-#-true-#-4-#-67-#-BAJA-#-1980-02-21T19:09
+71d522f2e143-#-Brain Walter DDS-#-camel-#-true-#-4-#-81-#-BAJA-#-1997-10-23T22:41
+5c61d395e144-#-Jefferey Hilpert Sr.-#-baboon-#-false-#-3-#-23-#-ALTA-#-1996-10-08T06:43
+3256308fd145-#-Mr. Sean Crona-#-seal-#-true-#-4-#-65-#-BAJA-#-2005-06-17T17:24
+dbde0422d146-#-Ms. Ike Huel-#-wasp-#-false-#-2-#-90-#-ALTA-#-1996-09-03T19:38
+08b2fc8a2147-#-Mary Dickens-#-termite-#-false-#-2-#-89-#-BAJA-#-1969-01-04T09:41
+6b0a78b44148-#-Jama Schumm-#-squirrel-#-false-#-4-#-66-#-BAJA-#-2000-10-01T00:14
+d9da3393e149-#-Dia Ward II-#-termite-#-false-#-5-#-48-#-BAJA-#-1997-05-13T19:46
+207259567150-#-Miss Douglass Corwin-#-fish-#-false-#-3-#-14-#-ALTA-#-1973-06-05T12:27
+99c68832f151-#-Jesus Labadie-#-horse-#-false-#-2-#-30-#-ALTA-#-2004-03-28T00:59
+73a81c962152-#-Summer Streich Sr.-#-worm-#-true-#-4-#-39-#-ALTA-#-1967-11-08T17:01
+66de026f8153-#-Mariela O'Connell-#-gerbil-#-false-#-4-#-24-#-MEDIA-#-2006-06-22T04:57
+71ca5686d154-#-Amparo Ritchie-#-antelope-#-true-#-2-#-4-#-ALTA-#-1995-03-26T02:51
+67cbf2e2f155-#-Rosalva Upton II-#-beetle-#-true-#-2-#-90-#-ALTA-#-1979-10-25T21:20
+b6513f9d9156-#-Mrs. Kennith Olson-#-whale-#-true-#-1-#-39-#-BAJA-#-1988-12-01T11:02
+309889e67157-#-Jeremiah Casper-#-chimpanzee-#-true-#-3-#-24-#-ALTA-#-2005-03-13T09:44
+0793fd96c158-#-Johnson Haag-#-coyote-#-true-#-3-#-31-#-BAJA-#-1993-11-12T04:29
+5ffed9ea5159-#-Ms. Donny Kub-#-buffalo-#-true-#-3-#-76-#-ALTA-#-1993-11-17T12:54
+0072eeced160-#-Sergio Anderson-#-lizard-#-true-#-4-#-61-#-BAJA-#-2003-12-22T07:50
+6773d4ad4161-#-Sade Dach-#-beetle-#-false-#-5-#-1-#-BAJA-#-1981-11-25T13:32
+b2c1195d8162-#-Shawn West-#-alpaca-#-false-#-2-#-60-#-ALTA-#-1969-11-16T00:35
+20d69b760163-#-Ali Bins-#-cod-#-false-#-3-#-80-#-ALTA-#-1977-12-05T04:06
+9e4ee36a2164-#-Dennis Sporer-#-ant-#-true-#-3-#-8-#-BAJA-#-2006-03-18T08:38
+d024cd279165-#-David Carroll-#-ox-#-false-#-3-#-75-#-BAJA-#-1964-05-12T04:21
+efa78375b166-#-Erminia Kautzer-#-termite-#-true-#-2-#-59-#-BAJA-#-1980-09-26T16:14
+1052a0bd6167-#-Sueann Herman-#-caribou-#-false-#-4-#-37-#-MEDIA-#-1973-02-20T06:36
+7cd5e6c5c168-#-Marita West-#-raccoon-#-false-#-2-#-3-#-ALTA-#-1978-10-21T01:35
+7d22d850e169-#-Samuel Hauck-#-baboon-#-true-#-5-#-6-#-ALTA-#-1964-08-02T20:48
+6f4888465170-#-Hui Mann Sr.-#-eel-#-true-#-2-#-88-#-BAJA-#-1964-07-20T16:08
+765df6466171-#-Deanna Murphy III-#-hyena-#-true-#-4-#-4-#-ALTA-#-1973-07-17T07:03
+ce9e39a6b172-#-Ms. Diego Wilkinson-#-alpaca-#-false-#-2-#-17-#-ALTA-#-2005-01-26T10:40
+148e50102173-#-Delmar Hane-#-chimpanzee-#-false-#-5-#-68-#-BAJA-#-2006-07-28T05:58
+3f4b1ec57174-#-Niesha Stracke-#-gorilla-#-false-#-2-#-14-#-BAJA-#-1976-04-29T03:40
+196c60fc5175-#-Ms. Nubia Jones-#-skunk-#-true-#-5-#-36-#-MEDIA-#-1995-06-25T01:57
+fcc7b62c5176-#-Cecelia Schmitt-#-oyster-#-false-#-1-#-15-#-ALTA-#-1972-01-30T17:22
+32eafd4e6177-#-Rudy Douglas-#-bat-#-true-#-2-#-18-#-ALTA-#-1965-06-09T12:20
+e500b9980178-#-Melida Walsh-#-pig-#-false-#-2-#-61-#-MEDIA-#-2000-07-18T02:24
+2b2ff39f2179-#-Jim Marvin V-#-butterfly-#-false-#-2-#-8-#-BAJA-#-1969-04-05T17:02
+e6b0c6ca8180-#-Sean Beatty-#-panda-#-false-#-2-#-41-#-BAJA-#-1962-03-05T05:02
+2dcaec177181-#-Rick Runolfsdottir-#-bear-#-true-#-3-#-32-#-BAJA-#-1974-09-24T08:43
+4a39f5b8d182-#-Benny Koelpin-#-deer-#-false-#-2-#-51-#-BAJA-#-1996-04-22T18:25
+34f3f7456183-#-Mr. Lance O'Reilly-#-hornet-#-true-#-2-#-66-#-ALTA-#-1966-05-16T21:58
+8830f6001184-#-Ellis Baumbach-#-camel-#-false-#-2-#-68-#-BAJA-#-1968-02-11T11:59
+f845bb4d7185-#-Markus Macejkovic II-#-sea lion-#-false-#-5-#-71-#-BAJA-#-1966-07-21T10:59
+8583b8335186-#-Bill Ruecker-#-louse-#-false-#-4-#-37-#-ALTA-#-1988-11-02T23:19
+2ecb27df9187-#-Margorie VonRueden-#-donkey-#-false-#-5-#-69-#-BAJA-#-1982-12-01T23:43
+c998ae5a9188-#-Antione Stamm-#-pig-#-true-#-2-#-90-#-MEDIA-#-1971-06-16T03:15
+e9f1edc12189-#-Tierra Gottlieb-#-tiger-#-false-#-2-#-73-#-BAJA-#-2004-01-22T08:07
+aeeac3ac0190-#-Andy Jakubowski-#-turtle -#-false-#-3-#-61-#-BAJA-#-1995-06-27T21:09
+609428f99191-#-Mr. Celestina Zemlak-#-chinchilla-#-false-#-4-#-42-#-BAJA-#-1996-10-24T16:04
+6d291e6ae192-#-Viki Lesch PhD-#-gnu-#-false-#-1-#-6-#-BAJA-#-1961-01-13T22:14
+a14b830c4193-#-Sandie Funk-#-leopard-#-true-#-5-#-18-#-BAJA-#-1968-08-04T21:28
+d32d557c6194-#-Joaquin Haag-#-macaw-#-true-#-2-#-56-#-BAJA-#-1965-11-25T16:28
+39ee1adfe195-#-Madelyn Treutel-#-zebra-#-false-#-5-#-21-#-BAJA-#-1973-07-06T23:11
+6d5a0f92d196-#-Marshall Hand DDS-#-ape-#-false-#-4-#-65-#-BAJA-#-1960-08-21T21:33
+9444a2f4b197-#-Stephen Swift-#-skunk-#-false-#-2-#-8-#-ALTA-#-1963-04-03T19:21
+b6117425a198-#-Emilia Denesik-#-alligator-#-false-#-3-#-81-#-ALTA-#-1983-06-20T11:22
+2a7070913199-#-Ms. August Wiza-#-ant-#-true-#-4-#-26-#-MEDIA-#-1963-01-28T12:43
+e6da55672200-#-Williams Wehner-#-spider-#-true-#-2-#-84-#-BAJA-#-1990-02-05T20:03
+2c450142c201-#-Stephine Baumbach-#-mink-#-false-#-1-#-57-#-MEDIA-#-1960-01-25T01:25
+618322bb5202-#-Alleen Murazik-#-chinchilla-#-true-#-5-#-25-#-BAJA-#-1972-03-14T10:28
+100d1dd17203-#-Ms. Shirley Morissette-#-leopard-#-false-#-4-#-43-#-BAJA-#-1971-08-14T16:39
+3f477ea4b204-#-Ms. Cedrick Parker-#-donkey-#-true-#-3-#-83-#-MEDIA-#-1999-08-22T01:25
+ff8307f5b205-#-America Erdman-#-beaver-#-true-#-2-#-86-#-BAJA-#-2001-08-14T04:54
+8d9fe3717206-#-Dr. Lenard Schamberger-#-porpoise-#-true-#-5-#-59-#-BAJA-#-1965-01-21T03:39
+aa4324fa2207-#-Mrs. Dorothea Hickle-#-serval-#-true-#-1-#-30-#-BAJA-#-1979-04-20T19:41
+f9efa12b4208-#-Loyd Blanda-#-sardine-#-true-#-1-#-73-#-ALTA-#-1988-01-09T02:49
+3974004ed209-#-Debroah Herzog-#-bee-#-false-#-4-#-71-#-ALTA-#-1963-09-29T04:36
+1a28e4332210-#-Kandra Dooley-#-cricket-#-true-#-2-#-60-#-MEDIA-#-1964-11-19T11:04
+b668a54ef211-#-Jamar Schmitt-#-crow-#-false-#-2-#-59-#-MEDIA-#-2002-05-09T00:08
+6d8566097212-#-Ngan Schultz-#-beetle-#-true-#-5-#-30-#-BAJA-#-1974-06-01T11:00
+bdf6d09bd213-#-Rachal Kshlerin-#-monkey-#-false-#-4-#-76-#-BAJA-#-1991-01-28T02:36
+d2540a711214-#-Edgardo Swift I-#-herring-#-false-#-3-#-69-#-BAJA-#-1966-05-30T13:45
+bcd9e6a8d215-#-Miss Sybil Orn-#-pig-#-false-#-4-#-2-#-ALTA-#-1965-04-24T04:25
+c40108f0d216-#-Letty Homenick-#-minnow-#-true-#-1-#-36-#-ALTA-#-1994-04-05T12:58
+35a59cb86217-#-Conrad Hickle-#-donkey-#-true-#-5-#-10-#-ALTA-#-1988-04-23T16:33
+4df5ef7f2218-#-Courtney Rath-#-dog-#-false-#-4-#-25-#-BAJA-#-1975-10-16T00:33
+8e0a869a7219-#-Kim Gaylord III-#-spider-#-true-#-3-#-17-#-MEDIA-#-1961-10-28T10:35
+6626c94e8220-#-Clorinda Medhurst PhD-#-gnu-#-true-#-2-#-1-#-ALTA-#-2003-04-11T12:26
+554e8348f221-#-Garfield Harvey-#-alligator-#-false-#-5-#-2-#-MEDIA-#-2005-03-14T05:50
+f561a1330222-#-Jamel Koss-#-moose-#-true-#-5-#-24-#-ALTA-#-1988-01-11T00:40
+58008f346223-#-Boyce Williamson-#-mosquito-#-false-#-2-#-43-#-MEDIA-#-1972-10-07T18:50
+edc4bf481224-#-Emile Wisozk-#-hedgehog-#-true-#-5-#-68-#-BAJA-#-1994-08-12T00:39
+1eb4998b9225-#-Mrs. Damian Jast-#-ferret-#-true-#-3-#-69-#-BAJA-#-1976-06-22T13:24
+5b172e786226-#-Mrs. Conrad Barrows-#-baboon-#-false-#-4-#-57-#-ALTA-#-1997-12-31T16:07
+e97a5e292227-#-Nenita Mayert-#-mosquito-#-true-#-3-#-7-#-BAJA-#-1971-02-03T07:47
+71a8f2e4f228-#-Lance Jakubowski-#-cricket-#-true-#-4-#-35-#-BAJA-#-1996-05-26T04:02
+318ae13c9229-#-Cheryll Jacobson-#-tortoise-#-true-#-2-#-14-#-ALTA-#-1975-03-04T00:33
+fd9b3bead230-#-Miss Keneth Marquardt-#-bat-#-false-#-4-#-62-#-ALTA-#-1984-03-15T00:49
+f5ca8eeb8231-#-Damian Stehr-#-koala-#-false-#-3-#-75-#-ALTA-#-1981-12-12T04:37
+0ad7ea971232-#-Lanelle Mosciski-#-mallard-#-false-#-3-#-35-#-ALTA-#-1960-03-11T01:00
+88e6975c9233-#-Billy Morar-#-hornet-#-false-#-5-#-49-#-BAJA-#-1985-10-01T02:48
+a6adc107f234-#-Myong Ullrich-#-beetle-#-false-#-4-#-30-#-ALTA-#-1999-03-22T17:26
+352b85c76235-#-Billie Christiansen-#-prairie dog-#-false-#-3-#-22-#-ALTA-#-1977-07-03T04:51
+4783d52cb236-#-Lamar Bergnaum Jr.-#-sheep-#-false-#-4-#-25-#-ALTA-#-1988-09-03T22:57
+3a9c33a23237-#-Joselyn Tremblay-#-water buffalo-#-false-#-1-#-45-#-BAJA-#-1986-03-11T10:28
+f31ab812d238-#-Laurence Bogisich-#-wasp-#-true-#-1-#-27-#-BAJA-#-1960-07-08T20:01
+260cf4a41239-#-Long Lueilwitz-#-cockroach-#-true-#-5-#-76-#-BAJA-#-1994-09-23T21:12
+d7ebac26b240-#-Sau Wolff-#-mallard-#-true-#-5-#-67-#-ALTA-#-1982-11-04T22:20
+1d6d10677241-#-Mao O'Conner-#-jackal-#-true-#-3-#-23-#-BAJA-#-1970-06-12T20:38
+3d2a3c7a4242-#-Amanda Rice-#-minnow-#-true-#-5-#-43-#-ALTA-#-2003-12-27T22:37
+562e66321243-#-Von Kub IV-#-termite-#-true-#-2-#-28-#-BAJA-#-1995-10-15T06:59
+c3f3c5222244-#-Chanelle Witting MD-#-turtle -#-true-#-4-#-80-#-BAJA-#-1970-03-06T02:37
+d038ed546245-#-Neal Collins-#-goose-#-true-#-2-#-23-#-ALTA-#-2002-04-10T22:30
+f806f6942246-#-Chas Mayert PhD-#-jackal-#-false-#-5-#-46-#-MEDIA-#-1996-08-14T21:47
+0044ffb35247-#-Ayesha Lind-#-llama-#-true-#-4-#-12-#-BAJA-#-1977-10-28T05:28
+f6d399c0d248-#-Kortney Waters-#-rhinoceros-#-false-#-4-#-84-#-MEDIA-#-1978-09-27T01:10
+38449f437249-#-Loreen Hackett-#-pug-#-false-#-3-#-19-#-BAJA-#-1977-05-25T04:07
+fb725263d250-#-Arlinda Hills-#-mammoth-#-true-#-5-#-8-#-ALTA-#-1981-08-25T21:33
+4a8acabba251-#-Sidney Herman-#-crocodile-#-true-#-5-#-58-#-BAJA-#-1999-05-21T03:37
+bda0bef8f252-#-Lynn Labadie I-#-buffalo-#-false-#-4-#-5-#-BAJA-#-2004-10-24T05:18
+9ae79da57253-#-Liana Langworth-#-beaver-#-true-#-3-#-89-#-ALTA-#-1996-04-20T02:17
+591a9df38254-#-Savannah Huels Sr.-#-hare-#-false-#-3-#-68-#-BAJA-#-1996-05-10T22:15
+1d74d56e3255-#-Walton Champlin II-#-termite-#-true-#-4-#-62-#-BAJA-#-1991-03-01T06:01
+75a31e2c1256-#-Dia Kshlerin-#-elk-#-false-#-3-#-50-#-ALTA-#-1965-05-31T09:29
+28312d163257-#-Ross Spencer-#-butterfly-#-false-#-3-#-16-#-MEDIA-#-2004-08-25T11:19
+be9118e0e258-#-Rolf Littel IV-#-porcupine-#-true-#-2-#-37-#-MEDIA-#-1978-03-14T10:02
+cef4048c7259-#-Classie Gutkowski-#-mouse-#-true-#-4-#-50-#-BAJA-#-1969-12-09T06:02
+2c9818034260-#-Mrs. Cheri Flatley-#-tortoise-#-false-#-2-#-16-#-ALTA-#-2004-02-14T07:40
+65577b33b261-#-Edgardo Mosciski-#-sardine-#-false-#-2-#-17-#-ALTA-#-1969-01-05T10:42
+7f3f58b9f262-#-Olin Friesen DVM-#-hedgehog-#-false-#-3-#-80-#-BAJA-#-1979-02-24T20:22
+db7611e85263-#-Ms. Cherrie Blick-#-camel-#-false-#-1-#-3-#-ALTA-#-1960-07-31T01:59
+a026fc14f264-#-Giuseppina Cassin II-#-hound-#-false-#-3-#-34-#-MEDIA-#-1988-08-31T16:16
+e04ac7339265-#-Dalton Will-#-cockroach-#-false-#-1-#-12-#-ALTA-#-1996-06-07T07:38
+7cfa82f22266-#-Bree Little-#-hound-#-true-#-4-#-27-#-ALTA-#-2004-09-14T11:25
+e9c93f1c5267-#-Leroy Rempel-#-hornet-#-true-#-5-#-27-#-MEDIA-#-1980-01-29T02:51
+02baddf76268-#-Laticia Spinka-#-bat-#-false-#-5-#-45-#-BAJA-#-1961-11-24T06:22
+277b049a9269-#-Lacey Hilll III-#-donkey-#-false-#-3-#-41-#-ALTA-#-1990-07-24T23:37
+45fee81a3270-#-Yan Huels-#-buffalo-#-true-#-1-#-31-#-BAJA-#-1984-03-27T15:33
+220b74739271-#-Lesley Sporer Sr.-#-salmon-#-false-#-1-#-90-#-ALTA-#-1995-07-26T20:34
+577e89c01272-#-Rogelio Harvey-#-platypus-#-true-#-2-#-56-#-BAJA-#-1984-01-14T01:38
+4be9cd45d273-#-Molly Bogisich MD-#-alligator-#-false-#-2-#-36-#-ALTA-#-1995-06-01T13:39
+7f01f723a274-#-Olen Durgan-#-squirrel-#-true-#-5-#-73-#-MEDIA-#-1984-09-04T09:25
+b01a5dc5f275-#-Horace Mertz-#-snail-#-false-#-5-#-35-#-BAJA-#-1997-12-27T16:43
+62dae099f276-#-Klara Kuvalis-#-grasshopper-#-false-#-2-#-13-#-BAJA-#-1969-09-15T23:41
+217792c0d277-#-Miguel Bosco-#-seal-#-false-#-4-#-11-#-BAJA-#-2002-07-15T23:48
+e35479c02278-#-Pamella Goyette Sr.-#-goat-#-false-#-1-#-28-#-BAJA-#-1977-10-05T19:09
+47e54f6ee279-#-Porfirio Parker-#-lion-#-true-#-4-#-15-#-ALTA-#-1966-03-14T10:59
+24da5c1f1280-#-Shanel Osinski-#-shark-#-true-#-2-#-15-#-ALTA-#-1994-08-15T04:55
+b3071af9f281-#-Sterling Berge-#-platypus-#-true-#-2-#-4-#-BAJA-#-1979-04-28T19:00
+5a2148b8a282-#-Portia Keeling-#-guinea pig-#-false-#-5-#-40-#-MEDIA-#-1985-10-19T22:43
+9cb47e263283-#-Michiko Bartoletti II-#-hyena-#-false-#-2-#-62-#-ALTA-#-1961-10-18T10:25
+354a897dc284-#-Bruno Strosin DVM-#-fly-#-true-#-5-#-4-#-BAJA-#-1983-08-22T13:03
+96c9ef70b285-#-Freddy Flatley-#-cattle-#-false-#-2-#-42-#-ALTA-#-2001-07-15T22:30
+19dced598286-#-Brenton Mayert-#-cricket-#-false-#-2-#-70-#-ALTA-#-1985-02-09T19:09
+c712bce99287-#-Omega Krajcik-#-cricket-#-true-#-4-#-46-#-MEDIA-#-1991-04-22T20:31
+2f43c8700288-#-Mr. Anissa Hessel-#-turtle -#-true-#-1-#-70-#-BAJA-#-1970-03-16T19:59
+224cf69c3289-#-Wilburn Kiehn DVM-#-ox-#-false-#-2-#-35-#-ALTA-#-2005-11-02T10:46
+f05d6550a290-#-Birdie Corwin-#-louse-#-true-#-3-#-16-#-ALTA-#-1995-07-23T08:45
+a052206f4291-#-Erin Rolfson-#-fish-#-false-#-1-#-72-#-MEDIA-#-1966-02-08T01:18
+71c92c758292-#-Fredda Fadel-#-crocodile-#-false-#-1-#-59-#-MEDIA-#-1984-06-10T14:13
+e2ad1db10293-#-Corey Zemlak-#-raccoon-#-false-#-1-#-85-#-ALTA-#-1992-11-08T15:32
+5113c99c9294-#-Peter Batz-#-hippopotamus-#-false-#-4-#-58-#-ALTA-#-1969-02-10T16:50
+03e545f6b295-#-Rhoda Bednar-#-tortoise-#-true-#-1-#-20-#-ALTA-#-2002-09-25T14:58
+0dd9fe938296-#-Millard Wisoky-#-ferret-#-true-#-4-#-36-#-MEDIA-#-1967-08-07T13:01
+1d5525008297-#-Mr. Gerry Sporer-#-serval-#-true-#-2-#-11-#-ALTA-#-1966-07-16T15:06
+0cd61c72c298-#-Tim Kessler-#-fly-#-false-#-4-#-56-#-BAJA-#-1959-10-09T13:48
+44923211c299-#-Jayne Bergstrom-#-snail-#-true-#-4-#-34-#-MEDIA-#-1999-04-04T11:57
+80d7738c1300-#-Solange Homenick-#-reindeer-#-true-#-3-#-26-#-BAJA-#-1984-11-18T21:54
+6f1f3a7fe301-#-Jefferey Krajcik-#-manatee-#-true-#-2-#-87-#-ALTA-#-1966-05-06T10:47
+0d06c2a89302-#-Dr. Bryce Douglas-#-leopard-#-true-#-4-#-80-#-MEDIA-#-1988-06-05T19:52
+b17523024303-#-Kory Heidenreich Jr.-#-rat-#-false-#-4-#-22-#-BAJA-#-1972-09-20T03:46
+55d1e3844304-#-Miss Olin Kilback-#-alpaca-#-false-#-2-#-2-#-MEDIA-#-1962-05-19T20:30
+d157db28d305-#-Ilana Krajcik-#-coyote-#-false-#-2-#-18-#-BAJA-#-1969-01-29T18:23
+d50b20ef2306-#-Barbra Pfannerstill-#-minnow-#-true-#-2-#-11-#-BAJA-#-1994-07-04T08:31
+d60703d71307-#-Shayla Wyman-#-antelope-#-false-#-1-#-57-#-MEDIA-#-1968-12-12T14:43
+b7feeab76308-#-Jarod Cummings-#-pug-#-false-#-3-#-51-#-BAJA-#-1961-03-29T16:50
+c27bb4d1d309-#-Colin Rippin-#-gnu-#-false-#-3-#-22-#-MEDIA-#-1977-07-11T15:06
+a98ab817a310-#-Meta Macejkovic-#-manatee-#-true-#-4-#-6-#-BAJA-#-1990-07-02T15:41
+bb8fbf4c4311-#-Cyril Casper-#-goat-#-true-#-5-#-82-#-BAJA-#-1989-09-16T11:44
+58f4693fa312-#-Aron Rau-#-porcupine-#-true-#-3-#-57-#-BAJA-#-2002-05-28T04:23
+77399a7c7313-#-Dudley Torp-#-swan-#-false-#-3-#-20-#-MEDIA-#-2004-01-02T09:00
+eeaf159e9314-#-Kamala Hammes-#-termite-#-false-#-4-#-11-#-BAJA-#-1976-04-12T04:27
+c9698bcd5315-#-Odell Boyer-#-raccoon-#-true-#-3-#-88-#-BAJA-#-2006-02-02T14:13
+7a94097dd316-#-Miss Mickey Lesch-#-pig-#-true-#-1-#-45-#-ALTA-#-1973-10-23T07:44
+527f6024c317-#-Shayna Davis-#-llama-#-false-#-3-#-28-#-ALTA-#-1971-01-27T14:01
+6e1208c29318-#-Jalisa Smitham-#-mole-#-false-#-3-#-24-#-BAJA-#-1984-04-15T02:45
+ea92dd0fb319-#-Michael Price-#-manatee-#-true-#-4-#-6-#-ALTA-#-1968-07-09T15:09
+f7bf48a17320-#-Markus Larkin-#-eagle-#-true-#-2-#-35-#-ALTA-#-1988-10-19T12:33
+50f46a5ac321-#-Dr. Eduardo Macejkovic-#-sardine-#-false-#-5-#-3-#-BAJA-#-2005-11-01T14:26
+91efc3efe322-#-Mr. Pablo Hammes-#-mink-#-true-#-2-#-45-#-ALTA-#-1990-05-24T02:11
+81baa0377323-#-Mr. Tonja Wehner-#-bear-#-true-#-2-#-74-#-BAJA-#-1985-01-12T08:41
+563924ab1324-#-Miss Ayanna Langosh-#-reindeer-#-true-#-1-#-18-#-BAJA-#-1959-11-27T00:36
+b81110724325-#-Von Parker-#-snake-#-false-#-5-#-68-#-MEDIA-#-1974-08-03T18:35
+67137b7f0326-#-Wesley Dicki-#-alpaca-#-false-#-2-#-42-#-BAJA-#-1986-10-10T13:08
+ebe76344c327-#-Greg Runolfsdottir-#-gerbil-#-false-#-2-#-63-#-ALTA-#-1984-03-05T13:18
+ac1a297c7328-#-Dr. Nanci Crona-#-elk-#-false-#-2-#-77-#-ALTA-#-2003-06-08T14:15
+8771e3f26329-#-Leonor Hudson-#-sardine-#-true-#-5-#-33-#-BAJA-#-1990-01-25T04:13
+fd369fed4330-#-Hilma Torphy Jr.-#-sheep-#-false-#-2-#-9-#-ALTA-#-1996-02-04T15:00
+e2b52de2a331-#-Winford Kshlerin IV-#-platypus-#-true-#-5-#-9-#-BAJA-#-1990-01-13T00:18
+5fcf7fd74332-#-Dr. Ehtel Schaefer-#-chinchilla-#-false-#-1-#-86-#-BAJA-#-1984-09-10T07:54
+233720ae1333-#-Bethany Herzog-#-crab-#-false-#-2-#-12-#-BAJA-#-1967-12-02T06:14
+746d84a43334-#-Belen Bahringer-#-camel-#-false-#-3-#-79-#-MEDIA-#-2001-07-09T08:33
+0b0fb3f62335-#-Terrell Padberg-#-fox-#-true-#-3-#-62-#-BAJA-#-1985-10-21T09:02
+f6decbd43336-#-Deshawn Koss-#-ferret-#-true-#-3-#-14-#-MEDIA-#-1965-05-20T16:38
+192dc40b9337-#-Beau Bergstrom V-#-rat-#-true-#-2-#-82-#-BAJA-#-1984-05-10T18:13
+d161925cb338-#-Mrs. Luis Boyer-#-swan-#-false-#-4-#-37-#-BAJA-#-2001-04-17T07:43
+0fdaef991339-#-Mr. Sol Cormier-#-guinea pig-#-false-#-5-#-70-#-BAJA-#-1973-10-29T22:36
+925343698340-#-Kermit Sipes-#-oyster-#-true-#-5-#-19-#-BAJA-#-1981-10-29T03:47
+dd159c788341-#-Ervin Cremin Jr.-#-chimpanzee-#-true-#-3-#-42-#-BAJA-#-1982-09-26T14:07
+40f7635ef342-#-Beverly Ebert-#-marten-#-false-#-5-#-42-#-BAJA-#-1963-07-10T23:06
+abe311dd8343-#-Valeria Batz-#-crow-#-false-#-3-#-22-#-ALTA-#-2004-06-30T18:03
+b139c6c44344-#-Marilu White Sr.-#-gorilla-#-true-#-2-#-86-#-ALTA-#-1989-06-05T07:36
+d9eadabf8345-#-Roselia Bashirian-#-reindeer-#-true-#-4-#-52-#-BAJA-#-1991-01-02T00:12
+77f51f9b8346-#-Humberto O'Hara-#-macaw-#-true-#-5-#-56-#-BAJA-#-2006-03-22T01:40
+0148d3592347-#-Carrol Stiedemann-#-coyote-#-true-#-2-#-88-#-ALTA-#-1975-01-13T02:52
+d2ecdb0b9348-#-Williams Huel-#-rat-#-false-#-5-#-63-#-ALTA-#-2004-06-22T10:35
+c9402ae8c349-#-Nada Greenholt-#-badger-#-true-#-5-#-45-#-BAJA-#-2005-04-22T11:24
+752d0c15b350-#-Lorraine Sanford-#-leopard-#-true-#-5-#-28-#-ALTA-#-1995-07-20T12:42
+a07d4c07e351-#-Ryann Rolfson-#-scorpion-#-false-#-5-#-81-#-MEDIA-#-2000-09-22T06:03
+23a62e512352-#-Carmen Olson III-#-swan-#-true-#-1-#-53-#-ALTA-#-1966-12-04T21:21
+dcdeb6195353-#-Kurtis Sporer-#-gerbil-#-true-#-1-#-89-#-ALTA-#-1991-11-14T04:29
+87fc989b5354-#-Willis Hagenes II-#-goat-#-true-#-5-#-55-#-BAJA-#-1990-08-11T11:15
+caec8d013355-#-Malena Champlin DDS-#-monkey-#-true-#-4-#-76-#-MEDIA-#-1965-07-10T04:43
+d20d6c5a3356-#-Nona Koss-#-rabbit-#-true-#-4-#-90-#-ALTA-#-1993-10-24T15:49
+15e4bb878357-#-Danny Leuschke-#-mink-#-true-#-4-#-27-#-MEDIA-#-1993-03-09T22:33
+5e952d86f358-#-Ms. Jeff Kihn-#-hare-#-true-#-1-#-6-#-BAJA-#-1978-08-10T15:55
+d690835f5359-#-Ms. Vanda Lemke-#-cat-#-false-#-2-#-13-#-BAJA-#-1972-07-04T10:03
+55de6312a360-#-Judson Ziemann-#-crocodile-#-true-#-2-#-10-#-BAJA-#-2005-09-16T02:42
+fe48fab36361-#-Shirely Bergnaum-#-elephant-#-true-#-5-#-18-#-ALTA-#-1962-12-15T11:19
+8baa0bd1e362-#-Mrs. Margarett Larkin-#-seal-#-true-#-5-#-18-#-BAJA-#-1965-04-09T02:26
+5090e59b8363-#-Michale Will-#-eel-#-false-#-5-#-90-#-ALTA-#-1967-06-13T15:38
+289421411364-#-Ms. Eugenio Gottlieb-#-platypus-#-true-#-3-#-54-#-BAJA-#-1986-02-08T21:58
+18ec0ec6f365-#-Mr. Corrin Legros-#-serval-#-false-#-3-#-15-#-ALTA-#-1963-10-18T20:17
+fa4432eb5366-#-Rema Mraz-#-fish-#-false-#-2-#-44-#-BAJA-#-1997-07-09T23:11
+6957115c9367-#-Jamar Schmeler-#-water buffalo-#-false-#-1-#-88-#-ALTA-#-1967-01-14T06:21
+285b6447b368-#-Raymundo Oberbrunner-#-cod-#-true-#-3-#-82-#-BAJA-#-1962-02-12T17:31
+f46ff2776369-#-Miss Delores Harber-#-tortoise-#-false-#-5-#-19-#-BAJA-#-2003-06-05T11:27
+28de31126370-#-Mrs. Adell Kuhn-#-lion-#-false-#-4-#-48-#-BAJA-#-2002-08-02T14:25
+35d517125371-#-Octavio Kuvalis II-#-mosquito-#-false-#-2-#-79-#-MEDIA-#-1998-08-24T19:14
+9ba6edcad372-#-Dee Russel-#-rat-#-false-#-3-#-71-#-BAJA-#-1977-10-04T18:57
+19ad351c9373-#-Agustin Christiansen-#-camel-#-false-#-1-#-28-#-MEDIA-#-1969-02-19T17:51
+a263465d1374-#-Jenniffer Rippin Sr.-#-yak-#-true-#-5-#-34-#-BAJA-#-1989-02-25T17:27
+b17c852b7375-#-Carie Welch-#-mallard-#-false-#-2-#-60-#-BAJA-#-1994-02-13T22:51
+2d9a91101376-#-Gerda Witting-#-raven-#-false-#-1-#-89-#-MEDIA-#-1988-06-28T18:46
+c76db96f1377-#-Darnell Heaney-#-frog-#-false-#-5-#-82-#-ALTA-#-1996-07-13T20:38
+5a66de321378-#-Kirby Schiller Jr.-#-eel-#-true-#-3-#-47-#-BAJA-#-1969-03-28T16:17
+6eaa42ff0379-#-Ruby Kiehn-#-leopard-#-true-#-1-#-28-#-BAJA-#-1979-03-27T15:23
+48c2a1aac380-#-Charles Hansen-#-toad-#-true-#-5-#-66-#-ALTA-#-1983-04-22T09:25
+a84bdd4f5381-#-Ms. Joelle Nienow-#-otter-#-false-#-5-#-85-#-MEDIA-#-1971-10-03T13:24
+8f458860c382-#-Roderick Kunze-#-otter-#-true-#-5-#-26-#-BAJA-#-1982-12-03T11:07
+3c60d3053383-#-Sigrid Tremblay-#-guinea pig-#-true-#-5-#-32-#-BAJA-#-1972-03-10T12:25
+4d55824fd384-#-Lenny Kemmer-#-locust-#-false-#-2-#-53-#-MEDIA-#-2001-08-30T01:28
+117318a29385-#-Berna Kreiger-#-worm-#-true-#-4-#-21-#-ALTA-#-1962-02-11T06:00
+84646d1c0386-#-Kristyn Breitenberg IV-#-otter-#-false-#-2-#-87-#-MEDIA-#-1993-02-26T07:02
+1e25b09b3387-#-Devin Klocko-#-clam-#-false-#-5-#-34-#-ALTA-#-2006-05-10T12:48
+d88e00ec8388-#-Mr. Yahaira Runolfsdottir-#-beetle-#-true-#-2-#-56-#-BAJA-#-1963-04-09T12:31
+e554fe752389-#-Iola Howe-#-panda-#-true-#-1-#-57-#-BAJA-#-1968-12-28T08:43
+b0e0a3a92390-#-Ms. Harvey Boyle-#-wasp-#-false-#-2-#-90-#-BAJA-#-1990-09-17T03:33
+a500efda1391-#-Yang Casper-#-manatee-#-false-#-4-#-34-#-ALTA-#-1982-12-21T03:37
+a98f3f7be392-#-Ryan Ferry-#-macaw-#-false-#-1-#-70-#-BAJA-#-2006-06-01T12:52
+38346c035393-#-Brant Orn-#-mole-#-false-#-5-#-6-#-BAJA-#-2002-12-18T22:27
+d3d26faf8394-#-Octavio Larkin-#-goose-#-false-#-2-#-19-#-ALTA-#-1998-05-16T07:59
+ee0d72145395-#-Carolee Dare-#-alligator-#-false-#-5-#-89-#-MEDIA-#-1991-12-13T03:14
+28fb14bbc396-#-Danial Donnelly DDS-#-water buffalo-#-false-#-3-#-37-#-BAJA-#-1995-04-14T18:38
+a9ba3c871397-#-Leda Conroy-#-snake-#-false-#-3-#-78-#-BAJA-#-1983-05-19T06:11
+99dd62254398-#-Noe Stiedemann IV-#-yak-#-false-#-3-#-48-#-ALTA-#-1969-11-16T19:04
+ec85f22bd399-#-Jackeline Reichel-#-jackal-#-false-#-5-#-16-#-MEDIA-#-1997-05-25T02:53
+c3fe0a49e400-#-Larae Gislason-#-yellowjacket-#-false-#-1-#-68-#-MEDIA-#-1970-09-08T13:20
+254da4daa401-#-Renato Bednar-#-frog-#-false-#-1-#-56-#-BAJA-#-1985-01-29T00:11
+194d6e546402-#-Lourie Bailey-#-hyena-#-true-#-2-#-22-#-BAJA-#-1974-01-28T11:24
+10f25cee2403-#-Lilliam Howe-#-manatee-#-true-#-2-#-50-#-BAJA-#-1991-05-12T05:41
+6af175dc5404-#-Jinny Runolfsson-#-caribou-#-true-#-3-#-65-#-MEDIA-#-1976-05-19T06:41
+dc6374a80405-#-Kiley Bode-#-camel-#-true-#-5-#-75-#-BAJA-#-1990-09-05T05:55
+0bd2b45e3406-#-Meredith Thiel-#-yak-#-true-#-5-#-84-#-MEDIA-#-1989-08-20T01:36
+82ea7beda407-#-Mrs. Ching Crist-#-mammoth-#-false-#-3-#-35-#-BAJA-#-1978-03-08T21:17
+b7a1a1abc408-#-Dr. Rufus Rohan-#-elk-#-false-#-3-#-57-#-BAJA-#-1984-05-13T12:26
+cfec39352409-#-Helene Marks-#-sardine-#-false-#-5-#-17-#-BAJA-#-1988-08-19T10:04
+70afe93ed410-#-Mario Fay-#-cricket-#-false-#-5-#-25-#-BAJA-#-1997-12-11T17:58
+f0317d5e6411-#-Sona Okuneva-#-snake-#-true-#-4-#-17-#-BAJA-#-1990-01-19T01:35
+3b6e2f1ca412-#-Shakita McLaughlin-#-mule-#-true-#-5-#-81-#-BAJA-#-1995-06-26T02:17
+7203b9b3c413-#-Hilaria Goodwin DDS-#-fly-#-false-#-5-#-19-#-ALTA-#-1964-11-14T01:34
+5a6f24182414-#-Normand Heaney-#-trout-#-false-#-5-#-65-#-MEDIA-#-1997-05-21T13:22
+8b30f1512415-#-Mrs. Enoch Littel-#-frog-#-true-#-2-#-51-#-BAJA-#-2003-10-16T07:19
+f77a361e7416-#-Mr. Valeria McKenzie-#-snake-#-false-#-4-#-41-#-BAJA-#-1999-06-20T07:42
+1047ae667417-#-Chiquita Koelpin-#-bear-#-true-#-3-#-54-#-ALTA-#-1973-06-21T13:56
+be42312c6418-#-Larry Rempel DVM-#-leopard-#-true-#-3-#-90-#-BAJA-#-1975-05-12T00:52
+eebdaffe7419-#-Rufus Hilll-#-mule-#-true-#-3-#-75-#-BAJA-#-1997-12-04T19:43
+aac294a5c420-#-Jae Shields-#-fish-#-true-#-3-#-31-#-ALTA-#-1967-06-25T03:17
+3acd7e703421-#-Mr. Marc Collins-#-dolphin-#-false-#-5-#-79-#-ALTA-#-1966-03-01T00:41
+4a05ab7af422-#-Pasquale Kirlin-#-jellyfish-#-false-#-4-#-67-#-BAJA-#-1984-07-15T23:29
+f7ea2cc49423-#-Elliott Volkman-#-dog-#-false-#-5-#-79-#-BAJA-#-1986-05-23T07:46
+ea1884fc7424-#-Salvatore Nader-#-serval-#-false-#-5-#-36-#-BAJA-#-1975-08-22T14:46
+8fa27203f425-#-Pamula McLaughlin-#-ox-#-false-#-4-#-20-#-ALTA-#-1974-09-09T12:15
+ecca9ed92426-#-Miss Titus Douglas-#-pig-#-false-#-1-#-76-#-ALTA-#-2001-07-10T19:49
+55407f58e427-#-Vern Bradtke-#-goldfish-#-true-#-2-#-56-#-BAJA-#-1966-09-18T15:23
+a6cec9a81428-#-Erna Leannon PhD-#-clam-#-false-#-5-#-77-#-BAJA-#-1965-03-18T09:31
+0b1646596429-#-Peggie Torphy-#-monkey-#-true-#-5-#-70-#-BAJA-#-1960-11-26T16:34
+28ece1c71430-#-Lacy Kozey-#-eagle-#-false-#-2-#-62-#-BAJA-#-1969-05-27T10:36
+d60df7d5d431-#-Min Strosin-#-chinchilla-#-false-#-1-#-51-#-BAJA-#-1961-06-17T06:55
+fc0e8f706432-#-Micha Murazik-#-sheep-#-true-#-5-#-68-#-BAJA-#-2000-11-16T20:41
+9585f064a433-#-Shaunda Tremblay-#-yak-#-false-#-1-#-29-#-BAJA-#-1974-10-21T16:54
+27f564b06434-#-Andrew Dickens-#-minnow-#-false-#-2-#-79-#-MEDIA-#-1972-03-22T22:51
+48b8b774f435-#-Omar Donnelly-#-koala-#-true-#-3-#-57-#-BAJA-#-1994-08-06T11:14
+ecda6fded436-#-Shani Lueilwitz-#-sheep-#-false-#-4-#-21-#-ALTA-#-1968-12-23T18:38
+3e373be48437-#-Lavonda Pagac PhD-#-donkey-#-true-#-3-#-65-#-BAJA-#-1963-06-03T05:07
+c5355576d438-#-Rubie Paucek-#-gorilla-#-false-#-4-#-73-#-ALTA-#-2001-02-15T05:45
+fea066767439-#-Drew Schamberger-#-eagle-#-false-#-2-#-32-#-ALTA-#-1960-02-01T18:59
+c4a4e7673440-#-Miss Sam Hauck-#-goose-#-false-#-5-#-48-#-BAJA-#-1988-03-16T15:09
+741e48927441-#-Dr. Millie Collins-#-squirrel-#-false-#-3-#-84-#-ALTA-#-2001-06-06T20:32
+89e3a064a442-#-Lou Jenkins-#-tortoise-#-false-#-3-#-83-#-MEDIA-#-1999-10-14T05:38
+4b75447b2443-#-Dr. Bonny Treutel-#-water buffalo-#-false-#-5-#-20-#-ALTA-#-2006-01-17T11:48
+1bc29e98d444-#-Isaac Vandervort-#-mouse-#-false-#-1-#-27-#-MEDIA-#-2004-04-27T16:26
+4d921d6e7445-#-Mr. Jean McKenzie-#-termite-#-true-#-3-#-26-#-BAJA-#-2002-12-18T05:44
+239eda127446-#-Reinaldo Pouros-#-snake-#-true-#-4-#-48-#-ALTA-#-2005-02-01T21:56
+75ab8484f447-#-An Cummings Sr.-#-camel-#-true-#-1-#-56-#-BAJA-#-1995-09-09T01:43
+e2aa4716d448-#-Dustin Gleichner-#-elephant-#-true-#-2-#-61-#-ALTA-#-2006-02-06T01:09
+e25922bd2449-#-Sandie Boehm MD-#-cat-#-true-#-4-#-48-#-BAJA-#-1999-02-27T11:28
+b31e7252e450-#-Lyle Reinger-#-toad-#-true-#-5-#-82-#-BAJA-#-1963-06-14T01:18
+46048acbd451-#-Tristan Gorczany-#-water buffalo-#-true-#-5-#-35-#-MEDIA-#-2001-07-05T23:13
+2c5895ac0452-#-James Schneider V-#-clam-#-false-#-4-#-36-#-BAJA-#-1980-02-20T10:01
+47a7faeb6453-#-Irvin Abshire-#-reindeer-#-false-#-5-#-73-#-ALTA-#-1978-10-12T10:18
+e7060f489454-#-Raphael Mayert-#-crab-#-true-#-3-#-26-#-MEDIA-#-1962-07-10T08:43
+3483677fd455-#-Charis Kohler-#-rabbit-#-true-#-2-#-80-#-ALTA-#-1962-05-08T22:47
+d906e05d5456-#-Ms. Benedict Rice-#-mouse-#-true-#-1-#-25-#-MEDIA-#-1974-05-28T03:17
+7020d17c0457-#-Wes O'Keefe-#-ape-#-false-#-4-#-17-#-ALTA-#-1987-08-12T12:53
+84d693410458-#-Mrs. Junior Brekke-#-goldfish-#-false-#-1-#-49-#-BAJA-#-1977-07-25T21:34
+5be5fd967459-#-Gwenda Olson-#-chinchilla-#-false-#-3-#-34-#-MEDIA-#-1985-08-18T03:24
+9fdcf1e9b460-#-Leonida Tremblay-#-raven-#-false-#-5-#-52-#-BAJA-#-2000-01-05T10:49
+3a509e4e9461-#-Miss Deshawn Hudson-#-leopard-#-true-#-2-#-40-#-BAJA-#-1963-06-11T03:33
+b518dbb10462-#-Valentine Murazik V-#-cattle-#-true-#-3-#-68-#-MEDIA-#-1968-04-12T19:13
+55bb35a7e463-#-Keesha Orn-#-deer-#-false-#-2-#-49-#-BAJA-#-1967-01-25T13:00
+7271ca4fc464-#-Maudie Lang-#-skunk-#-true-#-2-#-47-#-ALTA-#-1962-02-02T16:22
+fb5923cc3465-#-Debi Skiles-#-termite-#-false-#-1-#-47-#-BAJA-#-1966-10-07T14:49
+b74ff67ee466-#-Dusty Huel-#-sardine-#-false-#-3-#-17-#-BAJA-#-1964-05-20T14:52
+4a407b82d467-#-Dylan Kovacek DVM-#-reindeer-#-true-#-5-#-56-#-BAJA-#-1992-09-23T10:29
+05bade0e5468-#-Claudio Nicolas I-#-termite-#-true-#-3-#-19-#-MEDIA-#-1970-11-16T00:08
+62771c229469-#-Lyndsay Lubowitz-#-cricket-#-false-#-5-#-4-#-MEDIA-#-1992-12-05T04:06
+d670e44fb470-#-Cora Rodriguez IV-#-otter-#-false-#-3-#-37-#-BAJA-#-1971-11-30T02:50
+e82c4ef44471-#-Chieko Zulauf-#-yellowjacket-#-false-#-4-#-14-#-MEDIA-#-1988-08-28T10:09
+443c26e68472-#-Tanya Waters-#-gnu-#-false-#-5-#-22-#-MEDIA-#-1974-09-25T08:31
+adccea203473-#-Kraig Kulas-#-llama-#-false-#-3-#-58-#-ALTA-#-1966-09-02T12:51
+dd96442de474-#-Miss Kristofer Blick-#-muskrat-#-true-#-5-#-64-#-ALTA-#-2001-08-05T15:29
+6304b552c475-#-Miss Abbott-#-cockroach-#-false-#-4-#-3-#-BAJA-#-2000-11-25T02:50
+ad69d62ce476-#-Jamey Jones-#-whale-#-true-#-4-#-16-#-ALTA-#-1978-10-04T03:14
+12e827791477-#-Rex Walker DDS-#-rabbit-#-false-#-4-#-80-#-BAJA-#-1993-08-14T10:15
+a667c3a39478-#-Karlene Gerlach-#-sheep-#-false-#-3-#-38-#-MEDIA-#-1986-02-17T09:03
+6108c1129479-#-Johnathon Nicolas-#-fly-#-true-#-1-#-87-#-MEDIA-#-1977-06-30T02:17
+3cf736bcd480-#-Tyree Abbott-#-beaver-#-true-#-5-#-68-#-ALTA-#-2005-07-27T07:39
+e4b0cb8b3481-#-Billy Zboncak-#-oyster-#-false-#-2-#-50-#-BAJA-#-2005-12-22T09:06
+ee4053134482-#-Argelia Heidenreich-#-pug-#-true-#-2-#-81-#-BAJA-#-1965-03-01T13:27
+25a5b059b483-#-Tyron Spinka-#-hamster-#-true-#-2-#-32-#-BAJA-#-1970-06-29T20:33
+fff16d1a2484-#-Antonetta Lehner-#-cheetah-#-true-#-2-#-87-#-MEDIA-#-1967-03-08T05:17
+6bfca57c8485-#-Lynn Watsica II-#-squirrel-#-true-#-3-#-60-#-BAJA-#-1993-03-25T18:20
+ca783e278486-#-Salvatore Keebler-#-goat-#-true-#-5-#-16-#-BAJA-#-1965-05-09T04:36
+c3f0e18c9487-#-Mrs. Nancey Mitchell-#-termite-#-true-#-3-#-65-#-ALTA-#-1989-02-27T23:23
+b84879fb3488-#-Leo Kshlerin-#-cheetah-#-false-#-3-#-54-#-BAJA-#-1964-04-02T21:42
+40b498f48489-#-Ezra Zulauf-#-walrus-#-true-#-3-#-35-#-BAJA-#-1959-11-14T23:35
+0f8a2d164490-#-Dr. Jose Fay-#-pig-#-false-#-2-#-83-#-BAJA-#-1964-10-15T13:17
+847bfe580491-#-Zack Lind-#-horse-#-false-#-4-#-16-#-BAJA-#-1984-02-25T10:13
+e53ea4807492-#-Neville Hegmann-#-coyote-#-true-#-2-#-13-#-MEDIA-#-1971-07-04T09:53
+7f5ceede3493-#-Ms. Pasquale Bernhard-#-kangaroo-#-true-#-2-#-56-#-ALTA-#-1978-02-16T06:28
+afdfa9efa494-#-Paola Conroy-#-buffalo-#-true-#-1-#-84-#-BAJA-#-1961-05-12T00:48
+3ed331f00495-#-Robby Powlowski II-#-giraffe-#-false-#-5-#-31-#-ALTA-#-1982-11-20T00:43
+0132db016496-#-Dr. Sherman Anderson-#-dog-#-true-#-5-#-6-#-ALTA-#-1995-05-31T08:08
+61b3a222d497-#-Ms. Elouise Ondricka-#-porpoise-#-true-#-1-#-68-#-BAJA-#-1974-12-26T11:10
+e0b8b2a9f498-#-Elvis Considine-#-squirrel-#-true-#-2-#-53-#-BAJA-#-1966-10-25T14:31
+c896366e9499-#-Jalisa Hackett-#-locust-#-false-#-3-#-90-#-ALTA-#-1961-07-22T08:21
+f276dbce2500-#-Miss Wan Upton-#-fox-#-true-#-3-#-3-#-BAJA-#-1988-07-25T01:29
+25a42ea25501-#-Bennett Schiller-#-weasel-#-true-#-2-#-46-#-MEDIA-#-2004-08-19T03:31
+9070cd629502-#-Darleen Volkman DVM-#-cricket-#-false-#-1-#-48-#-BAJA-#-1991-05-01T10:06
+cbffd5f06503-#-Sharron Kuhn-#-alligator-#-true-#-2-#-81-#-MEDIA-#-2001-10-21T16:15
+c252ae6ce504-#-George Beatty III-#-crow-#-true-#-4-#-41-#-BAJA-#-1997-01-27T04:25
+cba0a50e5505-#-Dannette Wisozk-#-toad-#-true-#-5-#-28-#-BAJA-#-2003-03-31T07:34
+87d72900e506-#-Antoine Mitchell-#-minnow-#-true-#-3-#-73-#-BAJA-#-1997-12-01T07:52
+940317b87507-#-Shannon Rutherford-#-raccoon-#-false-#-1-#-37-#-BAJA-#-1975-08-22T09:29
+5e6dd22d8508-#-Karma Lubowitz-#-yak-#-false-#-1-#-2-#-BAJA-#-1997-06-30T15:13
+cb8fe703e509-#-Tambra Hilll III-#-panda-#-true-#-4-#-10-#-BAJA-#-1995-10-05T06:49
+0f4db2c27510-#-Pauletta McKenzie-#-shark-#-true-#-4-#-24-#-ALTA-#-1993-03-07T02:10
+88b3af690511-#-Ava Swaniawski-#-macaw-#-false-#-4-#-3-#-MEDIA-#-1971-01-31T16:37
+67e5f4f83512-#-Lucio Schmitt-#-duck-#-true-#-5-#-23-#-BAJA-#-1998-06-24T23:34
+f931bb227513-#-Honey Feil DDS-#-chimpanzee-#-false-#-4-#-90-#-ALTA-#-2000-05-06T00:34
+7db979a3e514-#-Bud Batz-#-minnow-#-false-#-4-#-14-#-BAJA-#-1976-03-01T06:54
+28fe80733515-#-Genny Yost-#-hornet-#-true-#-2-#-90-#-BAJA-#-1980-10-13T21:49
+124ea6f4b516-#-Dr. Jacalyn Auer-#-worm-#-true-#-1-#-74-#-BAJA-#-1986-11-20T21:38
+cac3a8762517-#-Vanessa Kertzmann-#-llama-#-true-#-2-#-29-#-BAJA-#-1977-10-17T11:19
+85017351f518-#-Idella Borer-#-clam-#-true-#-2-#-90-#-BAJA-#-2005-04-24T02:21
+5b451922c519-#-Dion Bogisich-#-llama-#-true-#-3-#-19-#-ALTA-#-2003-08-22T20:28
+4d4b45500520-#-Ophelia Upton-#-porcupine-#-true-#-5-#-31-#-MEDIA-#-1987-04-08T21:28
+56132db41521-#-Jordon Gorczany IV-#-caribou-#-true-#-4-#-7-#-MEDIA-#-1992-08-07T05:58
+7157f26ff522-#-Maurice Bartoletti I-#-salmon-#-true-#-5-#-2-#-BAJA-#-1985-08-29T05:59
+eeeeec761523-#-Dr. Laverne Toy-#-walrus-#-false-#-4-#-44-#-BAJA-#-1968-02-28T20:48
+ba0d8fc6c524-#-Mariam Treutel-#-oyster-#-true-#-4-#-68-#-ALTA-#-1972-08-27T15:18
+1fd0ebd0b525-#-Dr. Leonore Cruickshank-#-kangaroo-#-true-#-4-#-37-#-BAJA-#-1980-02-27T20:10
+06e1c17ce526-#-Yi Beahan-#-chinchilla-#-false-#-4-#-84-#-ALTA-#-1970-01-27T18:40
+d5132103c527-#-Laurie Herzog-#-salmon-#-true-#-3-#-22-#-ALTA-#-1982-07-09T00:43
+9020b27ee528-#-Mr. Arden Kuvalis-#-minnow-#-true-#-5-#-20-#-BAJA-#-1997-05-20T20:08
+ba1e1cb72529-#-Marianna McKenzie-#-grasshopper-#-false-#-2-#-72-#-ALTA-#-1967-11-08T08:25
+4b23d9ef1530-#-Ranee Cruickshank-#-dinosaur-#-false-#-5-#-18-#-ALTA-#-1959-10-05T12:35
+584ada3a6531-#-Mitchell Paucek-#-llama-#-false-#-4-#-82-#-MEDIA-#-1986-07-07T02:37
+c4fa7fc9a532-#-Manie Yundt-#-manatee-#-false-#-1-#-73-#-MEDIA-#-1974-06-17T17:42
+3408f871b533-#-Ralph Hartmann-#-mammoth-#-true-#-4-#-18-#-MEDIA-#-1980-07-21T04:38
+8ef2d9f5e534-#-Yolando Rowe-#-hyena-#-true-#-3-#-67-#-BAJA-#-1990-05-12T09:59
+71cbfcc25535-#-Dominick Spinka-#-camel-#-true-#-4-#-81-#-BAJA-#-2005-10-27T07:27
+71ecd45d5536-#-Miss Violet Lowe-#-eel-#-false-#-4-#-12-#-BAJA-#-1999-02-19T04:01
+5fa331dfc537-#-Lucille Herzog-#-scorpion-#-false-#-1-#-89-#-ALTA-#-1992-08-02T13:11
+d8a3f4bda538-#-Miquel Reichert I-#-koala-#-false-#-4-#-58-#-ALTA-#-1998-03-24T06:48
+3e17f3c48539-#-Miss Galina Bergstrom-#-herring-#-false-#-1-#-80-#-BAJA-#-2006-01-29T21:55
+26a8f1847540-#-Dr. Timothy Cremin-#-coyote-#-true-#-2-#-19-#-BAJA-#-1984-06-04T11:24
+5611fdebf541-#-Booker Homenick-#-prairie dog-#-false-#-3-#-87-#-BAJA-#-2006-09-13T04:05
+e91f5a5f0542-#-Antonio Frami-#-water buffalo-#-false-#-4-#-23-#-MEDIA-#-1997-01-14T05:41
+860bb8cf4543-#-Dewey Harber-#-ox-#-false-#-3-#-45-#-ALTA-#-1973-06-08T12:33
+0cc4499ab544-#-Mr. Myra Raynor-#-beetle-#-false-#-2-#-69-#-ALTA-#-1966-11-19T15:02
+e8a663640545-#-Ms. Britt Fadel-#-fish-#-true-#-1-#-56-#-BAJA-#-1991-10-28T22:04
+62643305d546-#-Wallace Littel-#-woodchuck-#-false-#-5-#-73-#-MEDIA-#-1963-09-10T05:58
+2ef5484af547-#-Dessie Heidenreich-#-impala-#-false-#-3-#-41-#-ALTA-#-1961-11-15T18:34
+57789e4d4548-#-Alfredo Jerde-#-sheep-#-false-#-4-#-85-#-ALTA-#-1971-11-04T14:59
+60b1bc9bf549-#-Miss Princess O'Kon-#-ant-#-false-#-4-#-76-#-BAJA-#-1986-02-08T10:38
+bb42f736a550-#-Mose Hoppe-#-cod-#-true-#-4-#-6-#-BAJA-#-1969-10-05T07:22
+8906e6eff551-#-Miss Amos Roob-#-spider-#-true-#-5-#-32-#-BAJA-#-1997-12-27T15:34
+16af056bf552-#-Sachiko Kulas-#-giraffe-#-false-#-1-#-75-#-BAJA-#-1998-04-07T09:59
+e0369bce7553-#-Toney Auer-#-gnu-#-true-#-3-#-18-#-BAJA-#-1964-06-28T23:24
+35b8053ba554-#-Joaquin Kerluke-#-cattle-#-true-#-3-#-82-#-BAJA-#-1991-03-01T09:01
+4cd50630a555-#-Korey Mante-#-mink-#-false-#-5-#-47-#-BAJA-#-1997-04-10T12:40
+854b35a6a556-#-Cyndi Grady-#-tortoise-#-false-#-3-#-58-#-ALTA-#-2004-03-13T21:54
+9fdccf310557-#-Lino Kessler-#-zebra-#-false-#-5-#-27-#-ALTA-#-1998-01-26T20:08
+2f0a38627558-#-Donita Breitenberg-#-armadillo-#-true-#-4-#-67-#-MEDIA-#-1980-03-02T20:56
+679ad3c7f559-#-Mrs. Keena Kuphal-#-oyster-#-true-#-2-#-75-#-ALTA-#-1992-12-30T06:02
+2c03a9213560-#-Mr. Malia Lindgren-#-oyster-#-true-#-1-#-9-#-BAJA-#-2005-05-25T16:39
+4bd03c3bc561-#-Mrs. Junko Gerhold-#-shark-#-true-#-3-#-60-#-BAJA-#-2002-10-06T10:32
+254832582562-#-Kerri Emard-#-shark-#-true-#-5-#-88-#-ALTA-#-1981-03-24T15:50
+0433a6da5563-#-Annamae Lemke-#-marten-#-true-#-5-#-68-#-BAJA-#-1992-08-11T21:41
+e25342284564-#-Ona Walter-#-reindeer-#-true-#-3-#-45-#-BAJA-#-1984-08-23T01:09
+35e868a11565-#-Rafael Reichel Sr.-#-deer-#-false-#-3-#-6-#-BAJA-#-1971-10-06T23:45
+19844f122566-#-Boris Casper-#-lion-#-false-#-3-#-50-#-BAJA-#-1976-09-01T03:06
+e65ea27b6567-#-Mr. Jody Buckridge-#-water buffalo-#-true-#-5-#-33-#-BAJA-#-1976-11-08T20:15
+ce4f3e784568-#-Dr. Porfirio Donnelly-#-lion-#-false-#-4-#-4-#-BAJA-#-1982-06-24T21:50
+87e665a62569-#-Iris Mohr-#-crocodile-#-false-#-4-#-14-#-BAJA-#-1973-07-22T18:10
+311e29834570-#-Candance Konopelski-#-eel-#-false-#-5-#-37-#-BAJA-#-1999-11-25T10:57
+081128f48571-#-Val Labadie-#-bear-#-false-#-4-#-2-#-ALTA-#-2006-05-03T17:40
+70c0b307a572-#-Ahmed Brekke DDS-#-sheep-#-false-#-4-#-87-#-BAJA-#-1985-09-12T13:51
+c5be19af3573-#-Darwin Abshire-#-crab-#-false-#-2-#-37-#-ALTA-#-2004-07-15T23:44
+b76b03595574-#-Garnet Braun-#-antelope-#-true-#-4-#-76-#-BAJA-#-1973-12-13T05:16
+ed5b5e778575-#-Zoraida Howell-#-elephant-#-true-#-3-#-6-#-ALTA-#-1975-12-09T04:18
+3b2e379e0576-#-Shondra Ledner-#-lion-#-false-#-3-#-71-#-BAJA-#-1966-02-01T05:23
+fca469210577-#-Spencer Trantow-#-reindeer-#-true-#-2-#-89-#-ALTA-#-1988-08-02T10:00
+0e466368e578-#-Efren Corwin-#-spider-#-true-#-4-#-56-#-BAJA-#-1981-01-20T05:56
+491893bff579-#-Kraig Aufderhar-#-rhinoceros-#-false-#-3-#-1-#-ALTA-#-1991-07-06T19:59
+eacbc14ab580-#-Karan Lebsack-#-shark-#-false-#-4-#-70-#-BAJA-#-1966-06-30T21:06
+7243e3ea0581-#-Elmer Pfeffer-#-frog-#-true-#-4-#-78-#-BAJA-#-1965-12-01T10:19
+a97ee3033582-#-Junita Carter MD-#-armadillo-#-false-#-4-#-47-#-ALTA-#-1978-11-09T19:18
+b6a9a3789583-#-Dr. Sheron Streich-#-hound-#-false-#-5-#-67-#-MEDIA-#-2004-09-19T13:04
+858f4e6fe584-#-Rosia Hand-#-lizard-#-false-#-3-#-69-#-ALTA-#-1988-04-16T02:20
+5d655a1d5585-#-Tamara Kemmer-#-dog-#-false-#-5-#-66-#-BAJA-#-1983-12-04T01:48
+6a54f5c10586-#-Mrs. Dara Ullrich-#-water buffalo-#-false-#-5-#-79-#-ALTA-#-1966-09-17T01:21
+df0d015bc587-#-Linh Harvey MD-#-macaw-#-false-#-5-#-67-#-ALTA-#-1965-05-11T10:49
+85042429b588-#-Sulema Cole Sr.-#-chinchilla-#-false-#-1-#-50-#-MEDIA-#-1985-02-09T06:59
+e0cffdeda589-#-Emmett Bartell-#-koala-#-true-#-5-#-88-#-BAJA-#-1995-05-30T04:15
+c511d8f57590-#-Keisha Sipes II-#-alpaca-#-false-#-4-#-58-#-ALTA-#-1992-09-28T02:08
+85099f4ca591-#-Mrs. Ray Bins-#-beaver-#-true-#-2-#-21-#-ALTA-#-1961-06-12T18:07
+126e90684592-#-Shanika Stracke-#-zebra-#-true-#-3-#-68-#-MEDIA-#-2004-10-06T11:50
+b11e44802593-#-Arlie Tillman PhD-#-panda-#-true-#-5-#-13-#-BAJA-#-1974-04-28T18:39
+54f5d8c9a594-#-Doretha Abernathy-#-cheetah-#-false-#-3-#-83-#-BAJA-#-1991-09-06T19:16
+1badcab19595-#-Rocco Flatley III-#-hornet-#-false-#-5-#-25-#-BAJA-#-1968-04-15T06:26
+710bab826596-#-Eleonore Dicki-#-moose-#-true-#-5-#-64-#-ALTA-#-1991-09-20T09:54
+d594d9d3d597-#-Vicenta Frami-#-elk-#-false-#-5-#-51-#-ALTA-#-1997-08-21T08:40
+733f583e1598-#-Shae Reynolds-#-badger-#-true-#-3-#-16-#-BAJA-#-1996-10-14T14:26
+4a40f2d2a599-#-Sharee Little V-#-snail-#-false-#-3-#-15-#-ALTA-#-2000-05-10T15:01
+0edbdc219600-#-Carla Renner-#-muskrat-#-false-#-1-#-52-#-BAJA-#-1981-05-11T10:54
+64c6f077c601-#-Wayne Weissnat-#-tiger-#-true-#-5-#-6-#-BAJA-#-1968-04-10T09:20
+59d215bcb602-#-Antone Tremblay-#-duck-#-true-#-1-#-39-#-BAJA-#-1972-10-04T06:09
+547ba943a603-#-Ms. Guadalupe Klein-#-fish-#-false-#-2-#-22-#-BAJA-#-1987-08-06T06:38
+b4cab5433604-#-Jillian Kuhic PhD-#-yellowjacket-#-false-#-5-#-61-#-MEDIA-#-1969-07-19T22:25
+48d39b430605-#-Charles Glover-#-cattle-#-true-#-3-#-62-#-ALTA-#-1966-04-29T12:09
+cdaca1826606-#-Alfredo Hackett V-#-pug-#-true-#-3-#-38-#-BAJA-#-1977-09-26T01:01
+8088c4ef2607-#-Gabriel Reichert-#-goldfish-#-false-#-3-#-28-#-BAJA-#-1997-02-20T09:05
+299730535608-#-Sabine Ryan-#-kangaroo-#-false-#-5-#-17-#-ALTA-#-1997-03-17T03:23
+2541f494a609-#-Erin Predovic-#-gerbil-#-true-#-4-#-68-#-BAJA-#-1981-02-01T17:53
+775121177610-#-Bobbie Hilpert-#-prairie dog-#-false-#-4-#-61-#-MEDIA-#-2003-02-25T07:50
+408a24059611-#-Lashaun Heller-#-hare-#-true-#-5-#-31-#-BAJA-#-2001-03-16T13:12
+3cc518f60612-#-Bulah Johnston-#-horse-#-false-#-4-#-31-#-MEDIA-#-1966-02-06T22:15
+e856f390f613-#-Zoraida Mante-#-raccoon-#-false-#-5-#-51-#-ALTA-#-2005-12-21T22:48
+4298b8b47614-#-Chase Kunze-#-leopard-#-true-#-2-#-5-#-ALTA-#-1986-02-09T09:13
+fce7cb0ab615-#-Dwayne Murphy-#-frog-#-true-#-2-#-25-#-BAJA-#-1968-09-03T00:48
+cbbc8c922616-#-Clorinda Olson-#-shark-#-true-#-2-#-40-#-BAJA-#-1960-09-19T10:20
+2b70756c7617-#-Salley Ernser-#-lion-#-false-#-3-#-78-#-ALTA-#-1975-05-31T18:27
+3b619475a618-#-Clara Walker-#-cicada-#-false-#-5-#-49-#-ALTA-#-1986-05-28T03:23
+2b2b823f9619-#-Mrs. Theodore Bechtelar-#-chinchilla-#-false-#-4-#-25-#-MEDIA-#-1976-11-02T12:48
+2a3c3978f620-#-Jess Fadel-#-bee-#-true-#-3-#-35-#-BAJA-#-1972-06-20T00:21
+18f2102f9621-#-Miss Lenita Skiles-#-eel-#-true-#-2-#-65-#-BAJA-#-1987-11-09T10:30
+81af7f9cf622-#-Dr. Hai Kiehn-#-herring-#-false-#-3-#-2-#-ALTA-#-1989-08-13T17:37
+a26e60771623-#-Dorothea Russel-#-hippopotamus-#-true-#-2-#-19-#-BAJA-#-1964-02-13T17:42
+d5743f07c624-#-Bea Moore-#-horse-#-false-#-4-#-48-#-BAJA-#-1980-07-09T13:48
+db342b9e3625-#-Cody Kunze PhD-#-horse-#-false-#-3-#-19-#-BAJA-#-1979-04-12T16:42
+9cdd2d439626-#-Digna Wilkinson Jr.-#-impala-#-true-#-1-#-48-#-BAJA-#-1988-04-16T20:06
+083401ef8627-#-Helen Beer-#-zebra-#-true-#-3-#-36-#-BAJA-#-1973-06-27T05:59
+60cb4585d628-#-Ms. Danial Leannon-#-gerbil-#-false-#-5-#-11-#-ALTA-#-2000-01-23T06:50
+4eebcd355629-#-Frank Powlowski-#-toad-#-false-#-4-#-78-#-BAJA-#-1970-11-13T17:45
+278af7489630-#-Mr. Cindie Howe-#-spider-#-true-#-3-#-78-#-BAJA-#-1976-05-13T21:20
+7ed1c3f90631-#-Timothy Erdman III-#-wallaby-#-true-#-3-#-86-#-BAJA-#-1995-07-12T08:29
+48777ddde632-#-Ghislaine Auer II-#-cockroach-#-false-#-4-#-45-#-MEDIA-#-1990-06-27T20:57
+72df6a778633-#-Hilde Renner-#-deer-#-true-#-4-#-8-#-BAJA-#-1989-10-24T03:10
+bcf64cd7b634-#-Johnathan Ferry-#-eel-#-false-#-5-#-77-#-MEDIA-#-1971-02-24T23:31
+d5864d43b635-#-Joan Flatley-#-cattle-#-false-#-5-#-15-#-BAJA-#-1983-06-17T23:20
+409661aaa636-#-Andreas Stroman-#-caribou-#-true-#-2-#-76-#-ALTA-#-1970-09-20T14:37
+5c8d0c402637-#-Prince Schaden-#-locust-#-false-#-4-#-34-#-ALTA-#-1979-11-26T17:08
+d2abf6ba4638-#-Ms. Zachary Mann-#-mink-#-false-#-4-#-73-#-ALTA-#-1975-01-16T08:49
+dfe7c7881639-#-Hector Miller-#-termite-#-true-#-3-#-20-#-BAJA-#-1973-04-03T22:18
+aaa3f5118640-#-Dr. Erica Hackett-#-mink-#-true-#-4-#-53-#-ALTA-#-1991-09-07T07:44
+35cba1dc1641-#-Patrica Weimann-#-goose-#-true-#-4-#-48-#-ALTA-#-1994-08-12T05:07
+48cf7a082642-#-Latanya Bergstrom-#-woodchuck-#-true-#-4-#-58-#-BAJA-#-1984-04-06T05:56
+f1f0b39dc643-#-Dr. Brandy Hansen-#-clam-#-false-#-5-#-44-#-BAJA-#-1975-09-21T02:50
+16b29c992644-#-Rudolf Bode-#-leopard-#-false-#-4-#-11-#-BAJA-#-1963-11-18T10:26
+c49e30f58645-#-Hana Hessel-#-duck-#-false-#-4-#-48-#-MEDIA-#-1998-01-28T23:51
+bf0f6a357646-#-Devon Gutmann V-#-louse-#-false-#-2-#-81-#-BAJA-#-2000-12-25T13:25
+0c53f80b7647-#-Miss Elmer Jast-#-sheep-#-false-#-5-#-50-#-BAJA-#-1978-04-16T09:35
+d5f628a36648-#-Doris Maggio-#-elk-#-false-#-1-#-64-#-BAJA-#-2005-03-30T05:21
+b3d6e12a9649-#-Evan Satterfield III-#-wombat-#-false-#-3-#-16-#-BAJA-#-1999-05-03T15:39
+739802ef2650-#-Vern Miller-#-fox-#-false-#-2-#-21-#-ALTA-#-1969-10-07T00:43
+7ba6afe48651-#-Nigel Hagenes-#-whale-#-false-#-3-#-30-#-ALTA-#-1993-06-10T14:19
+84dd90753652-#-Johnsie Durgan-#-wolf-#-false-#-5-#-85-#-ALTA-#-2004-07-09T03:12
+70002c2ce653-#-Courtney Conn-#-hare-#-false-#-5-#-57-#-BAJA-#-1995-07-24T16:27
+f12bd9c40654-#-Cassy Smith-#-raccoon-#-true-#-4-#-76-#-ALTA-#-1992-07-19T22:16
+8b95553b3655-#-Prince Herzog-#-elk-#-false-#-4-#-71-#-MEDIA-#-1970-05-20T04:33
+c5aaeb830656-#-Leeanne Monahan-#-rhinoceros-#-false-#-2-#-6-#-BAJA-#-1964-03-12T03:48
+2dfee7546657-#-Stella Quitzon-#-tortoise-#-false-#-5-#-27-#-BAJA-#-2005-12-13T16:02
+cfb144450658-#-Vernell Schowalter-#-tortoise-#-true-#-2-#-81-#-MEDIA-#-1979-06-08T19:24
+391feed80659-#-Marty Jones III-#-mosquito-#-false-#-1-#-69-#-BAJA-#-1999-04-30T00:58
+cebb2075e660-#-Connie Tromp-#-lizard-#-true-#-2-#-64-#-BAJA-#-1978-02-15T00:11
+3b3372355661-#-Mr. Christoper McClure-#-bear-#-true-#-4-#-75-#-BAJA-#-1994-06-27T09:59
+9b0b538cf662-#-Lorenzo Kautzer-#-giraffe-#-false-#-3-#-30-#-BAJA-#-1969-11-08T05:29
+77c3a1b6f663-#-Mrs. Mistie Toy-#-woodchuck-#-false-#-2-#-56-#-ALTA-#-1960-02-08T03:24
+6473e2433664-#-Frank Daugherty PhD-#-coyote-#-true-#-4-#-29-#-ALTA-#-1991-10-17T11:16
+d790d2282665-#-Harvey Bailey-#-squirrel-#-true-#-1-#-56-#-ALTA-#-2001-09-23T05:54
+4bfca3b77666-#-Milton Robel III-#-woodchuck-#-false-#-1-#-13-#-BAJA-#-1985-07-03T12:26
+06600fba7667-#-Vonda Bechtelar-#-hedgehog-#-false-#-4-#-25-#-ALTA-#-1992-09-05T13:38
+6cfeee1d7668-#-Mrs. Hilde Gerhold-#-elk-#-false-#-5-#-51-#-BAJA-#-1977-09-02T08:26
+35cf94c8b669-#-Miss Dorotha Glover-#-otter-#-true-#-4-#-25-#-ALTA-#-1968-08-27T04:34
+114aacf77670-#-Heidi Braun-#-mule-#-true-#-5-#-55-#-ALTA-#-1977-01-14T20:44
+beaf96500671-#-Taylor Ward-#-armadillo-#-false-#-5-#-85-#-BAJA-#-1986-07-30T09:21
+02381028f672-#-Miss Suk Dicki-#-platypus-#-false-#-2-#-29-#-BAJA-#-1992-07-21T12:19
+2df3e228b673-#-Alvin Waelchi-#-rat-#-true-#-2-#-56-#-ALTA-#-1996-05-27T08:50
+774cbf7de674-#-Nia Quigley IV-#-reindeer-#-true-#-1-#-30-#-BAJA-#-1977-11-24T21:59
+396beb431675-#-Yon Goldner-#-cattle-#-false-#-4-#-44-#-BAJA-#-1989-06-03T20:38
+94b0d3ad3676-#-Kesha Nikolaus II-#-prairie dog-#-true-#-3-#-54-#-BAJA-#-1994-03-13T17:38
+3cf7177dc677-#-Colby Gibson-#-mink-#-true-#-3-#-22-#-ALTA-#-1978-06-04T12:00
+3e7f7e6d4678-#-Arianna Hoppe Sr.-#-beaver-#-false-#-1-#-41-#-BAJA-#-2006-04-30T05:35
+85d7eced8679-#-Miss Eliseo Hartmann-#-minnow-#-true-#-4-#-86-#-ALTA-#-1993-08-28T01:44
+6602c8b3a680-#-Mrs. Fiona Bartoletti-#-crow-#-false-#-5-#-58-#-ALTA-#-1994-04-08T03:01
+ffe1ee773681-#-Dayle Tillman-#-giraffe-#-false-#-3-#-21-#-BAJA-#-1980-10-18T15:14
+6bb97bba5682-#-Alfonzo Hammes-#-seal-#-true-#-3-#-46-#-ALTA-#-2002-10-03T05:31
+a6160280c683-#-Jerrod Runolfsson Sr.-#-koala-#-true-#-2-#-28-#-BAJA-#-1966-06-15T21:57
+03c6f5a33684-#-Ward Auer-#-hare-#-false-#-3-#-41-#-BAJA-#-1981-08-06T21:38
+787868f87685-#-Lashanda Morissette PhD-#-frog-#-false-#-2-#-46-#-ALTA-#-1982-05-24T13:22
+a01fd00db686-#-Marcus Yundt DVM-#-cheetah-#-false-#-2-#-5-#-BAJA-#-1962-01-17T05:20
+b447c23f9687-#-Miss Deloris Cormier-#-locust-#-false-#-2-#-53-#-BAJA-#-1964-07-27T23:57
+dfce2166d688-#-Simonne Bednar-#-giraffe-#-false-#-5-#-58-#-ALTA-#-1967-12-11T19:07
+02a8d6532689-#-Jamie Yost-#-dolphin-#-false-#-3-#-68-#-BAJA-#-1971-05-13T04:36
+46679c0d1690-#-Laurence Abbott-#-rhinoceros-#-false-#-3-#-66-#-MEDIA-#-1994-03-16T19:13
+f452f81c9691-#-Kyle VonRueden-#-goldfish-#-false-#-4-#-30-#-MEDIA-#-1977-02-22T03:50
+b028c990f692-#-Norris Batz IV-#-hamster-#-false-#-1-#-21-#-BAJA-#-1986-01-31T18:56
+339474e50693-#-Kyle Barrows-#-coyote-#-true-#-3-#-54-#-ALTA-#-1998-07-26T08:55
+5ecea663f694-#-Buddy Koelpin-#-wolf-#-true-#-5-#-48-#-BAJA-#-1994-10-26T01:40
+28ee00c06695-#-Douglas Kiehn-#-sardine-#-false-#-2-#-15-#-BAJA-#-1966-09-23T23:30
+da570c5d9696-#-Hollis Dickinson-#-monkey-#-true-#-3-#-43-#-MEDIA-#-1973-08-16T17:48
+024fc2498697-#-Sal Roob-#-hamster-#-true-#-2-#-35-#-BAJA-#-1983-06-05T09:44
+0fe767513698-#-Kory Weimann-#-cheetah-#-false-#-1-#-83-#-ALTA-#-1991-07-23T22:35
+e7ee1a146699-#-Freeman Rippin DDS-#-snake-#-false-#-3-#-65-#-BAJA-#-1987-03-08T10:00
+2ab2586c4700-#-Antonette Hudson PhD-#-alligator-#-false-#-3-#-18-#-ALTA-#-1972-06-27T15:19
+2279c56bd701-#-Mike Ruecker-#-herring-#-false-#-5-#-24-#-ALTA-#-1975-10-21T22:36
+e20b0a48b702-#-Miss Cole Fisher-#-ape-#-false-#-3-#-88-#-BAJA-#-1977-02-09T14:56
+38785e9da703-#-Estella Armstrong II-#-elephant-#-true-#-3-#-23-#-BAJA-#-1986-06-14T13:14
+5b4bd0fba704-#-Milo Nolan-#-rabbit-#-false-#-3-#-80-#-ALTA-#-1990-03-16T07:45
+8decc59eb705-#-Mckinley Wilkinson-#-cod-#-false-#-4-#-24-#-BAJA-#-1980-04-06T04:50
+529701b36706-#-Hillary Mante Sr.-#-swan-#-true-#-2-#-74-#-BAJA-#-1988-05-08T07:00
+a18a7f854707-#-Kenya Breitenberg-#-weasel-#-false-#-4-#-90-#-BAJA-#-1978-05-12T01:48
+74b0fea58708-#-Erasmo Windler-#-crab-#-true-#-5-#-56-#-BAJA-#-2001-06-24T17:47
+7e4e10510709-#-Yi Wolf-#-turtle -#-true-#-2-#-47-#-BAJA-#-2000-06-29T15:06
+55ed5f9cc710-#-Violette Wisoky IV-#-llama-#-true-#-2-#-13-#-ALTA-#-1972-01-14T15:19
+dc8e90ba4711-#-Tami Waters-#-badger-#-true-#-2-#-78-#-BAJA-#-1998-02-06T23:50
+4f9d912a7712-#-Clarence Yundt-#-cod-#-false-#-1-#-60-#-BAJA-#-1966-06-16T10:18
+353e3adcd713-#-Geoffrey Mann-#-guinea pig-#-true-#-3-#-34-#-ALTA-#-1988-05-31T07:18
+7dc712bde714-#-Golden McKenzie I-#-shark-#-true-#-3-#-60-#-ALTA-#-1963-07-06T21:08
+17ded3816715-#-Paul Olson-#-minnow-#-false-#-4-#-70-#-ALTA-#-1976-10-11T10:47
+1238e5c78716-#-Mrs. Carole Pacocha-#-squirrel-#-false-#-2-#-86-#-BAJA-#-2001-11-11T13:01
+5cb42c79c717-#-Shanika Mohr-#-clam-#-false-#-2-#-68-#-BAJA-#-1959-12-04T00:49
+e8570206a718-#-Tamie Langworth-#-water buffalo-#-true-#-4-#-12-#-MEDIA-#-1961-06-11T15:45
+4c484e5cc719-#-Isaias Will IV-#-camel-#-false-#-4-#-86-#-BAJA-#-1979-07-21T09:17
+6951dc2ad720-#-Ms. Evan Wehner-#-serval-#-false-#-5-#-49-#-MEDIA-#-1981-05-05T04:47
+6ea215888721-#-Miss Jammie Heathcote-#-woodchuck-#-true-#-5-#-7-#-BAJA-#-1962-04-14T11:11
+0a61df0cd722-#-Dr. Demarcus Quitzon-#-wildebeest-#-true-#-3-#-38-#-ALTA-#-1997-08-15T10:15
+c6a13d0c9723-#-Mrs. Fred Donnelly-#-badger-#-false-#-2-#-37-#-BAJA-#-1991-06-09T06:28
+d2cb08108724-#-Cira Hauck-#-bat-#-false-#-3-#-8-#-BAJA-#-1973-09-29T16:35
+52d728cbb725-#-Chadwick Russel III-#-prairie dog-#-true-#-2-#-86-#-BAJA-#-1960-08-18T00:56
+a8c2ee2fd726-#-Javier Strosin-#-cheetah-#-true-#-2-#-50-#-BAJA-#-1965-08-24T09:12
+f9523a641727-#-Clark Marks-#-cicada-#-true-#-3-#-68-#-BAJA-#-1996-09-28T10:33
+f45893d26728-#-Stanford Hickle-#-giraffe-#-false-#-3-#-4-#-BAJA-#-1968-12-18T07:36
+383a6160f729-#-Mrs. Ignacio Lebsack-#-caribou-#-false-#-2-#-64-#-ALTA-#-2005-04-15T11:31
+130c4c01e730-#-Geraldine Bogisich-#-zebra-#-true-#-2-#-47-#-BAJA-#-1997-06-12T11:17
+20450b11d731-#-Kurt Goyette-#-dinosaur-#-false-#-5-#-42-#-MEDIA-#-1966-02-28T03:18
+5c67a5781732-#-Mariano Fritsch-#-lizard-#-true-#-5-#-77-#-BAJA-#-1975-02-11T18:54
+7a42aaad1733-#-Ty Wolff-#-water buffalo-#-false-#-5-#-8-#-BAJA-#-1959-12-20T15:13
+8feddbfbc734-#-Stefani Morissette-#-worm-#-true-#-2-#-64-#-BAJA-#-1977-12-25T13:50
+bd1377fcf735-#-Melvin Stanton-#-mink-#-false-#-4-#-72-#-ALTA-#-1995-06-07T10:25
+42af732e1736-#-Ignacio Price I-#-ferret-#-false-#-3-#-25-#-BAJA-#-1979-03-03T06:19
+6e7a11d6c737-#-Joesph Leuschke-#-louse-#-true-#-3-#-46-#-BAJA-#-1977-11-05T07:55
+0fc4320fb738-#-Molly Koch-#-hare-#-true-#-4-#-13-#-BAJA-#-1999-08-04T08:51
+02425ef9f739-#-Lashon Leuschke-#-muskrat-#-true-#-4-#-8-#-MEDIA-#-1964-05-23T20:41
+cd0e509cc740-#-Carlos Hegmann-#-oyster-#-false-#-5-#-85-#-ALTA-#-1973-07-31T13:50
+37c8c2eee741-#-Norbert Vandervort-#-reindeer-#-false-#-3-#-49-#-ALTA-#-1987-02-18T23:32
+8e528b989742-#-Alana Kilback-#-cat-#-false-#-3-#-13-#-BAJA-#-2000-07-13T16:46
+e5c09f4e4743-#-Mrs. Bennie Macejkovic-#-trout-#-true-#-3-#-58-#-ALTA-#-1997-02-03T05:55
+a2bcc35ab744-#-Malinda Tillman-#-gnat-#-true-#-4-#-80-#-MEDIA-#-1970-07-11T23:55
+7f14a3c6f745-#-Mr. Alita Berge-#-whale-#-false-#-5-#-44-#-BAJA-#-1980-05-29T00:35
+5111c1e85746-#-Federico Pollich-#-antelope-#-false-#-1-#-11-#-ALTA-#-1996-12-08T09:53
+db279e35b747-#-Malik Goldner-#-mammoth-#-true-#-5-#-14-#-ALTA-#-1981-08-26T17:46
+247359aa1748-#-Mr. Christina Osinski-#-wallaby-#-false-#-5-#-41-#-ALTA-#-1993-09-21T13:33
+d35bed451749-#-Dr. Jaunita Crist-#-toad-#-false-#-1-#-79-#-ALTA-#-2006-03-04T14:14
+a360ce626750-#-Gayle MacGyver-#-wildebeest-#-true-#-5-#-81-#-BAJA-#-1980-07-14T04:13
+810ab1bba751-#-Miyoko Jerde-#-whale-#-false-#-1-#-60-#-BAJA-#-2001-10-15T02:18
+6b6e88334752-#-Eryn Heidenreich III-#-louse-#-false-#-2-#-37-#-ALTA-#-2005-12-03T09:19
+0042a8d33753-#-Mr. Houston Hermiston-#-worm-#-true-#-5-#-72-#-MEDIA-#-1974-10-12T17:01
+60c1424de754-#-Timmy Schuppe-#-goat-#-false-#-3-#-36-#-BAJA-#-1977-02-13T06:18
+a01c323b5755-#-Elliott Jaskolski-#-coyote-#-true-#-3-#-17-#-ALTA-#-1989-01-10T09:29
+eb1ebb14c756-#-Vito Schuster-#-otter-#-true-#-4-#-58-#-MEDIA-#-1962-08-31T01:01
+4230631f2757-#-Kurtis Gerlach MD-#-muskrat-#-true-#-3-#-57-#-BAJA-#-1991-05-16T00:09
+1a815a3e8758-#-Gail Stoltenberg-#-fly-#-true-#-5-#-4-#-MEDIA-#-1961-03-29T18:00
+1af5f8227759-#-Domenic Bradtke-#-fox-#-false-#-3-#-66-#-MEDIA-#-1976-04-17T08:28
+8cb3b834b760-#-Tora Erdman PhD-#-yak-#-false-#-2-#-84-#-MEDIA-#-1976-09-17T16:52
+9e403aa6b761-#-Margarito Boehm MD-#-ape-#-false-#-1-#-30-#-ALTA-#-2006-09-07T08:59
+01221817d762-#-Mrs. Shon Lind-#-impala-#-true-#-5-#-57-#-BAJA-#-1967-08-19T06:51
+4028a748c763-#-Olen Harvey-#-beaver-#-false-#-4-#-87-#-ALTA-#-2005-11-26T17:06
+90871558b764-#-Rusty Macejkovic-#-yak-#-false-#-5-#-67-#-BAJA-#-1992-09-20T18:33
+1923d6d31765-#-Jutta Schumm-#-raccoon-#-false-#-1-#-56-#-BAJA-#-1966-02-06T17:47
+d14a510a0766-#-Kathyrn Feil-#-tiger-#-false-#-5-#-12-#-BAJA-#-1996-06-08T12:29
+0a1e242ba767-#-Caron Block-#-hippopotamus-#-false-#-2-#-12-#-MEDIA-#-1960-04-06T10:41
+dfc8fa229768-#-Darcie Goldner-#-lizard-#-true-#-2-#-62-#-BAJA-#-1963-05-22T21:25
+6ff906f9b769-#-Randolph Wyman-#-muskrat-#-false-#-5-#-68-#-ALTA-#-1978-03-05T11:25
+b2fd80336770-#-Alexis Heaney-#-bear-#-false-#-3-#-49-#-BAJA-#-1966-11-27T23:35
+9377a3a00771-#-Claude Effertz-#-minnow-#-false-#-4-#-25-#-MEDIA-#-1992-04-21T21:21
+f19cd76de772-#-William McCullough-#-marten-#-true-#-2-#-45-#-BAJA-#-1991-12-15T08:17
+580f35663773-#-Ronna Lowe-#-serval-#-false-#-3-#-36-#-ALTA-#-1964-08-31T23:28
+24c8b1285774-#-Garland Marks-#-badger-#-true-#-2-#-17-#-BAJA-#-1961-09-07T09:49
+be894f30e775-#-Greg Wisozk-#-bear-#-true-#-2-#-35-#-ALTA-#-1969-12-17T18:51
+0f4652f9a776-#-Nathan Ferry V-#-dog-#-false-#-4-#-15-#-BAJA-#-1960-07-11T03:39
+014edd745777-#-Lashanda Runte-#-kangaroo-#-false-#-5-#-68-#-BAJA-#-1960-07-03T00:17
+d6fb16cee778-#-Jonah Hintz V-#-mosquito-#-false-#-5-#-50-#-MEDIA-#-1990-06-06T23:49
+fd3bf9d91779-#-Laurence Lemke-#-impala-#-true-#-5-#-18-#-BAJA-#-2005-05-17T22:08
+2655a1776780-#-Avery Metz III-#-squirrel-#-true-#-5-#-62-#-MEDIA-#-1965-01-08T02:57
+59f41be3b781-#-Charmaine Boyle-#-antelope-#-false-#-3-#-33-#-BAJA-#-1994-09-29T22:02
+6026ba33c782-#-Alva Sawayn-#-turtle -#-true-#-5-#-50-#-BAJA-#-1979-09-21T19:43
+201125369783-#-Mrs. Patti Gutmann-#-water buffalo-#-true-#-3-#-68-#-MEDIA-#-1983-06-22T00:33
+9400baa80784-#-Sunni Morar-#-antelope-#-false-#-2-#-63-#-ALTA-#-1998-02-18T19:32
+58c51b01c785-#-Marilu Bechtelar-#-seal-#-false-#-5-#-29-#-ALTA-#-1995-03-08T04:27
+c75f70d34786-#-Linnie Hettinger IV-#-cheetah-#-true-#-3-#-90-#-MEDIA-#-1977-12-18T11:42
+9083842e8787-#-Eustolia Murazik-#-goose-#-true-#-4-#-24-#-BAJA-#-2002-05-05T03:19
+30ae087ea788-#-Palmira Mohr-#-dinosaur-#-false-#-2-#-34-#-BAJA-#-1976-09-14T11:47
+d5be72c72789-#-Harland Purdy-#-mink-#-true-#-4-#-26-#-BAJA-#-1988-03-18T05:41
+b6f382fa0790-#-Nickolas Douglas-#-termite-#-true-#-4-#-78-#-ALTA-#-2000-06-19T14:08
+3f7806a96791-#-Krishna Rippin-#-crab-#-false-#-4-#-15-#-ALTA-#-1994-05-01T07:04
+a22ac403b792-#-Dr. Dominick Gleichner-#-pig-#-false-#-1-#-29-#-BAJA-#-1962-10-17T20:12
+469662602793-#-Luciano Ryan I-#-mallard-#-true-#-2-#-59-#-ALTA-#-1970-07-14T01:54
+68b54b699794-#-Elizebeth Kihn-#-mammoth-#-true-#-1-#-28-#-BAJA-#-1972-01-02T22:50
+5683b92be795-#-Davina Herman-#-sardine-#-true-#-3-#-66-#-BAJA-#-1975-10-06T16:05
+22eb886a4796-#-Tracie Abbott-#-coyote-#-false-#-3-#-47-#-ALTA-#-1985-02-08T17:56
+481ee7a83797-#-Sanjuana Haley-#-butterfly-#-false-#-4-#-42-#-BAJA-#-1966-11-26T18:26
+27ad8e3ec798-#-Darrell Denesik-#-oyster-#-true-#-3-#-30-#-BAJA-#-1980-06-02T00:31
+27580b69b799-#-Mr. Rose Frami-#-jellyfish-#-false-#-1-#-71-#-BAJA-#-1992-07-29T03:16
+7c7cc8c32800-#-Shawanna Hand DVM-#-raven-#-false-#-2-#-35-#-BAJA-#-1990-12-11T06:02
+d1e675aca801-#-Renee Gusikowski-#-woodchuck-#-true-#-4-#-60-#-MEDIA-#-2003-03-04T04:42
+d914a5902802-#-Mrs. Reid Dibbert-#-gerbil-#-true-#-4-#-28-#-BAJA-#-1999-07-18T04:26
+daadd59d3803-#-Kenny Lynch II-#-antelope-#-true-#-1-#-3-#-ALTA-#-2005-11-17T01:07
+0e3127a64804-#-Louie Smith-#-turtle -#-true-#-5-#-56-#-ALTA-#-1988-10-19T21:50
+bbc24e178805-#-Sana Schroeder Sr.-#-moose-#-true-#-3-#-24-#-BAJA-#-1998-08-29T06:53
+08e583920806-#-Dewayne Farrell-#-zebra-#-true-#-5-#-20-#-BAJA-#-1964-01-10T11:30
+bb46590d4807-#-Kathlyn Murphy I-#-buffalo-#-false-#-5-#-59-#-ALTA-#-1994-03-06T15:36
+6453cd41b808-#-Lachelle Nitzsche V-#-zebra-#-true-#-1-#-38-#-BAJA-#-1965-02-13T14:15
+661a2ea08809-#-Arnold Gorczany-#-mammoth-#-false-#-4-#-33-#-MEDIA-#-1975-03-29T00:30
+f3af16dac810-#-Cecil Weissnat-#-zebra-#-true-#-4-#-76-#-MEDIA-#-1998-07-02T18:47
+03b088f8f811-#-Angelo Jerde-#-wallaby-#-false-#-2-#-83-#-ALTA-#-1978-05-05T08:03
+3be5e2976812-#-Mrs. Jody Lockman-#-badger-#-false-#-5-#-89-#-BAJA-#-1978-09-29T21:21
+381bd154a813-#-Isaac Moen DVM-#-wolf-#-true-#-3-#-24-#-BAJA-#-1993-11-12T23:59
+ebf0b2b48814-#-Tania Hansen-#-spider-#-false-#-2-#-58-#-BAJA-#-1983-11-20T08:28
+36d0554a2815-#-Antonio Herzog-#-water buffalo-#-true-#-2-#-18-#-BAJA-#-1997-12-04T11:35
+f7975a911816-#-Dong Johnston-#-skunk-#-true-#-5-#-66-#-BAJA-#-1980-02-12T01:09
+321715bb2817-#-Brigitte Prohaska-#-goldfish-#-false-#-1-#-59-#-BAJA-#-1982-10-01T22:00
+116562c78818-#-Franklin Larson-#-jellyfish-#-false-#-5-#-12-#-BAJA-#-2001-02-05T17:23
+b0a42c9ce819-#-Tim Torp-#-elk-#-true-#-2-#-41-#-BAJA-#-1970-05-23T21:30
+b5b6ad74c820-#-Dr. Ethelene Reilly-#-cat-#-false-#-5-#-24-#-ALTA-#-1967-10-17T04:23
+6c34ce060821-#-Reyes Walter-#-woodchuck-#-true-#-5-#-41-#-BAJA-#-1972-12-23T11:53
+63f23e556822-#-Emanuel Borer-#-salmon-#-true-#-4-#-85-#-ALTA-#-1960-09-07T23:10
+fd853ea1f823-#-Minh Larkin-#-buffalo-#-true-#-4-#-79-#-MEDIA-#-2005-08-23T17:49
+2e8086b5f824-#-Rana Quigley-#-chinchilla-#-false-#-2-#-89-#-BAJA-#-1965-09-07T06:15
+ece39fdca825-#-Dr. Loreen Nikolaus-#-wombat-#-true-#-4-#-13-#-MEDIA-#-1995-12-30T08:34
+5cb985004826-#-Sabina Parker-#-snake-#-false-#-4-#-20-#-ALTA-#-1966-08-21T11:14
+cffda2490827-#-Opal Hodkiewicz IV-#-guinea pig-#-false-#-3-#-75-#-ALTA-#-1961-05-31T10:28
+4dc3d872e828-#-Saul Fay-#-yellowjacket-#-false-#-2-#-47-#-BAJA-#-1968-05-23T00:37
+12263b2e6829-#-Ms. Debbra Parisian-#-reindeer-#-true-#-5-#-44-#-BAJA-#-1999-04-25T05:54
+369fca581830-#-Carina Kertzmann-#-raccoon-#-true-#-4-#-10-#-BAJA-#-1992-07-01T02:43
+a7541c8e9831-#-Jolanda Quigley III-#-pug-#-true-#-2-#-90-#-ALTA-#-1985-04-04T11:22
+191da55ef832-#-Destiny Durgan-#-minnow-#-true-#-2-#-79-#-BAJA-#-1997-02-17T03:01
+f190c6a08833-#-Peter Leuschke-#-muskrat-#-false-#-4-#-12-#-BAJA-#-1968-07-07T18:54
+8dcea00b7834-#-Ignacio Simonis-#-badger-#-false-#-3-#-3-#-BAJA-#-1997-07-26T11:20
+a4b0a5cf8835-#-Chang Auer-#-badger-#-true-#-3-#-2-#-BAJA-#-1964-03-06T19:41
+5338b7ee2836-#-Norbert Ferry-#-dolphin-#-false-#-4-#-21-#-BAJA-#-1979-11-12T08:23
+910c31f3c837-#-Hosea Bogan-#-shark-#-false-#-5-#-10-#-MEDIA-#-1971-05-04T18:10
+ebdd9175e838-#-Garfield Kohler-#-kangaroo-#-false-#-5-#-44-#-ALTA-#-1973-04-30T04:41
+e0b02434a839-#-Karima Lang-#-buffalo-#-false-#-3-#-27-#-MEDIA-#-1978-08-03T23:53
+613ab84c5840-#-Kristine Conroy-#-cricket-#-true-#-3-#-85-#-BAJA-#-1991-12-31T18:08
+a72349014841-#-Mr. Florence Simonis-#-mallard-#-false-#-3-#-41-#-ALTA-#-1992-04-26T11:39
+5f986bba1842-#-Luann Funk-#-scorpion-#-false-#-2-#-44-#-MEDIA-#-1969-10-02T04:47
+695c44163843-#-Julio Kutch-#-crow-#-true-#-4-#-11-#-BAJA-#-1980-10-25T10:26
+2976c61c7844-#-Tamica Barrows MD-#-weasel-#-true-#-1-#-49-#-ALTA-#-1974-09-03T23:56
+d49d35f97845-#-Valarie Feil-#-guinea pig-#-true-#-3-#-70-#-ALTA-#-1993-10-25T01:28
+fdb4db824846-#-Caren Trantow-#-goldfish-#-false-#-1-#-79-#-ALTA-#-1999-03-19T06:37
+2fd217b0e847-#-Mckinley Wisozk IV-#-water buffalo-#-false-#-2-#-72-#-BAJA-#-1999-08-28T00:38
+889515794848-#-Detra Johnston-#-deer-#-true-#-2-#-43-#-BAJA-#-1986-09-19T21:26
+5c2a10f5e849-#-Jackelyn Homenick Sr.-#-porpoise-#-true-#-4-#-39-#-BAJA-#-1960-04-05T03:41
+6ba035475850-#-Dalila Nicolas-#-horse-#-false-#-5-#-45-#-BAJA-#-1982-02-11T10:19
+2f0e23b58851-#-Nan Lehner-#-giraffe-#-false-#-4-#-61-#-ALTA-#-1993-04-19T21:19
+e57a6641f852-#-Ms. Treva Schmitt-#-sardine-#-true-#-5-#-66-#-BAJA-#-1970-09-11T15:31
+6bdb133f1853-#-Leslie Konopelski-#-serval-#-true-#-2-#-68-#-BAJA-#-1982-09-23T07:57
+683028f59854-#-Celinda Stroman-#-tortoise-#-false-#-4-#-52-#-BAJA-#-1968-05-27T21:01
+eb9355e75855-#-Mr. Mack Wisozk-#-camel-#-false-#-2-#-13-#-BAJA-#-1984-06-27T10:52
+fc2c92f94856-#-Dr. Marcel Ledner-#-hippopotamus-#-false-#-2-#-60-#-BAJA-#-1982-06-04T10:59
+e960df1a6857-#-Elton Kub-#-whale-#-false-#-1-#-88-#-BAJA-#-1978-05-11T08:10
+a664c0992858-#-Miss Kandice Nolan-#-bear-#-true-#-2-#-35-#-BAJA-#-1992-10-03T04:12
+61e386b16859-#-Paul Kilback-#-skunk-#-true-#-2-#-81-#-ALTA-#-2005-09-15T05:20
+f31d5f890860-#-Brandon Runte-#-locust-#-false-#-1-#-50-#-BAJA-#-1963-01-03T03:11
+445c9cc9a861-#-Dr. Pat Orn-#-mammoth-#-false-#-1-#-75-#-ALTA-#-1962-03-25T15:48
+aebe56cee862-#-Cameron Hickle-#-goose-#-false-#-4-#-50-#-BAJA-#-2000-09-11T20:01
+802897aa5863-#-Henriette Wehner Sr.-#-reindeer-#-false-#-3-#-18-#-BAJA-#-1996-06-14T07:46
+c2b7c169e864-#-Rena Kuhic V-#-turtle -#-false-#-5-#-5-#-ALTA-#-2000-11-05T10:11
+f8f9a7423865-#-Sybil Sawayn Sr.-#-oyster-#-false-#-4-#-31-#-BAJA-#-2005-01-11T09:23
+f0fd65a0d866-#-Dr. Gregg Runolfsson-#-rabbit-#-true-#-4-#-40-#-BAJA-#-1996-01-05T19:33
+2c140de36867-#-Israel Block-#-bat-#-false-#-5-#-22-#-BAJA-#-1960-06-03T01:55
+79e34ccf6868-#-Laree Stark-#-koala-#-true-#-2-#-80-#-MEDIA-#-1985-08-02T23:42
+9c48eebe6869-#-Sherwood Bruen-#-weasel-#-false-#-3-#-80-#-BAJA-#-1990-03-28T01:38
+a934223f5870-#-Antonia Harvey-#-zebra-#-false-#-3-#-54-#-MEDIA-#-1961-07-19T21:33
+12343860b871-#-Remedios Hermiston-#-hippopotamus-#-false-#-4-#-17-#-BAJA-#-1991-04-12T09:48
+e32f39008872-#-Nolan Marquardt III-#-kangaroo-#-true-#-4-#-66-#-BAJA-#-1988-01-07T00:26
+042388942873-#-Kaycee Hyatt-#-yak-#-false-#-1-#-43-#-BAJA-#-1995-01-21T17:00
+cbd429b52874-#-Tristan Green-#-prairie dog-#-false-#-5-#-42-#-ALTA-#-1974-05-31T03:46
+c087a5c9c875-#-Armanda Rohan-#-grasshopper-#-true-#-3-#-60-#-BAJA-#-1979-01-07T20:00
+14b720902876-#-Virgina Ortiz-#-deer-#-false-#-5-#-39-#-BAJA-#-1976-10-29T19:50
+33a2e826d877-#-Mr. Edwin Zboncak-#-monkey-#-false-#-3-#-49-#-MEDIA-#-2005-09-23T16:17
+d5e3f01b9878-#-Kareem Sporer-#-baboon-#-true-#-5-#-83-#-ALTA-#-1969-08-23T19:29
+11fed205d879-#-Dr. Aja Shanahan-#-hamster-#-true-#-3-#-22-#-ALTA-#-1998-01-05T09:48
+39d796b91880-#-Kimberley Koch-#-donkey-#-true-#-4-#-37-#-BAJA-#-2002-01-22T05:50
+7088e5368881-#-Carter Corkery-#-prairie dog-#-true-#-5-#-65-#-BAJA-#-1975-01-28T09:31
+64b79bb13882-#-Elizebeth Gottlieb-#-mouse-#-false-#-1-#-58-#-ALTA-#-2004-12-10T01:17
+7577b4881883-#-Ariel Dietrich-#-caribou-#-false-#-5-#-7-#-ALTA-#-1967-12-18T21:51
+608716f89884-#-Mr. Guadalupe Cronin-#-caribou-#-true-#-5-#-9-#-ALTA-#-1962-12-09T12:15
+cd7d09c5e885-#-Felicita Gibson II-#-oyster-#-false-#-5-#-27-#-MEDIA-#-2006-07-25T07:17
+812a53fac886-#-Shin Gusikowski-#-bat-#-false-#-1-#-36-#-MEDIA-#-1966-05-02T07:25
+f2202bfff887-#-Walton O'Reilly Sr.-#-gnat-#-false-#-3-#-63-#-BAJA-#-1976-05-25T20:40
+42af5dc6d888-#-Sandi Bailey-#-tiger-#-true-#-1-#-39-#-MEDIA-#-1979-07-14T12:04
+3423a9587889-#-Mrs. Emogene Fahey-#-pig-#-false-#-4-#-6-#-BAJA-#-1969-03-16T08:31
+7878ebf1d890-#-Chauncey Rice-#-manatee-#-true-#-1-#-29-#-BAJA-#-1984-02-05T18:07
+4a30f2084891-#-Julio Emard-#-hedgehog-#-true-#-5-#-74-#-ALTA-#-1983-02-18T16:45
+29f57d39d892-#-Mrs. Blake Lowe-#-hedgehog-#-true-#-2-#-47-#-BAJA-#-1998-07-27T16:44
+24641ee4d893-#-Kurtis Cruickshank-#-fish-#-true-#-5-#-41-#-ALTA-#-1995-07-08T11:01
+9c75c7e46894-#-Ms. Faye McLaughlin-#-lion-#-true-#-2-#-9-#-ALTA-#-1992-10-02T14:35
+a50b93e3b895-#-Eloise Gulgowski-#-gnu-#-false-#-4-#-37-#-MEDIA-#-1999-05-23T02:28
+2d24ee629896-#-Ricardo Lemke-#-raccoon-#-false-#-5-#-78-#-BAJA-#-1970-04-09T01:30
+67dcea6ee897-#-Deshawn Wisozk-#-lizard-#-false-#-4-#-33-#-BAJA-#-1963-01-27T22:15
+37dc977cc898-#-Buddy Feil-#-caribou-#-false-#-2-#-27-#-MEDIA-#-1980-06-14T21:19
+f06d79b51899-#-Billy Green MD-#-turtle -#-false-#-3-#-28-#-ALTA-#-1988-05-20T07:42
+bd9918177900-#-Hollis Mraz-#-alpaca-#-true-#-5-#-34-#-BAJA-#-1965-11-30T09:42
+10cee8a17901-#-Sanora Green-#-locust-#-false-#-5-#-25-#-ALTA-#-1989-06-29T21:27
+f6df49ee7902-#-Elias Bechtelar-#-cat-#-false-#-3-#-84-#-BAJA-#-1989-05-18T03:40
+312a57d34903-#-Henriette Gusikowski-#-cattle-#-true-#-2-#-78-#-ALTA-#-1986-10-16T16:04
+5f72e6b12904-#-Wes Von-#-alpaca-#-true-#-5-#-8-#-ALTA-#-1996-12-22T04:49
+6bc781343905-#-Miss Waldo Lueilwitz-#-elephant-#-true-#-5-#-25-#-BAJA-#-1993-10-03T12:40
+3f24ad304906-#-Eula Larson-#-bat-#-true-#-5-#-26-#-BAJA-#-1975-09-14T17:07
+88b06c251907-#-Jerica McClure-#-manatee-#-true-#-3-#-33-#-ALTA-#-1967-04-14T16:46
+89bab991c908-#-Cristopher Kreiger-#-porcupine-#-true-#-2-#-52-#-ALTA-#-1979-08-10T21:49
+efd95e0cf909-#-Raymond Lesch-#-monkey-#-true-#-5-#-28-#-BAJA-#-1985-03-15T00:45
+44dda57a8910-#-Miss Spencer Ledner-#-elephant-#-true-#-1-#-84-#-BAJA-#-2002-06-15T12:01
+0a85f8369911-#-Sumiko Rutherford III-#-whale-#-true-#-5-#-63-#-BAJA-#-1984-11-26T15:15
+807671291912-#-Harry Renner-#-cricket-#-false-#-4-#-54-#-BAJA-#-1992-01-20T11:07
+3da87da28913-#-Latesha Schumm-#-prairie dog-#-true-#-3-#-83-#-BAJA-#-1959-12-11T13:10
+2e634349d914-#-Yung Quigley-#-dog-#-false-#-4-#-22-#-ALTA-#-2003-01-30T08:30
+bcf6a5c97915-#-Miss Jacques Rice-#-beetle-#-false-#-4-#-43-#-BAJA-#-1983-09-30T02:41
+5dbda4287916-#-Sandy Schoen II-#-gorilla-#-true-#-5-#-41-#-BAJA-#-2000-09-11T03:46
+505709db6917-#-Truman Thiel IV-#-hyena-#-true-#-5-#-16-#-ALTA-#-1998-09-29T18:28
+f1544a7a4918-#-Seth Kuhic-#-hedgehog-#-false-#-5-#-74-#-BAJA-#-1987-12-05T13:21
+85c2f7706919-#-Melissa Klein III-#-serval-#-true-#-1-#-68-#-ALTA-#-1992-08-05T18:18
+eade60698920-#-Hallie Morar-#-jellyfish-#-true-#-3-#-63-#-ALTA-#-2004-06-19T07:03
+b7a06726f921-#-Camila Klein-#-zebra-#-true-#-4-#-22-#-BAJA-#-1970-09-23T09:43
+434568eae922-#-Glayds Doyle DDS-#-mammoth-#-false-#-4-#-25-#-ALTA-#-1979-05-21T08:16
+0065a6e98923-#-Glinda Romaguera-#-hedgehog-#-false-#-1-#-37-#-ALTA-#-1973-09-05T10:37
+704899aa0924-#-Fanny Bednar-#-rhinoceros-#-false-#-5-#-47-#-MEDIA-#-1972-10-24T19:17
+1b70cddb8925-#-Ronda Mraz V-#-donkey-#-true-#-1-#-13-#-BAJA-#-1998-09-27T03:22
+49e85ae72926-#-Kieth Zboncak Sr.-#-gerbil-#-false-#-4-#-17-#-MEDIA-#-2003-10-09T08:39
+3ca334829927-#-Kerri Veum-#-weasel-#-false-#-3-#-69-#-BAJA-#-1995-12-14T22:44
+219612d99928-#-Elvis Mitchell-#-mammoth-#-false-#-5-#-56-#-BAJA-#-1995-02-10T15:14
+3c37dfada929-#-Virgilio Goodwin-#-koala-#-false-#-2-#-53-#-BAJA-#-1986-06-25T13:07
+0d8ec4326930-#-Mercy Gusikowski-#-cat-#-true-#-5-#-83-#-ALTA-#-1981-09-14T19:16
+0c960173e931-#-Lynell Brakus-#-sheep-#-false-#-1-#-50-#-ALTA-#-1980-12-27T21:52
+9c7e15470932-#-Mr. Heidi Thompson-#-bear-#-true-#-1-#-90-#-BAJA-#-1998-08-25T21:20
+f60e0d8a6933-#-Dr. Nikita Schaden-#-dog-#-false-#-3-#-55-#-ALTA-#-2002-01-15T00:24
+187510f4a934-#-Raleigh Mertz-#-serval-#-false-#-4-#-46-#-BAJA-#-1989-02-25T02:13
+73e56ceb3935-#-Babette Tillman III-#-cat-#-false-#-2-#-81-#-BAJA-#-1973-03-23T03:53
+add31b931936-#-Jordan Hodkiewicz III-#-badger-#-false-#-4-#-19-#-ALTA-#-2006-08-16T15:46
+02e114c7a937-#-Ines Kuhn IV-#-pug-#-true-#-1-#-61-#-BAJA-#-1984-09-13T16:30
+6ef7c03ce938-#-Conrad Little-#-hound-#-false-#-4-#-78-#-ALTA-#-1971-04-03T22:59
+58e970dc1939-#-Candyce Monahan-#-deer-#-false-#-4-#-6-#-BAJA-#-1964-05-23T18:58
+b8718b313940-#-Elza Skiles-#-swan-#-true-#-5-#-43-#-BAJA-#-1969-12-29T02:34
+16682cf92941-#-Wendolyn Nienow-#-cricket-#-false-#-4-#-69-#-MEDIA-#-1960-09-05T07:29
+d284ac0ed942-#-Tristan Schaefer-#-llama-#-false-#-3-#-14-#-BAJA-#-2004-05-28T05:51
+97567428c943-#-Irish Altenwerth II-#-cod-#-false-#-5-#-39-#-BAJA-#-1974-09-10T07:49
+b2bc2f3f0944-#-Adan Dickens-#-bee-#-false-#-5-#-20-#-BAJA-#-1985-04-04T07:29
+dbe5e6eef945-#-Isela Haag-#-trout-#-false-#-3-#-11-#-ALTA-#-1979-07-24T22:29
+b89fcfd26946-#-Mindy Jaskolski-#-cat-#-false-#-5-#-3-#-ALTA-#-1964-04-27T02:42
+0956302fc947-#-Anja Cronin-#-mole-#-true-#-3-#-16-#-BAJA-#-1988-02-05T19:02
+dd39b6adc948-#-Cedric Botsford-#-camel-#-true-#-3-#-20-#-BAJA-#-1973-09-11T07:18
+d33f27a69949-#-Lesley O'Connell-#-wombat-#-false-#-3-#-15-#-ALTA-#-2000-11-23T12:08
+995a1cc87950-#-Leanne Kuhic PhD-#-gerbil-#-true-#-2-#-14-#-ALTA-#-1985-03-14T17:32
+852ec8e8c951-#-Queenie Botsford-#-wasp-#-false-#-3-#-66-#-BAJA-#-1963-12-16T07:59
+a7ee95d18952-#-Ambrose Ferry-#-coyote-#-false-#-3-#-60-#-BAJA-#-1993-09-02T22:40
+66ba7b823953-#-Sherice Greenfelder-#-swan-#-true-#-1-#-26-#-BAJA-#-1974-02-17T18:19
+f4efdac6c954-#-Bernadette Stracke-#-salmon-#-false-#-5-#-57-#-BAJA-#-1998-08-21T19:48
+4eac5a8e1955-#-Lida Goldner I-#-toad-#-true-#-4-#-22-#-ALTA-#-1986-09-26T23:17
+e66055336956-#-Ethan Corwin-#-duck-#-true-#-4-#-55-#-BAJA-#-2004-01-09T07:02
+e630d2b25957-#-Ms. Edmund Reichel-#-crocodile-#-true-#-4-#-33-#-BAJA-#-2004-01-25T09:56
+7eba269f5958-#-Dick Aufderhar-#-gorilla-#-true-#-5-#-37-#-ALTA-#-1966-04-10T01:01
+37f4464dd959-#-Staci Padberg-#-hyena-#-false-#-4-#-51-#-BAJA-#-1972-08-30T19:22
+181928717960-#-Pablo Roberts-#-goat-#-false-#-4-#-53-#-MEDIA-#-1975-11-22T14:27
+06b9db33a961-#-Florrie Walker-#-hippopotamus-#-true-#-4-#-20-#-ALTA-#-1993-10-18T17:34
+8c925745c962-#-Verlene Larkin Sr.-#-caribou-#-false-#-2-#-26-#-ALTA-#-1992-10-19T19:02
+7c8f9f705963-#-Hugo Murray PhD-#-crab-#-true-#-5-#-55-#-BAJA-#-1989-08-14T05:01
+b031e25ad964-#-Courtney Kuhn-#-porcupine-#-false-#-4-#-26-#-BAJA-#-1993-06-04T06:25
+826fce5bd965-#-Philomena Grant PhD-#-elk-#-false-#-4-#-38-#-BAJA-#-1990-02-27T11:11
+697307a1c966-#-Jerome Halvorson-#-mink-#-true-#-3-#-46-#-MEDIA-#-1987-10-29T02:05
+3638981b9967-#-Heidy Senger-#-cat-#-true-#-4-#-15-#-BAJA-#-1980-04-03T05:18
+796d971c9968-#-Howard Wolff-#-snail-#-false-#-5-#-59-#-BAJA-#-2004-01-09T21:56
+9228e88ec969-#-Mason Hyatt-#-wildebeest-#-false-#-5-#-86-#-ALTA-#-1980-02-06T11:56
+84d7e214f970-#-Jacklyn Huel-#-crab-#-false-#-3-#-83-#-MEDIA-#-1966-06-28T11:54
+c0b97a57d971-#-Shiloh Lindgren-#-rabbit-#-false-#-4-#-71-#-BAJA-#-1963-07-06T06:20
+83c8479d1972-#-Laverne Rohan-#-lizard-#-true-#-3-#-3-#-MEDIA-#-1982-10-16T19:36
+e81f48547973-#-Ms. Kieth Rippin-#-jellyfish-#-true-#-2-#-8-#-BAJA-#-1975-12-28T23:13
+b6f8307d0974-#-Mrs. Twanda Wolff-#-koala-#-false-#-2-#-89-#-ALTA-#-1968-08-12T08:14
+4bfde9fec975-#-Dr. Felton Price-#-duck-#-false-#-4-#-24-#-ALTA-#-1984-01-19T06:35
+9802319f2976-#-Lashonda Orn V-#-beaver-#-true-#-4-#-71-#-ALTA-#-1999-05-04T23:59
+d000e5672977-#-Scottie Hintz I-#-marten-#-false-#-2-#-74-#-BAJA-#-1972-10-04T22:34
+117755284978-#-Renaldo Romaguera-#-gnat-#-false-#-5-#-40-#-BAJA-#-1980-06-05T03:48
+4fc901941979-#-Elliott Zulauf III-#-walrus-#-true-#-5-#-48-#-ALTA-#-1992-11-11T16:35
+1abadaa47980-#-Mose Yundt-#-hyena-#-false-#-5-#-6-#-MEDIA-#-1981-11-26T23:31
+a8b82d7ec981-#-Kassandra Moen-#-hare-#-false-#-5-#-70-#-BAJA-#-2005-07-30T15:21
+93dba44cc982-#-Stevie Wolff-#-gerbil-#-false-#-2-#-12-#-BAJA-#-1968-06-13T06:53
+a1934c487983-#-Miss Sallie Leannon-#-eagle-#-false-#-4-#-5-#-BAJA-#-1966-04-26T07:28
+a35f10d04984-#-Jonathon Koch-#-mink-#-true-#-3-#-43-#-BAJA-#-1981-08-31T21:03
+75f571ee1985-#-Von Hilpert I-#-kangaroo-#-true-#-2-#-28-#-BAJA-#-1967-11-20T11:07
+59c56386b986-#-Ms. Andria Simonis-#-rabbit-#-true-#-4-#-6-#-BAJA-#-1985-09-24T12:42
+ee94353ad987-#-Darrell Nitzsche-#-porcupine-#-true-#-2-#-54-#-ALTA-#-1996-07-25T16:11
+19509f49b988-#-Ms. Wyatt McClure-#-monkey-#-false-#-2-#-74-#-ALTA-#-1992-07-30T04:33
+a968dae1d989-#-Cyrus Hoeger PhD-#-dolphin-#-false-#-4-#-14-#-BAJA-#-1999-06-15T07:52
+9c1088a67990-#-Emile Shanahan-#-hippopotamus-#-false-#-2-#-62-#-ALTA-#-2000-04-22T11:43
+4bb118c60991-#-Mrs. Violet Brown-#-platypus-#-false-#-5-#-14-#-BAJA-#-1963-09-16T13:03
+7f25f72d8992-#-Forrest Swaniawski-#-hornet-#-true-#-2-#-16-#-ALTA-#-1960-11-07T03:02
+6f5c8d916993-#-Karry Berge-#-goat-#-true-#-2-#-47-#-BAJA-#-1960-03-12T04:13
+e3eb87694994-#-Mrs. Ray Carroll-#-eagle-#-false-#-4-#-15-#-MEDIA-#-1974-02-22T04:40
+417a5390d995-#-Cindie Johns-#-cicada-#-false-#-4-#-35-#-ALTA-#-2003-10-06T23:17
+c53758c7d996-#-Muriel Mills-#-koala-#-true-#-3-#-36-#-ALTA-#-1974-12-25T21:14
+d65fd6ce5997-#-Mozella Casper III-#-cheetah-#-true-#-2-#-26-#-BAJA-#-1997-06-10T16:51
+1084bd994998-#-Isidro Homenick Sr.-#-hornet-#-true-#-3-#-7-#-BAJA-#-1971-09-30T06:33
+269252ad9999-#-Donita Rice-#-lion-#-true-#-5-#-73-#-BAJA-#-1966-05-07T09:58
+dbb0b04c81000-#-Rod Murray-#-pig-#-true-#-2-#-63-#-ALTA-#-1997-04-21T16:05

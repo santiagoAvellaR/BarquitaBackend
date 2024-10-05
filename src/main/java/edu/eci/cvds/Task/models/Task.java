@@ -22,7 +22,9 @@ public class Task {
     private String name;
     private String description;
     private boolean state;
-    private Priority priority;
+    private int priority;
+    private int estimatedTime;
+    private Difficulty difficulty;
     private LocalDateTime deadline;
 
 
@@ -32,23 +34,28 @@ public class Task {
      * @param name The name of the task, should not be null.
      * @param description A description of the Task, this should be null.
      * @param state The state of task
-     * @param priority The priority of the task.
+     * @param priority The priority of the task, must be in the range [1,5].
+     * @param estimatedTime The estimated time to complete the task, must be greater than zero.
+     * @param difficulty The difficulty of the task
      * @param deadline The deadline of the task.
-     * @throws TaskManagerException Throws an exception if the name or description are incorrect.
+     * @throws TaskManagerException Throws an exception if the name, description or the priority are incorrect.
      */
-    public Task(String id, String name, String description, boolean state, Priority priority, LocalDateTime deadline) throws TaskManagerException {
+    public Task(String id, String name, String description, boolean state, int priority,int estimatedTime,Difficulty difficulty, LocalDateTime deadline) throws TaskManagerException {
         if(!validateName(name)){
             throw new TaskManagerException(TaskManagerException.NAME_NOT_NULL);
         }
         if(!validateDescription(description)){
             throw new TaskManagerException(TaskManagerException.DESCRIPTION_NOT_NULL);
         }
+        if(!validatePriority(priority)) throw new TaskManagerException(TaskManagerException.PRIORITY_OUT_OF_RANGE);
+        if(!validateEstimatedTime(estimatedTime)) throw new TaskManagerException(TaskManagerException.TIME_INCORRECT);
         this.name = name;
         this.id = id;
         this.description = description;
         this.state = state;
         this.priority = priority;
-
+        this.estimatedTime = estimatedTime;
+        this.difficulty = difficulty;
         this.deadline = deadline;
     }
     /**
@@ -60,12 +67,30 @@ public class Task {
 
     /**
      * This method sets up the priority of the task by the new given one.
-     * @param newPriority The priority to set to the task.
+     * @param newPriority The priority to set to the task, this most be in the range of [1,5]
+     * @throws TaskManagerException If the given priority is not in the range of [1,5]
      */
-    public void changePriority(Priority newPriority){
+    public void changePriority(int newPriority) throws TaskManagerException {
+        if(!validatePriority(newPriority)) throw new TaskManagerException(TaskManagerException.PRIORITY_OUT_OF_RANGE);
         priority = newPriority;
     }
 
+    /**
+     * This method sets up the estimated time of the task by the new given one.
+     * @param newEstimatedTime The new estimated time for the task, must be greater than zero.
+     * @throws TaskManagerException If the given time is not greater than zero.
+     */
+    public void changeEstimatedTime(int newEstimatedTime) throws TaskManagerException {
+        if(!validateEstimatedTime(newEstimatedTime)) throw new TaskManagerException(TaskManagerException.TIME_INCORRECT);
+        estimatedTime = newEstimatedTime;
+    }
+    /**
+     * This method sets up the difficulty of the task by the new given one.
+     * @param newDifficulty The given difficulty of the task
+     */
+    public void changeDifficulty(Difficulty newDifficulty){
+        this.difficulty = newDifficulty;
+    }
     /**
      * Method sets up the name of the Task
      * @param newName The new name of the task
@@ -79,6 +104,7 @@ public class Task {
     /**
      * Method sets up a Description of the Task.
      * @param newDescription the new description to set up to the task
+     * @throws TaskManagerException If the given description is null or empty
      */
     public void changeDescription(String newDescription) throws TaskManagerException {
         if (!validateDescription(newDescription)) throw new TaskManagerException(TaskManagerException.DESCRIPTION_NOT_NULL);
@@ -113,9 +139,15 @@ public class Task {
     }
 
     private boolean validateName(String name){
-        return name != null;
+        return name != null && !name.isEmpty();
     }
     private boolean validateDescription(String description){
-        return description != null;
+        return description != null && !description.isEmpty();
+    }
+    private boolean validatePriority(int priority){
+        return priority >= 1 && priority <= 5;
+    }
+    private boolean validateEstimatedTime(int estimatedTime){
+        return estimatedTime > 0;
     }
 }
