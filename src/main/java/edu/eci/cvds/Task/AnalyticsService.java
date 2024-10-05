@@ -30,8 +30,8 @@ public class AnalyticsService implements TaskAnalyticsService {
     }
 
     @Override
-    public Map<Integer, Double> getAverageByPriority() throws TaskManagerException {
-        return taskAnalysis.getAverageByPriority();
+    public Map<Integer, Double> getConsolidatedPriority() throws TaskManagerException {
+        return taskAnalysis.getConsolidatedPriority();
     }
 
     @Override

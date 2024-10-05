@@ -9,7 +9,7 @@ public interface TaskAnalyticsService {
     void createTasks(int numberTasks) throws TaskManagerException;
     Map<Difficulty, Long> getHistogram()throws TaskManagerException;
     Map<Integer, Long> getFinishedTasks()throws TaskManagerException;
-    Map<Integer, Double> getAverageByPriority()throws TaskManagerException;
+    Map<Integer, Double> getConsolidatedPriority()throws TaskManagerException;
     Map<Difficulty, Double> getTotalTimeSpentByDifficulty() throws TaskManagerException;
     void deleteAll();
 }

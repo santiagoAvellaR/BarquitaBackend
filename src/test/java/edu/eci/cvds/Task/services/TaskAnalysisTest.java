@@ -75,12 +75,12 @@ public class TaskAnalysisTest {
 
     @Test
     void getAverageByPriority() throws TaskManagerException {
-        Map<Integer, Double> averages = taskAnalysis.getAverageByPriority();
+        Map<Integer, Double> averages = taskAnalysis.getConsolidatedPriority();
         Double total = 0.0;
         for(Map.Entry<Integer, Double> entry: averages.entrySet()){
             assertTrue(entry.getValue() > 1);
             total += entry.getValue();
         }
-        assertEquals(333.3333333333333, total);
+        assertEquals(1000.0, total);
     }
 }

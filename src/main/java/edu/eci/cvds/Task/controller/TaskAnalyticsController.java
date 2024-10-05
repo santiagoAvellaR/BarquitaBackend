@@ -72,8 +72,8 @@ public class TaskAnalyticsController {
      * @throws TaskManagerException If there is an error while calculating the averages.
      */
     @GetMapping("/getAverageByPriority")
-    public Map<Integer, Double> getAverageByPriority() throws TaskManagerException {
-        return taskAnalyticsService.getAverageByPriority();
+    public Map<Integer, Double> getConsolidatedPriority() throws TaskManagerException {
+        return taskAnalyticsService.getConsolidatedPriority();
     }
 
     /**
