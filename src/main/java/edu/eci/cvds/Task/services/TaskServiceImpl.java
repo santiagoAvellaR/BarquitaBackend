@@ -25,9 +25,8 @@ public class TaskServiceImpl implements TaskService {
 
     private int id = 1; // Este metodo se usara para crear una String
 
-    public TaskServiceImpl(@Qualifier("taskPersistenceMongo")TaskPersistence taskRepository) {
+    public TaskServiceImpl(TaskPersistence taskRepository) {
         this.taskRepository = taskRepository;
-
     }
     /**
      * This method adds a Task by the given DTO Task and stores it in thd Date Base.

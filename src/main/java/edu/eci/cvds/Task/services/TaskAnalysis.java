@@ -14,16 +14,19 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class TaskAnalysis {
-    @Autowired
-    private static TaskPersistence taskPersistence;
+    private final TaskPersistence taskPersistence;
 
-    public static void randomData(int counter)throws TaskManagerException{
+    public TaskAnalysis(TaskPersistence taskPersistence) {
+        this.taskPersistence = taskPersistence;
+    }
+
+    public void randomData(int counter)throws TaskManagerException{
         if(isEmpty()){
             generateAnalysis(counter);
         }
     }
 
-    public static List<Task> getRandomTasks(int numberOfTasks) throws TaskManagerException {
+    public List<Task> getRandomTasks(int numberOfTasks) throws TaskManagerException {
         ArrayList<Task> tasks = new ArrayList<>();
         for(int i = 0; i < numberOfTasks; i++) {
             Faker fake = new Faker();
@@ -44,7 +47,7 @@ public class TaskAnalysis {
         }
         return tasks;
     }
-    private static Difficulty generateDifficulty(Faker faker) {
+    private Difficulty generateDifficulty(Faker faker) {
         Difficulty difficulty;
         int number = faker.number().numberBetween(0, 3);
         if(number == 1) {difficulty = Difficulty.BAJA;}
@@ -52,30 +55,30 @@ public class TaskAnalysis {
         else {difficulty = Difficulty.ALTA;}
         return difficulty;
     }
-    private static LocalDateTime generateDate(Faker faker) {
+    private LocalDateTime generateDate(Faker faker) {
         Date date  = faker.date().birthday();
         return date.toInstant()
                 .atZone(ZoneId.systemDefault())
                 .toLocalDateTime();
     }
-    private static boolean isEmpty()throws TaskManagerException{
+    private boolean isEmpty()throws TaskManagerException{
         return taskPersistence.findAll() == null;
     }
-    private static void generateAnalysis(int counter) throws TaskManagerException {
+    private void generateAnalysis(int counter) throws TaskManagerException {
         List<Task> tasks = getRandomTasks(counter);
         for(Task task : tasks){
             taskPersistence.save(task);
         }
     }
 
-    public static Map<Difficulty, Long> getHistogram()throws TaskManagerException{
+    public Map<Difficulty, Long> getHistogram()throws TaskManagerException{
         long difficultyALTA = taskPersistence.findByDifficulty(Difficulty.ALTA).size();
         long difficultyMEDIA = taskPersistence.findByDifficulty(Difficulty.MEDIA).size();
         long difficultyBAJA = taskPersistence.findByDifficulty(Difficulty.BAJA).size();
         return Map.of(Difficulty.ALTA, difficultyALTA, Difficulty.MEDIA, difficultyMEDIA, Difficulty.BAJA, difficultyBAJA);
     }
 
-    public static Map<Integer, Long> getFinishedTasks()throws TaskManagerException{
+    public Map<Integer, Long> getFinishedTasks()throws TaskManagerException{
         return taskPersistence.findByState(true).stream()
                 .collect(Collectors.groupingBy(
                         Task::getEstimatedTime,
@@ -83,7 +86,7 @@ public class TaskAnalysis {
                 ));
     }
 
-    public static Map<Integer, Double> getAverageByPriority()throws TaskManagerException{
+    public Map<Integer, Double> getAverageByPriority()throws TaskManagerException{
         Map<Integer, Double> res = new HashMap<>();
         List<Task> totalTasks = taskPersistence.findAll();
         Map<Integer, Long> tasksGrouped = totalTasks.stream()
@@ -98,7 +101,7 @@ public class TaskAnalysis {
 
         return res;
     }
-    public static Map<Difficulty, Double> getTotalTimeSpentByDifficulty() throws TaskManagerException{
+    public Map<Difficulty, Double> getTotalTimeSpentByDifficulty() throws TaskManagerException{
         List<Task> allTasks = taskPersistence.findByState(true);
         return allTasks.stream().collect(Collectors.groupingBy(
                 Task::getDifficulty,

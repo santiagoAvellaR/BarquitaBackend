@@ -7,7 +7,9 @@ import edu.eci.cvds.Task.models.Task;
 import edu.eci.cvds.Task.services.TaskPersistence;
 import edu.eci.cvds.Task.services.TaskRepository;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -20,10 +22,10 @@ import java.util.Optional;
  */
 
 @Component
+@Primary
+@RequiredArgsConstructor
 public class TaskPersistenceMongo implements TaskPersistence {
-    @Autowired
-    private TaskRepository taskRepository;
-
+    private final TaskRepository taskRepository;
 
     @Override
     public Task save(Task task) throws TaskManagerException {
