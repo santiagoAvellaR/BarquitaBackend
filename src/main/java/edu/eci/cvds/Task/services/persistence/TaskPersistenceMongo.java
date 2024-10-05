@@ -1,12 +1,15 @@
 package edu.eci.cvds.Task.services.persistence;
 
 import edu.eci.cvds.Task.TaskManagerException;
-import edu.eci.cvds.Task.models.Priority;
+import edu.eci.cvds.Task.models.Difficulty;
 import edu.eci.cvds.Task.models.Task;
-import edu.eci.cvds.Task.models.TaskDTO;
+
 import edu.eci.cvds.Task.services.TaskPersistence;
 import edu.eci.cvds.Task.services.TaskRepository;
+
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -17,8 +20,10 @@ import java.util.Optional;
  * @Version 1.0
  * @Since 29-09-2024
  */
-@RequiredArgsConstructor
+
 @Component
+@Primary
+@RequiredArgsConstructor
 public class TaskPersistenceMongo implements TaskPersistence {
     private final TaskRepository taskRepository;
 
@@ -50,14 +55,27 @@ public class TaskPersistenceMongo implements TaskPersistence {
     }
 
     @Override
-    public List<Task> findByPriority(Priority priority) throws TaskManagerException {
+    public List<Task> findByPriority(int priority) throws TaskManagerException {
         return taskRepository.findByPriority(priority);
+    }
+
+    @Override
+    public List<Task> findByDifficulty(Difficulty difficulty) throws TaskManagerException {
+        return taskRepository.findByDifficulty(difficulty);
+    }
+
+    @Override
+    public List<Task> findByEstimatedTime(int estimatedTime) throws TaskManagerException {
+        return taskRepository.findByEstimatedTime(estimatedTime);
     }
 
     @Override
     public Optional<Task> findById(String id) throws TaskManagerException {
         return taskRepository.findById(id);
     }
-
+    @Override
+    public void deleteAll(){
+        taskRepository.deleteAll();
+    }
 
 }
