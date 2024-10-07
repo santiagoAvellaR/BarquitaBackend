@@ -8,8 +8,8 @@ import java.util.List;
 import java.util.Map;
 
 public interface ServiceUser {
-    User createUser(UserDTO userDTO)throws TaskManagerException;
-    User getUser(String id) throws TaskManagerException;
+    UserDTO createUser(UserDTO userDTO)throws TaskManagerException;
+    UserDTO getUser(String id) throws TaskManagerException;
     boolean login(String username, String password) throws TaskManagerException;
     // Delete account
     void deleteUser(String userId) throws TaskManagerException;

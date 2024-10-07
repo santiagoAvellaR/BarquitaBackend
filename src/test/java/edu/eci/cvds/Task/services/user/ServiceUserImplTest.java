@@ -36,17 +36,17 @@ class ServiceUserImplTest {
     @Test
     void createUser() {
         try{
-            User user = serviceUser.createUser(new UserDTO("123123", null, "Miguel", "Miguel123"));
+            UserDTO user = serviceUser.createUser(new UserDTO("123123", null, "Miguel", "Miguel123"));
             assertEquals("Miguel", user.getName());
             assertEquals("Miguel123", user.getPassword());
-            assertEquals(Collections.emptyList(), user.getAllTasks());
+            assertEquals(Collections.emptyList(), user.getTasks());
         } catch (TaskManagerException e) {fail("Should not fail with error: " + e.getMessage());}
     }
 
     @Test
     void login() {
         try{
-            User user = serviceUser.createUser(new UserDTO("123123", null, "Miguel", "Miguel123"));
+            UserDTO user = serviceUser.createUser(new UserDTO("123123", null, "Miguel", "Miguel123"));
             boolean res = serviceUser.login(user.getUsernameId(), user.getPassword());
             assertTrue(res);
             assertFalse(serviceUser.login(user.getUsernameId(), "wrong Password"));
@@ -56,7 +56,7 @@ class ServiceUserImplTest {
     @Test
     void addTask() {
         try{
-            User user = serviceUser.createUser(new UserDTO("123123", null, "Miguel", "Miguel123"));
+            UserDTO user = serviceUser.createUser(new UserDTO("123123", null, "Miguel", "Miguel123"));
             Task task = serviceUser.addTask(user.getUsernameId(), new TaskDTO("dontcare", "Study", "Description", true, 3, 2, Difficulty.BAJA,date));
             List<Task> tasks = serviceUser.getAllTasks(user.getUsernameId());
             assertEquals(1, tasks.size());
@@ -67,31 +67,33 @@ class ServiceUserImplTest {
     @Test
     void deleteTask() {
         try{
-            User user = serviceUser.createUser(new UserDTO("1", null, "User1", "User123"));
+            UserDTO user = serviceUser.createUser(new UserDTO("1", null, "User1", "User123"));
             Task task = serviceUser.addTask(user.getUsernameId(), new TaskDTO("dontcare", "Study", "Description", true, 3, 2, Difficulty.BAJA,date));
-            assertNotNull(serviceUser.getUser(user.getUsernameId()).getTasks().get(task.getId()));
+
+
+            assertNotNull(serviceUser.getUser(user.getUsernameId()).getTasks().stream().filter(task1 -> task1.getId().equals(task.getId())).findFirst().get());
             serviceUser.deleteTask(user.getUsernameId(), task.getId());
-            assertNull(serviceUser.getUser(user.getUsernameId()).getTasks().get(task.getId()));
+            assertTrue(serviceUser.getUser(user.getUsernameId()).getTasks().stream().filter(task1 -> task1.getId().equals(task.getId())).findFirst().isEmpty());
         } catch(TaskManagerException e) {fail("Should not fail with error: " + e.getMessage());}
     }
 
     @Test
     void changeStateTask() {
         try{
-            User user = serviceUser.createUser(new UserDTO("1", null, "User1", "User123"));
+            UserDTO user = serviceUser.createUser(new UserDTO("1", null, "User1", "User123"));
             Task task = serviceUser.addTask(user.getUsernameId(), new TaskDTO("dontcare", "Study", "Description", true, 3, 2, Difficulty.BAJA,date));
-            assertTrue(serviceUser.getUser(user.getUsernameId()).getTasks().get(task.getId()).getState());
+            assertTrue(serviceUser.getUser(user.getUsernameId()).getTasks().stream().filter(task1 -> task1.getId().equals(task.getId())).findFirst().get().getState());
             serviceUser.changeStateTask(user.getUsernameId(), task.getId());
-            assertFalse(serviceUser.getUser(user.getUsernameId()).getTasks().get(task.getId()).getState());
+            assertFalse(serviceUser.getUser(user.getUsernameId()).getTasks().stream().filter(task1 -> task1.getId().equals(task.getId())).findFirst().get().getState());
         } catch(TaskManagerException e) {fail("Should not fail with error: " + e.getMessage());}
     }
 
     @Test
     void updateTask() {
         try{
-            User user = serviceUser.createUser(new UserDTO("1", null, "User1", "User123"));
+            UserDTO user = serviceUser.createUser(new UserDTO("1", null, "User1", "User123"));
             Task task = serviceUser.addTask(user.getUsernameId(), new TaskDTO("dontcare", "Study", "Description", true, 3, 2, Difficulty.BAJA,date));
-            Task serviceTask = serviceUser.getUser(user.getUsernameId()).getTasks().get(task.getId());
+            Task serviceTask = serviceUser.getUser(user.getUsernameId()).getTasks().stream().filter(task1 -> task1.getId().equals(task.getId())).findFirst().get();
 
             assertEquals(task.getName(),serviceTask.getName());
             assertEquals(task.getDifficulty(), serviceTask.getDifficulty());
@@ -101,7 +103,7 @@ class ServiceUserImplTest {
             assertEquals(task.getPriority(),serviceTask.getPriority());
 
             serviceUser.updateTask(user.getUsernameId(), new TaskDTO(task.getId(), "Do exercise", "Updated Description", false, 1, 8, Difficulty.ALTA,date.plusDays(1)));
-            Task updatedTask = serviceUser.getUser(user.getUsernameId()).getTasks().get(task.getId());
+            Task updatedTask = serviceUser.getUser(user.getUsernameId()).getTasks().stream().filter(task1 -> task1.getId().equals(task.getId())).findFirst().get();
             assertNotEquals(task.getName(),updatedTask.getName());
             assertNotEquals(task.getDifficulty(), updatedTask.getDifficulty());
             assertNotEquals(task.getDescription(),updatedTask.getDescription());
@@ -115,7 +117,7 @@ class ServiceUserImplTest {
     @Test
     void getAllTasks() {
         try{
-            User user = serviceUser.createUser(new UserDTO("1", null, "User1", "User123"));
+            UserDTO user = serviceUser.createUser(new UserDTO("1", null, "User1", "User123"));
             serviceUser.addTask(user.getUsernameId(), new TaskDTO("", "Study 1", "Description 1", true, 3, 1, Difficulty.ALTA,date));
             serviceUser.addTask(user.getUsernameId(), new TaskDTO("", "Study 2", "Description 2", true, 5, 4, Difficulty.MEDIA,date));
             serviceUser.addTask(user.getUsernameId(), new TaskDTO("", "Study 3", "Description 3", true, 1, 7, Difficulty.BAJA,date));
@@ -129,7 +131,7 @@ class ServiceUserImplTest {
     @Test
     void getTasksByState() {
         try{
-            User user = serviceUser.createUser(new UserDTO("1", null, "User1", "User123"));
+            UserDTO user = serviceUser.createUser(new UserDTO("1", null, "User1", "User123"));
             addSomeTasks(user.getUsernameId());
             List<Task> tasksTrue = serviceUser.getTasksByState(user.getUsernameId(), true);
             List<Task> tasksFalse = serviceUser.getTasksByState(user.getUsernameId(), false);
@@ -145,7 +147,7 @@ class ServiceUserImplTest {
     @Test
     void getTaskByPriority() {
         try{
-            User user = serviceUser.createUser(new UserDTO("1", null, "User1", "User123"));
+            UserDTO user = serviceUser.createUser(new UserDTO("1", null, "User1", "User123"));
             addSomeTasks(user.getUsernameId());
             List<Task> tasks1 = serviceUser.getTaskByPriority(user.getUsernameId(), 1);
             List<Task> tasks2 = serviceUser.getTaskByPriority(user.getUsernameId(), 2);
@@ -168,7 +170,7 @@ class ServiceUserImplTest {
     @Test
     void getTaskByDifficulty() {
         try{
-            User user = serviceUser.createUser(new UserDTO("1", null, "User1", "User123"));
+            UserDTO user = serviceUser.createUser(new UserDTO("1", null, "User1", "User123"));
             addSomeTasks(user.getUsernameId());
             List<Task> tasksA = serviceUser.getTaskByDifficulty(user.getUsernameId(), Difficulty.ALTA);
             List<Task> tasksM = serviceUser.getTaskByDifficulty(user.getUsernameId(), Difficulty.MEDIA);
@@ -186,7 +188,7 @@ class ServiceUserImplTest {
     @Test
     void getTaskByEstimatedTime() {
         try{
-            User user = serviceUser.createUser(new UserDTO("1", null, "User1", "User123"));
+            UserDTO user = serviceUser.createUser(new UserDTO("1", null, "User1", "User123"));
             addSomeTasks(user.getUsernameId());
             List<Task> tasks1 = serviceUser.getTaskByEstimatedTime(user.getUsernameId(), 4);
             List<Task> tasks2 = serviceUser.getTaskByEstimatedTime(user.getUsernameId(), 3);
@@ -203,7 +205,7 @@ class ServiceUserImplTest {
     @Test
     void getHistogram() {
         try{
-            User user = serviceUser.createUser(new UserDTO("1", null, "User1", "User123"));
+            UserDTO user = serviceUser.createUser(new UserDTO("1", null, "User1", "User123"));
             serviceUser.createTasks(user.getUsernameId(), 500);
             Map<Difficulty, Long> histogram = serviceUser.getHistogram(user.getUsernameId());
             int total = 0;
@@ -217,7 +219,7 @@ class ServiceUserImplTest {
     @Test
     void getFinishedTasks() {
         try{
-            User user = serviceUser.createUser(new UserDTO("1", null, "User1", "User123"));
+            UserDTO user = serviceUser.createUser(new UserDTO("1", null, "User1", "User123"));
             serviceUser.createTasks(user.getUsernameId(), 500);
             Map<Integer, Long> finished = serviceUser.getFinishedTasks(user.getUsernameId());
             int total = 0;

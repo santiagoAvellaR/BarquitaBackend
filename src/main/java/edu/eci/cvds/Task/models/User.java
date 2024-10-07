@@ -111,4 +111,8 @@ public class User implements TaskService {
         if(name == null || name.isEmpty()) throw new TaskManagerException(TaskManagerException.INVALID_USER_NAME);
         if(password == null || password.isEmpty()) throw new TaskManagerException(TaskManagerException.INVALID_USER_PASSWD);
     }
+
+    public UserDTO toDTO() throws TaskManagerException {
+        return new UserDTO(usernameId,getAllTasks(),name,password);
+    }
 }
