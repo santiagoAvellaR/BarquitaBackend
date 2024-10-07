@@ -37,8 +37,8 @@ public class TaskController {
      * @throws TaskManagerException Throws an exception if the given information is incorrect, if the
      * given id of the TaskDTO does not exist in the database or if there is a problem with the database.
      */
-    @PostMapping("/addTask")
-    public ResponseEntity<Task> addTask(@RequestBody TaskDTO task) throws TaskManagerException{
+    @PostMapping("/{userId}/addTask")
+    public ResponseEntity<Task> addTask(@PathVariable String userId, @RequestBody TaskDTO task) throws TaskManagerException{
         // La id de la tarea TaskDTO debe existir, de lo contrario lanza una excepcion.
         Task task1 = taskService.addTask(task);
         return ResponseEntity.status(HttpStatus.CREATED)
@@ -49,8 +49,8 @@ public class TaskController {
      * @return The list of task in JSON format
      * @throws TaskManagerException If there is a problem with the database.
      */
-    @GetMapping("/getAllTasks")
-    public ResponseEntity<List<Task>> getAllTasks() throws TaskManagerException {
+    @GetMapping("/{userId}/getAllTasks")
+    public ResponseEntity<List<Task>> getAllTasks(@PathVariable String userId) throws TaskManagerException {
         return ResponseEntity.status(HttpStatus.OK)
                 .body(taskService.getAllTasks());
     }
@@ -61,8 +61,8 @@ public class TaskController {
      * @return The tasks with the given state
      * @throws TaskManagerException Throws an exception if there is a problem the database.
      */
-    @GetMapping("/getTasksByState")
-    public ResponseEntity<List<Task>> getTasksByState(@RequestParam boolean state) throws TaskManagerException {
+    @GetMapping("/{userId}/getTasksByState")
+    public ResponseEntity<List<Task>> getTasksByState(@PathVariable String userId, @RequestParam boolean state) throws TaskManagerException {
         return ResponseEntity.status(HttpStatus.OK)
                 .body(taskService.getTasksByState(state));
     }
@@ -72,8 +72,8 @@ public class TaskController {
      * @param id The id of the task
      * @return Confirmation of success
      */
-    @DeleteMapping("/deleteTask")
-    public ResponseEntity<String> deleteTask(@RequestParam String id) throws TaskManagerException{
+    @DeleteMapping("/{userId}/deleteTask")
+    public ResponseEntity<String> deleteTask(@PathVariable String userId, @RequestParam String id) throws TaskManagerException{
         taskService.deleteTask(id);
         return ResponseEntity.status(HttpStatus.OK)
                 .body("OK");
@@ -85,8 +85,8 @@ public class TaskController {
      * @return Confirmation of success
      * @throws TaskManagerException
      */
-    @PutMapping("/changeStateTask")
-    public ResponseEntity<String> changeStateTask(@RequestParam String id) throws TaskManagerException {
+    @PutMapping("/{userId}/changeStateTask")
+    public ResponseEntity<String> changeStateTask(@PathVariable String userId, @RequestParam String id) throws TaskManagerException {
         taskService.changeStateTask(id);
         return ResponseEntity.status(HttpStatus.OK)
                 .body("OK");
@@ -99,8 +99,8 @@ public class TaskController {
      * @throws TaskManagerException Throws an exception if the given information is incorrect,
      * or if there is a problem with the database.
      */
-    @PutMapping("/updateTask")
-    public ResponseEntity<String> updateTask(@RequestBody TaskDTO taskDTO) throws TaskManagerException{
+    @PutMapping("/{userId}/updateTask")
+    public ResponseEntity<String> updateTask(@PathVariable String userId, @RequestBody TaskDTO taskDTO) throws TaskManagerException{
         taskService.updateTask(taskDTO);
         return ResponseEntity.status(HttpStatus.OK)
                 .body("OK");
@@ -112,8 +112,8 @@ public class TaskController {
      * @return the list of tasks with the given deadline
      * @throws TaskManagerException If there is a problem with the database or the given deadline.
      */
-    @GetMapping("/getTasksByDeadline")
-    public ResponseEntity<List<Task>> getTasksByDeadline(@RequestParam LocalDateTime deadline) throws TaskManagerException {
+    @GetMapping("/{userId}/getTasksByDeadline")
+    public ResponseEntity<List<Task>> getTasksByDeadline(@PathVariable String userId, @RequestParam LocalDateTime deadline) throws TaskManagerException {
         return ResponseEntity.status(HttpStatus.OK)
                 .body(taskService.getTasksByDeadline(deadline));
     }
@@ -124,8 +124,8 @@ public class TaskController {
      * @return The list of tasks with the given priority
      * @throws TaskManagerException If there is a problem with the database.
      */
-    @GetMapping("/getTaskByPriority")
-    public ResponseEntity<List<Task>> getTaskByPriority(@RequestParam int priority) throws TaskManagerException {
+    @GetMapping("/{userId}/getTaskByPriority")
+    public ResponseEntity<List<Task>> getTaskByPriority(@PathVariable String userId, @RequestParam int priority) throws TaskManagerException {
         return ResponseEntity.status(HttpStatus.OK)
                 .body(taskService.getTaskByPriority(priority));
     }
@@ -136,8 +136,8 @@ public class TaskController {
      * @return The list of tasks with the given difficulty
      * @throws TaskManagerException If there is a problem with the database.
      */
-    @GetMapping("/getTaskByDifficulty")
-    public ResponseEntity<List<Task>> getTaskByDifficulty(@RequestParam Difficulty difficulty) throws TaskManagerException {
+    @GetMapping("/{userId}/getTaskByDifficulty")
+    public ResponseEntity<List<Task>> getTaskByDifficulty(@PathVariable String userId, @RequestParam Difficulty difficulty) throws TaskManagerException {
         return ResponseEntity.status(HttpStatus.OK)
                 .body(taskService.getTaskByDifficulty(difficulty));
     }
@@ -148,8 +148,8 @@ public class TaskController {
      * @return The list of task with the given estimated time
      * @throws TaskManagerException If there is a problem with the database.
      */
-    @GetMapping("/getTaskByEstimatedTime")
-    public ResponseEntity<List<Task>> getTaskByEstimatedTime(@RequestParam int estimatedTime) throws TaskManagerException {
+    @GetMapping("/{userId}/getTaskByEstimatedTime")
+    public ResponseEntity<List<Task>> getTaskByEstimatedTime(@PathVariable String userId, @RequestParam int estimatedTime) throws TaskManagerException {
         return ResponseEntity.status(HttpStatus.OK)
                 .body(taskService.getTaskByEstimatedTime(estimatedTime));
     }

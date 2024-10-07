@@ -188,7 +188,7 @@ public class TaskAnalysis {
     /**
      * Deletes all tasks from the system.
      */
-    public void deleteAllTasks() {
+    public void deleteAllTasks() throws TaskManagerException{
         taskPersistence.deleteAll();
     }
 }

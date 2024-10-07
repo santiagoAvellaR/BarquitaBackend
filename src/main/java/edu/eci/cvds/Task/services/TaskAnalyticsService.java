@@ -11,6 +11,6 @@ public interface TaskAnalyticsService {
     Map<Integer, Long> getFinishedTasks()throws TaskManagerException;
     Map<Integer, Double> getConsolidatedPriority()throws TaskManagerException;
     Map<Difficulty, Double> getTotalTimeSpentByDifficulty() throws TaskManagerException;
-    void deleteAll();
+    void deleteAll() throws TaskManagerException;
 }
 

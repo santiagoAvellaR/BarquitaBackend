@@ -15,11 +15,11 @@ import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@SpringBootTest
+
 public class TaskAnalysisTest {
 
-    private static TaskAnalysis taskAnalysis;
     private static String fileRoute = "src/main/java/edu/eci/cvds/Task/services/persistence/DataAnalysis.txt";
+    private static TaskAnalysis taskAnalysis = new TaskAnalysis(new FilePersistenceImpl(fileRoute));
     @BeforeAll
     static void setUpBeforeClass() throws Exception {
         taskAnalysis = new TaskAnalysis(new FilePersistenceImpl(fileRoute));

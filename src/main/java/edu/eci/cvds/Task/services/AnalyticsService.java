@@ -1,5 +1,6 @@
-package edu.eci.cvds.Task;
+package edu.eci.cvds.Task.services;
 
+import edu.eci.cvds.Task.TaskManagerException;
 import edu.eci.cvds.Task.models.Difficulty;
 import edu.eci.cvds.Task.services.TaskAnalysis;
 import edu.eci.cvds.Task.services.TaskAnalyticsService;
@@ -39,7 +40,7 @@ public class AnalyticsService implements TaskAnalyticsService {
         return taskAnalysis.getTotalTimeSpentByDifficulty();
     }
     @Override
-    public void  deleteAll(){
+    public void  deleteAll()throws TaskManagerException{
         taskAnalysis.deleteAllTasks();
     }
 }

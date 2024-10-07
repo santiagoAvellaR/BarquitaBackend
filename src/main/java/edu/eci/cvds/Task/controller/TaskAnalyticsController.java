@@ -92,7 +92,7 @@ public class TaskAnalyticsController {
      * This action cannot be undone.
      */
     @DeleteMapping("/deleteAllTasks")
-    public void deleteAll(){
+    public void deleteAll()throws TaskManagerException{
         taskAnalyticsService.deleteAll();
     }
 }
