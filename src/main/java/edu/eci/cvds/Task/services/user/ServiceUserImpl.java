@@ -2,6 +2,8 @@ package edu.eci.cvds.Task.services.user;
 
 import edu.eci.cvds.Task.TaskManagerException;
 import edu.eci.cvds.Task.models.*;
+import edu.eci.cvds.Task.services.AnalyticsService;
+import edu.eci.cvds.Task.services.TaskAnalyticsService;
 import edu.eci.cvds.Task.services.persistence.UserRepository;
 import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;
@@ -13,9 +15,11 @@ import java.util.UUID;
 public class ServiceUserImpl implements ServiceUser {
     private int id = 1;
     private final UserRepository userRepository;
+    private final TaskAnalyticsService analyticsService;
 
-    public ServiceUserImpl(UserRepository userRepository) {
+    public ServiceUserImpl(UserRepository userRepository, TaskAnalyticsService analyticsService) {
         this.userRepository =userRepository;
+        this.analyticsService = analyticsService;
     }
 
     public List<User> getUsers(){ return userRepository.findAll(); }
@@ -38,76 +42,97 @@ public class ServiceUserImpl implements ServiceUser {
 
     @Override
     public boolean login(String username, String password) throws TaskManagerException {
-        /*
-        User user = userRepository.findByUsername(username);
+        User user = getUser(username);
         if(user==null) throw new TaskManagerException(TaskManagerException.USER_DOESNT_EXIST);
         return user.getPassword().equals(password);
-         */
-        return false;
     }
 
     @Override
     public Task addTask(String userId, TaskDTO dto) throws TaskManagerException {
-        /*
-        User user = userRepository.findByUsername(userId);
+        User user = getUser(userId);
         if(user==null) throw new TaskManagerException(TaskManagerException.USER_DOESNT_EXIST);
-        return user.addTask(dto);
-         */
-        return null;
+        Task task = user.addTask(dto);
+        userRepository.save(user);
+        return task;
     }
 
     @Override
     public void deleteTask(String userId, String id) throws TaskManagerException {
-
+        User user = getUser(userId);
+        if(user==null) throw new TaskManagerException(TaskManagerException.USER_DOESNT_EXIST);
+        user.deleteTask(id);
+        userRepository.save(user);
     }
 
     @Override
     public void changeStateTask(String userId, String id) throws TaskManagerException {
-
+        User user = getUser(userId);
+        if(user==null) throw new TaskManagerException(TaskManagerException.USER_DOESNT_EXIST);
+        user.getTasks().get(id).changeState();
+        userRepository.save(user);
     }
 
     @Override
     public void updateTask(String userId, TaskDTO dto) throws TaskManagerException {
-
+        User user = getUser(userId);
+        if(user==null) throw new TaskManagerException(TaskManagerException.USER_DOESNT_EXIST);
+        user.updateTask(dto);
+        userRepository.save(user);
     }
 
     @Override
     public List<Task> getAllTasks(String userId) throws TaskManagerException {
-        return List.of();
+        User user = getUser(userId);
+        if(user==null) throw new TaskManagerException(TaskManagerException.USER_DOESNT_EXIST);
+        return user.getAllTasks();
     }
 
     @Override
     public List<Task> getTasksByState(String userId, boolean state) throws TaskManagerException {
-        return List.of();
+        User user = getUser(userId);
+        if(user==null) throw new TaskManagerException(TaskManagerException.USER_DOESNT_EXIST);
+        return user.getTasksByState(state);
     }
 
     @Override
     public List<Task> getTasksByDeadline(String userId, LocalDateTime deadline) throws TaskManagerException {
-        return List.of();
+        User user = getUser(userId);
+        if(user==null) throw new TaskManagerException(TaskManagerException.USER_DOESNT_EXIST);
+        return user.getTasksByDeadline(deadline);
     }
 
     @Override
     public List<Task> getTaskByPriority(String userId, int priority) throws TaskManagerException {
-        return List.of();
+        User user = getUser(userId);
+        if(user==null) throw new TaskManagerException(TaskManagerException.USER_DOESNT_EXIST);
+        return user.getTaskByPriority(priority);
     }
 
     @Override
     public List<Task> getTaskByDifficulty(String userId, Difficulty difficulty) throws TaskManagerException {
-        return List.of();
+        User user = getUser(userId);
+        if(user==null) throw new TaskManagerException(TaskManagerException.USER_DOESNT_EXIST);
+        return user.getTaskByDifficulty(difficulty);
     }
 
     @Override
     public List<Task> getTaskByEstimatedTime(String userId, int estimatedTime) throws TaskManagerException {
-        return List.of();
+        User user = getUser(userId);
+        if(user==null) throw new TaskManagerException(TaskManagerException.USER_DOESNT_EXIST);
+        return user.getTaskByEstimatedTime(estimatedTime);
     }
 
     @Override
     public void createTasks(String userId, int numberTasks) throws TaskManagerException {
-
+        User user = getUser(userId);
+        if(user==null) throw new TaskManagerException(TaskManagerException.USER_DOESNT_EXIST);
+        //user.createTasks(numberTasks, analyticsService);
     }
 
     @Override
     public Map<Difficulty, Long> getHistogram(String userId) throws TaskManagerException {
+        // User user = getUser(userId);
+        // return analyticsService.getHistogram(user);
         return Map.of();
     }
 
@@ -129,10 +154,11 @@ public class ServiceUserImpl implements ServiceUser {
     @Override
     public void deleteAll() {
         userRepository.deleteAll();
-
     }
     @Override
-    public void deleteUser(String id){
+    public void deleteUser(String id)throws TaskManagerException {
+        User user = getUser(id);
+        if(user==null) throw new TaskManagerException(TaskManagerException.USER_DOESNT_EXIST);
         userRepository.deleteById(id);
     }
     private String generateId(){
