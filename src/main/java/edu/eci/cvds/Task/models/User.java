@@ -8,6 +8,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
@@ -46,31 +47,44 @@ public class User implements TaskService {
     }
     @Override
     public void deleteTask(String id) throws TaskManagerException {
-
+        if(!tasks.containsKey(id)) throw new TaskManagerException(TaskManagerException.TASK_NOT_FOUND);
+        tasks.remove(id);
     }
     @Override
     public void changeStateTask(String id) throws TaskManagerException {
-
+        if(!tasks.containsKey(id)) throw new TaskManagerException(TaskManagerException.TASK_NOT_FOUND);
+        Task task = tasks.get(id);
+        task.changeState();
+        tasks.put(id, task);
     }
 
     @Override
     public void updateTask(TaskDTO dto) throws TaskManagerException {
-
+        if(!tasks.containsKey(dto.getId())) throw new TaskManagerException(TaskManagerException.TASK_NOT_FOUND);
+        Task task = tasks.get(dto.getId());
+        task.changeName(dto.getName());
+        task.changeDescription(dto.getDescription());
+        task.setState(dto.getState());
+        task.changePriority(dto.getPriority());
+        task.changeEstimatedTime(dto.getEstimatedTime());
+        task.setDifficulty(dto.getDifficulty());
+        task.setDeadline(dto.getDeadline());
+        tasks.put(task.getId(), task);
     }
 
     @Override
     public List<Task> getAllTasks() throws TaskManagerException {
-        return List.of();
+        return new ArrayList<>(tasks.values());
     }
 
     @Override
     public List<Task> getTasksByState(boolean state) throws TaskManagerException {
-        return List.of();
+        return getAllTasks().stream().filter(task -> state==task.getState()).toList();
     }
 
     @Override
     public List<Task> getTasksByDeadline(LocalDateTime deadline) throws TaskManagerException {
-        return List.of();
+        return getAllTasks().stream().filter(task -> task.getDeadline().isBefore(deadline)).toList();
     }
 
     @Override
@@ -80,12 +94,12 @@ public class User implements TaskService {
 
     @Override
     public List<Task> getTaskByDifficulty(Difficulty difficulty) throws TaskManagerException {
-        return List.of();
+        return getAllTasks().stream().filter(task -> task.getDifficulty().equals(difficulty)).toList();
     }
 
     @Override
     public List<Task> getTaskByEstimatedTime(int estimatedTime) throws TaskManagerException {
-        return List.of();
+        return getAllTasks().stream().filter(task -> task.getEstimatedTime() == estimatedTime).toList();
     }
 
     private String generateId(){

@@ -32,9 +32,10 @@ class UserTest {
     @Test
     void addTask() {
         try{
-            user.addTask(taskDTO);
-            Task task = user.getTasks().get(taskDTO.getId());
-            assertEquals(taskDTO.getId(), task.getId());
+            String taskId = user.addTask(taskDTO).getId();
+            Task task = user.getTasks().get(taskId);
+
+            assertEquals(taskId, task.getId());
             assertEquals(taskDTO.getDescription(), task.getDescription());
             assertEquals(taskDTO.getState(), task.getState());
             assertEquals(taskDTO.getDifficulty(), task.getDifficulty());
@@ -47,11 +48,11 @@ class UserTest {
     @Test
     void deleteTask() {
         try{
-            user.addTask(taskDTO);
-            Task task = user.getTasks().get(taskDTO.getId());
-            assertEquals(taskDTO.getId(), task.getId());
-            user.deleteTask(taskDTO.getId());
-            Task taskDeleted = user.getTasks().get(taskDTO.getId());
+            String taskId = user.addTask(taskDTO).getId();
+            Task task = user.getTasks().get(taskId);
+            assertEquals(taskId, task.getId());
+            user.deleteTask(taskId);
+            Task taskDeleted = user.getTasks().get(taskId);
             assertNull(taskDeleted);
         } catch (TaskManagerException e) {fail("Should not have failed with error: " + e.getMessage());}
     }
@@ -59,11 +60,11 @@ class UserTest {
     @Test
     void changeStateTask() {
         try{
-            user.addTask(taskDTO);
-            Task task = user.getTasks().get(taskDTO.getId());
+            String taskId = user.addTask(taskDTO).getId();
+            Task task = user.getTasks().get(taskId);
             boolean oldState = task.getState();
-            user.changeStateTask(taskDTO.getId());
-            boolean newState = user.getTasks().get(taskDTO.getId()).getState();
+            user.changeStateTask(taskId);
+            boolean newState = user.getTasks().get(taskId).getState();
             assertNotEquals(newState, oldState);
         } catch (TaskManagerException e) {fail("Should not have failed with error: " + e.getMessage());}
     }
@@ -71,8 +72,7 @@ class UserTest {
     @Test
     void updateTask() {
         try{
-            user.addTask(taskDTO);
-            String taskId = user.getTasks().get(taskDTO.getId()).getId();
+            String taskId = user.addTask(taskDTO).getId();
             user.updateTask(new TaskDTO(taskId, "Task Updated", "Description Updated", false, 5, 10, Difficulty.ALTA, LocalDateTime.now()));
             assertEquals("Task Updated", user.getTasks().get(taskId).getName());
             assertEquals("Description Updated", user.getTasks().get(taskId).getDescription());
