@@ -210,11 +210,8 @@ public class FilePersistenceImpl implements TaskPersistence {
         return taskByEstimatedTime;
     }
 
-    /**
-     * This method is made for the test, in order to clean the file where the data is stored.
-     * @throws TaskManagerException If there is a problem with the STDOUT of the database.
-     */
-    public void cleanFileForTest()throws TaskManagerException{
+
+    private void cleanFileForTest()throws TaskManagerException{
         try (PrintWriter writer = new PrintWriter(fileName)) {
         } catch (FileNotFoundException e) {
             throw new TaskManagerException(TaskManagerException.DATA_BASE_FILE_ERROR);
@@ -264,9 +261,13 @@ public class FilePersistenceImpl implements TaskPersistence {
         }
         return tasks;
     }
+    /**
+     * This method is made for the test, in order to clean the file where the data is stored.
+     * @throws TaskManagerException If there is a problem with the STDOUT of the database.
+     */
     @Override
-    public void deleteAll(){
-
+    public void deleteAll()throws TaskManagerException{
+        cleanFileForTest();
     }
 
 }

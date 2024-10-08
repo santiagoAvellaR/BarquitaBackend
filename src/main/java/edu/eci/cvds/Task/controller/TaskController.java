@@ -1,10 +1,7 @@
 package edu.eci.cvds.Task.controller;
 import edu.eci.cvds.Task.*;
-import edu.eci.cvds.Task.models.Difficulty;
-import edu.eci.cvds.Task.models.Task;
-import edu.eci.cvds.Task.models.TaskDTO;
-import edu.eci.cvds.Task.services.TaskService;
-import edu.eci.cvds.Task.services.TaskServiceImpl;
+import edu.eci.cvds.Task.models.*;
+import edu.eci.cvds.Task.services.user.ServiceUser;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -20,137 +17,194 @@ import java.util.List;
 @RestController
 @CrossOrigin
 public class TaskController {
+    private final ServiceUser userService;
 
-    private final TaskService taskService;
-
-    /**
-     * This method is the constructor and receives the taskService by Injection.
-     * @param taskService The taskService by Injection
-     */
-    public TaskController(TaskServiceImpl taskService){
-        this.taskService = taskService;
+    public TaskController(ServiceUser userService){
+        this.userService = userService;
     }
+
     /**
-     * This method gets a TaskDTO in a JSON format from the client to be added with the interface TaskService;
-     * @param task the task to add in JSON format
-     * @return Confirmation of success
-     * @throws TaskManagerException Throws an exception if the given information is incorrect, if the
-     * given id of the TaskDTO does not exist in the database or if there is a problem with the database.
+     * This method creates a user by the given Data transfer User and returns the created
+     * user (with the generated id) if the event was executed successfully. Throws an exception otherwise.
+     * @param userDTO The given Data Transfer User
+     * @return the created User
+     * @throws TaskManagerException If there is a problem with the user information or the database.
      */
-    @PostMapping("/addTask")
-    public ResponseEntity<Task> addTask(@RequestBody TaskDTO task) throws TaskManagerException{
-        // La id de la tarea TaskDTO debe existir, de lo contrario lanza una excepcion.
-        Task task1 = taskService.addTask(task);
+    @PostMapping("/createUser")
+    public ResponseEntity<UserDTO> createUser(@RequestBody UserDTO userDTO)throws TaskManagerException{
+        return ResponseEntity.status(HttpStatus.OK)
+                .body(userService.createUser(userDTO));
+    }
+
+    /**
+     * This method deletes the user from the database by the given id.
+     * @param userId The user id to be deleted from the DB.
+     * @return The String OK if it was executed successfully. Throws an exception otherwise.
+     * @throws TaskManagerException If there is a problem with the user id or the database.
+     */
+    @DeleteMapping("/deleteUser")
+    public ResponseEntity<String> deleteUser(@RequestParam String userId) throws TaskManagerException{
+        userService.deleteUser(userId);
+        return ResponseEntity.status(HttpStatus.OK)
+                .body("OK");
+    }
+
+    /**
+     * This method returns a user by searching it in the database by the given id.
+     * @param userId The id of the user.
+     * @return The user with the given id.
+     * @throws TaskManagerException If there is a problem with the user id or the database.
+     */
+    @GetMapping("/getUser")
+    public ResponseEntity<UserDTO> getUser(@RequestParam String userId) throws TaskManagerException{
+        return ResponseEntity.status(HttpStatus.OK)
+                .body(userService.getUser(userId));
+    }
+
+    /**
+     * This method adds a task to the given id user in the database.
+     * @param userId The user id to search in the database.
+     * @param task The given task Transfer Object to create and assign to the user
+     * @return The task created. Throws an exception otherwise
+     * @throws TaskManagerException If there is a problem with the user id, the task information or the database.
+     */
+    @PostMapping("/{userId}/addTask")
+    public ResponseEntity<Task> addTask(@PathVariable String userId, @RequestBody TaskDTO task) throws TaskManagerException{
+        Task task1 = userService.addTask(userId, task);
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(task1);
-        }
-    /**
-     * This method returns all the tasks without a specific order
-     * @return The list of task in JSON format
-     * @throws TaskManagerException If there is a problem with the database.
-     */
-    @GetMapping("/getAllTasks")
-    public ResponseEntity<List<Task>> getAllTasks() throws TaskManagerException {
-        return ResponseEntity.status(HttpStatus.OK)
-                .body(taskService.getAllTasks());
     }
 
     /**
-     * This method returns all the tasks filtered by the given state
-     * @param state The state of the tasks
-     * @return The tasks with the given state
-     * @throws TaskManagerException Throws an exception if there is a problem the database.
+     * This method checks if the user is correctly logged with the given id and password.
+     * @param userId The user id
+     * @param password The user password
+     * @return True if the id and password are in the database and assigned to the same user. False otherwise
+     * @throws TaskManagerException If there is a problem with the user information or the database.
      */
-    @GetMapping("/getTasksByState")
-    public ResponseEntity<List<Task>> getTasksByState(@RequestParam boolean state) throws TaskManagerException {
+    @GetMapping("/login")
+    public ResponseEntity<Boolean> login(@RequestParam String userId, @RequestParam String password) throws TaskManagerException{
         return ResponseEntity.status(HttpStatus.OK)
-                .body(taskService.getTasksByState(state));
+                .body(userService.login(userId,password));
     }
 
     /**
-     * This method deletes a task if it exists
-     * @param id The id of the task
-     * @return Confirmation of success
+     * This method returns the tasks of the user by the given id from the database.
+     * @param userId The given user id.
+     * @return The tasks as a list.
+     * @throws TaskManagerException If there is a problem with the user information or the database.
      */
-    @DeleteMapping("/deleteTask")
-    public ResponseEntity<String> deleteTask(@RequestParam String id) throws TaskManagerException{
-        taskService.deleteTask(id);
+    @GetMapping("/{userId}/getAllTasks")
+    public ResponseEntity<List<Task>> getAllTasks(@PathVariable String userId) throws TaskManagerException {
         return ResponseEntity.status(HttpStatus.OK)
-                .body("OK");
+                .body(userService.getAllTasks(userId));
+    }
+
+
+    /**
+     * This method returns the tasks filtered by state.
+     * @param userId The given user id.
+     * @param state The given state.
+     * @return The tasks with the given state from the user by the given id.
+     * @throws TaskManagerException If there is a problem with the user information or the database.
+     */
+    @GetMapping("/{userId}/getTasksByState")
+    public ResponseEntity<List<Task>> getTasksByState(@PathVariable String userId, @RequestParam boolean state) throws TaskManagerException {
+        return ResponseEntity.status(HttpStatus.OK)
+                .body(userService.getTasksByState(userId, state));
     }
 
     /**
-     * THis method changes the state of a Task if it is found
-     * @param id The id of the task
-     * @return Confirmation of success
-     * @throws TaskManagerException
+     * This method removes a task from the user by the given user id and the task id.
+     * @param userId The given user id
+     * @param id The given task id
+     * @return OK if it was successfully removed, throws an exception otherwise.
+     * @throws TaskManagerException If there is a problem with the user information or the database.
      */
-    @PutMapping("/changeStateTask")
-    public ResponseEntity<String> changeStateTask(@RequestParam String id) throws TaskManagerException {
-        taskService.changeStateTask(id);
-        return ResponseEntity.status(HttpStatus.OK)
-                .body("OK");
-    }
-
-    /**
-     * This method updates a task by the given updated task
-     * @param taskDTO The updated task
-     * @return Confirmation of success
-     * @throws TaskManagerException Throws an exception if the given information is incorrect,
-     * or if there is a problem with the database.
-     */
-    @PutMapping("/updateTask")
-    public ResponseEntity<String> updateTask(@RequestBody TaskDTO taskDTO) throws TaskManagerException{
-        taskService.updateTask(taskDTO);
+    @DeleteMapping("/{userId}/deleteTask")
+    public ResponseEntity<String> deleteTask(@PathVariable String userId, @RequestParam String id) throws TaskManagerException{
+        userService.deleteTask(userId, id);
         return ResponseEntity.status(HttpStatus.OK)
                 .body("OK");
     }
 
     /**
-     * This method returns the tasks with the given deadline
-     * @param deadline The deadline to filter the tasks
-     * @return the list of tasks with the given deadline
-     * @throws TaskManagerException If there is a problem with the database or the given deadline.
+     * This method changes the state of a task by the given user and task id.
+     * @param userId The given user id
+     * @param id The given task id
+     * @return OK if it was successfully changed, throws an exception otherwise.
+     * @throws TaskManagerException If there is a problem with the user information or the database.
      */
-    @GetMapping("/getTasksByDeadline")
-    public ResponseEntity<List<Task>> getTasksByDeadline(@RequestParam LocalDateTime deadline) throws TaskManagerException {
+    @PutMapping("/{userId}/changeStateTask")
+    public ResponseEntity<String> changeStateTask(@PathVariable String userId, @RequestParam String id) throws TaskManagerException {
+        userService.changeStateTask(userId, id);
         return ResponseEntity.status(HttpStatus.OK)
-                .body(taskService.getTasksByDeadline(deadline));
+                .body("OK");
+    }
+
+    /***
+     * This method updates a task by the given user id and task id
+     * @param userId The given user id.
+     * @param taskDTO The new updated task
+     * @return OK if it was successfully changed, throws an exception otherwise.
+     * @throws TaskManagerException If there is a problem with the user information or the database.
+     */
+    @PutMapping("/{userId}/updateTask")
+    public ResponseEntity<String> updateTask(@PathVariable String userId, @RequestBody TaskDTO taskDTO) throws TaskManagerException{
+        userService.updateTask(userId, taskDTO);
+        return ResponseEntity.status(HttpStatus.OK)
+                .body("OK");
     }
 
     /**
-     * This method returns the tasks filtered by a given priority
-     * @param priority The priority to filter the tasks
-     * @return The list of tasks with the given priority
-     * @throws TaskManagerException If there is a problem with the database.
+     * This method returns a list of tasks filtered by the given deadline, if the deadline is before the given one.
+     * @param userId The given user id.
+     * @param deadline The given deadline to filter the user tasks
+     * @return The list of tasks with the given deadline condition.
+     * @throws TaskManagerException If there is a problem with the user information or the database.
      */
-    @GetMapping("/getTaskByPriority")
-    public ResponseEntity<List<Task>> getTaskByPriority(@RequestParam int priority) throws TaskManagerException {
+    @GetMapping("/{userId}/getTasksByDeadline")
+    public ResponseEntity<List<Task>> getTasksByDeadline(@PathVariable String userId, @RequestParam LocalDateTime deadline) throws TaskManagerException {
         return ResponseEntity.status(HttpStatus.OK)
-                .body(taskService.getTaskByPriority(priority));
+                .body(userService.getTasksByDeadline(userId, deadline));
     }
 
     /**
-     * This method returns the tasks filtered by a given priority
-     * @param difficulty The difficulty to filter the tasks
+     * This method returns a list of tasks filtered by the given priority.
+     * @param userId The given user id.
+     * @param priority The given priority.
+     * @return The list of tasks with the given priority.
+     * @throws TaskManagerException If there is a problem with the user information or the database.
+     */
+    @GetMapping("/{userId}/getTaskByPriority")
+    public ResponseEntity<List<Task>> getTaskByPriority(@PathVariable String userId, @RequestParam int priority) throws TaskManagerException {
+        return ResponseEntity.status(HttpStatus.OK)
+                .body(userService.getTaskByPriority(userId, priority));
+    }
+
+    /**
+     * This method returns the tasks by the given user id and the given difficulty.
+     * @param userId The given user id.
+     * @param difficulty The given task difficulty
      * @return The list of tasks with the given difficulty
-     * @throws TaskManagerException If there is a problem with the database.
+     * @throws TaskManagerException If there is a problem with the user information or the database.
      */
-    @GetMapping("/getTaskByDifficulty")
-    public ResponseEntity<List<Task>> getTaskByDifficulty(@RequestParam Difficulty difficulty) throws TaskManagerException {
+    @GetMapping("/{userId}/getTaskByDifficulty")
+    public ResponseEntity<List<Task>> getTaskByDifficulty(@PathVariable String userId, @RequestParam Difficulty difficulty) throws TaskManagerException {
         return ResponseEntity.status(HttpStatus.OK)
-                .body(taskService.getTaskByDifficulty(difficulty));
+                .body(userService.getTaskByDifficulty(userId, difficulty));
     }
 
     /**
-     * This method returns the tasks filtered by the given estimated time to be completed
-     * @param estimatedTime The estimated time of the task to be done
-     * @return The list of task with the given estimated time
-     * @throws TaskManagerException If there is a problem with the database.
+     * This method returns a list of tasks with the given estimated time of the user with the given id.
+     * @param userId THe given user id
+     * @param estimatedTime The given task estimated time
+     * @return The list of tasks with the given estimated time.
+     * @throws TaskManagerException If there is a problem with the user information or the database.
      */
-    @GetMapping("/getTaskByEstimatedTime")
-    public ResponseEntity<List<Task>> getTaskByEstimatedTime(@RequestParam int estimatedTime) throws TaskManagerException {
+    @GetMapping("/{userId}/getTaskByEstimatedTime")
+    public ResponseEntity<List<Task>> getTaskByEstimatedTime(@PathVariable String userId, @RequestParam int estimatedTime) throws TaskManagerException {
         return ResponseEntity.status(HttpStatus.OK)
-                .body(taskService.getTaskByEstimatedTime(estimatedTime));
+                .body(userService.getTaskByEstimatedTime(userId, estimatedTime));
     }
 }

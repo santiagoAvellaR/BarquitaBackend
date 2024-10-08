@@ -30,7 +30,7 @@ public class TaskTests {
     @Test
     void testChageDifficulty() {
         assertEquals(Difficulty.MEDIA, task.getDifficulty());
-        task.changeDifficulty(Difficulty.ALTA);
+        task.setDifficulty(Difficulty.ALTA);
         assertEquals(Difficulty.ALTA, task.getDifficulty());
     }
 
@@ -55,7 +55,7 @@ public class TaskTests {
     @Test
     void testChangeDeadline(){
         LocalDateTime newDeadline = LocalDateTime.now().plusDays(2);
-        task.changeDeadline(newDeadline);
+        task.setDeadline(newDeadline);
         assertEquals(newDeadline, task.getDeadline());
     }
 

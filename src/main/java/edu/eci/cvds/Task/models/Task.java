@@ -84,13 +84,7 @@ public class Task {
         if(!validateEstimatedTime(newEstimatedTime)) throw new TaskManagerException(TaskManagerException.TIME_INCORRECT);
         estimatedTime = newEstimatedTime;
     }
-    /**
-     * This method sets up the difficulty of the task by the new given one.
-     * @param newDifficulty The given difficulty of the task
-     */
-    public void changeDifficulty(Difficulty newDifficulty){
-        this.difficulty = newDifficulty;
-    }
+
     /**
      * Method sets up the name of the Task
      * @param newName The new name of the task
@@ -111,13 +105,6 @@ public class Task {
         description = newDescription;
     }
 
-    /**
-     * Method sets up a Deadline to the Task.
-     * @param newDeadline The new deadline
-     */
-    public void changeDeadline(LocalDateTime newDeadline) {
-        deadline = newDeadline;
-    }
 
     /**
      * This method returns the state of a Task
