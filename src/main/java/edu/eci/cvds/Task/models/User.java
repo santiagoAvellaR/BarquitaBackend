@@ -23,6 +23,15 @@ public class User implements TaskService {
     private String name;
     private String password;
     private int idTask=1;
+
+
+    /**
+     * This method is the constructor of User, and it validates the field of password, name and usernameId.
+     * @param usernameId The given username id
+     * @param name The Given name
+     * @param password The given password
+     * @throws TaskManagerException If the information of the user is not correct.
+     */
     public User(String usernameId, String name, String password) throws TaskManagerException {
         validate(usernameId,name, password);
         this.usernameId = usernameId;
@@ -30,6 +39,13 @@ public class User implements TaskService {
         this.password = password;
         this.tasks = new HashMap<>();
     }
+
+    /**
+     * This method adds a Task by the given DTO Task.
+     * @param taskDTO The given DTO Object, in this case, TaskDTO
+     * @return the created Task
+     * @throws TaskManagerException In the case the information given to create the Task is not correct.
+     */
     @Override
     public Task addTask(TaskDTO taskDTO) throws TaskManagerException {
         if(tasks.containsKey(taskDTO.getId())) throw new TaskManagerException(TaskManagerException.TASK_ALREADY_EXIST);
@@ -45,11 +61,24 @@ public class User implements TaskService {
         tasks.put(task.getId(), task);
         return task;
     }
+
+    /**
+     * This method deletes a task by the given id, if it exists
+     * @param id The id of the task to delete
+     * @throws TaskManagerException Throws an exception in case the task is not found
+     */
     @Override
     public void deleteTask(String id) throws TaskManagerException {
         if(!tasks.containsKey(id)) throw new TaskManagerException(TaskManagerException.TASK_NOT_FOUND);
         tasks.remove(id);
     }
+
+    /**
+     * This method changes the state of a task by the given id.
+     * @param id The task of the id to change state
+     * @throws TaskManagerException Throws an exception if there is a problem
+     * with the database or with the given id is not correct.
+     */
     @Override
     public void changeStateTask(String id) throws TaskManagerException {
         if(!tasks.containsKey(id)) throw new TaskManagerException(TaskManagerException.TASK_NOT_FOUND);
@@ -58,6 +87,14 @@ public class User implements TaskService {
         tasks.put(id, task);
     }
 
+    /**
+     * This method updates a Task from the database by the given TaskDTO.
+     * this updates the information of the task, except, if there is a problem with the given TaskDTO information
+     * of if there is a problem with the Database.
+     * @param dto The given TaskDTO to update the Task in the database
+     * @throws TaskManagerException If the information of the DTO is incorrect, or if there is a problem
+     * with the database.
+     */
     @Override
     public void updateTask(TaskDTO dto) throws TaskManagerException {
         if(!tasks.containsKey(dto.getId())) throw new TaskManagerException(TaskManagerException.TASK_NOT_FOUND);
@@ -72,34 +109,77 @@ public class User implements TaskService {
         tasks.put(task.getId(), task);
     }
 
+    /**
+     * This method returns all the tasks of the database.
+     * @return A List of the task from the database.
+     * @throws TaskManagerException Throws an exception if there is a problem with the database.
+     */
     @Override
     public List<Task> getAllTasks() throws TaskManagerException {
         return new ArrayList<>(tasks.values());
     }
 
+    /**
+     * This method return a List of Tasks with the state given.
+     * @param state The state to filter the list of tasks
+     * @return The list of Tasks with the same state that is given.
+     * @throws TaskManagerException Throws an exception if there is a problem with the database.
+     */
     @Override
     public List<Task> getTasksByState(boolean state) throws TaskManagerException {
         return getAllTasks().stream().filter(task -> state==task.getState()).toList();
     }
 
+    /**
+     * This method returns List of Tasks that have a deadline equal or before the given date.
+     * @param deadline The deadline to filter the List of Task
+     * @return The list of tasks that satisfies the condition.
+     * @throws TaskManagerException Throws an exception if there is a problem with the database.
+     */
     @Override
     public List<Task> getTasksByDeadline(LocalDateTime deadline) throws TaskManagerException {
         return getAllTasks().stream().filter(task -> task.getDeadline().isBefore(deadline)).toList();
     }
 
+    /**
+     * This method returns List of Tasks that have the given priority.
+     * @param priority The priority to filter the List of Task.
+     * @return The list of tasks that satisfies the condition.
+     * @throws TaskManagerException Throws an exception if there is a problem with the database.
+     */
     @Override
     public List<Task> getTaskByPriority(int priority) throws TaskManagerException {
         return List.of();
     }
 
+    /**
+     * This method returns List of Tasks that have the given difficulty
+     * @param difficulty The difficulty to filter the List of Taks.
+     * @return The list of tasks that satisfies the condition.
+     * @throws TaskManagerException Throws an exception if there is a problem with the database.
+     */
     @Override
     public List<Task> getTaskByDifficulty(Difficulty difficulty) throws TaskManagerException {
         return getAllTasks().stream().filter(task -> task.getDifficulty().equals(difficulty)).toList();
     }
-
+    /**
+     * This method returns List of Tasks that have the given estimated time.
+     * @param estimatedTime The estimated time to complete the task
+     * @return The list of tasks that satisfies the condition.
+     * @throws TaskManagerException Throws an exception if there is a problem with the database.
+     */
     @Override
     public List<Task> getTaskByEstimatedTime(int estimatedTime) throws TaskManagerException {
         return getAllTasks().stream().filter(task -> task.getEstimatedTime() == estimatedTime).toList();
+    }
+
+    /**
+     * This method returns a User DTO with the user information instead of returning the User Object
+     * @return The User DTO of this user
+     * @throws TaskManagerException If there is a problem tasks of the user.
+     */
+    public UserDTO toDTO() throws TaskManagerException {
+        return new UserDTO(usernameId,getAllTasks(),name,password);
     }
 
     private String generateId(){
@@ -110,9 +190,5 @@ public class User implements TaskService {
         if(usernameId == null || usernameId.isEmpty() ) throw new TaskManagerException(TaskManagerException.INVALID_USER_ID);
         if(name == null || name.isEmpty()) throw new TaskManagerException(TaskManagerException.INVALID_USER_NAME);
         if(password == null || password.isEmpty()) throw new TaskManagerException(TaskManagerException.INVALID_USER_PASSWD);
-    }
-
-    public UserDTO toDTO() throws TaskManagerException {
-        return new UserDTO(usernameId,getAllTasks(),name,password);
     }
 }

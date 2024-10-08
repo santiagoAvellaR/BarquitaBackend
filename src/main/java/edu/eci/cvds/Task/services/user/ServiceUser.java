@@ -26,10 +26,5 @@ public interface ServiceUser {
     List<Task> getTaskByDifficulty(String userId, Difficulty difficulty) throws TaskManagerException;
     // Analytics
     List<Task> getTaskByEstimatedTime(String userId, int estimatedTime) throws TaskManagerException;
-    void createTasks(String userId, int numberTasks) throws TaskManagerException;
-    Map<Difficulty, Long> getHistogram(String userId)throws TaskManagerException;
-    Map<Integer, Long> getFinishedTasks(String userId)throws TaskManagerException;
-    Map<Integer, Double> getConsolidatedPriority(String userId)throws TaskManagerException;
-    Map<Difficulty, Double> getTotalTimeSpentByDifficulty(String userId) throws TaskManagerException;
     void deleteAll();
 }

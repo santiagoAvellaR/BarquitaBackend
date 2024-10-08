@@ -203,35 +203,6 @@ class ServiceUserImplTest {
     }
 
     @Test
-    void getHistogram() {
-        try{
-            UserDTO user = serviceUser.createUser(new UserDTO("1", null, "User1", "User123"));
-            serviceUser.createTasks(user.getUsernameId(), 500);
-            Map<Difficulty, Long> histogram = serviceUser.getHistogram(user.getUsernameId());
-            int total = 0;
-            for(Map.Entry<Difficulty, Long> entry : histogram.entrySet()){
-                total += entry.getValue();
-            }
-            //assertEquals(500, total);
-        } catch (TaskManagerException e) {fail("Should not fail with error: " + e.getMessage());}
-    }
-
-    @Test
-    void getFinishedTasks() {
-        try{
-            UserDTO user = serviceUser.createUser(new UserDTO("1", null, "User1", "User123"));
-            serviceUser.createTasks(user.getUsernameId(), 500);
-            Map<Integer, Long> finished = serviceUser.getFinishedTasks(user.getUsernameId());
-            int total = 0;
-            for(Map.Entry<Integer, Long> entry: finished.entrySet()){
-                assertTrue(entry.getValue() > 0 && entry.getValue() < 100);
-                total += entry.getValue();
-            }
-            assertTrue(total >= 0 && total <= 1000);
-        } catch (TaskManagerException e) {fail("Should not fail with error: " + e.getMessage());}
-    }
-
-    @Test
     void deleteAll() {
         serviceUser.deleteAll();
         List<User> users = serviceUser.getUsers();
