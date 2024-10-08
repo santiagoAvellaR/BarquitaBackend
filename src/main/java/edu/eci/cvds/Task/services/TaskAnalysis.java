@@ -3,6 +3,9 @@ package edu.eci.cvds.Task.services;
 import edu.eci.cvds.Task.TaskManagerException;
 import edu.eci.cvds.Task.models.Difficulty;
 import edu.eci.cvds.Task.models.Task;
+import edu.eci.cvds.Task.models.TaskDTO;
+import edu.eci.cvds.Task.models.User;
+import edu.eci.cvds.Task.services.persistence.UserRepository;
 import org.springframework.stereotype.Component;
 import com.github.javafaker.Faker;
 
@@ -22,15 +25,15 @@ import java.util.stream.Collectors;
 @Component
 public class TaskAnalysis {
 
-    private final TaskPersistence taskPersistence;
+    private final UserRepository userRepository;
 
     /**
      * Constructor for the TaskAnalysis class. It injects the TaskPersistence component to interact with the data layer.
      *
-     * @param taskPersistence The persistence component used to save and retrieve task information.
+     * @param userRepository The persistence component used to save and retrieve task information.
      */
-    public TaskAnalysis(TaskPersistence taskPersistence) {
-        this.taskPersistence = taskPersistence;
+    public TaskAnalysis(UserRepository userRepository) {
+        this.userRepository = userRepository;
     }
 
     /**
@@ -39,9 +42,9 @@ public class TaskAnalysis {
      * @param counter The number of random tasks to generate.
      * @throws TaskManagerException If there is an error while interacting with the persistence layer.
      */
-    public void randomData(int counter) throws TaskManagerException {
-        if (isEmpty()) {
-            generateAnalysis(counter);
+    public void randomData(String userId,int counter) throws TaskManagerException {
+        if (isEmpty(userId)) {
+            generateAnalysis(userId, counter);
         }
     }
 
@@ -52,8 +55,8 @@ public class TaskAnalysis {
      * @return A list of randomly generated Task objects.
      * @throws TaskManagerException If there is an error while generating tasks.
      */
-    public List<Task> getRandomTasks(int numberOfTasks) throws TaskManagerException {
-        ArrayList<Task> tasks = new ArrayList<>();
+    public List<TaskDTO> getRandomTasks(int numberOfTasks) throws TaskManagerException {
+        ArrayList<TaskDTO> tasks = new ArrayList<>();
         for (int i = 0; i < numberOfTasks; i++) {
             Faker faker = new Faker();
             boolean state = faker.bool().bool();
@@ -64,7 +67,7 @@ public class TaskAnalysis {
             int estimatedTime = faker.number().numberBetween(1, 100);
             Difficulty difficulty = generateDifficulty(faker);
             LocalDateTime dateTime = generateDate(faker);
-            Task task1 = new Task(id, name, description, state, priority, estimatedTime, difficulty, dateTime);
+            TaskDTO task1 = new TaskDTO(id, name, description, state, priority, estimatedTime, difficulty, dateTime);
             tasks.add(task1);
         }
         return tasks;
@@ -104,8 +107,9 @@ public class TaskAnalysis {
      * @return True if there are no tasks; false otherwise.
      * @throws TaskManagerException If there is an error while checking the task list.
      */
-    private boolean isEmpty() throws TaskManagerException {
-        return taskPersistence.findAll().isEmpty();
+    private boolean isEmpty(String userId) throws TaskManagerException {
+        if(userRepository.findById(userId).isEmpty()) throw new TaskManagerException(TaskManagerException.USER_DOESNT_EXIST);
+        return userRepository.findById(userId).get().getTasks().isEmpty();
     }
 
     /**
@@ -114,11 +118,14 @@ public class TaskAnalysis {
      * @param counter The number of tasks to generate.
      * @throws TaskManagerException If there is an error while saving the tasks.
      */
-    private void generateAnalysis(int counter) throws TaskManagerException {
-        List<Task> tasks = getRandomTasks(counter);
-        for (Task task : tasks) {
-            taskPersistence.save(task);
+    private void generateAnalysis(String userId, int counter) throws TaskManagerException {
+        if(userRepository.findById(userId).isEmpty()) throw new TaskManagerException(TaskManagerException.USER_DOESNT_EXIST);
+        User user = userRepository.findById(userId).get();
+        List<TaskDTO> tasks = getRandomTasks(counter);
+        for (TaskDTO task : tasks) {
+            user.addTask(task);
         }
+        userRepository.save(user);
     }
 
     /**
@@ -127,10 +134,11 @@ public class TaskAnalysis {
      * @return A map where the keys are difficulties and the values are the count of tasks for each difficulty.
      * @throws TaskManagerException If there is an error while retrieving data from the persistence layer.
      */
-    public Map<Difficulty, Long> getHistogram() throws TaskManagerException {
-        long difficultyALTA = taskPersistence.findByDifficulty(Difficulty.ALTA).size();
-        long difficultyMEDIA = taskPersistence.findByDifficulty(Difficulty.MEDIA).size();
-        long difficultyBAJA = taskPersistence.findByDifficulty(Difficulty.BAJA).size();
+    public Map<Difficulty, Long> getHistogram(String userId) throws TaskManagerException {
+        if(userRepository.findById(userId).isEmpty()) throw new TaskManagerException(TaskManagerException.USER_DOESNT_EXIST);
+        long difficultyALTA = userRepository.findById(userId).get().getTaskByDifficulty(Difficulty.ALTA).size();
+        long difficultyMEDIA = userRepository.findById(userId).get().getTaskByDifficulty(Difficulty.MEDIA).size();
+        long difficultyBAJA = userRepository.findById(userId).get().getTaskByDifficulty(Difficulty.BAJA).size();
         return Map.of(Difficulty.ALTA, difficultyALTA, Difficulty.MEDIA, difficultyMEDIA, Difficulty.BAJA, difficultyBAJA);
     }
 
@@ -140,8 +148,9 @@ public class TaskAnalysis {
      * @return A map where the keys are the estimated time and the values are the count of finished tasks for each time.
      * @throws TaskManagerException If there is an error while retrieving data from the persistence layer.
      */
-    public Map<Integer, Long> getFinishedTasks() throws TaskManagerException {
-        return taskPersistence.findByState(true).stream()
+    public Map<Integer, Long> getFinishedTasks(String userId) throws TaskManagerException {
+        if(userRepository.findById(userId).isEmpty()) throw new TaskManagerException(TaskManagerException.USER_DOESNT_EXIST);
+        return userRepository.findById(userId).get().getTasksByState(true).stream()
                 .collect(Collectors.groupingBy(
                         Task::getEstimatedTime,
                         Collectors.counting()
@@ -155,19 +164,18 @@ public class TaskAnalysis {
      * @return A map where the keys are priorities and the values are the average number of tasks for each priority.
      * @throws TaskManagerException If there is an error while retrieving data from the persistence layer.
      */
-    public Map<Integer, Double> getConsolidatedPriority() throws TaskManagerException {
+    public Map<Integer, Double> getConsolidatedPriority(String userId) throws TaskManagerException {
+        if(userRepository.findById(userId).isEmpty()) throw new TaskManagerException(TaskManagerException.USER_DOESNT_EXIST);
         Map<Integer, Double> res = new HashMap<>();
-        List<Task> totalTasks = taskPersistence.findAll();
+        List<Task> totalTasks = userRepository.findById(userId).get().getAllTasks();
         Map<Integer, Long> tasksGrouped = totalTasks.stream()
                 .collect(Collectors.groupingBy(
                         Task::getPriority,
                         Collectors.counting()
                 ));
-
         for (Map.Entry<Integer, Long> entry : tasksGrouped.entrySet()) {
             res.put(entry.getKey(), (double) entry.getValue());
         }
-
         return res;
     }
 
@@ -177,8 +185,9 @@ public class TaskAnalysis {
      * @return A map where the keys are difficulties and the values are the total estimated time spent on tasks of each difficulty.
      * @throws TaskManagerException If there is an error while retrieving data from the persistence layer.
      */
-    public Map<Difficulty, Double> getTotalTimeSpentByDifficulty() throws TaskManagerException {
-        List<Task> allTasks = taskPersistence.findByState(true);
+    public Map<Difficulty, Double> getTotalTimeSpentByDifficulty(String userId) throws TaskManagerException {
+        if(userRepository.findById(userId).isEmpty()) throw new TaskManagerException(TaskManagerException.USER_DOESNT_EXIST);
+        List<Task> allTasks = userRepository.findById(userId).get().getTasksByState(true);
         return allTasks.stream().collect(Collectors.groupingBy(
                 Task::getDifficulty,
                 Collectors.summingDouble(Task::getEstimatedTime)
@@ -188,7 +197,8 @@ public class TaskAnalysis {
     /**
      * Deletes all tasks from the system.
      */
-    public void deleteAllTasks() throws TaskManagerException{
-        taskPersistence.deleteAll();
+    public void deleteAllTasks(String userId) throws TaskManagerException{
+        if(userRepository.findById(userId).isEmpty()) throw new TaskManagerException(TaskManagerException.USER_DOESNT_EXIST);
+        userRepository.deleteById(userId);
     }
 }
