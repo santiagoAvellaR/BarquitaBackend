@@ -1,24 +1,30 @@
 package edu.eci.cvds.Task.services.user;
 
-import edu.eci.cvds.Task.TaskManagerException;
+import edu.eci.cvds.Task.*;
 import edu.eci.cvds.Task.models.*;
 import edu.eci.cvds.Task.services.AnalyticsService;
 import edu.eci.cvds.Task.services.TaskAnalyticsService;
 import edu.eci.cvds.Task.services.persistence.UserRepository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
-
+@RequiredArgsConstructor
 @Service
 public class ServiceUserImpl implements ServiceUser {
+    private final JwtService jwtService;
+    private final AuthenticationManager authenticationManager;
+    private final PasswordEncoder passwordEncoder;
     private int id = 1;
     private final UserRepository userRepository;
 
-    public ServiceUserImpl(UserRepository userRepository) {
-        this.userRepository =userRepository;
-    }
+
 
     public List<User> getUsers(){ return userRepository.findAll(); }
 
@@ -40,14 +46,14 @@ public class ServiceUserImpl implements ServiceUser {
      * @throws TaskManagerException If there is a problem with the user information.
      */
     @Override
-    public UserDTO createUser(UserDTO userDTO) throws TaskManagerException{
+    public TokenDTO createUser(RegisterDTO registerDTO) throws TaskManagerException{
         // Should check if the user already exist.
         User user = new User(
-                generateId(userDTO.getName()),
-                userDTO.getName(),
-                userDTO.getPassword());
+                generateId(registerDTO.getName()),
+                registerDTO.getName(),
+                passwordEncoder.encode(registerDTO.getPassword()), registerDTO.getEmail());
         userRepository.save(user);
-        return user.toDTO();
+        return TokenDTO.builder().token(jwtService.getToken(user.getUsernameId())).build();
     }
 
     /**
@@ -58,9 +64,10 @@ public class ServiceUserImpl implements ServiceUser {
      * @throws TaskManagerException If the user does not exist in the database.
      */
     @Override
-    public boolean login(String username, String password) throws TaskManagerException {
-        User user = findUser(username);
-        return user.getPassword().equals(password);
+    public TokenDTO login(LoginDTO loginDTO) throws TaskManagerException {
+        authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginDTO.getEmail(), loginDTO.getPassword()));
+        User user = userRepository.findByEmail(loginDTO.getEmail()).orElseThrow(()->new UsernameNotFoundException("The user with email not found." + loginDTO.getEmail()));
+        return TokenDTO.builder().token(jwtService.getToken(user.getUsernameId())).build();
     }
 
     /**

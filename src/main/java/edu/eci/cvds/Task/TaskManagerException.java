@@ -16,6 +16,7 @@ public class TaskManagerException extends Exception{
     public static final String INVALID_USER_NAME = "The user name should not be null";
     public static final String INVALID_USER_PASSWD = "The ";
     public static final String INVALID_USER_ID = "";
+    public static final String INVALID_USER_EMAIL = "The email should not be null";
     public static final String TASK_ALREADY_EXIST = "The task already exists.";
 
     /**

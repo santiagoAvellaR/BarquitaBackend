@@ -2,6 +2,7 @@ package edu.eci.cvds.Task.controller;
 import edu.eci.cvds.Task.*;
 import edu.eci.cvds.Task.models.*;
 import edu.eci.cvds.Task.services.user.ServiceUser;
+import org.antlr.v4.runtime.Token;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -31,7 +32,7 @@ public class TaskController {
      * @throws TaskManagerException If there is a problem with the user information or the database.
      */
     @PostMapping("/createUser")
-    public ResponseEntity<UserDTO> createUser(@RequestBody UserDTO userDTO)throws TaskManagerException{
+    public ResponseEntity<TokenDTO> createUser(@RequestBody RegisterDTO userDTO)throws TaskManagerException{
         return ResponseEntity.status(HttpStatus.OK)
                 .body(userService.createUser(userDTO));
     }
@@ -77,15 +78,18 @@ public class TaskController {
 
     /**
      * This method checks if the user is correctly logged with the given id and password.
-     * @param userId The user id
-     * @param password The user password
      * @return True if the id and password are in the database and assigned to the same user. False otherwise
      * @throws TaskManagerException If there is a problem with the user information or the database.
      */
-    @GetMapping("/login")
-    public ResponseEntity<Boolean> login(@RequestParam String userId, @RequestParam String password) throws TaskManagerException{
+    @PostMapping("/login")
+    public ResponseEntity<TokenDTO> login(@RequestBody LoginDTO loginDTO) throws TaskManagerException{
+        System.out.print(loginDTO.getUsernameId());
+        System.out.print(loginDTO.getEmail());
+        System.out.print(loginDTO.getPassword());
+
         return ResponseEntity.status(HttpStatus.OK)
-                .body(userService.login(userId,password));
+                .body(userService.login(loginDTO));
+
     }
 
     /**

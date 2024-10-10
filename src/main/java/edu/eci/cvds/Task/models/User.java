@@ -6,23 +6,23 @@ import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 @Setter
 @Getter
 @Document(collection = "Users")
-public class User implements TaskService {
+public class User implements TaskService, UserDetails {
     @Id
     private String usernameId;
     private HashMap<String,Task> tasks;
     private String name;
     private String password;
     private int idTask=1;
+    private String email;
 
 
     /**
@@ -32,12 +32,13 @@ public class User implements TaskService {
      * @param password The given password
      * @throws TaskManagerException If the information of the user is not correct.
      */
-    public User(String usernameId, String name, String password) throws TaskManagerException {
-        validate(usernameId,name, password);
+    public User(String usernameId, String name, String password, String email) throws TaskManagerException {
+        validate(usernameId,name, password, email);
         this.usernameId = usernameId;
         this.name = name;
         this.password = password;
         this.tasks = new HashMap<>();
+        this.email = email;
     }
 
     /**
@@ -179,16 +180,47 @@ public class User implements TaskService {
      * @throws TaskManagerException If there is a problem tasks of the user.
      */
     public UserDTO toDTO() throws TaskManagerException {
-        return new UserDTO(usernameId,getAllTasks(),name,password);
+        return new UserDTO(usernameId,getAllTasks(),name,password, email);
     }
 
     private String generateId(){
         return UUID.randomUUID().toString().replace("-", "").substring(0, 9) + this.idTask++;
     }
 
-    private void validate(String usernameId, String name, String password) throws TaskManagerException {
+    private void validate(String usernameId, String name, String password, String email) throws TaskManagerException {
         if(usernameId == null || usernameId.isEmpty() ) throw new TaskManagerException(TaskManagerException.INVALID_USER_ID);
         if(name == null || name.isEmpty()) throw new TaskManagerException(TaskManagerException.INVALID_USER_NAME);
         if(password == null || password.isEmpty()) throw new TaskManagerException(TaskManagerException.INVALID_USER_PASSWD);
+        if(email == null || email.isEmpty()) throw  new TaskManagerException(TaskManagerException.INVALID_USER_EMAIL);
+    }
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return List.of();
+    }
+
+    @Override
+    public String getUsername() {
+        return email;
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return UserDetails.super.isAccountNonExpired();
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return UserDetails.super.isAccountNonLocked();
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return UserDetails.super.isCredentialsNonExpired();
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return UserDetails.super.isEnabled();
     }
 }

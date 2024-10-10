@@ -1,6 +1,9 @@
 package edu.eci.cvds.Task.services.user;
 
+import edu.eci.cvds.Task.LoginDTO;
+import edu.eci.cvds.Task.RegisterDTO;
 import edu.eci.cvds.Task.TaskManagerException;
+import edu.eci.cvds.Task.TokenDTO;
 import edu.eci.cvds.Task.models.*;
 
 import java.time.LocalDateTime;
@@ -8,9 +11,9 @@ import java.util.List;
 import java.util.Map;
 
 public interface ServiceUser {
-    UserDTO createUser(UserDTO userDTO)throws TaskManagerException;
+    TokenDTO createUser(RegisterDTO registerDTO)throws TaskManagerException;
     UserDTO getUser(String id) throws TaskManagerException;
-    boolean login(String username, String password) throws TaskManagerException;
+    TokenDTO login(LoginDTO loginDTO) throws TaskManagerException;
     // Delete account
     void deleteUser(String userId) throws TaskManagerException;
     //
