@@ -1,9 +1,8 @@
 package edu.eci.cvds.Task.services.user;
 
 import edu.eci.cvds.Task.*;
+import edu.eci.cvds.Task.jwt.JwtService;
 import edu.eci.cvds.Task.models.*;
-import edu.eci.cvds.Task.services.AnalyticsService;
-import edu.eci.cvds.Task.services.TaskAnalyticsService;
 import edu.eci.cvds.Task.services.persistence.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -13,7 +12,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Map;
 import java.util.UUID;
 @RequiredArgsConstructor
 @Service
@@ -53,7 +51,7 @@ public class ServiceUserImpl implements ServiceUser {
                 registerDTO.getName(),
                 passwordEncoder.encode(registerDTO.getPassword()), registerDTO.getEmail());
         userRepository.save(user);
-        return TokenDTO.builder().token(jwtService.getToken(user.getUsernameId())).build();
+        return TokenDTO.builder().token(jwtService.getToken(user.getUsername())).build();
     }
 
     /**
@@ -67,7 +65,7 @@ public class ServiceUserImpl implements ServiceUser {
     public TokenDTO login(LoginDTO loginDTO) throws TaskManagerException {
         authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginDTO.getEmail(), loginDTO.getPassword()));
         User user = userRepository.findByEmail(loginDTO.getEmail()).orElseThrow(()->new UsernameNotFoundException("The user with email not found." + loginDTO.getEmail()));
-        return TokenDTO.builder().token(jwtService.getToken(user.getUsernameId())).build();
+        return TokenDTO.builder().token(jwtService.getToken(user.getUsername())).build();
     }
 
     /**
@@ -204,6 +202,12 @@ public class ServiceUserImpl implements ServiceUser {
     @Override
     public void deleteAll() {
         userRepository.deleteAll();
+    }
+
+    @Override
+    public UserIDTO getUserId(String email) throws TaskManagerException {
+        if(userRepository.findByEmail(email).isEmpty()) throw new TaskManagerException(TaskManagerException.USER_DOESNT_EXIST);
+        return new UserIDTO(userRepository.findByEmail(email).get().getUsernameId());
     }
 
     /**

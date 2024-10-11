@@ -1,4 +1,4 @@
-package edu.eci.cvds.Task;
+package edu.eci.cvds.Task.config;
 import edu.eci.cvds.Task.services.persistence.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;

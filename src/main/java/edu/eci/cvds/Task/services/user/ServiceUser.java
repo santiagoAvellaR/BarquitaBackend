@@ -1,14 +1,10 @@
 package edu.eci.cvds.Task.services.user;
 
-import edu.eci.cvds.Task.LoginDTO;
-import edu.eci.cvds.Task.RegisterDTO;
-import edu.eci.cvds.Task.TaskManagerException;
-import edu.eci.cvds.Task.TokenDTO;
+import edu.eci.cvds.Task.*;
 import edu.eci.cvds.Task.models.*;
 
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Map;
 
 public interface ServiceUser {
     TokenDTO createUser(RegisterDTO registerDTO)throws TaskManagerException;
@@ -30,4 +26,5 @@ public interface ServiceUser {
     // Analytics
     List<Task> getTaskByEstimatedTime(String userId, int estimatedTime) throws TaskManagerException;
     void deleteAll();
+    UserIDTO getUserId(String email) throws TaskManagerException;
 }

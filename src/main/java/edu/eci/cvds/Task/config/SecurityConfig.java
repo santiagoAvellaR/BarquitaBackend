@@ -1,4 +1,4 @@
-package edu.eci.cvds.Task;
+package edu.eci.cvds.Task.config;
 
 import edu.eci.cvds.Task.jwt.JwtAuthenticationFilter;
 import lombok.RequiredArgsConstructor;
@@ -25,7 +25,7 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http.csrf(htt->htt.disable()).authorizeHttpRequests(
-                        auth-> auth.requestMatchers(HttpMethod.POST, "/createUser", "/login").permitAll()
+                        auth-> auth.requestMatchers( "/createUser", "/login").permitAll()
                                 .anyRequest().authenticated()
                 )
                 .formLogin(form -> form
