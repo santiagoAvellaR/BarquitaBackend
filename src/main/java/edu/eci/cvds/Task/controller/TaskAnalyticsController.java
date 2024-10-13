@@ -17,9 +17,9 @@ import java.util.Map;
  * @since 04-10-2024
  */
 @RestController
-@CrossOrigin
+@CrossOrigin(origins = "https://tasksmanagement-e3htazgka7h4c2ev.brazilsouth-01.azurewebsites.net/")
 @RequestMapping("/Analytics")
-public class TaskAnalyticsController {
+public class TaskAnalyticsController{
 
     private final TaskAnalyticsService taskAnalyticsService;
 
@@ -39,8 +39,8 @@ public class TaskAnalyticsController {
      * @throws TaskManagerException If there is an error while creating tasks.
      */
     @PostMapping("/createTasks")
-    public void createTasks(@RequestParam int numberTasks) throws TaskManagerException {
-        taskAnalyticsService.createTasks(numberTasks);
+    public void createTasks(@RequestParam String userId, @RequestParam int numberTasks) throws TaskManagerException {
+        taskAnalyticsService.createTasks(userId, numberTasks);
     }
 
     /**
@@ -50,8 +50,8 @@ public class TaskAnalyticsController {
      * @throws TaskManagerException If there is an error while retrieving the histogram data.
      */
     @GetMapping("/getHistogram")
-    public Map<Difficulty, Long> getHistogram() throws TaskManagerException {
-        return taskAnalyticsService.getHistogram();
+    public Map<Difficulty, Long> getHistogram(@RequestParam String userId) throws TaskManagerException {
+        return taskAnalyticsService.getHistogram(userId);
     }
 
     /**
@@ -61,8 +61,8 @@ public class TaskAnalyticsController {
      * @throws TaskManagerException If there is an error while retrieving the data.
      */
     @GetMapping("/getFinishedTasks")
-    public Map<Integer, Long> getFinishedTasks() throws TaskManagerException {
-        return taskAnalyticsService.getFinishedTasks();
+    public Map<Integer, Long> getFinishedTasks(@RequestParam String userId) throws TaskManagerException {
+        return taskAnalyticsService.getFinishedTasks(userId);
     }
 
     /**
@@ -72,8 +72,8 @@ public class TaskAnalyticsController {
      * @throws TaskManagerException If there is an error while calculating the averages.
      */
     @GetMapping("/getAverageByPriority")
-    public Map<Integer, Double> getAverageByPriority() throws TaskManagerException {
-        return taskAnalyticsService.getAverageByPriority();
+    public Map<Integer, Double> getConsolidatedPriority(@RequestParam String userId) throws TaskManagerException {
+        return taskAnalyticsService.getConsolidatedPriority(userId);
     }
 
     /**
@@ -83,8 +83,8 @@ public class TaskAnalyticsController {
      * @throws TaskManagerException If there is an error while calculating the total time.
      */
     @GetMapping("/getTotalTimeSpentByDifficulty")
-    public Map<Difficulty, Double> getTotalTimeSpentByDifficulty() throws TaskManagerException {
-        return taskAnalyticsService.getTotalTimeSpentByDifficulty();
+    public Map<Difficulty, Double> getTotalTimeSpentByDifficulty(@RequestParam String userId) throws TaskManagerException {
+        return taskAnalyticsService.getTotalTimeSpentByDifficulty(userId);
     }
 
     /**
@@ -92,7 +92,7 @@ public class TaskAnalyticsController {
      * This action cannot be undone.
      */
     @DeleteMapping("/deleteAllTasks")
-    public void deleteAll(){
-        taskAnalyticsService.deleteAll();
+    public void deleteAll(@RequestParam String userId)throws TaskManagerException{
+        taskAnalyticsService.deleteAll(userId);
     }
 }

@@ -23,7 +23,7 @@ class TaskServiceImplTest {
     @AfterEach
     void tearDown(){
         try{
-            filePersistence.cleanFileForTest();
+            filePersistence.deleteAll();
         } catch(TaskManagerException e) {fail("Should not fail with error: " + e.getMessage());}
     }
 

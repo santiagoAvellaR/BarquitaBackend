@@ -12,6 +12,12 @@ public class TaskManagerException extends Exception{
     public static final String PRIORITY_OUT_OF_RANGE = "The difficulty must be in the range [1,5].";
     public static final String DATA_BASE_FILE_ERROR = "There has been an error with the plane text database";
     public static final String TIME_INCORRECT = "The time must be greater than zero";
+    public static final String USER_DOESNT_EXIST = "The user was not found in the database.";
+    public static final String INVALID_USER_NAME = "The user name should not be null";
+    public static final String INVALID_USER_PASSWD = "The ";
+    public static final String INVALID_USER_ID = "";
+    public static final String INVALID_USER_EMAIL = "The email should not be null";
+    public static final String TASK_ALREADY_EXIST = "The task already exists.";
 
     /**
      * Constructor TaskManagerExceptions.
