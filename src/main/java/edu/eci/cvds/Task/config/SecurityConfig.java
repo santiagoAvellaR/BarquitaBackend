@@ -12,6 +12,8 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 
 @Configuration
@@ -25,18 +27,32 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http.csrf(htt->htt.disable()).authorizeHttpRequests(
-                        auth-> auth.requestMatchers( "/createUser", "/login").permitAll()
+                        auth-> auth.requestMatchers( "/createUser", "/login")
+                                .permitAll()
+                                .requestMatchers(HttpMethod.OPTIONS,"/**").permitAll()
                                 .anyRequest().authenticated()
                 )
-                .formLogin(form -> form
-                        .loginPage("/loginUser").permitAll()
-                ).sessionManagement(sessionManager ->
+                .sessionManagement(sessionManager ->
                         sessionManager.sessionCreationPolicy(
                                 SessionCreationPolicy.STATELESS
                         )).
                 authenticationProvider(authenticationProvider).
                 addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class).
                 build();
+    }
+
+    @Bean
+    public WebMvcConfigurer corsConfigurer() {
+        return new WebMvcConfigurer() {
+            @Override
+            public void addCorsMappings(CorsRegistry registry) {
+                registry.addMapping("/**")
+                        .allowedOrigins("http://localhost:3000")  // El origen del frontend
+                        .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
+                        .allowedHeaders("Authorization", "Content-Type")
+                        .allowCredentials(true);  // Permitir envío de credenciales
+            }
+        };
     }
 
 

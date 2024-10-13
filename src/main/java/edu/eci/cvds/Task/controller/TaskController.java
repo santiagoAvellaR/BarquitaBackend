@@ -219,4 +219,9 @@ public class TaskController {
         return ResponseEntity.status(HttpStatus.OK)
                 .body(userService.getTaskByEstimatedTime(userId, estimatedTime));
     }
+
+    @RequestMapping(value="/**", method = RequestMethod.OPTIONS)
+    public ResponseEntity<Void> handleOptions() {
+        return ResponseEntity.ok().build();  // Responder 200 OK
+    }
 }
