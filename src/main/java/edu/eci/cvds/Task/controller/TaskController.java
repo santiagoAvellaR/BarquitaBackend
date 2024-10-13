@@ -15,7 +15,7 @@ import java.util.List;
  * {@code @Since} 22-09-2024
  */
 @RestController
-@CrossOrigin
+@CrossOrigin(origins = "https://tasksmanagement-e3htazgka7h4c2ev.brazilsouth-01.azurewebsites.net/")
 public class TaskController {
     private final ServiceUser userService;
 
@@ -31,7 +31,8 @@ public class TaskController {
      * @throws TaskManagerException If there is a problem with the user information or the database.
      */
     @PostMapping("/createUser")
-    public ResponseEntity<UserDTO> createUser(@RequestBody UserDTO userDTO)throws TaskManagerException{
+    public ResponseEntity<TokenDTO> createUser(@RequestBody RegisterDTO userDTO)throws TaskManagerException{
+        System.out.printf("%s %s %s %s", userDTO.getUsernameId(), userDTO.getName(), userDTO.getPassword(), userDTO.getEmail());
         return ResponseEntity.status(HttpStatus.OK)
                 .body(userService.createUser(userDTO));
     }
@@ -76,16 +77,15 @@ public class TaskController {
     }
 
     /**
-     * This method checks if the user is correctly logged with the given id and password.
-     * @param userId The user id
-     * @param password The user password
+     * This method checks if the user is correctly logged with the given email and password.
+     * @param loginDTO The given data email and password
      * @return True if the id and password are in the database and assigned to the same user. False otherwise
      * @throws TaskManagerException If there is a problem with the user information or the database.
      */
-    @GetMapping("/login")
-    public ResponseEntity<Boolean> login(@RequestParam String userId, @RequestParam String password) throws TaskManagerException{
+    @PostMapping("/login")
+    public ResponseEntity<TokenDTO> login(@RequestBody LoginDTO loginDTO) throws TaskManagerException{
         return ResponseEntity.status(HttpStatus.OK)
-                .body(userService.login(userId,password));
+                .body(userService.login(loginDTO));
     }
 
     /**
@@ -100,6 +100,18 @@ public class TaskController {
                 .body(userService.getAllTasks(userId));
     }
 
+    /**
+     * Retrieves the user ID associated with the given email.
+     *
+     * @param email The user's email address.
+     * @return A response containing the user's ID if found, with an HTTP 200 status.
+     * @throws TaskManagerException If there is an issue retrieving the user ID or with the database.
+     */
+    @GetMapping("/getUserId")
+    public ResponseEntity<UserIDTO> getUserId(@RequestParam String email) throws TaskManagerException {
+        return ResponseEntity.status(HttpStatus.OK)
+                .body(userService.getUserId(email));
+    }
 
     /**
      * This method returns the tasks filtered by state.
@@ -206,5 +218,10 @@ public class TaskController {
     public ResponseEntity<List<Task>> getTaskByEstimatedTime(@PathVariable String userId, @RequestParam int estimatedTime) throws TaskManagerException {
         return ResponseEntity.status(HttpStatus.OK)
                 .body(userService.getTaskByEstimatedTime(userId, estimatedTime));
+    }
+
+    @RequestMapping(value="/**", method = RequestMethod.OPTIONS)
+    public ResponseEntity<Void> handleOptions() {
+        return ResponseEntity.ok().build();  // Responder 200 OK
     }
 }

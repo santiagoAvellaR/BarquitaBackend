@@ -5,6 +5,7 @@ import java.util.Arrays;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
@@ -40,5 +41,12 @@ public class TaskControllerHandler {
         logger.error(ex.getMessage());
         logger.error(Arrays.toString(ex.getStackTrace()));
         return "Internal Server Error";
+    }
+    @ExceptionHandler(BadCredentialsException.class)
+    @ResponseStatus(value=HttpStatus.UNAUTHORIZED)
+    public String badCredentialsException(BadCredentialsException ex){
+        logger.error(ex.getMessage());
+        logger.error(Arrays.toString(ex.getStackTrace()));
+        return "The Email Or Password Is Incorrect";
     }
 }

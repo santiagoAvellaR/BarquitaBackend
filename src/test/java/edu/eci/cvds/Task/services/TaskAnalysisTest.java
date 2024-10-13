@@ -25,7 +25,7 @@ public class TaskAnalysisTest {
 
     @BeforeAll
     static void setUpBeforeClass(@Autowired UserRepository userRepository) throws TaskManagerException {
-        user = new User("#-UsER-TeST-#", "USER-TEST", "USER-TEST");
+        user = new User("#-UsER-TeST-#", "USER-TEST", "USER-TEST", "test@gmail.com");
         userRepository.save(user);
         taskAnalysis = new TaskAnalysis(userRepository);
         taskAnalysis.randomData(user.getUsernameId(), 1000);

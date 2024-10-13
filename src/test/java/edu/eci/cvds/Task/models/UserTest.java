@@ -18,7 +18,7 @@ class UserTest {
     @BeforeEach
     void setUp() {
         try{
-            user = new User("1", "User 1", "user1");
+            user = new User("1", "User 1", "user1", "user1@gmail.com");
             taskDTO = new TaskDTO("001", "Task 1", "Description 1", true, 4, 8, Difficulty.BAJA, LocalDateTime.now());
         } catch (TaskManagerException e) {fail("Should not have failed with error: " + e.getMessage());}
     }

@@ -17,9 +17,9 @@ import java.util.Map;
  * @since 04-10-2024
  */
 @RestController
-@CrossOrigin
+@CrossOrigin(origins = "https://tasksmanagement-e3htazgka7h4c2ev.brazilsouth-01.azurewebsites.net/")
 @RequestMapping("/Analytics")
-public class TaskAnalyticsController {
+public class TaskAnalyticsController{
 
     private final TaskAnalyticsService taskAnalyticsService;
 
