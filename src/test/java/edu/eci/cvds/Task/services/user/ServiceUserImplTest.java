@@ -11,6 +11,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.authentication.BadCredentialsException;
+import org.springframework.web.client.HttpClientErrorException;
 
 import java.time.LocalDateTime;
 import java.util.Collections;
@@ -40,6 +41,16 @@ class ServiceUserImplTest {
         try{
             assertNotNull(serviceUser.createUser(new RegisterDTO("123123", "Miguel", "Miguel123", "miguel@gmail.com")));
         } catch (TaskManagerException e) {fail("Should not fail with error: " + e.getMessage());}
+    }
+    @Test
+    void shouldNotCreateUserWithSameEmail() throws TaskManagerException {
+        try {
+            serviceUser.createUser(new RegisterDTO("123123", "Miguel", "Miguel123", "miguel@gmail.com"));
+            serviceUser.createUser(new RegisterDTO("123123",  "Miguel", "Miguel123", "miguel@gmail.com"));
+            fail("Did not throw exception");
+        }catch (TaskManagerException e) {
+            assertEquals(TaskManagerException.EMAIL_IN_USE, e.getMessage());
+        }
     }
 
     @Test
