@@ -40,7 +40,7 @@ public class Task {
      * @param deadline The deadline of the task.
      * @throws TaskManagerException Throws an exception if the name, description or the priority are incorrect.
      */
-    public Task(String id, String name, String description, boolean state, int priority,int estimatedTime,Difficulty difficulty, LocalDateTime deadline) throws TaskManagerException {
+    public Task(String id, String name, String description, boolean state, int priority,int estimatedTime, Difficulty difficulty, LocalDateTime deadline) throws TaskManagerException {
         if(!validateName(name)){
             throw new TaskManagerException(TaskManagerException.NAME_NOT_NULL);
         }
