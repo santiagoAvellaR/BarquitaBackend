@@ -15,7 +15,7 @@ import java.util.List;
  * {@code @Since} 22-09-2024
  */
 @RestController
-@CrossOrigin(origins = " https://agreeable-field-0b472e70f.5.azurestaticapps.net/")
+@CrossOrigin(origins = "https://agreeable-field-0b472e70f.5.azurestaticapps.net/")
 public class TaskController {
     private final ServiceUser userService;
 
