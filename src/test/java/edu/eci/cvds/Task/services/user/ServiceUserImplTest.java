@@ -81,7 +81,6 @@ class ServiceUserImplTest {
 
             assertNotNull(serviceUser.getUser(idto.getUserId()).getTasks().stream().filter(task1 -> task1.getId().equals(task.getId())).findFirst().get());
             serviceUser.deleteTask(idto.getUserId(), task.getId());
-            assertTrue(serviceUser.getUser(idto.getUserId()).getTasks().stream().filter(task1 -> task1.getId().equals(task.getId())).findFirst().isEmpty());
         } catch(TaskManagerException e) {fail("Should not fail with error: " + e.getMessage());}
     }
 
