@@ -9,6 +9,7 @@ import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+import org.springframework.web.client.HttpClientErrorException;
 
 /**
  * This class handles the possible exceptions with the backend to hide the information and just throw
@@ -49,4 +50,6 @@ public class TaskControllerHandler {
         logger.error(Arrays.toString(ex.getStackTrace()));
         return "The Email Or Password Is Incorrect";
     }
+
+
 }

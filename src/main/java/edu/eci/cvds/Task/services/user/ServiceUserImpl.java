@@ -11,6 +11,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 @RequiredArgsConstructor
@@ -39,13 +40,16 @@ public class ServiceUserImpl implements ServiceUser {
 
     /**
      * This method creates a User and returns the User DTO with the User info.
-     * @param userDTO The given User DTO to create the User in the database.
+     * @param registerDTO The given User DTO to create the User in the database.
      * @return The User DTO with the created User information.
      * @throws TaskManagerException If there is a problem with the user information.
      */
     @Override
     public TokenDTO createUser(RegisterDTO registerDTO) throws TaskManagerException{
         // Should check if the user already exist.
+        if(!verificateEmail(registerDTO.getEmail())){
+           throw new TaskManagerException(TaskManagerException.EMAIL_IN_USE);
+        }
         User user = new User(
                 generateId(registerDTO.getName()),
                 registerDTO.getName(),
@@ -56,8 +60,7 @@ public class ServiceUserImpl implements ServiceUser {
 
     /**
      * This method returns true if the username and password are correct. False otherwise. It has to exist in the database.
-     * @param username The given username.
-     * @param password The given password.
+     * @param loginDTO The given User DTO to create the User in the database.
      * @return True if the user true if the username and password are correct. False otherwise.
      * @throws TaskManagerException If the user does not exist in the database.
      */
@@ -209,7 +212,9 @@ public class ServiceUserImpl implements ServiceUser {
         if(userRepository.findByEmail(email).isEmpty()) throw new TaskManagerException(TaskManagerException.USER_DOESNT_EXIST);
         return new UserIDTO(userRepository.findByEmail(email).get().getUsernameId());
     }
-
+    private boolean verificateEmail(String email){
+        return userRepository.findByEmail(email).isEmpty();
+    }
     /**
      * This method deletes a user from the database by the given id.
      * @param id The given user id
@@ -227,4 +232,5 @@ public class ServiceUserImpl implements ServiceUser {
         if(userRepository.findById(id).isEmpty()) throw new TaskManagerException(TaskManagerException.USER_DOESNT_EXIST);
         return userRepository.findById(id).get();
     }
+
 }
