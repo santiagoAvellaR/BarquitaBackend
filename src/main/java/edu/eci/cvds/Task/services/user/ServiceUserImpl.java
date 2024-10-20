@@ -3,8 +3,10 @@ package edu.eci.cvds.Task.services.user;
 import edu.eci.cvds.Task.*;
 import edu.eci.cvds.Task.jwt.JwtService;
 import edu.eci.cvds.Task.models.*;
+import edu.eci.cvds.Task.services.persistence.UserPersistence;
 import edu.eci.cvds.Task.services.persistence.UserRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -21,7 +23,8 @@ public class ServiceUserImpl implements ServiceUser {
     private final AuthenticationManager authenticationManager;
     private final PasswordEncoder passwordEncoder;
     private int id = 1;
-    private final UserRepository userRepository;
+    @Autowired
+    private final UserPersistence userRepository;
 
 
 

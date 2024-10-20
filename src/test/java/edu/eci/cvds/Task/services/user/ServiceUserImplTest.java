@@ -1,7 +1,10 @@
 package edu.eci.cvds.Task.services.user;
 
 import edu.eci.cvds.Task.*;
+import edu.eci.cvds.Task.jwt.JwtService;
 import edu.eci.cvds.Task.models.*;
+import edu.eci.cvds.Task.services.persistence.FilePersistenceImpl;
+import edu.eci.cvds.Task.services.persistence.UserFilePersistenceImpl;
 import org.antlr.v4.runtime.Token;
 import org.apache.commons.lang3.builder.Diff;
 import org.hibernate.dialect.function.TimestampdiffFunction;
@@ -10,7 +13,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.client.HttpClientErrorException;
 
 import java.time.LocalDateTime;
@@ -22,18 +27,17 @@ import java.util.Map;
 import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
 class ServiceUserImplTest {
-
     private final LocalDateTime date = LocalDateTime.now();
+    private final ServiceUserImpl serviceUser;
     @Autowired
-    private ServiceUserImpl serviceUser;
-
-    @BeforeEach
-    void setUp() {
-        serviceUser.deleteAll();
+    ServiceUserImplTest(JwtService jwtService, AuthenticationManager authenticationManager, PasswordEncoder passwordEncoder) {
+        UserFilePersistenceImpl filePersistence= new UserFilePersistenceImpl("src/test/java/edu/eci/cvds/Task/services/persistence/DataUserTEST.txt");
+        this.serviceUser  = new ServiceUserImpl(jwtService, authenticationManager, passwordEncoder, filePersistence);
     }
 
     @AfterEach
     void tearDown(){
+        serviceUser.deleteAll();
     }
 
     @Test
@@ -73,11 +77,18 @@ class ServiceUserImplTest {
     @Test
     void addTask() {
         try{
-            serviceUser.createUser(new RegisterDTO("123123","Miguel", "Miguel123", "miguel@gmail.com"));
-            UserIDTO idto = serviceUser.getUserId("miguel@gmail.com");
+            serviceUser.createUser(new RegisterDTO("123123","Sara", "Miguel123", "sara@gmail.com"));
+            System.out.println("-This-");
+            UserIDTO idto = serviceUser.getUserId("sara@gmail.com");
+
             Task task = serviceUser.addTask(idto.getUserId(), new TaskDTO("dontcare", "Study", "Description", true, 3, 2, Difficulty.BAJA,date));
             List<Task> tasks = serviceUser.getAllTasks(idto.getUserId());
+
             assertEquals(1, tasks.size());
+
+            System.out.println("Tarea: " + task.getId());
+            System.out.println("Tareas: " + tasks.get(0).getId());
+
             assertEquals(task.getId(), tasks.get(0).getId());
         } catch (TaskManagerException e) {fail("Should not fail with error: " + e.getMessage());}
     }
@@ -116,7 +127,6 @@ class ServiceUserImplTest {
             UserIDTO idto = serviceUser.getUserId("miguel@gmail.com");
             Task task = serviceUser.addTask(idto.getUserId(), new TaskDTO("dontcare", "Study", "Description", true, 3, 2, Difficulty.BAJA,date));
             Task serviceTask = serviceUser.getUser(idto.getUserId()).getTasks().stream().filter(task1 -> task1.getId().equals(task.getId())).findFirst().get();
-
             assertEquals(task.getName(),serviceTask.getName());
             assertEquals(task.getDifficulty(), serviceTask.getDifficulty());
             assertEquals(task.getDescription(),serviceTask.getDescription());
