@@ -6,6 +6,7 @@ import edu.eci.cvds.Task.models.Task;
 import edu.eci.cvds.Task.models.TaskDTO;
 import edu.eci.cvds.Task.models.User;
 import edu.eci.cvds.Task.services.persistence.FilePersistenceImpl;
+import edu.eci.cvds.Task.services.persistence.UserFilePersistenceImpl;
 import edu.eci.cvds.Task.services.persistence.UserRepository;
 import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,23 +18,24 @@ import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@SpringBootTest
-public class TaskAnalysisTest {
+class TaskAnalysisTest {
 
-    private static User user;
-    private static TaskAnalysis taskAnalysis;
+    private User user;
+    private TaskAnalysis taskAnalysis;
+    private UserFilePersistenceImpl userRepository;
 
-    @BeforeAll
-    static void setUpBeforeClass(@Autowired UserRepository userRepository) throws TaskManagerException {
-        user = new User("#-UsER-TeST-#", "USER-TEST", "USER-TEST", "test@gmail.com");
+    @BeforeEach
+    void setUp() throws TaskManagerException {
+        user = new User("UsER-TeST", "USER-TEST", "USER-TEST", "test@gmail.com");
+        userRepository = new UserFilePersistenceImpl("src/test/java/edu/eci/cvds/Task/services/persistence/DataUserTEST.txt");
         userRepository.save(user);
         taskAnalysis = new TaskAnalysis(userRepository);
         taskAnalysis.randomData(user.getUsernameId(), 1000);
     }
 
-    @AfterAll
-    static void tearDownAfterClass(@Autowired UserRepository userRepository){
-        userRepository.delete(user);
+    @AfterEach
+    void tearDown(){
+        userRepository.deleteAll();
     }
 
 

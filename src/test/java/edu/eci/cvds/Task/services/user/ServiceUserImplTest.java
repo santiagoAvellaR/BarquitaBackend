@@ -78,7 +78,6 @@ class ServiceUserImplTest {
     void addTask() {
         try{
             serviceUser.createUser(new RegisterDTO("123123","Sara", "Miguel123", "sara@gmail.com"));
-            System.out.println("-This-");
             UserIDTO idto = serviceUser.getUserId("sara@gmail.com");
 
             Task task = serviceUser.addTask(idto.getUserId(), new TaskDTO("dontcare", "Study", "Description", true, 3, 2, Difficulty.BAJA,date));
@@ -86,8 +85,6 @@ class ServiceUserImplTest {
 
             assertEquals(1, tasks.size());
 
-            System.out.println("Tarea: " + task.getId());
-            System.out.println("Tareas: " + tasks.get(0).getId());
 
             assertEquals(task.getId(), tasks.get(0).getId());
         } catch (TaskManagerException e) {fail("Should not fail with error: " + e.getMessage());}

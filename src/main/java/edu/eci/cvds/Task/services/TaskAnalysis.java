@@ -5,7 +5,7 @@ import edu.eci.cvds.Task.models.Difficulty;
 import edu.eci.cvds.Task.models.Task;
 import edu.eci.cvds.Task.models.TaskDTO;
 import edu.eci.cvds.Task.models.User;
-import edu.eci.cvds.Task.services.persistence.UserRepository;
+import edu.eci.cvds.Task.services.persistence.UserPersistence;
 import org.springframework.stereotype.Component;
 import com.github.javafaker.Faker;
 
@@ -25,14 +25,14 @@ import java.util.stream.Collectors;
 @Component
 public class TaskAnalysis {
 
-    private final UserRepository userRepository;
+    private final UserPersistence userRepository;
 
     /**
      * Constructor for the TaskAnalysis class. It injects the TaskPersistence component to interact with the data layer.
      *
      * @param userRepository The persistence component used to save and retrieve task information.
      */
-    public TaskAnalysis(UserRepository userRepository) {
+    public TaskAnalysis(UserPersistence userRepository) {
         this.userRepository = userRepository;
     }
 
