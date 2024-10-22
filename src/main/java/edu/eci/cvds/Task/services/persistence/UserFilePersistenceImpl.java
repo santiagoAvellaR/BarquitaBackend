@@ -132,6 +132,11 @@ public class UserFilePersistenceImpl implements UserPersistence {
         } // TODO
     }
 
+    @Override
+    public long count() {
+        return findAll().size();
+    }
+
     private boolean isNew(String usernameId) throws TaskManagerException {
         boolean res = true;
         for (User u : findAll()) {

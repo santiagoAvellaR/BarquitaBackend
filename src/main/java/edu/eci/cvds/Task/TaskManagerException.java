@@ -19,6 +19,7 @@ public class TaskManagerException extends Exception{
     public static final String INVALID_USER_EMAIL = "The email should not be null";
     public static final String TASK_ALREADY_EXIST = "The task already exists.";
     public static final String EMAIL_IN_USE = "Email is already in use.";
+    public static final String ADMIN_CREATE_ADMIN = "Only administrators can create other administrators";
 
     /**
      * Constructor TaskManagerExceptions.

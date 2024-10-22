@@ -139,6 +139,7 @@
 							<excludes>
 								<!-- Excluding controller classes for analysis with JACOCO -->
 								<exclude>**/edu/eci/cvds/Task/controller/**</exclude>
+								<exclude>**/edu/eci/cvds/Task/config/**</exclude>
 							</excludes>
 						</configuration>
 					</execution>
