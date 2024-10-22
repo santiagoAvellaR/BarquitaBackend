@@ -7,6 +7,7 @@ import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.time.LocalDateTime;
@@ -23,6 +24,7 @@ public class User implements TaskService, UserDetails {
     private String password;
     private int idTask=1;
     private String email;
+    private Role role = Role.USER;
 
 
     /**
@@ -39,6 +41,13 @@ public class User implements TaskService, UserDetails {
         this.password = password;
         this.tasks = new HashMap<>();
         this.email = email;
+    }
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return List.of(new SimpleGrantedAuthority("ROLE_" + role.name()));
+    }
+    public boolean isAdmin() {
+        return role.equals(Role.ADMIN);
     }
 
     /**
@@ -194,10 +203,12 @@ public class User implements TaskService, UserDetails {
         if(email == null || email.isEmpty()) throw  new TaskManagerException(TaskManagerException.INVALID_USER_EMAIL);
     }
 
+    /*
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of();
     }
+     */
 
     @Override
     public String getUsername() {

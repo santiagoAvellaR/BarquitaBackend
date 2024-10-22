@@ -41,4 +41,9 @@ public class UserPersistenceMongo implements UserPersistence {
     public void deleteAll() {
         // NO BORRAR TODO :)
     }
+
+    @Override
+    public long count() {
+        return userRepository.count();
+    }
 }
