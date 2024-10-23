@@ -20,7 +20,8 @@ public class TaskManagerException extends Exception{
     public static final String TASK_ALREADY_EXIST = "The task already exists.";
     public static final String EMAIL_IN_USE = "Email is already in use.";
     public static final String ADMIN_CREATE_ADMIN = "Only administrators can create other administrators";
-
+    public static final String INVALID_PASSWORD = "The password must be at least 8 characters long and include at least one uppercase letter, one lowercase letter, one number, and one special character such as @, $, !, %, *, ?, &, or #.";
+    public static final String INVALID_EMAIL = "Invalid email format.";
     /**
      * Constructor TaskManagerExceptions.
      * @param message The message of error.
