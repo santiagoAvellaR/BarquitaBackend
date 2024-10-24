@@ -25,7 +25,7 @@ import java.util.stream.Collectors;
 @Component
 public class TaskAnalysis {
 
-    private final UserPersistence userRepository;
+    protected final UserPersistence userRepository;
 
     /**
      * Constructor for the TaskAnalysis class. It injects the TaskPersistence component to interact with the data layer.
@@ -79,7 +79,7 @@ public class TaskAnalysis {
      * @param faker The Faker object used to generate random values.
      * @return A randomly generated Difficulty level.
      */
-    private Difficulty generateDifficulty(Faker faker) {
+    protected Difficulty generateDifficulty(Faker faker) {
         int number = faker.number().numberBetween(0, 3);
         if (number == 1) {
             return Difficulty.BAJA;
@@ -96,7 +96,7 @@ public class TaskAnalysis {
      * @param faker The Faker object used to generate a random Date.
      * @return A LocalDateTime representation of the random Date.
      */
-    private LocalDateTime generateDate(Faker faker) {
+    protected LocalDateTime generateDate(Faker faker) {
         Date date = faker.date().birthday();
         return date.toInstant().atZone(ZoneId.systemDefault()).toLocalDateTime();
     }
@@ -107,7 +107,7 @@ public class TaskAnalysis {
      * @return True if there are no tasks; false otherwise.
      * @throws TaskManagerException If there is an error while checking the task list.
      */
-    private boolean isEmpty(String userId) throws TaskManagerException {
+    protected boolean isEmpty(String userId) throws TaskManagerException {
         if(userRepository.findById(userId).isEmpty()) throw new TaskManagerException(TaskManagerException.USER_DOESNT_EXIST);
         return userRepository.findById(userId).get().getTasks().isEmpty();
     }
@@ -118,7 +118,7 @@ public class TaskAnalysis {
      * @param counter The number of tasks to generate.
      * @throws TaskManagerException If there is an error while saving the tasks.
      */
-    private void generateAnalysis(String userId, int counter) throws TaskManagerException {
+    protected void generateAnalysis(String userId, int counter) throws TaskManagerException {
         if(userRepository.findById(userId).isEmpty()) throw new TaskManagerException(TaskManagerException.USER_DOESNT_EXIST);
         User user = userRepository.findById(userId).get();
         List<TaskDTO> tasks = getRandomTasks(counter);

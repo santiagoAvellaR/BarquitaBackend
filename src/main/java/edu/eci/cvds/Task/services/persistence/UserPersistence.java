@@ -13,4 +13,5 @@ public interface UserPersistence {
     void deleteById(String id) throws TaskManagerException;
     Optional<User> findById(String id) throws TaskManagerException;
     void deleteAll();
+    long count();
 }
