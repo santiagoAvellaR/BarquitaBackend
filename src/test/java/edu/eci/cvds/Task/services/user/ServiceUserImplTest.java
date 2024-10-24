@@ -43,14 +43,14 @@ class ServiceUserImplTest {
     @Test
     void createUser() {
         try{
-            assertNotNull(serviceUser.createUser(new RegisterDTO("123123", "Miguel", "Miguel123", "miguel@gmail.com")));
+            assertNotNull(serviceUser.createUser(new RegisterDTO("123123", "Miguel", "Miguel1234#", "miguel@gmail.com")));
         } catch (TaskManagerException e) {fail("Should not fail with error: " + e.getMessage());}
     }
     @Test
     void shouldNotCreateUserWithSameEmail() throws TaskManagerException {
         try {
-            serviceUser.createUser(new RegisterDTO("123123", "Miguel", "Miguel123", "miguel@gmail.com"));
-            serviceUser.createUser(new RegisterDTO("123123",  "Miguel", "Miguel123", "miguel@gmail.com"));
+            serviceUser.createUser(new RegisterDTO("123123", "Miguel", "Miguel1234#", "miguel@gmail.com"));
+            serviceUser.createUser(new RegisterDTO("123123",  "Miguel", "Miguel1234#", "miguel@gmail.com"));
             fail("Did not throw exception");
         }catch (TaskManagerException e) {
             assertEquals(TaskManagerException.EMAIL_IN_USE, e.getMessage());
@@ -61,8 +61,8 @@ class ServiceUserImplTest {
     void login() {
 
         try {
-            TokenDTO user = serviceUser.createUser(new RegisterDTO("123123",  "Miguel", "Miguel123", "miguel@gmail.com"));
-            serviceUser.login(new LoginDTO("123123", "Miguel123", "miguel@gmail.com"));
+            TokenDTO user = serviceUser.createUser(new RegisterDTO("123123",  "Miguel", "Miguel1234#", "miguel@gmail.com"));
+            serviceUser.login(new LoginDTO("123123", "Miguel1234#", "miguel@gmail.com"));
             serviceUser.login(new LoginDTO("123123", "Miguel1234", "miguel@gmail.com"));
             fail("Did not throw exception");
         }catch (BadCredentialsException ex){
@@ -77,7 +77,7 @@ class ServiceUserImplTest {
     @Test
     void addTask() {
         try{
-            serviceUser.createUser(new RegisterDTO("123123","Sara", "Miguel123", "sara@gmail.com"));
+            serviceUser.createUser(new RegisterDTO("123123","Sara", "Miguel1234#", "sara@gmail.com"));
             UserIDTO idto = serviceUser.getUserId("sara@gmail.com");
 
             Task task = serviceUser.addTask(idto.getUserId(), new TaskDTO("dontcare", "Study", "Description", true, 3, 2, Difficulty.BAJA,date));
@@ -93,7 +93,7 @@ class ServiceUserImplTest {
     @Test
     void deleteTask() {
         try{
-            serviceUser.createUser(new RegisterDTO("123123","User1", "User123", "miguel@gmail.com"));
+            serviceUser.createUser(new RegisterDTO("123123","User1", "User124#", "miguel@gmail.com"));
             UserIDTO idto = serviceUser.getUserId("miguel@gmail.com");
             Task task = serviceUser.addTask(idto.getUserId(), new TaskDTO("dontcare", "Study", "Description", true, 3, 2, Difficulty.BAJA,date));
 
@@ -108,7 +108,7 @@ class ServiceUserImplTest {
     @Test
     void changeStateTask() {
         try{
-            serviceUser.createUser(new RegisterDTO("123123","User1", "User123", "miguel@gmail.com"));
+            serviceUser.createUser(new RegisterDTO("123123","User1", "User1234#", "miguel@gmail.com"));
             UserIDTO idto = serviceUser.getUserId("miguel@gmail.com");
             Task task = serviceUser.addTask(idto.getUserId(), new TaskDTO("dontcare", "Study", "Description", true, 3, 2, Difficulty.BAJA,date));
             assertTrue(serviceUser.getUser(idto.getUserId()).getTasks().stream().filter(task1 -> task1.getId().equals(task.getId())).findFirst().get().getState());
@@ -120,7 +120,7 @@ class ServiceUserImplTest {
     @Test
     void updateTask() {
         try{
-            serviceUser.createUser(new RegisterDTO("123123","User1", "User123", "miguel@gmail.com"));
+            serviceUser.createUser(new RegisterDTO("123123","User1", "User1234#", "miguel@gmail.com"));
             UserIDTO idto = serviceUser.getUserId("miguel@gmail.com");
             Task task = serviceUser.addTask(idto.getUserId(), new TaskDTO("dontcare", "Study", "Description", true, 3, 2, Difficulty.BAJA,date));
             Task serviceTask = serviceUser.getUser(idto.getUserId()).getTasks().stream().filter(task1 -> task1.getId().equals(task.getId())).findFirst().get();
@@ -146,7 +146,7 @@ class ServiceUserImplTest {
     @Test
     void getAllTasks() {
         try{
-            serviceUser.createUser(new RegisterDTO("123123","User1", "User123", "miguel@gmail.com"));
+            serviceUser.createUser(new RegisterDTO("123123","User1", "User1234#", "miguel@gmail.com"));
             UserIDTO userIDTO = serviceUser.getUserId("miguel@gmail.com");
             serviceUser.addTask(userIDTO.getUserId(), new TaskDTO("", "Study 1", "Description 1", true, 3, 1, Difficulty.ALTA,date));
             serviceUser.addTask(userIDTO.getUserId(), new TaskDTO("", "Study 2", "Description 2", true, 5, 4, Difficulty.MEDIA,date));
@@ -161,7 +161,7 @@ class ServiceUserImplTest {
     @Test
     void getTasksByState() {
         try{
-            serviceUser.createUser(new RegisterDTO("123123","User1", "User123", "miguel@gmail.com"));
+            serviceUser.createUser(new RegisterDTO("123123","User1", "User1234#", "miguel@gmail.com"));
             UserIDTO idto = serviceUser.getUserId("miguel@gmail.com");
             addSomeTasks(idto.getUserId());
             List<Task> tasksTrue = serviceUser.getTasksByState(idto.getUserId(), true);
@@ -178,7 +178,7 @@ class ServiceUserImplTest {
     @Test
     void getTaskByPriority() {
         try{
-            serviceUser.createUser(new RegisterDTO("123123","User1", "User123", "miguel@gmail.com"));
+            serviceUser.createUser(new RegisterDTO("123123","User1", "User1234#", "miguel@gmail.com"));
             UserIDTO idto = serviceUser.getUserId("miguel@gmail.com");
             addSomeTasks(idto.getUserId());
             List<Task> tasks1 = serviceUser.getTaskByPriority(idto.getUserId(), 1);
@@ -202,7 +202,7 @@ class ServiceUserImplTest {
     @Test
     void getTaskByDifficulty() {
         try{
-            serviceUser.createUser(new RegisterDTO("123123","User1", "User123","miguel@gmail.com"));
+            serviceUser.createUser(new RegisterDTO("123123","User1", "User1234#","miguel@gmail.com"));
             UserIDTO idto = serviceUser.getUserId("miguel@gmail.com");
             addSomeTasks(idto.getUserId());
             List<Task> tasksA = serviceUser.getTaskByDifficulty(idto.getUserId(), Difficulty.ALTA);
@@ -221,7 +221,7 @@ class ServiceUserImplTest {
     @Test
     void getTaskByEstimatedTime() {
         try{
-            serviceUser.createUser(new RegisterDTO("123123","User1", "User123", "miguel@gmail.com"));
+            serviceUser.createUser(new RegisterDTO("123123","User1", "User1234#", "miguel@gmail.com"));
             UserIDTO idto = serviceUser.getUserId("miguel@gmail.com");
             addSomeTasks(idto.getUserId());
             List<Task> tasks1 = serviceUser.getTaskByEstimatedTime(idto.getUserId(), 4);
@@ -254,6 +254,21 @@ class ServiceUserImplTest {
         serviceUser.addTask(userId, new TaskDTO("", "Study 9", "Description 9", false, 4, 10, Difficulty.MEDIA,date));
         serviceUser.addTask(userId, new TaskDTO("", "Study 10", "Description 10", true, 4, 10, Difficulty.ALTA,date));
     }
-
+    @Test
+    void shouldNotCreateUserWithInvalidPassword(){
+        try {
+            serviceUser.createUser(new RegisterDTO("123123", "Daniel", "hola", "daniel@gmail.com"));
+        }catch (TaskManagerException e){
+            assertEquals(e.getMessage(), TaskManagerException.INVALID_PASSWORD);
+        }
+    }
+    @Test
+    void shouldNotCreateUserWithInvalidEmail(){
+        try {
+            serviceUser.createUser(new RegisterDTO("123123", "Daniel", "Hola142*", "daniel"));
+        }catch (TaskManagerException e){
+            assertEquals(e.getMessage(), TaskManagerException.INVALID_EMAIL);
+        }
+    }
 
 }

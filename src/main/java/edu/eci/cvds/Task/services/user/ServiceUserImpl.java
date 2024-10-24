@@ -16,6 +16,8 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
+import java.util.regex.Pattern;
+
 @RequiredArgsConstructor
 @Service
 public class ServiceUserImpl implements ServiceUser {
@@ -50,6 +52,7 @@ public class ServiceUserImpl implements ServiceUser {
     @Override
     public TokenDTO createUser(RegisterDTO registerDTO) throws TaskManagerException{
         // Should check if the user already exist.
+        validateData(registerDTO);
         if(!verificateEmail(registerDTO.getEmail())){
            throw new TaskManagerException(TaskManagerException.EMAIL_IN_USE);
         }
@@ -259,6 +262,17 @@ public class ServiceUserImpl implements ServiceUser {
     private User findUser(String id) throws TaskManagerException {
         if(userRepository.findById(id).isEmpty()) throw new TaskManagerException(TaskManagerException.USER_DOESNT_EXIST);
         return userRepository.findById(id).get();
+    }
+    private void validateData(RegisterDTO registerDTO) throws TaskManagerException {
+        if(!registerDTO.getPassword().matches(".*[a-z].*") || !registerDTO.getPassword().matches(".*[A-Z].*") ||
+        !registerDTO.getPassword().matches(".*\\d.*") || !registerDTO.getPassword().matches(".*[@$!%*?&#].*") ||
+        registerDTO.getPassword().length() < 8){
+            throw new TaskManagerException(TaskManagerException.INVALID_PASSWORD);
+        }
+        String email = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$";
+        if(!Pattern.matches(email, registerDTO.getEmail())){
+            throw new TaskManagerException(TaskManagerException.INVALID_EMAIL);
+        }
     }
 
 }

@@ -30,6 +30,9 @@ public class SecurityConfig {
                         auth-> auth.requestMatchers( "/createUser", "/login")
                                 .permitAll()
                                 .requestMatchers(HttpMethod.OPTIONS,"/**").permitAll()
+                                .requestMatchers("/api/admin/**").hasRole("ADMIN")
+                                .requestMatchers("/user/**").hasRole("USER")
+                                .requestMatchers("/Analytics/**").hasRole("USER")
                                 .anyRequest().authenticated()
                 )
                 .sessionManagement(sessionManager ->

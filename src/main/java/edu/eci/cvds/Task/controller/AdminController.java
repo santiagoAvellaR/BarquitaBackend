@@ -12,7 +12,6 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/admin")
-//@PreAuthorize("hasRole('ADMIN')") Para esto creo que debo usar spring security configuration, pero no sé si eso se hace en conjunto con el cifrado ssl
 public class AdminController {
     private final AdminService adminService;
     private final ServiceUser serviceUser;
