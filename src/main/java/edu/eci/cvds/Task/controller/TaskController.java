@@ -221,7 +221,10 @@ public class TaskController {
         return ResponseEntity.status(HttpStatus.OK)
                 .body(userService.getTaskByEstimatedTime(userId, estimatedTime));
     }
-
+    @GetMapping("/getRole")
+    public ResponseEntity<RoleDTO> getRole(@RequestParam String email) throws TaskManagerException {
+        return ResponseEntity.status(HttpStatus.OK).body(userService.getRoleUser(email));
+    }
     @RequestMapping(value="/**", method = RequestMethod.OPTIONS)
     public ResponseEntity<Void> handleOptions() {
         return ResponseEntity.ok().build();  // Responder 200 OK

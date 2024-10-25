@@ -24,4 +24,5 @@ public interface AdminService {
     Map<Integer, Double> getConsolidatedPriority(String userId)throws TaskManagerException;
     Map<Difficulty, Double> getTotalTimeSpentByDifficulty(String userId) throws TaskManagerException;
     void deleteUser(String userId) throws TaskManagerException;
+
 }
