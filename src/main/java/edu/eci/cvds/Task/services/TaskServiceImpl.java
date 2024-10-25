@@ -1,5 +1,6 @@
 package edu.eci.cvds.Task.services;
 
+import edu.eci.cvds.Task.RoleDTO;
 import edu.eci.cvds.Task.TaskManagerException;
 import edu.eci.cvds.Task.models.Difficulty;
 import edu.eci.cvds.Task.models.Task;
@@ -157,9 +158,9 @@ public class TaskServiceImpl implements TaskService {
     public List<Task> getTaskByEstimatedTime(int estimatedTime) throws TaskManagerException{
         return taskRepository.findByEstimatedTime(estimatedTime);
     }
-
     // Este metodo genra la clave de 14 caracteres, mas el valor del contador (imposible que se repita)
     private String generateId(){
         return UUID.randomUUID().toString().replace("-", "").substring(0, 9) + this.id++;
     }
+
 }

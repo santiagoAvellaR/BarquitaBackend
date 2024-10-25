@@ -1,5 +1,6 @@
 package edu.eci.cvds.Task.controller;
 
+import edu.eci.cvds.Task.RoleDTO;
 import edu.eci.cvds.Task.TaskManagerException;
 import edu.eci.cvds.Task.models.Difficulty;
 import edu.eci.cvds.Task.services.persistence.AdminService;
@@ -12,6 +13,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/admin")
+@CrossOrigin(origins = "https://agreeable-field-0b472e70f.5.azurestaticapps.net/")
 public class AdminController {
     private final AdminService adminService;
     private final ServiceUser serviceUser;
@@ -44,6 +46,8 @@ public class AdminController {
         return ResponseEntity.status(HttpStatus.OK)
                 .body(adminService.getEachUserTotalTimeSpentByDifficulty());
     }
+
+
 
     // For all users General
 

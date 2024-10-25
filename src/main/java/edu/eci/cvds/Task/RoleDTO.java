@@ -1,19 +1,18 @@
-package edu.eci.cvds.Task.models;
+package edu.eci.cvds.Task;
+
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
-import java.util.List;
 
 @Getter
 @Setter
 @Builder
 @AllArgsConstructor
-public class UserDTO {
+public class RoleDTO {
+    private String role;
     private String usernameId;
-    private List<Task> tasks;
     private String name;
     private String email;
-
 }

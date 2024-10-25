@@ -189,7 +189,7 @@ public class User implements TaskService, UserDetails {
      * @throws TaskManagerException If there is a problem tasks of the user.
      */
     public UserDTO toDTO() throws TaskManagerException {
-        return new UserDTO(usernameId,getAllTasks(),name,password, email);
+        return new UserDTO(usernameId,getAllTasks(),name, email);
     }
 
     private String generateId(){

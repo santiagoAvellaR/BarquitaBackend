@@ -26,4 +26,5 @@ public interface ServiceUser {
     List<Task> getTaskByEstimatedTime(String userId, int estimatedTime) throws TaskManagerException;
     void deleteAll();
     UserIDTO getUserId(String email) throws TaskManagerException;
+    RoleDTO getRoleUser(String email) throws TaskManagerException;
 }

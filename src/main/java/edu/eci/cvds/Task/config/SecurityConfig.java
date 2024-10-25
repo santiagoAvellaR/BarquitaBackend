@@ -27,10 +27,11 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http.csrf(htt->htt.disable()).authorizeHttpRequests(
-                        auth-> auth.requestMatchers( "/createUser", "/login")
+                        auth-> auth.requestMatchers( "/user/createUser", "/user/login")
                                 .permitAll()
                                 .requestMatchers(HttpMethod.OPTIONS,"/**").permitAll()
                                 .requestMatchers("/api/admin/**").hasRole("ADMIN")
+                                .requestMatchers("/user/getRole").hasRole("ADMIN")
                                 .requestMatchers("/user/**").hasRole("USER")
                                 .requestMatchers("/Analytics/**").hasRole("USER")
                                 .anyRequest().authenticated()
