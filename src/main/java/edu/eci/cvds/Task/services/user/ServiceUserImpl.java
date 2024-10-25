@@ -243,6 +243,14 @@ public class ServiceUserImpl implements ServiceUser {
         if(userRepository.findByEmail(email).isEmpty()) throw new TaskManagerException(TaskManagerException.USER_DOESNT_EXIST);
         return new UserIDTO(userRepository.findByEmail(email).get().getUsernameId());
     }
+
+    @Override
+    public RoleDTO getRoleUser(String email) throws TaskManagerException {
+        if(userRepository.findByEmail(email).isEmpty()) throw new TaskManagerException(TaskManagerException.USER_DOESNT_EXIST);
+        return new RoleDTO(userRepository.findByEmail(email).get().getRole().toString(), userRepository.findByEmail(email).get().getUsernameId(), userRepository.findByEmail(email).get().getName(),
+                userRepository.findByEmail(email).get().getEmail());
+    }
+
     private boolean verificateEmail(String email){
         return userRepository.findByEmail(email).isEmpty();
     }
