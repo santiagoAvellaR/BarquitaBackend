@@ -11,6 +11,8 @@ public interface ServiceUser {
     UserDTO getUser(String id) throws TaskManagerException;
     TokenDTO login(LoginDTO loginDTO) throws TaskManagerException;
     //TokenDTO createAdmin(Regis)
+    void changePassword(String id, String password) throws TaskManagerException;
+    void changeName(String id, String name) throws TaskManagerException;
     void deleteUser(String userId) throws TaskManagerException;
     Task addTask(String userId, TaskDTO dto) throws TaskManagerException;
     void deleteTask(String userId, String id) throws TaskManagerException;
