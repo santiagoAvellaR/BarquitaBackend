@@ -102,6 +102,20 @@ public class ServiceUserImpl implements ServiceUser {
         return TokenDTO.builder().token(jwtService.getToken(user.getUsername())).build();
     }
 
+    @Override
+    public void changePassword(String id, String password) throws TaskManagerException {
+        User user = findUser(id);
+        user.setPassword(passwordEncoder.encode(password));
+        userRepository.save(user);
+    }
+
+    @Override
+    public void changeName(String id, String name) throws TaskManagerException {
+        User user = findUser(id);
+        user.changeName(name);
+        userRepository.save(user);
+    }
+
     /**
      * This method returns a Task created by the given user id and the TaskDTO to create.
      * @param userId The user id to add the task

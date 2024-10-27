@@ -192,15 +192,37 @@ public class User implements TaskService, UserDetails {
         return new UserDTO(usernameId,getAllTasks(),name, email);
     }
 
+    public void changeName(String name) throws TaskManagerException {
+        if(!validateName(name)) throw new TaskManagerException(TaskManagerException.INVALID_USER_NAME);
+        this.name = name;
+    }
+
+    public void changePassword(String password) throws TaskManagerException{
+        if(!validatePassWord(password)) throw new TaskManagerException(TaskManagerException.INVALID_USER_PASSWD);
+        this.password = password;
+    }
+
+
+    private boolean validatePassWord(String password){
+        return password != null && !password.isEmpty();
+    }
+
+    private boolean validateName(String name){
+        return name != null && !name.isEmpty();
+    }
+
+    private boolean validateEmail(String email){
+        return email != null && !email.isEmpty();
+    }
     private String generateId(){
         return UUID.randomUUID().toString().replace("-", "").substring(0, 9) + this.idTask++;
     }
 
     private void validate(String usernameId, String name, String password, String email) throws TaskManagerException {
-        if(usernameId == null || usernameId.isEmpty() ) throw new TaskManagerException(TaskManagerException.INVALID_USER_ID);
-        if(name == null || name.isEmpty()) throw new TaskManagerException(TaskManagerException.INVALID_USER_NAME);
-        if(password == null || password.isEmpty()) throw new TaskManagerException(TaskManagerException.INVALID_USER_PASSWD);
-        if(email == null || email.isEmpty()) throw  new TaskManagerException(TaskManagerException.INVALID_USER_EMAIL);
+        if(!validateName(usernameId) ) throw new TaskManagerException(TaskManagerException.INVALID_USER_ID);
+        if(!validateName(name)) throw new TaskManagerException(TaskManagerException.INVALID_USER_NAME);
+        if(!validatePassWord(password)) throw new TaskManagerException(TaskManagerException.INVALID_USER_PASSWD);
+        if(!validateEmail(email)) throw  new TaskManagerException(TaskManagerException.INVALID_USER_EMAIL);
     }
 
     /*

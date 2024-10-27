@@ -26,7 +26,7 @@ import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
-class ServiceUserImplTest {
+class  ServiceUserImplTest {
     private final LocalDateTime date = LocalDateTime.now();
     private final ServiceUserImpl serviceUser;
     @Autowired
@@ -72,7 +72,46 @@ class ServiceUserImplTest {
         }
     }
 
+    @Test
+    void shouldChangeName() throws TaskManagerException {
+        try{
+            serviceUser.createUser(new RegisterDTO("123123", "Miguel", "Miguel1234#", "myemail@gmail.com"));
+            assertEquals("Miguel", serviceUser.getUser(serviceUser.getUserId("myemail@gmail.com").getUserId()).getName());
+            serviceUser.changeName(serviceUser.getUserId("myemail@gmail.com").getUserId(), "Jonas");
+            assertEquals("Jonas", serviceUser.getUser(serviceUser.getUserId("myemail@gmail.com").getUserId()).getName());
+        } catch (TaskManagerException e) {fail("There has been an error: " + e.getMessage());}
+    }
 
+    @Test
+    void shouldChangePassword() throws TaskManagerException {
+        try{
+            serviceUser.createUser(new RegisterDTO("123123", "Miguel", "Miguel1234#", "myemail@gmail.com"));
+            String oldPasswd = serviceUser.getUsers().get(0).getPassword();
+            serviceUser.changePassword(serviceUser.getUserId("myemail@gmail.com").getUserId(), "Jonas");
+            assertNotEquals(oldPasswd, serviceUser.getUsers().get(0).getPassword());
+        } catch (TaskManagerException e) {fail("There has been an error: " + e.getMessage());}
+    }
+
+    @Test
+    void shouldNotChangeName1() throws TaskManagerException {
+        try{
+            serviceUser.createUser(new RegisterDTO("123123", "Miguel", "Miguel1234#", "myemail@gmail.com"));
+            serviceUser.changeName(serviceUser.getUserId("myemail@gmail.com").getUserId(), null);
+            fail("Did not throw exception");
+        } catch (TaskManagerException e) {
+            assertEquals(TaskManagerException.INVALID_USER_NAME, e.getMessage());
+        }
+    }
+    @Test
+    void shouldNotChangeName2() throws TaskManagerException {
+        try{
+            serviceUser.createUser(new RegisterDTO("123123", "Miguel", "Miguel1234#", "myemail@gmail.com"));
+            serviceUser.changeName(serviceUser.getUserId("myemail@gmail.com").getUserId(), "");
+            fail("Did not throw exception");
+        } catch (TaskManagerException e) {
+            assertEquals(TaskManagerException.INVALID_USER_NAME, e.getMessage());
+        }
+    }
 
     @Test
     void addTask() {
