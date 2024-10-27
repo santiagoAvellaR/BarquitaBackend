@@ -1,4 +1,5 @@
 package edu.eci.cvds.Task.services.user;
+import edu.eci.cvds.Task.RoleDTO;
 import edu.eci.cvds.Task.TaskManagerException;
 import edu.eci.cvds.Task.models.Difficulty;
 import edu.eci.cvds.Task.models.User;
@@ -7,6 +8,7 @@ import edu.eci.cvds.Task.services.persistence.AdminService;
 import edu.eci.cvds.Task.services.persistence.UserPersistence;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -163,5 +165,16 @@ public class AdminServiceImpl implements AdminService {
     @Override
     public void deleteUser(String userId) throws TaskManagerException {
         userPersistence.deleteById(userId);
+    }
+    @Override
+    public List<RoleDTO> getUsersDTO(){
+        ArrayList<User> users = new ArrayList<>(userPersistence.findAll());
+        ArrayList<RoleDTO> roleDTOS = new ArrayList<>();
+        for(User user: users){
+            roleDTOS.add(new RoleDTO(user.getRole().toString(), user.getUsernameId(), user.getName(), user.getEmail()));
+        }
+        return roleDTOS;
+
+
     }
 }

@@ -1,8 +1,10 @@
 package edu.eci.cvds.Task.services.persistence;
 
+import edu.eci.cvds.Task.RoleDTO;
 import edu.eci.cvds.Task.TaskManagerException;
 import edu.eci.cvds.Task.models.Difficulty;
 
+import java.util.List;
 import java.util.Map;
 
 public interface AdminService {
@@ -25,4 +27,5 @@ public interface AdminService {
     Map<Difficulty, Double> getTotalTimeSpentByDifficulty(String userId) throws TaskManagerException;
     void deleteUser(String userId) throws TaskManagerException;
 
+    List<RoleDTO> getUsersDTO();
 }

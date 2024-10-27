@@ -261,7 +261,10 @@ public class ServiceUserImpl implements ServiceUser {
      */
     @Override
     public void deleteUser(String id)throws TaskManagerException {
-        findUser(id);
+        User user = findUser(id);
+        if(user.getRole().toString().equals("ADMIN")){
+            throw new TaskManagerException(TaskManagerException.ADMIN_SHOULD_NOT_DELETE);
+        }
         userRepository.deleteById(id);
     }
     private String generateId(String name){

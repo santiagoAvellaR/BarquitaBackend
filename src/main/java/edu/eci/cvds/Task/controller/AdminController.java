@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -105,5 +106,9 @@ public class AdminController {
     public ResponseEntity<String> delUser(@RequestParam String userId) throws TaskManagerException{
         adminService.deleteUser(userId);
         return ResponseEntity.status(HttpStatus.OK).body("OK");
+    }
+    @GetMapping("/getUsers")
+    public ResponseEntity<List<RoleDTO>> getUsers(){
+        return  ResponseEntity.status(HttpStatus.OK).body(adminService.getUsersDTO());
     }
 }
