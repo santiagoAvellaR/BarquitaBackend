@@ -22,6 +22,7 @@ public class TaskManagerException extends Exception{
     public static final String ADMIN_CREATE_ADMIN = "Only administrators can create other administrators";
     public static final String INVALID_PASSWORD = "The password must be at least 8 characters long and include at least one uppercase letter, one lowercase letter, one number, and one special character such as @, $, !, %, *, ?, &, or #.";
     public static final String INVALID_EMAIL = "Invalid email format.";
+    public static final String ADMIN_SHOULD_NOT_DELETE = "An admin cannot be removed ";
     /**
      * Constructor TaskManagerExceptions.
      * @param message The message of error.

@@ -27,4 +27,5 @@ public interface ServiceUser {
     void deleteAll();
     UserIDTO getUserId(String email) throws TaskManagerException;
     RoleDTO getRoleUser(String email) throws TaskManagerException;
+
 }
