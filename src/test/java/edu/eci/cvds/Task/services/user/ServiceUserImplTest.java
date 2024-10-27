@@ -87,7 +87,7 @@ class  ServiceUserImplTest {
         try{
             serviceUser.createUser(new RegisterDTO("123123", "Miguel", "Miguel1234#", "myemail@gmail.com"));
             String oldPasswd = serviceUser.getUsers().get(0).getPassword();
-            serviceUser.changePassword(serviceUser.getUserId("myemail@gmail.com").getUserId(), "Jonas");
+            serviceUser.changePassword(serviceUser.getUserId("myemail@gmail.com").getUserId(), "newPassword1*");
             assertNotEquals(oldPasswd, serviceUser.getUsers().get(0).getPassword());
         } catch (TaskManagerException e) {fail("There has been an error: " + e.getMessage());}
     }
@@ -112,6 +112,27 @@ class  ServiceUserImplTest {
             assertEquals(TaskManagerException.INVALID_USER_NAME, e.getMessage());
         }
     }
+    @Test
+    void shouldNotChangePassword1() throws TaskManagerException {
+        try{
+            serviceUser.createUser(new RegisterDTO("123123", "Miguel", "Miguel1234#", "myemail@gmail.com"));
+            serviceUser.changePassword(serviceUser.getUserId("myemail@gmail.com").getUserId(), null);
+            fail("Did not throw exception");
+        } catch (TaskManagerException e) {
+            assertEquals(TaskManagerException.INVALID_PASSWORD, e.getMessage());
+        }
+    }
+    @Test
+    void shouldNotChangePassword2() throws TaskManagerException {
+        try{
+            serviceUser.createUser(new RegisterDTO("123123", "Miguel", "Miguel1234#", "myemail@gmail.com"));
+            serviceUser.changePassword(serviceUser.getUserId("myemail@gmail.com").getUserId(), "");
+            fail("Did not throw exception");
+        } catch (TaskManagerException e) {
+            assertEquals(TaskManagerException.INVALID_PASSWORD, e.getMessage());
+        }
+    }
+
 
     @Test
     void addTask() {

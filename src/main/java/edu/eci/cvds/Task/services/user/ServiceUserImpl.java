@@ -104,8 +104,9 @@ public class ServiceUserImpl implements ServiceUser {
 
     @Override
     public void changePassword(String id, String password) throws TaskManagerException {
+        if(notValidatePassword(password)) throw new TaskManagerException(TaskManagerException.INVALID_PASSWORD);
         User user = findUser(id);
-        user.setPassword(passwordEncoder.encode(password));
+        user.changePassword(passwordEncoder.encode(password));
         userRepository.save(user);
     }
 
@@ -288,10 +289,13 @@ public class ServiceUserImpl implements ServiceUser {
         if(userRepository.findById(id).isEmpty()) throw new TaskManagerException(TaskManagerException.USER_DOESNT_EXIST);
         return userRepository.findById(id).get();
     }
+    private boolean notValidatePassword(String password){
+           return password==null||!password.matches(".*[a-z].*")||!password.matches(".*[A-Z].*")
+               ||!password.matches(".*\\d.*")|| !password.matches(".*[@$!%*?&#].*")||
+                   password.length() < 8;
+    }
     private void validateData(RegisterDTO registerDTO) throws TaskManagerException {
-        if(!registerDTO.getPassword().matches(".*[a-z].*") || !registerDTO.getPassword().matches(".*[A-Z].*") ||
-        !registerDTO.getPassword().matches(".*\\d.*") || !registerDTO.getPassword().matches(".*[@$!%*?&#].*") ||
-        registerDTO.getPassword().length() < 8){
+        if(notValidatePassword(registerDTO.getPassword())||registerDTO.getName()==null){
             throw new TaskManagerException(TaskManagerException.INVALID_PASSWORD);
         }
         String email = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$";
