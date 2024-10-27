@@ -331,4 +331,51 @@ class  ServiceUserImplTest {
         }
     }
 
+    @Test
+    void shouldCreateAdmin(){
+        try{
+            serviceUser.createUser(new RegisterDTO("123123","Admin 01", "User1234#","admin@gmail.com"));
+            assertEquals(1,serviceUser.getUsers().size());
+            String adminId = serviceUser.getUserId("admin@gmail.com").getUserId();
+            serviceUser.createAdmin(new RegisterDTO("123123","Admin 02", "User1234#","admin2@gmail.com"),adminId);
+            List<User> users = serviceUser.getUsers();
+            assertEquals(2,users.size());
+            for(User user : users) {
+                assertEquals(Role.ADMIN, user.getRole());
+            }
+        } catch (TaskManagerException e) {fail("Should not fail with error: " + e.getMessage());}
+    }
+
+    @Test
+    void shouldNotCreateAdmin(){
+        try{
+            serviceUser.createUser(new RegisterDTO("123123","Admin 01", "User1234#","admin@gmail.com"));
+            serviceUser.createUser(new RegisterDTO("123123","Not Admin 01", "User1234#","notadmin@gmail.com"));
+
+            String adminId = serviceUser.getUserId("notadmin@gmail.com").getUserId();
+
+            assertEquals(2,serviceUser.getUsers().size());
+            assertEquals(Role.USER,Role.valueOf(serviceUser.getRoleUser("notadmin@gmail.com").getRole()));
+            // FAIL
+            serviceUser.createAdmin(new RegisterDTO("123123","Admin 02", "User1234#","notadmin2@gmail.com"),adminId);
+            fail("Should Not create admin because the creator user is not admin.");
+        } catch (TaskManagerException e) {
+            assertEquals(TaskManagerException.ADMIN_CREATE_ADMIN, e.getMessage());
+            assertEquals(2,serviceUser.getUsers().size());
+        }
+    }
+
+    @Test
+    void shouldNotCreateAdminWrongValues(){
+        try{
+            serviceUser.createUser(new RegisterDTO("123123","Admin 01", "User1234#","admin@gmail.com"));
+            assertEquals(1,serviceUser.getUsers().size());
+            String adminId = serviceUser.getUserId("admin@gmail.com").getUserId();
+            // FAIL
+            serviceUser.createAdmin(new RegisterDTO("123123","Admin 02", "wrong","admin2@gmail.com"),adminId);
+            fail("Should not create a user with wrong information.");
+        } catch (TaskManagerException e) {
+            assertEquals(TaskManagerException.INVALID_PASSWORD, e.getMessage());
+        }
+    }
 }

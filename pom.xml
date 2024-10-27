@@ -135,6 +135,7 @@
 								<!-- Excluding controller classes for analysis with JACOCO -->
 								<exclude>**/edu/eci/cvds/Task/controller/**</exclude>
 								<exclude>**/edu/eci/cvds/Task/config/**</exclude>
+								<exclude>edu/eci/cvds/Task/jwt/JwtAuthenticationFilter.class</exclude>
 							</excludes>
 						</configuration>
 					</execution>

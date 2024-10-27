@@ -44,6 +44,12 @@ class JwtServiceTest {
     }
 
     @Test
+    void isNotUserValid() {
+        UserDetails user = User.withUsername("NOTuser123").password("password").roles("USER").build();
+        assertFalse(jwtService.isUserValid(token, user));
+    }
+
+    @Test
     void getClaim() {
         String username = jwtService.getClaim(token, Claims::getSubject);
         assertEquals("user123", username);

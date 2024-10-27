@@ -63,21 +63,21 @@ public class ServiceUserImpl implements ServiceUser {
 
         // IF There is not any user created, the first user created should be the ADMIN
         if(userRepository.count()==0) user.setRole(Role.ADMIN);
-
         userRepository.save(user);
         return TokenDTO.builder().token(jwtService.getToken(user.getUsername())).build();
     }
 
     // ONLY ADMIN Creates ADMIN
     public TokenDTO createAdmin(RegisterDTO registerDTO, String creatorUserId) throws TaskManagerException {
+        validateData(registerDTO);
+        if(!verificateEmail(registerDTO.getEmail())) {
+            throw new TaskManagerException(TaskManagerException.EMAIL_IN_USE);
+        }
         User creator = findUser(creatorUserId);
         if (!creator.isAdmin()) {
             throw new TaskManagerException(TaskManagerException.ADMIN_CREATE_ADMIN);
         }
 
-        if(!verificateEmail(registerDTO.getEmail())) {
-            throw new TaskManagerException(TaskManagerException.EMAIL_IN_USE);
-        }
 
         User user = new User(
                 generateId(registerDTO.getName()),

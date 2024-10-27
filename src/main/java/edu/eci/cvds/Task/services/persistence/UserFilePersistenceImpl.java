@@ -1,9 +1,6 @@
 package edu.eci.cvds.Task.services.persistence;
 import edu.eci.cvds.Task.TaskManagerException;
-import edu.eci.cvds.Task.models.Difficulty;
-import edu.eci.cvds.Task.models.Task;
-import edu.eci.cvds.Task.models.TaskDTO;
-import edu.eci.cvds.Task.models.User;
+import edu.eci.cvds.Task.models.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -69,6 +66,7 @@ public class UserFilePersistenceImpl implements UserPersistence {
                             user.getName() + "-#-" +
                             user.getPassword() + "-#-" +
                             user.getEmail() + "-#-" +
+                            user.getRole() + "-#-" +
                             serializeTasks(user)
             );
             writer.newLine();
@@ -174,9 +172,10 @@ public class UserFilePersistenceImpl implements UserPersistence {
                     content[2],  // password
                     content[3]   // email
             );
+            user.setRole(Role.valueOf(content[4]));
             // Deserialize and add tasks if present
-            if (content.length > 4) {
-                deserializeTasks(content[4], user);
+            if (content.length > 5) {
+                deserializeTasks(content[5], user);
             }
             users.add(user);
         }
