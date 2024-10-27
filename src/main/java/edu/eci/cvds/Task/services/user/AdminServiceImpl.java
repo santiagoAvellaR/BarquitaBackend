@@ -171,7 +171,9 @@ public class AdminServiceImpl implements AdminService {
         ArrayList<User> users = new ArrayList<>(userPersistence.findAll());
         ArrayList<RoleDTO> roleDTOS = new ArrayList<>();
         for(User user: users){
-            roleDTOS.add(new RoleDTO(user.getRole().toString(), user.getUsernameId(), user.getName(), user.getEmail()));
+            if(!user.isAdmin()) {
+                roleDTOS.add(new RoleDTO(user.getRole().toString(), user.getUsernameId(), user.getName(), user.getEmail()));
+            }
         }
         return roleDTOS;
 
