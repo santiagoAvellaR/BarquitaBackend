@@ -33,7 +33,6 @@ public class TaskController {
      */
     @PostMapping("/createUser")
     public ResponseEntity<TokenDTO> createUser(@RequestBody RegisterDTO userDTO)throws TaskManagerException{
-        System.out.printf("%s %s %s %s", userDTO.getUsernameId(), userDTO.getName(), userDTO.getPassword(), userDTO.getEmail());
         return ResponseEntity.status(HttpStatus.OK)
                 .body(userService.createUser(userDTO));
     }
