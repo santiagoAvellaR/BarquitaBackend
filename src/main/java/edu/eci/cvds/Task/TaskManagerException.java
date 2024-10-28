@@ -2,8 +2,8 @@ package edu.eci.cvds.Task;
 
 /**
  * The exception class for the Task Manager
- * @Version 1.0
- * @Since 20-09-2024
+ * @version 1.0
+ * @since 20-09-2024
  */
 public class TaskManagerException extends Exception{
     public static final String NAME_NOT_NULL = "The name of the task should not be null.";
@@ -14,8 +14,8 @@ public class TaskManagerException extends Exception{
     public static final String TIME_INCORRECT = "The time must be greater than zero";
     public static final String USER_DOESNT_EXIST = "The user was not found in the database.";
     public static final String INVALID_USER_NAME = "The user name should not be null";
-    public static final String INVALID_USER_PASSWD = "The ";
-    public static final String INVALID_USER_ID = "";
+    public static final String INVALID_USER_PASSWD = "The password should not be null";
+    public static final String INVALID_USER_ID = "The User Id is not correct";
     public static final String INVALID_USER_EMAIL = "The email should not be null";
     public static final String TASK_ALREADY_EXIST = "The task already exists.";
     public static final String EMAIL_IN_USE = "Email is already in use.";

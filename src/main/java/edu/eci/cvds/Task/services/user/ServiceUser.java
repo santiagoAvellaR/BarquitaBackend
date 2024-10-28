@@ -11,6 +11,8 @@ public interface ServiceUser {
     UserDTO getUser(String id) throws TaskManagerException;
     TokenDTO login(LoginDTO loginDTO) throws TaskManagerException;
     //TokenDTO createAdmin(Regis)
+    void changePassword(String id, String password) throws TaskManagerException;
+    void changeName(String id, String name) throws TaskManagerException;
     void deleteUser(String userId) throws TaskManagerException;
     Task addTask(String userId, TaskDTO dto) throws TaskManagerException;
     void deleteTask(String userId, String id) throws TaskManagerException;
@@ -24,8 +26,9 @@ public interface ServiceUser {
     List<Task> getTaskByDifficulty(String userId, Difficulty difficulty) throws TaskManagerException;
     // Analytics
     List<Task> getTaskByEstimatedTime(String userId, int estimatedTime) throws TaskManagerException;
-    void deleteAll();
+    void deleteAll() throws TaskManagerException;
     UserIDTO getUserId(String email) throws TaskManagerException;
     RoleDTO getRoleUser(String email) throws TaskManagerException;
+    TokenDTO createAdmin(RegisterDTO registerDTO, String creatorUserId) throws TaskManagerException;
 
 }

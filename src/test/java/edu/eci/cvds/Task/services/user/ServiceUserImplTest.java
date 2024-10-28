@@ -26,7 +26,7 @@ import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
-class ServiceUserImplTest {
+class  ServiceUserImplTest {
     private final LocalDateTime date = LocalDateTime.now();
     private final ServiceUserImpl serviceUser;
     @Autowired
@@ -36,7 +36,7 @@ class ServiceUserImplTest {
     }
 
     @AfterEach
-    void tearDown(){
+    void tearDown()throws TaskManagerException{
         serviceUser.deleteAll();
     }
 
@@ -72,6 +72,66 @@ class ServiceUserImplTest {
         }
     }
 
+    @Test
+    void shouldChangeName() throws TaskManagerException {
+        try{
+            serviceUser.createUser(new RegisterDTO("123123", "Miguel", "Miguel1234#", "myemail@gmail.com"));
+            assertEquals("Miguel", serviceUser.getUser(serviceUser.getUserId("myemail@gmail.com").getUserId()).getName());
+            serviceUser.changeName(serviceUser.getUserId("myemail@gmail.com").getUserId(), "Jonas");
+            assertEquals("Jonas", serviceUser.getUser(serviceUser.getUserId("myemail@gmail.com").getUserId()).getName());
+        } catch (TaskManagerException e) {fail("There has been an error: " + e.getMessage());}
+    }
+
+    @Test
+    void shouldChangePassword() throws TaskManagerException {
+        try{
+            serviceUser.createUser(new RegisterDTO("123123", "Miguel", "Miguel1234#", "myemail@gmail.com"));
+            String oldPasswd = serviceUser.getUsers().get(0).getPassword();
+            serviceUser.changePassword(serviceUser.getUserId("myemail@gmail.com").getUserId(), "newPassword1*");
+            assertNotEquals(oldPasswd, serviceUser.getUsers().get(0).getPassword());
+        } catch (TaskManagerException e) {fail("There has been an error: " + e.getMessage());}
+    }
+
+    @Test
+    void shouldNotChangeName1() throws TaskManagerException {
+        try{
+            serviceUser.createUser(new RegisterDTO("123123", "Miguel", "Miguel1234#", "myemail@gmail.com"));
+            serviceUser.changeName(serviceUser.getUserId("myemail@gmail.com").getUserId(), null);
+            fail("Did not throw exception");
+        } catch (TaskManagerException e) {
+            assertEquals(TaskManagerException.INVALID_USER_NAME, e.getMessage());
+        }
+    }
+    @Test
+    void shouldNotChangeName2() throws TaskManagerException {
+        try{
+            serviceUser.createUser(new RegisterDTO("123123", "Miguel", "Miguel1234#", "myemail@gmail.com"));
+            serviceUser.changeName(serviceUser.getUserId("myemail@gmail.com").getUserId(), "");
+            fail("Did not throw exception");
+        } catch (TaskManagerException e) {
+            assertEquals(TaskManagerException.INVALID_USER_NAME, e.getMessage());
+        }
+    }
+    @Test
+    void shouldNotChangePassword1() throws TaskManagerException {
+        try{
+            serviceUser.createUser(new RegisterDTO("123123", "Miguel", "Miguel1234#", "myemail@gmail.com"));
+            serviceUser.changePassword(serviceUser.getUserId("myemail@gmail.com").getUserId(), null);
+            fail("Did not throw exception");
+        } catch (TaskManagerException e) {
+            assertEquals(TaskManagerException.INVALID_PASSWORD, e.getMessage());
+        }
+    }
+    @Test
+    void shouldNotChangePassword2() throws TaskManagerException {
+        try{
+            serviceUser.createUser(new RegisterDTO("123123", "Miguel", "Miguel1234#", "myemail@gmail.com"));
+            serviceUser.changePassword(serviceUser.getUserId("myemail@gmail.com").getUserId(), "");
+            fail("Did not throw exception");
+        } catch (TaskManagerException e) {
+            assertEquals(TaskManagerException.INVALID_PASSWORD, e.getMessage());
+        }
+    }
 
 
     @Test
@@ -237,7 +297,7 @@ class ServiceUserImplTest {
     }
 
     @Test
-    void deleteAll() {
+    void deleteAll() throws TaskManagerException{
         serviceUser.deleteAll();
         List<User> users = serviceUser.getUsers();
         assertTrue(users.isEmpty());
@@ -271,4 +331,51 @@ class ServiceUserImplTest {
         }
     }
 
+    @Test
+    void shouldCreateAdmin(){
+        try{
+            serviceUser.createUser(new RegisterDTO("123123","Admin 01", "User1234#","admin@gmail.com"));
+            assertEquals(1,serviceUser.getUsers().size());
+            String adminId = serviceUser.getUserId("admin@gmail.com").getUserId();
+            serviceUser.createAdmin(new RegisterDTO("123123","Admin 02", "User1234#","admin2@gmail.com"),adminId);
+            List<User> users = serviceUser.getUsers();
+            assertEquals(2,users.size());
+            for(User user : users) {
+                assertEquals(Role.ADMIN, user.getRole());
+            }
+        } catch (TaskManagerException e) {fail("Should not fail with error: " + e.getMessage());}
+    }
+
+    @Test
+    void shouldNotCreateAdmin()throws TaskManagerException{
+        try{
+            serviceUser.createUser(new RegisterDTO("123123","Admin 01", "User1234#","admin@gmail.com"));
+            serviceUser.createUser(new RegisterDTO("123123","Not Admin 01", "User1234#","notadmin@gmail.com"));
+
+            String adminId = serviceUser.getUserId("notadmin@gmail.com").getUserId();
+
+            assertEquals(2,serviceUser.getUsers().size());
+            assertEquals(Role.USER,Role.valueOf(serviceUser.getRoleUser("notadmin@gmail.com").getRole()));
+            // FAIL
+            serviceUser.createAdmin(new RegisterDTO("123123","Admin 02", "User1234#","notadmin2@gmail.com"),adminId);
+            fail("Should Not create admin because the creator user is not admin.");
+        } catch (TaskManagerException e) {
+            assertEquals(TaskManagerException.ADMIN_CREATE_ADMIN, e.getMessage());
+            assertEquals(2,serviceUser.getUsers().size());
+        }
+    }
+
+    @Test
+    void shouldNotCreateAdminWrongValues(){
+        try{
+            serviceUser.createUser(new RegisterDTO("123123","Admin 01", "User1234#","admin@gmail.com"));
+            assertEquals(1,serviceUser.getUsers().size());
+            String adminId = serviceUser.getUserId("admin@gmail.com").getUserId();
+            // FAIL
+            serviceUser.createAdmin(new RegisterDTO("123123","Admin 02", "wrong","admin2@gmail.com"),adminId);
+            fail("Should not create a user with wrong information.");
+        } catch (TaskManagerException e) {
+            assertEquals(TaskManagerException.INVALID_PASSWORD, e.getMessage());
+        }
+    }
 }

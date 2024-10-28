@@ -38,6 +38,34 @@ public class TaskController {
     }
 
     /**
+     * This method changes the password of a User by the given id and the new password
+     * @param userId The user id to change the password
+     * @param newPassword The new password to set up
+     * @return OK if it was done right.
+     * @throws TaskManagerException If there was an exception with the password or the id.
+     */
+    @PutMapping("/changePassword")
+    public ResponseEntity<String> changePassword(@RequestParam String userId, @RequestParam String newPassword) throws TaskManagerException{
+        userService.changePassword(userId, newPassword);
+        return ResponseEntity.status(HttpStatus.OK)
+                .body("OK");
+    }
+
+    /**
+     * This method changes the name of the User.
+     * @param userId The user id
+     * @param newName The new Name of the User
+     * @return OK if it was done right
+     * @throws TaskManagerException If there is an error with the id, the name or the request.
+     */
+    @PutMapping("/changeName")
+    public ResponseEntity<String> changeName(@RequestParam String userId, @RequestParam String newName) throws TaskManagerException{
+        userService.changeName(userId, newName);
+        return ResponseEntity.status(HttpStatus.OK)
+                .body("OK");
+    }
+
+    /**
      * This method deletes the user from the database by the given id.
      * @param userId The user id to be deleted from the DB.
      * @return The String OK if it was executed successfully. Throws an exception otherwise.
@@ -220,10 +248,25 @@ public class TaskController {
         return ResponseEntity.status(HttpStatus.OK)
                 .body(userService.getTaskByEstimatedTime(userId, estimatedTime));
     }
+
+    /**
+     * This method returns the Role of a user by the given email.
+     * @param email The email to search in the DB.
+     * @return The User information as RoleDTO
+     * @throws TaskManagerException If there is any problem with the DB or the given email.
+     */
     @GetMapping("/getRole")
     public ResponseEntity<RoleDTO> getRole(@RequestParam String email) throws TaskManagerException {
         return ResponseEntity.status(HttpStatus.OK).body(userService.getRoleUser(email));
     }
+
+    /**
+     * Handles HTTP requests of type OPTIONS for all routes.
+     * This method is useful for preflight requests in the context of CORS,
+     * allowing browsers to check which HTTP methods are allowed
+     * for a specific resource.
+     * @return Response Entity OK status.
+     */
     @RequestMapping(value="/**", method = RequestMethod.OPTIONS)
     public ResponseEntity<Void> handleOptions() {
         return ResponseEntity.ok().build();  // Responder 200 OK
