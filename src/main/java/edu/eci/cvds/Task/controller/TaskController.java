@@ -248,10 +248,25 @@ public class TaskController {
         return ResponseEntity.status(HttpStatus.OK)
                 .body(userService.getTaskByEstimatedTime(userId, estimatedTime));
     }
+
+    /**
+     * This method returns the Role of a user by the given email.
+     * @param email The email to search in the DB.
+     * @return The User information as RoleDTO
+     * @throws TaskManagerException If there is any problem with the DB or the given email.
+     */
     @GetMapping("/getRole")
     public ResponseEntity<RoleDTO> getRole(@RequestParam String email) throws TaskManagerException {
         return ResponseEntity.status(HttpStatus.OK).body(userService.getRoleUser(email));
     }
+
+    /**
+     * Handles HTTP requests of type OPTIONS for all routes.
+     * This method is useful for preflight requests in the context of CORS,
+     * allowing browsers to check which HTTP methods are allowed
+     * for a specific resource.
+     * @return Response Entity OK status.
+     */
     @RequestMapping(value="/**", method = RequestMethod.OPTIONS)
     public ResponseEntity<Void> handleOptions() {
         return ResponseEntity.ok().build();  // Responder 200 OK

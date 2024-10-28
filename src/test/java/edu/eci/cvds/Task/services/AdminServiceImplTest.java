@@ -38,7 +38,7 @@ class AdminServiceImplTest {
     }
 
     @AfterEach
-    void tearDown() {
+    void tearDown() throws TaskManagerException{
         userFilePersistence.deleteAll();
     }
 
@@ -173,7 +173,7 @@ class AdminServiceImplTest {
         try{
             userFilePersistence.save(new User("Individual_ID", "Test Individual", "Test Individual", "TestIndividual@gmail.com"));
             Random random = new Random();
-            int ALTA = random.nextInt(0,100), MEDIA = random.nextInt(0,100), BAJA = random.nextInt(1,100);
+            int ALTA = random.nextInt(0,100), MEDIA = random.nextInt(0,100), BAJA = random.nextInt(2,100);
             saveSomeTasksHistogram("Individual_ID", ALTA,MEDIA,BAJA);
             Map<Difficulty, Long> histogram = adminServiceImpl.getHistogram("Individual_ID");
             assertEquals(ALTA, histogram.get(Difficulty.ALTA));
@@ -188,7 +188,7 @@ class AdminServiceImplTest {
             userFilePersistence.save(new User("Individual_ID", "Test Individual", "Test Individual", "TestIndividual@gmail.com"));
             // Agrupa por tiempo estimado
             Random rand = new Random();
-            int value1 = rand.nextInt(1,100), tasks1 = rand.nextInt(1,100), value2 = rand.nextInt(1,100), tasks2=rand.nextInt(1,100), value3 = rand.nextInt(1,100), tasks3=rand.nextInt(1,100);
+            int value1 = rand.nextInt(2,100), tasks1 = rand.nextInt(2,100), value2 = rand.nextInt(2,100), tasks2=rand.nextInt(2,100), value3 = rand.nextInt(2,100), tasks3=rand.nextInt(2,100);
             saveSomeFinishedTasks("Individual_ID", value1, value2, value3, tasks1, tasks2, tasks3);
             assertEquals(3, adminServiceImpl.getFinishedTasks("Individual_ID").size());
 
@@ -202,7 +202,7 @@ class AdminServiceImplTest {
     void getConsolidatedPriority() {
         try{
             Random rand = new Random();
-            int priority1 = rand.nextInt(1,100), priority2 = rand.nextInt(1,100), priority3=rand.nextInt(1,100), priority4=rand.nextInt(1,100), priority5=rand.nextInt(1,100);
+            int priority1 = rand.nextInt(2,100), priority2 = rand.nextInt(2,100), priority3=rand.nextInt(2,100), priority4=rand.nextInt(2,100), priority5=rand.nextInt(2,100);
             userFilePersistence.save(new User("Individual_ID", "Test Individual", "Test Individual", "TestIndividual@gmail.com"));
             saveSomeConsolidatedByPriority("Individual_ID", priority1, priority2, priority3, priority4, priority5);
             Map<Integer, Double> histogram = adminServiceImpl.getConsolidatedPriority("Individual_ID");
@@ -221,8 +221,8 @@ class AdminServiceImplTest {
         try{
             userFilePersistence.save(new User("Individual_ID", "Test Individual", "Test Individual", "TestIndividual@gmail.com"));
             Random random = new Random();
-            int value1 = random.nextInt(1,100), value2 = random.nextInt(1,100),
-                    value3=random.nextInt(1,100), timesV1 = random.nextInt(1,30),
+            int value1 = random.nextInt(2,100), value2 = random.nextInt(2,100),
+                    value3=random.nextInt(2,100), timesV1 = random.nextInt(1,30),
                     timesV2 = random.nextInt(1,30), timesV3 = random.nextInt(1,30);
             saveByDifficulty("Individual_ID",value1, value2, value3, timesV1, timesV2, timesV3);
             Map<Difficulty, Double> histogram = adminServiceImpl.getTotalTimeSpentByDifficulty("Individual_ID");

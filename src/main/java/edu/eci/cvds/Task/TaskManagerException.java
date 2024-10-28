@@ -2,8 +2,8 @@ package edu.eci.cvds.Task;
 
 /**
  * The exception class for the Task Manager
- * @Version 1.0
- * @Since 20-09-2024
+ * @version 1.0
+ * @since 20-09-2024
  */
 public class TaskManagerException extends Exception{
     public static final String NAME_NOT_NULL = "The name of the task should not be null.";

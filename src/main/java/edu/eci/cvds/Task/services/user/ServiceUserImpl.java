@@ -30,7 +30,7 @@ public class ServiceUserImpl implements ServiceUser {
 
 
 
-    public List<User> getUsers(){ return userRepository.findAll(); }
+    public List<User> getUsers()throws TaskManagerException{ return userRepository.findAll(); }
 
     /**
      * This method returns a DT User by the given id
@@ -68,6 +68,15 @@ public class ServiceUserImpl implements ServiceUser {
     }
 
     // ONLY ADMIN Creates ADMIN
+
+    /**
+     * This method creates an admin user by the given registerDTO and the admin creator id.
+     * @param registerDTO The User to create by the DTO
+     * @param creatorUserId The creator id, should be admin.
+     * @return The token generated for the given Register DTO
+     * @throws TaskManagerException If there is any problem with the given creator id, the Register information or the DB.
+     */
+    @Override
     public TokenDTO createAdmin(RegisterDTO registerDTO, String creatorUserId) throws TaskManagerException {
         validateData(registerDTO);
         if(!verificateEmail(registerDTO.getEmail())) {
@@ -102,6 +111,12 @@ public class ServiceUserImpl implements ServiceUser {
         return TokenDTO.builder().token(jwtService.getToken(user.getUsername())).build();
     }
 
+    /**
+     * This method provides the facility to change a password of the user with the given id
+     * @param id The id of the user to change the password.
+     * @param password The new password to set up.
+     * @throws TaskManagerException If there is any error with the password or with the user id.
+     */
     @Override
     public void changePassword(String id, String password) throws TaskManagerException {
         if(notValidatePassword(password)) throw new TaskManagerException(TaskManagerException.INVALID_PASSWORD);
@@ -110,6 +125,12 @@ public class ServiceUserImpl implements ServiceUser {
         userRepository.save(user);
     }
 
+    /**
+     * This method provides the facility to change the name of the user with the given id
+     * @param id The id of the user to change the name
+     * @param name The new name of the user
+     * @throws TaskManagerException If there is a problem with the name or the user id.
+     */
     @Override
     public void changeName(String id, String name) throws TaskManagerException {
         User user = findUser(id);
@@ -249,16 +270,29 @@ public class ServiceUserImpl implements ServiceUser {
      * This method deletes all the users from the database.
      */
     @Override
-    public void deleteAll() {
+    public void deleteAll() throws TaskManagerException{
         userRepository.deleteAll();
     }
 
+    /**
+     * This method returns a userIDTO by the given email, providing the facility to search user by email.
+     * @param email The email of the user
+     * @return The UserIDTO if it is found.(It has just the information of the Id)
+     * @throws TaskManagerException If the user doesn't exist.
+     */
     @Override
     public UserIDTO getUserId(String email) throws TaskManagerException {
         if(userRepository.findByEmail(email).isEmpty()) throw new TaskManagerException(TaskManagerException.USER_DOESNT_EXIST);
         return new UserIDTO(userRepository.findByEmail(email).get().getUsernameId());
     }
 
+    /**
+     * This method returns a RoleDTO by the given email, providing basic information
+     * of the user including the Role by the given email.
+     * @param email The email of the user.
+     * @return The RoleDTO with the given email, giving basic information of the user, without providing the password.
+     * @throws TaskManagerException If there is any error with the DB or the user is not found.
+     */
     @Override
     public RoleDTO getRoleUser(String email) throws TaskManagerException {
         if(userRepository.findByEmail(email).isEmpty()) throw new TaskManagerException(TaskManagerException.USER_DOESNT_EXIST);
@@ -266,9 +300,6 @@ public class ServiceUserImpl implements ServiceUser {
                 userRepository.findByEmail(email).get().getEmail());
     }
 
-    private boolean verificateEmail(String email){
-        return userRepository.findByEmail(email).isEmpty();
-    }
     /**
      * This method deletes a user from the database by the given id.
      * @param id The given user id
@@ -281,6 +312,9 @@ public class ServiceUserImpl implements ServiceUser {
             throw new TaskManagerException(TaskManagerException.ADMIN_SHOULD_NOT_DELETE);
         }
         userRepository.deleteById(id);
+    }
+    private boolean verificateEmail(String email)throws TaskManagerException{
+        return userRepository.findByEmail(email).isEmpty();
     }
     private String generateId(String name){
         return name + "_"+UUID.randomUUID().toString().replace("-", "").substring(0, 2) + this.id++;

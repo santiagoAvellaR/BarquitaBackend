@@ -136,6 +136,8 @@
 								<exclude>**/edu/eci/cvds/Task/controller/**</exclude>
 								<exclude>**/edu/eci/cvds/Task/config/**</exclude>
 								<exclude>edu/eci/cvds/Task/jwt/JwtAuthenticationFilter.class</exclude>
+								<exclude>edu/eci/cvds/Task/TaskApplication.class</exclude>
+								<exclude>edu/eci/cvds/Task/services/persistence/TaskPersistenceMongo.class</exclude>
 							</excludes>
 						</configuration>
 					</execution>

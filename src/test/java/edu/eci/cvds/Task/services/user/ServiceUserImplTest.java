@@ -36,7 +36,7 @@ class  ServiceUserImplTest {
     }
 
     @AfterEach
-    void tearDown(){
+    void tearDown()throws TaskManagerException{
         serviceUser.deleteAll();
     }
 
@@ -297,7 +297,7 @@ class  ServiceUserImplTest {
     }
 
     @Test
-    void deleteAll() {
+    void deleteAll() throws TaskManagerException{
         serviceUser.deleteAll();
         List<User> users = serviceUser.getUsers();
         assertTrue(users.isEmpty());
@@ -347,7 +347,7 @@ class  ServiceUserImplTest {
     }
 
     @Test
-    void shouldNotCreateAdmin(){
+    void shouldNotCreateAdmin()throws TaskManagerException{
         try{
             serviceUser.createUser(new RegisterDTO("123123","Admin 01", "User1234#","admin@gmail.com"));
             serviceUser.createUser(new RegisterDTO("123123","Not Admin 01", "User1234#","notadmin@gmail.com"));
