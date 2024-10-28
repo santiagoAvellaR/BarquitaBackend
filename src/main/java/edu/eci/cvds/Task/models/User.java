@@ -5,6 +5,7 @@ import edu.eci.cvds.Task.services.TaskService;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -23,6 +24,7 @@ public class User implements TaskService, UserDetails {
     private String name;
     private String password;
     private int idTask=1;
+    @Indexed(unique=true)
     private String email;
     private Role role = Role.USER;
 
