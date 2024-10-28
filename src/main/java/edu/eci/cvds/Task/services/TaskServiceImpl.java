@@ -17,8 +17,8 @@ import java.util.UUID;
  * This class is the implementation of the Task Service Interface.
  * The responsibility of this class is the administration and use
  * of the databases that are available to return the requests made by the client.
- * @Version 1.0
- * @Since 26-09-2024
+ * @version 1.0
+ * @since 26-09-2024
  */
 @Service
 public class TaskServiceImpl implements TaskService {

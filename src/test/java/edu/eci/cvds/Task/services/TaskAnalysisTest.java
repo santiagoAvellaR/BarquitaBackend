@@ -34,7 +34,7 @@ class TaskAnalysisTest {
     }
 
     @AfterEach
-    void tearDown(){
+    void tearDown() throws TaskManagerException{
         userRepository.deleteAll();
     }
 

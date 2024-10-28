@@ -1,9 +1,6 @@
 package edu.eci.cvds.Task.services.persistence;
 import edu.eci.cvds.Task.TaskManagerException;
-import edu.eci.cvds.Task.models.Difficulty;
-import edu.eci.cvds.Task.models.Task;
-import edu.eci.cvds.Task.models.TaskDTO;
-import edu.eci.cvds.Task.models.User;
+import edu.eci.cvds.Task.models.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -16,13 +13,18 @@ import java.util.Optional;
 
 /**
  * This class represents a database for Users, working with plane text file to store the information.
- * @Version 1.0
+ * @version 1.0
+ * @since 28-10-2024
  */
 @Component
 public class UserFilePersistenceImpl implements UserPersistence {
     private String fileName;
     private File file;
 
+    /**
+     * This method is the UserFilePersistence Constructor
+     * @param fileName the given file path name. It is autowired by the respective bean in the class Beans
+     */
     @Autowired
     public UserFilePersistenceImpl(String fileName) {
         this.fileName = fileName;
@@ -46,8 +48,13 @@ public class UserFilePersistenceImpl implements UserPersistence {
         return res;
     }
 
+    /**
+     * This method searches a user by the given email.
+     * @param email the given email of the user.
+     * @return The User if it's found, Empty otherwise.
+     */
     @Override
-    public Optional<User> findByEmail(String email) {
+    public Optional<User> findByEmail(String email) throws TaskManagerException{
         return findAll().stream().filter(u -> u.getEmail().equals(email)).findFirst();
     }
 
@@ -69,6 +76,7 @@ public class UserFilePersistenceImpl implements UserPersistence {
                             user.getName() + "-#-" +
                             user.getPassword() + "-#-" +
                             user.getEmail() + "-#-" +
+                            user.getRole() + "-#-" +
                             serializeTasks(user)
             );
             writer.newLine();
@@ -100,10 +108,9 @@ public class UserFilePersistenceImpl implements UserPersistence {
     /**
      * This method returns a List of all the Users found in the file
      * @return List of all the Users found in the file
-     * @throws TaskManagerException If there is a problem with the file operations
      */
     @Override
-    public List<User> findAll() {
+    public List<User> findAll() throws TaskManagerException{
         ArrayList<String> lines = new ArrayList<>();
         try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
             String line;
@@ -111,13 +118,11 @@ public class UserFilePersistenceImpl implements UserPersistence {
                 lines.add(line);
             }
         } catch (IOException e) {
-            //throw new TaskManagerException(TaskManagerException.DATA_BASE_FILE_ERROR);
+            throw new TaskManagerException(TaskManagerException.DATA_BASE_FILE_ERROR);
         }
         List<User> res = null;
-        try{
-            res=  createUsers(lines);
-        } catch (TaskManagerException e) {}
-        return res; // TODO -- > refactorizar
+        res=  createUsers(lines);
+        return res;
     }
 
     /**
@@ -125,15 +130,19 @@ public class UserFilePersistenceImpl implements UserPersistence {
      * @throws TaskManagerException If there is a problem with the file operations
      */
     @Override
-    public void deleteAll()  {
+    public void deleteAll()  throws TaskManagerException{
         try (PrintWriter writer = new PrintWriter(fileName)) {
         } catch (FileNotFoundException e) {
-            //throw new TaskManagerException(TaskManagerException.DATA_BASE_FILE_ERROR);
-        } // TODO
+            throw new TaskManagerException(TaskManagerException.DATA_BASE_FILE_ERROR);
+        }
     }
 
+    /**
+     * This method returns the total of users found.
+     * @return The number of users in the DB.
+     */
     @Override
-    public long count() {
+    public long count() throws TaskManagerException{
         return findAll().size();
     }
 
@@ -174,9 +183,10 @@ public class UserFilePersistenceImpl implements UserPersistence {
                     content[2],  // password
                     content[3]   // email
             );
+            user.setRole(Role.valueOf(content[4]));
             // Deserialize and add tasks if present
-            if (content.length > 4) {
-                deserializeTasks(content[4], user);
+            if (content.length > 5) {
+                deserializeTasks(content[5], user);
             }
             users.add(user);
         }

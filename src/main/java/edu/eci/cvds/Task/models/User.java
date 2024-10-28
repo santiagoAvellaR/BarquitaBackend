@@ -5,6 +5,7 @@ import edu.eci.cvds.Task.services.TaskService;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -23,6 +24,7 @@ public class User implements TaskService, UserDetails {
     private String name;
     private String password;
     private int idTask=1;
+    @Indexed(unique=true)
     private String email;
     private Role role = Role.USER;
 
@@ -192,11 +194,21 @@ public class User implements TaskService, UserDetails {
         return new UserDTO(usernameId,getAllTasks(),name, email);
     }
 
+    /**
+     * This method changes the name of the user, if the given name is valid.
+     * @param name The new name of the user.
+     * @throws TaskManagerException If the name is not correct.
+     */
     public void changeName(String name) throws TaskManagerException {
         if(!validateName(name)) throw new TaskManagerException(TaskManagerException.INVALID_USER_NAME);
         this.name = name;
     }
 
+    /**
+     * This method changes the password of the user, if the given pass
+     * @param password The new password of the user.
+     * @throws TaskManagerException If the password is incorrect.
+     */
     public void changePassword(String password) throws TaskManagerException{
         if(!validatePassWord(password)) throw new TaskManagerException(TaskManagerException.INVALID_USER_PASSWD);
         this.password = password;
@@ -225,33 +237,48 @@ public class User implements TaskService, UserDetails {
         if(!validateEmail(email)) throw  new TaskManagerException(TaskManagerException.INVALID_USER_EMAIL);
     }
 
-    /*
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return List.of();
-    }
+    /**
+     * This method returns the email
+     * @return email of the user.
      */
-
     @Override
     public String getUsername() {
         return email;
     }
 
+    /**
+     * This method returns a boolean if the account is expired with the use
+     * of UserDetails class.
+     * @return true if is not expired, false otherwise.
+     */
     @Override
     public boolean isAccountNonExpired() {
         return UserDetails.super.isAccountNonExpired();
     }
 
+    /**
+     * This method returns boolean if the account is not locked
+     * @return true if the account isn't locked, false otherwise.
+     */
     @Override
     public boolean isAccountNonLocked() {
         return UserDetails.super.isAccountNonLocked();
     }
 
+    /**
+     * This method returns true if the credentials (User Details inherit method)
+     * @return True if the credentials are not expired, false otherwise.
+     */
     @Override
     public boolean isCredentialsNonExpired() {
         return UserDetails.super.isCredentialsNonExpired();
     }
 
+    /**
+     * This method returns a boolean if the User is enabled with the
+     * inherit method of User Details isEnabled().
+     * @return true if it's enabled, false otherwise.
+     */
     @Override
     public boolean isEnabled() {
         return UserDetails.super.isEnabled();

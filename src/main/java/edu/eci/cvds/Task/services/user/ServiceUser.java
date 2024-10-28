@@ -26,8 +26,9 @@ public interface ServiceUser {
     List<Task> getTaskByDifficulty(String userId, Difficulty difficulty) throws TaskManagerException;
     // Analytics
     List<Task> getTaskByEstimatedTime(String userId, int estimatedTime) throws TaskManagerException;
-    void deleteAll();
+    void deleteAll() throws TaskManagerException;
     UserIDTO getUserId(String email) throws TaskManagerException;
     RoleDTO getRoleUser(String email) throws TaskManagerException;
+    TokenDTO createAdmin(RegisterDTO registerDTO, String creatorUserId) throws TaskManagerException;
 
 }
