@@ -32,10 +32,10 @@ public class SecurityConfig {
                                 .requestMatchers(HttpMethod.OPTIONS,"/**").permitAll()
                                 .requestMatchers("/api/admin/**").hasRole("ADMIN")
                                 .requestMatchers("/user/getRole").hasAnyRole("ADMIN", "USER")
-                                .requestMatchers("/user/**").hasRole("USER")
-                                .requestMatchers("/Analytics/**").hasRole("USER")
                                 .requestMatchers("/user/changePassword").hasAnyRole("ADMIN","USER")
                                 .requestMatchers("/user/changeName").hasAnyRole("ADMIN","USER")
+                                .requestMatchers("/user/**").hasRole("USER")
+                                .requestMatchers("/Analytics/**").hasRole("USER")
                                 .anyRequest().authenticated()
                 )
                 .sessionManagement(sessionManager ->
